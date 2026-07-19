@@ -1,0 +1,76 @@
+/* Snow overlay — only when user allows motion (see snow.js guard too) */
+@media (prefers-reduced-motion: no-preference) {
+  #snow-container {
+    position: fixed;
+    inset: 0;
+    width: 100%;
+    height: 100%;
+    max-height: 100dvh;
+    pointer-events: none;
+    z-index: 1;
+    overflow: hidden;
+    contain: strict;
+  }
+
+  .snow-lane {
+    position: absolute;
+    top: 0;
+    left: var(--snow-x, 50%);
+    transform: translateX(-50%);
+    pointer-events: none;
+  }
+
+  .snowflake-track {
+    pointer-events: none;
+    will-change: transform;
+    animation-name: snow-fall;
+    animation-timing-function: linear;
+    animation-iteration-count: infinite;
+    animation-duration: var(--fall-dur, 5s);
+    animation-delay: var(--fall-delay, 0s);
+  }
+
+  @keyframes snow-fall {
+    from {
+      transform: translate3d(0, -15vh, 0);
+    }
+    to {
+      transform: translate3d(0, 115vh, 0);
+    }
+  }
+
+  .snowflake {
+    display: block;
+    width: var(--size, 4px);
+    height: var(--size, 4px);
+    border-radius: 50%;
+    background: #ffffff;
+    pointer-events: none;
+    will-change: transform;
+    flex-shrink: 0;
+    animation-name: snow-sway;
+    animation-timing-function: ease-in-out;
+    animation-iteration-count: infinite;
+    animation-duration: var(--sway-dur, 3s);
+    animation-delay: var(--sway-delay, 0s);
+  }
+
+  /* Gentle horizontal sway (sine-like via multi-step keyframes) */
+  @keyframes snow-sway {
+    0% {
+      transform: translate3d(calc(-1 * var(--sway-amt, 12px)), 0, 0);
+    }
+    25% {
+      transform: translate3d(0, 0, 0);
+    }
+    50% {
+      transform: translate3d(var(--sway-amt, 12px), 0, 0);
+    }
+    75% {
+      transform: translate3d(0, 0, 0);
+    }
+    100% {
+      transform: translate3d(calc(-1 * var(--sway-amt, 12px)), 0, 0);
+    }
+  }
+}

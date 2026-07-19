@@ -1,0 +1,16 @@
+django
+psycopg[binary]
+dj-database-url
+python-dotenv
+django-axes
+stripe
+whitenoise
+gunicorn
+pandas
+numpy
+plotly
+pvlib
+requests
+reportlab
+Pillow
+

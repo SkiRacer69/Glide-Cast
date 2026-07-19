@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}{{ title }} · GlideCast — Wax Done Right{% endblock %}
+
+{% block hero %}
+  <section class="hero-premium">
+    <div class="hero-inner">
+      <p class="hero-brand-kicker hero-stagger-1">GlideCast<sup class="mark-tm">™</sup></p>
+      <h1 class="hero-title hero-stagger-1">{{ title }}</h1>
+      <p class="hero-subtitle hero-stagger-2">Date, venue, discipline, wax used, result, snow notes</p>
+    </div>
+  </section>
+{% endblock %}
+
+{% block content %}
+  <div class="card-glass scroll-anim-card" style="padding: 1.5rem; max-width: 32rem;">
+    <form method="post" style="display: flex; flex-direction: column; gap: 1rem;">
+      {% csrf_token %}
+      {{ form.as_p }}
+      <div style="display: flex; gap: 0.5rem;">
+        <button type="submit" class="btn-primary">Save</button>
+        <a href="{% url 'conditions_log_list' %}" class="btn-secondary">Cancel</a>
+      </div>
+    </form>
+  </div>
+{% endblock %}

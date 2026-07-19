@@ -1,0 +1,148 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}Subscribe · GlideCast — Wax Done Right{% endblock %}
+{% block body_class %}page-paywall{% endblock %}
+
+{% block hero %}
+  <section class="paywall-hero">
+    <div class="paywall-hero-inner">
+      <p class="paywall-hero-brand">GlideCast<sup class="mark-tm">™</sup></p>
+      <p class="paywall-hero-slogan">&ldquo;Stop Guessing. Start Winning.&rdquo;<sup class="mark-tm">™</sup></p>
+      <h1 class="paywall-hero-title">Choose your plan</h1>
+      <p class="paywall-hero-lead">7-day free trial on all plans. Annual billing: 20% off.</p>
+    </div>
+  </section>
+{% endblock %}
+
+{% block content %}
+  <section class="paywall-features" aria-labelledby="paywall-features-heading">
+    <h2 id="paywall-features-heading" class="paywall-section-title">What GlideCast does</h2>
+    <p class="paywall-features-services">RaceWax Oracle<sup class="mark-sm">℠</sup> supplies the forecast core; the GlideCast Calculator<sup class="mark-sm">℠</sup> delivers it for race morning.</p>
+    <p class="paywall-section-lead">Venue-specific inputs, clear physics-based reasoning, and wax recommendations for race morning.</p>
+    <div class="paywall-features-grid">
+      <div class="paywall-feature-card">
+        <h3>Mountain-specific</h3>
+        <p>Uses each venue’s geometry and your schedule—not a generic hill profile.</p>
+      </div>
+      <div class="paywall-feature-card">
+        <h3>Energy terms spelled out</h3>
+        <p>On Pro: solar, longwave, latent and sensible heat, and deep-snow evolution shown with each recommendation.</p>
+      </div>
+      <div class="paywall-feature-card">
+        <h3>Fast to use</h3>
+        <p>Short form, direct output; PDFs when you need a brief for staff or athletes.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="science-credibility-section section-full-bleed" aria-labelledby="science-credibility-heading">
+    <div class="science-credibility-inner">
+      <h2 id="science-credibility-heading" class="science-credibility-heading">Built on real science. Not guesswork.</h2>
+      <div class="science-credibility-grid">
+        <div class="science-credential-card">
+          <p class="science-credential-name">
+            <a href="https://faculty-directory.dartmouth.edu/erich-osterberg" target="_blank" rel="noopener noreferrer">Dr. Erich Osterberg</a>
+          </p>
+          <p class="science-credential-title">Professor of Earth Sciences, Dartmouth College</p>
+          <p class="science-credential-label">Education</p>
+          <p class="science-credential-degrees">B.A. from Middlebury College, M.S. from the University of Otago, and Ph.D. from the University of Maine.</p>
+          <p class="science-credential-label">Areas of expertise</p>
+          <div class="science-expertise-pills" role="list">
+            <span class="science-expertise-pill" role="listitem">Paleoclimatology</span>
+            <span class="science-expertise-pill" role="listitem">Climate dynamics</span>
+            <span class="science-expertise-pill" role="listitem">Atmospheric chemistry</span>
+            <span class="science-expertise-pill" role="listitem">Snow and ice chemistry</span>
+          </div>
+        </div>
+        <div class="science-credibility-copy">
+          <blockquote class="science-pull-quote">The same physics that govern how snow changes over 10,000 years govern how it changes over two hours.</blockquote>
+          <p>GlideCast&rsquo;s wax prediction engine<sup class="mark-sm">℠</sup> is grounded in physical principles from snow and ice science research. <a class="paywall-text-link" href="https://faculty-directory.dartmouth.edu/erich-osterberg" target="_blank" rel="noopener noreferrer">Dr. Erich Osterberg</a> is Professor of Earth Sciences at Dartmouth College and one of the world&rsquo;s leading experts in ice, snow, and climate science &mdash; his specialty is analyzing the chemistry and physical properties of snow and ice to understand how they change over time and in response to atmospheric conditions.</p>
+          <p>His research spans ice cores from mountain glaciers and ice sheets across Alaska, Greenland, and Antarctica, giving him a uniquely deep understanding of how snow temperature, crystal structure, humidity, solar radiation, and atmospheric chemistry interact at the surface level &mdash; the exact conditions that determine how a ski glides.</p>
+          <p>Dr. Osterberg holds a B.A. from Middlebury College, an M.S. from the University of Otago, and a Ph.D. from the University of Maine. He has published dozens of peer-reviewed papers in journals including <em>Nature Geoscience</em>, <em>Geophysical Research Letters</em>, and the <em>Journal of Glaciology</em>. His areas of expertise include paleoclimatology, climate dynamics, atmospheric chemistry, and snow and ice chemistry.</p>
+          <p>The snow surface energy model<sup class="mark-sm">℠</sup> at the core of GlideCast &mdash; combining solar radiation, longwave exchange, latent heat, sensible heat, and deep snow temperature evolution &mdash; is grounded in the same physical principles researchers apply to understand how snow changes across decades and centuries. GlideCast applies that science to a two-hour race window.</p>
+          <div class="science-cta-row">
+            <a class="science-research-btn" href="https://icecore.host.dartmouth.edu/" target="_blank" rel="noopener noreferrer">Explore Dr. Osterberg&rsquo;s Research</a>
+            <a class="science-dartmouth-linkcard" href="https://faculty-directory.dartmouth.edu/erich-osterberg" target="_blank" rel="noopener noreferrer">
+              <span class="science-dartmouth-linkcard-text">
+                <span class="science-dartmouth-linkcard-name">Dartmouth College</span>
+                <span class="science-dartmouth-linkcard-sub">Faculty profile · Earth Sciences</span>
+              </span>
+              <svg class="science-external-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <div class="paywall-pricing-block">
+    <div class="paywall-billing-row">
+      <label class="paywall-billing-label">
+        <span>Billing</span>
+        <select id="interval-toggle" class="paywall-select">
+          <option value="monthly">Monthly</option>
+          <option value="annual">Annual (20% off)</option>
+        </select>
+      </label>
+    </div>
+    <div class="paywall-plans-grid">
+      {% for tier in tiers %}
+        <div class="paywall-plan-card">
+          <p class="paywall-plan-name">{{ tier.name }}</p>
+          <p class="paywall-plan-price tier-monthly">${{ tier.monthly }}/mo</p>
+          <p class="paywall-plan-price tier-annual">${{ tier.annual }}/yr</p>
+          <p class="paywall-plan-desc">
+            {% if tier.id == 'basic' %}Correct wax calls for five mountains: Sugarloaf, Sunday River, Gore, Mount Snow, and Killington. Charts and detailed “why” data are not included.{% endif %}
+            {% if tier.id == 'pro' %}Every mountain in the app, plus temperature charts, energy breakdown, full rationale, and unlimited PDF export.{% endif %}
+          </p>
+          <a href="{% url 'create_checkout_session' %}?plan={{ tier.id }}&interval=monthly" class="paywall-cta checkout-link" data-plan="{{ tier.id }}">Start free trial</a>
+        </div>
+      {% endfor %}
+    </div>
+    <p class="paywall-account-link-wrap">
+      <a href="{% url 'account' %}" class="paywall-text-link">View account</a>
+    </p>
+    {% if show_dev_bypass %}
+      <form method="post" action="{% url 'dev_bypass_subscription' %}" style="margin-top: 1rem;">
+        {% csrf_token %}
+        <button type="submit" class="btn-secondary alert-amber" style="border-style: dashed;">Dev only: bypass subscription</button>
+      </form>
+    {% endif %}
+  </div>
+
+  <div class="paywall-erich-photo-wrap">
+    <figure class="paywall-erich-photo">
+      <img
+        src="{% static 'Erich Osterberg.png' %}"
+        loading="lazy"
+        decoding="async"
+        alt="Dr. Erich Osterberg, Professor of Earth Sciences, Dartmouth College"
+      />
+    </figure>
+  </div>
+
+  <script>
+    (function() {
+      var base = "{% url 'create_checkout_session' %}";
+      var interval = document.getElementById('interval-toggle');
+      var monthlyEls = document.querySelectorAll('.tier-monthly');
+      var annualEls = document.querySelectorAll('.tier-annual');
+      var links = document.querySelectorAll('.checkout-link');
+      function update() {
+        var val = interval.value;
+        monthlyEls.forEach(function(el) { el.style.display = val === 'monthly' ? 'block' : 'none'; });
+        annualEls.forEach(function(el) { el.style.display = val === 'annual' ? 'block' : 'none'; });
+        links.forEach(function(a) {
+          var plan = a.getAttribute('data-plan');
+          a.href = base + '?plan=' + encodeURIComponent(plan) + '&interval=' + encodeURIComponent(val);
+        });
+      }
+      interval.addEventListener('change', update);
+      update();
+    })();
+  </script>
+{% endblock %}

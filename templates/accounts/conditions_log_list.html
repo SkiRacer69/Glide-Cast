@@ -1,0 +1,66 @@
+{% extends "base.html" %}
+{% block title %}Conditions log · GlideCast — Wax Done Right{% endblock %}
+
+{% block hero %}
+  <section class="hero-premium">
+    <div class="hero-inner">
+      <p class="hero-brand-kicker hero-stagger-1">GlideCast<sup class="mark-tm">™</sup></p>
+      <h1 class="hero-title hero-stagger-1">Conditions log</h1>
+      <p class="hero-subtitle hero-stagger-2">Your personal race log — wax accuracy and venue history</p>
+    </div>
+  </section>
+{% endblock %}
+
+{% block content %}
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; align-items: start;">
+    <div class="card-glass scroll-anim-card" style="padding: 1.5rem;">
+      <h2 class="text-section-title" style="font-size: 1.25rem; margin: 0 0 0.75rem 0;">Summary</h2>
+      {% if summary.total_entries %}
+        {% if summary.accuracy_rate is not None %}
+          <p class="data-value" style="font-size: 1.25rem; margin: 0 0 0.5rem 0;">Wax accuracy: {{ summary.accuracy_rate }}%</p>
+        {% endif %}
+        <p class="text-caption" style="margin: 0 0 0.75rem 0;">{{ summary.total_entries }} log entries</p>
+        {% if summary.most_used_products %}
+          <p class="text-label" style="font-size: 0.75rem; margin-bottom: 0.25rem;">Most used products</p>
+          <ul style="margin: 0 0 0.75rem 0; padding-left: 1.25rem; font-size: 0.875rem;">
+            {% for name, count in summary.most_used_products %}
+              <li>{{ name }} ({{ count }})</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+        {% if summary.best_venues %}
+          <p class="text-label" style="font-size: 0.75rem; margin-bottom: 0.25rem;">Top venues</p>
+          <ul style="margin: 0; padding-left: 1.25rem; font-size: 0.875rem;">
+            {% for row in summary.best_venues %}
+              <li>{{ row.venue }} ({{ row.c }} runs)</li>
+            {% endfor %}
+          </ul>
+        {% endif %}
+      {% else %}
+        <p class="text-caption" style="margin: 0;">Add entries to see your wax accuracy rate and most used products.</p>
+      {% endif %}
+    </div>
+    <div class="card-glass scroll-anim-card" style="padding: 1.5rem;">
+      <div style="display: flex; justify-content: space-between; align-items: center; margin-bottom: 1rem;">
+        <h2 class="text-section-title" style="font-size: 1.25rem; margin: 0;">Entries</h2>
+        <a href="{% url 'conditions_log_add' %}" class="btn-primary" style="width: auto;">Add entry</a>
+      </div>
+      {% if entries %}
+        <ul style="list-style: none; padding: 0; margin: 0;">
+          {% for entry in entries %}
+            <li style="padding: 0.5rem 0; border-bottom: 1px solid var(--surface); display: flex; justify-content: space-between; align-items: center;">
+              <span>{{ entry.date|date:"M j, Y" }} — {{ entry.venue }} {{ entry.discipline }}{% if entry.result %} · {{ entry.get_result_display }}{% endif %}</span>
+              <span>
+                <a href="{% url 'conditions_log_edit' entry.pk %}" style="color: var(--glacier); margin-right: 0.5rem;">Edit</a>
+                <a href="{% url 'conditions_log_delete' entry.pk %}" style="color: var(--amber);">Delete</a>
+              </span>
+            </li>
+          {% endfor %}
+        </ul>
+      {% else %}
+        <p class="text-caption" style="margin: 0;">No entries yet. <a href="{% url 'conditions_log_add' %}" style="color: var(--glacier);">Add your first log entry</a>.</p>
+      {% endif %}
+    </div>
+  </div>
+  <p style="margin-top: 1rem;"><a href="{% url 'account' %}" style="color: var(--glacier);">Back to account</a></p>
+{% endblock %}

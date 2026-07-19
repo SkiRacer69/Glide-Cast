@@ -1,0 +1,72 @@
+{% extends "admin/base_site.html" %}
+{% load i18n %}
+
+{% block title %}Security dashboard{% endblock %}
+
+{% block content %}
+<h1>Security dashboard</h1>
+
+<div style="margin-bottom: 2rem;">
+  <h2>Accounts flagged for multiple IP logins (last 24h)</h2>
+  {% if flagged_accounts %}
+  <table style="width: 100%; border-collapse: collapse;">
+    <thead>
+      <tr style="background: #f0f0f0;">
+        <th style="padding: 8px; text-align: left;">User</th>
+        <th style="padding: 8px; text-align: left;">Flagged at</th>
+        <th style="padding: 8px; text-align: left;">Action</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for p in flagged_accounts %}
+      <tr>
+        <td style="padding: 8px;">{{ p.user.username }} ({{ p.user.email }})</td>
+        <td style="padding: 8px;">{{ p.flagged_for_review_at }}</td>
+        <td style="padding: 8px;">
+          <a href="{% url 'admin:accounts_profile_changelist' %}?q={{ p.user_id }}">View profile</a>
+          | <a href="{% url 'admin:auth_user_change' p.user_id %}">Edit user</a>
+        </td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+  {% else %}
+  <p>None.</p>
+  {% endif %}
+</div>
+
+<div style="margin-bottom: 2rem;">
+  <h2>High PDF download activity (last 24h, &gt;10 downloads)</h2>
+  {% if high_pdf_users %}
+  <ul>
+    {% for u in high_pdf_users %}
+    <li><a href="{% url 'admin:auth_user_change' u.id %}">{{ u.username }} ({{ u.email }})</a></li>
+    {% endfor %}
+  </ul>
+  {% else %}
+  <p>None.</p>
+  {% endif %}
+</div>
+
+<div style="margin-bottom: 2rem;">
+  <h2>Revenue summary by plan tier</h2>
+  <table style="width: 100%; border-collapse: collapse;">
+    <thead>
+      <tr style="background: #f0f0f0;">
+        <th style="padding: 8px; text-align: left;">Plan</th>
+        <th style="padding: 8px; text-align: left;">Subscriber count</th>
+      </tr>
+    </thead>
+    <tbody>
+      {% for row in revenue_by_plan %}
+      <tr>
+        <td style="padding: 8px;">{{ row.plan_tier }}</td>
+        <td style="padding: 8px;">{{ row.c }}</td>
+      </tr>
+      {% endfor %}
+    </tbody>
+  </table>
+</div>
+
+<p><a href="{% url 'admin:accounts_profile_changelist' %}">Back to Profiles</a></p>
+{% endblock %}

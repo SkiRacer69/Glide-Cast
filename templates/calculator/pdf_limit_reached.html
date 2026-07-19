@@ -1,0 +1,23 @@
+{% extends "base.html" %}
+{% block title %}PDF limit reached · GlideCast — Wax Done Right{% endblock %}
+
+{% block hero %}
+  <section class="hero-premium">
+    <div class="hero-inner">
+      <p class="hero-brand-kicker hero-stagger-1">GlideCast<sup class="mark-tm">™</sup></p>
+      <h1 class="hero-title hero-stagger-1">PDF download limit reached</h1>
+      <p class="hero-subtitle hero-stagger-2">You have used all {{ pdf_limit }} PDF downloads for this billing period.</p>
+    </div>
+  </section>
+{% endblock %}
+
+{% block content %}
+  <div class="card-glass scroll-anim-card" style="padding: 1.5rem;">
+    {% if upgrade_prompt.next_tier %}
+      <p class="text-caption" style="margin-bottom: 1rem;">Upgrade to <strong>{{ upgrade_prompt.next_tier }}</strong> for unlimited PDF exports.</p>
+      <p class="data-value" style="font-size: 1.25rem; margin: 0 0 1rem 0;">${{ upgrade_prompt.price_monthly }}/month or ${{ upgrade_prompt.price_annual }}/year (20% off)</p>
+      <a href="{% url 'paywall' %}" class="btn-primary" style="width: auto;">View plans</a>
+    {% endif %}
+    <p style="margin-top: 1rem;"><a href="{% url 'calculator' %}" style="color: var(--glacier);">Back to calculator</a></p>
+  </div>
+{% endblock %}

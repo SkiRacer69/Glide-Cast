@@ -1,0 +1,143 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body_class %}page-calculator{% endblock %}
+{% block title %}Calculator · GlideCast — Wax Done Right{% endblock %}
+
+{% block extra_head %}
+{% if user.is_authenticated %}
+<meta name="csrf-token" content="{{ csrf_token }}" />
+{% endif %}
+{% endblock %}
+
+{% block hero %}
+  <section class="hero-premium">
+    <div class="hero-inner">
+      <h1 id="calc-hero-title" class="hero-title hero-stagger-1">{{ hero_venue }} · {{ hero_discipline }}</h1>
+      <p id="calc-hero-schedule" class="hero-subtitle hero-stagger-2">{{ hero_race_date|date:"l, M j, Y" }} · Run 1 {{ hero_run1_time|time:"g:i A" }} · Run 2 {{ hero_run2_time|time:"g:i A" }}</p>
+      <p class="hero-brand-kicker hero-stagger-2" style="margin-top: 0.25rem;">RaceWax Oracle<sup class="mark-sm">℠</sup></p>
+      <p id="calc-hero-caption" class="text-caption hero-stagger-2" style="margin-top: 0.35rem; opacity: 0.92;">Wax Done Right<sup class="mark-sm">℠</sup> &mdash; configure run parameters and compute wax recommendations</p>
+    </div>
+  </section>
+{% endblock %}
+
+{% block content %}
+  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; align-items: start;">
+    <div class="card-glass scroll-anim-card" style="padding: 1.5rem;">
+      <p class="text-label" style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.25rem;">Wax calculator</p>
+      <h2 class="text-section-title" style="font-size: 1.5rem; margin: 0 0 0.25rem 0;">GlideCast Calculator<sup class="mark-sm">℠</sup> engine</h2>
+      <p class="text-caption" style="font-size: 0.875rem; margin-bottom: 1.5rem;">Powered by RaceWax Oracle. Set venue, discipline, times, and snow context. Engine runs on submit.</p>
+
+      <form method="post" action="" style="display: flex; flex-direction: column; gap: 1rem;">
+        {% csrf_token %}
+
+        {% if form.errors %}
+          <div class="msg error">
+            <strong>There was a problem with your input.</strong>
+            {% for field in form %}
+              {% if field.errors %}<div>{{ field.label }}: {{ field.errors.0 }}</div>{% endif %}
+            {% endfor %}
+            {% if form.non_field_errors %}
+              {% for err in form.non_field_errors %}<div>{{ err }}</div>{% endfor %}
+            {% endif %}
+          </div>
+        {% endif %}
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+          <div class="input-wrap">
+            <label for="id_venue">Venue</label>
+            <select name="venue" id="id_venue" class="input-dark">
+              {% for value, label in form.venue.field.choices %}
+                <option value="{{ value }}" {% if form.venue.value == value %}selected{% endif %}>{{ label }}</option>
+              {% endfor %}
+            </select>
+          </div>
+          <div class="input-wrap">
+            <label for="id_discipline">Discipline</label>
+            <select name="discipline" id="id_discipline" class="input-dark">
+              {% for value, label in form.discipline.field.choices %}
+                <option value="{{ value }}" {% if form.discipline.value == value %}selected{% endif %}>{{ label }}</option>
+              {% endfor %}
+            </select>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+          <div class="input-wrap">
+            <label for="id_race_date">Race date</label>
+            <input type="date" name="race_date" id="id_race_date" class="input-dark" value="{{ form.race_date.value|date:'Y-m-d' }}" />
+          </div>
+          <div class="input-wrap">
+            <label for="id_snow_mode">Snow mode</label>
+            <select name="snow_mode" id="id_snow_mode" class="input-dark">
+              {% for value, label in form.snow_mode.field.choices %}
+                <option value="{{ value }}" {% if form.snow_mode.value == value %}selected{% endif %}>{{ label }}</option>
+              {% endfor %}
+            </select>
+          </div>
+        </div>
+
+        <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+          <div class="input-wrap">
+            <label for="id_run1_time">Run 1 time</label>
+            <input type="time" name="run1_time" id="id_run1_time" class="input-dark" value="{{ form.run1_time.value|time:'H:i' }}" />
+          </div>
+          <div class="input-wrap">
+            <label for="id_run2_time">Run 2 time</label>
+            <input type="time" name="run2_time" id="id_run2_time" class="input-dark" value="{{ form.run2_time.value|time:'H:i' }}" />
+          </div>
+        </div>
+
+        <div class="input-check-wrap">
+          <input type="checkbox" name="dirty_abrasive" id="id_dirty_abrasive" {% if form.dirty_abrasive.value %}checked{% endif %} />
+          <div>
+            <span class="text-data" style="font-size: 0.875rem;">Dirty / abrasive snow</span>
+            <span class="text-caption" style="display: block; font-size: 0.75rem;">Adjusts confidence slightly downward</span>
+          </div>
+        </div>
+
+        <input type="hidden" name="slope_deg" value="{{ form.slope_deg.value|default:19 }}" />
+        <input type="hidden" name="aspect_deg" value="{{ form.aspect_deg.value|default:20 }}" />
+        <input type="hidden" name="wind_coeff" value="{{ form.wind_coeff.value|default:0.12 }}" />
+        <input type="hidden" name="solar_coeff" value="{{ form.solar_coeff.value|default:2 }}" />
+        <input type="hidden" name="clear_night_coeff" value="{{ form.clear_night_coeff.value|default:1.4 }}" />
+        <input type="hidden" name="longwave_coeff" value="{{ form.longwave_coeff.value|default:-0.25 }}" />
+        <input type="hidden" name="latent_coeff" value="{{ form.latent_coeff.value|default:0.06 }}" />
+        <input type="hidden" name="restore_coeff" value="{{ form.restore_coeff.value|default:0.05 }}" />
+        <input type="hidden" name="deep_auto_relax_coeff" value="{{ form.deep_auto_relax_coeff.value|default:0.02 }}" />
+        <input type="hidden" name="lapse_cap_f_per_1000ft" value="{{ form.lapse_cap_f_per_1000ft.value|default:4.5 }}" />
+        <input type="hidden" name="cloud_attenuation" value="{{ form.cloud_attenuation.value|default:0.75 }}" />
+        <input type="hidden" name="diffuse_floor_frac" value="{{ form.diffuse_floor_frac.value|default:0.35 }}" />
+        <input type="hidden" name="albedo" value="{{ form.albedo.value|default:0.75 }}" />
+        <input type="hidden" name="wet_lock_band_f" value="{{ form.wet_lock_band_f.value|default:0.3 }}" />
+        <input type="hidden" name="wet_refreeze_strength" value="{{ form.wet_refreeze_strength.value|default:3.5 }}" />
+        <input type="hidden" name="wet_deep_relax_scale" value="{{ form.wet_deep_relax_scale.value|default:0.4 }}" />
+
+        <button type="submit" class="btn-primary">Compute recommendation</button>
+      </form>
+    </div>
+
+    <div class="card-glass scroll-anim-card" style="padding: 1.5rem;">
+      <h2 class="text-section-title" style="font-size: 1.25rem; margin: 0 0 0.5rem 0;">At a glance</h2>
+      <p class="text-caption" style="font-size: 0.875rem; margin-bottom: 1rem;">HS primary, TS/TSP options, and boundary warnings. Calculation history is stored per user.</p>
+      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
+        <div class="card-glass" style="padding: 1rem;">
+          <div class="text-label" style="font-size: 0.7rem;">Output</div>
+          <div class="text-data" style="font-size: 0.9rem;">Clear wax call</div>
+        </div>
+        <div class="card-glass" style="padding: 1rem;">
+          <div class="text-label" style="font-size: 0.7rem;">Subscription</div>
+          <div class="text-data" style="font-size: 0.9rem;">Basic &amp; Pro · see Subscribe</div>
+        </div>
+      </div>
+    </div>
+  </div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="{% static 'js/calculator-hero-sync.js' %}" defer></script>
+{% if user.is_authenticated %}
+<div style="display:none" aria-hidden="true">{% csrf_token %}</div>
+<script>window.SCREENSHOT_SIGNAL_URL = "{% url 'report_screenshot_attempt' %}";</script>
+<script src="{% static 'js/screenshot-detect.js' %}" defer></script>
+{% endif %}
+{% endblock %}

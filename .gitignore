@@ -1,0 +1,46 @@
+# Environment variables — never commit secrets
+.env
+.env.*
+!.env.example
+
+# Python
+__pycache__/
+*.pyc
+*.pyo
+*.pyd
+*.egg-info/
+dist/
+build/
+*.egg
+.eggs/
+
+# Django
+db.sqlite3
+staticfiles/
+media/
+
+# Virtual environments
+venv/
+.venv/
+env/
+.env/
+
+# macOS
+.DS_Store
+
+# IDEs
+.vscode/
+.idea/
+*.swp
+
+# Old backup / archive folders
+GlideCast-App-Full-2026-03-25/
+GlideCast-TiinyHost-ROOT-2026-03-25/
+GlideCast-TiinyHost-ROOT-2026-03-25-v2/
+GlideCast-TiinyHost-ROOT-2026-03-25-v3/
+RaceWax-Deploy-2026-03-24/
+RaceWax-Vercel-Build-2026-03-24/
+tiiny-host/
+tiiny-host 2/
+*.zip
+V1.zip

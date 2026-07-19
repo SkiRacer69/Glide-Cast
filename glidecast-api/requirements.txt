@@ -1,0 +1,10 @@
+fastapi
+uvicorn[standard]
+python-jose[cryptography]
+bcrypt
+python-multipart
+pandas
+numpy
+plotly
+pvlib
+requests

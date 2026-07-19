@@ -1,0 +1,70 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+  <meta charset="utf-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1" />
+  {% block extra_head %}{% endblock %}
+  <title>{% block title %}GlideCast — Wax Done Right{% endblock %}</title>
+  {% load static %}
+  <link rel="icon" type="image/svg+xml" href="/images/glidecast_icon.svg" />
+  <link rel="apple-touch-icon" href="/images/glidecast_icon.svg" />
+  <link rel="preconnect" href="https://fonts.googleapis.com" />
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet" />
+  <link rel="stylesheet" href="{% static 'css/premium.css' %}" />
+  <link rel="stylesheet" href="{% static 'css/snow.css' %}" />
+</head>
+<body class="{% block body_class %}{% endblock %}">
+  <div id="snow-container" aria-hidden="true"></div>
+  <header class="nav-sticky">
+    <div class="nav-inner">
+      <a href="{% url 'calculator' %}" class="nav-logo">
+        <img src="/images/glidecast_logo.svg" alt="GlideCast™" height="48" class="nav-logo-img" />
+      </a>
+      <span class="patent-badge" aria-label="Patent pending notice">Patent Pending</span>
+      <nav class="nav-links">
+        {% if user.is_authenticated %}
+          <a href="{% url 'account' %}">Account</a>
+          <form method="post" action="{% url 'logout' %}" style="display:inline;">
+            {% csrf_token %}
+            <button type="submit">Log out</button>
+          </form>
+        {% else %}
+          <a href="{% url 'login' %}">Log in</a>
+          <a href="{% url 'signup' %}" class="nav-cta">Sign up</a>
+        {% endif %}
+      </nav>
+    </div>
+  </header>
+
+  {% block hero %}{% endblock %}
+
+  <main>
+    <div class="main-inner">
+      {% if messages %}
+        <div class="msg-list">
+          {% for message in messages %}
+            <div class="msg {% if message.tags == 'error' %}error{% endif %}">{{ message }}</div>
+          {% endfor %}
+        </div>
+      {% endif %}
+      {% block content %}{% endblock %}
+    </div>
+  </main>
+
+  <footer class="site-footer">
+    <div class="site-footer-inner">
+      <p class="site-footer-legal">
+        © 2026 GlideCast<sup class="mark-tm">™</sup>. All rights reserved. &ldquo;Stop Guessing. Start Winning.&rdquo;<sup class="mark-tm">™</sup> GlideCast Calculator<sup class="mark-sm">℠</sup> and RaceWax Oracle<sup class="mark-sm">℠</sup> are services of GlideCast. Patent Pending.
+      </p>
+      <p class="site-footer-links">
+        <a href="{% url 'terms_of_service' %}">Terms of Service</a>
+      </p>
+    </div>
+  </footer>
+
+  <script src="{% static 'js/scroll-animations.js' %}"></script>
+  <script src="{% static 'js/snow.js' %}" defer></script>
+  {% block extra_js %}{% endblock %}
+</body>
+</html>

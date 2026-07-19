@@ -1,0 +1,25 @@
+{% extends "base.html" %}
+{% block title %}Upgrade required · GlideCast — Wax Done Right{% endblock %}
+
+{% block hero %}
+  <section class="hero-premium">
+    <div class="hero-inner">
+      <p class="hero-brand-kicker hero-stagger-1">GlideCast<sup class="mark-tm">™</sup></p>
+      <h1 class="hero-title hero-stagger-1">Upgrade to access {{ feature }}</h1>
+      <p class="hero-subtitle hero-stagger-2">This feature is available on a higher plan.</p>
+    </div>
+  </section>
+{% endblock %}
+
+{% block content %}
+  <div class="card-glass scroll-anim-card" style="padding: 1.5rem;">
+    {% if upgrade_prompt.next_tier %}
+      <p class="text-caption" style="margin-bottom: 1rem;">Upgrade to <strong>{{ upgrade_prompt.next_tier }}</strong> to use this feature.</p>
+      <p class="data-value" style="font-size: 1.25rem; margin: 0 0 1rem 0;">${{ upgrade_prompt.price_monthly }}/month or ${{ upgrade_prompt.price_annual }}/year (20% off)</p>
+      <a href="{% url 'paywall' %}" class="btn-primary" style="width: auto;">View plans</a>
+    {% else %}
+      <p class="text-caption">You're on the top plan. If you believe this is an error, contact support.</p>
+    {% endif %}
+    <p style="margin-top: 1rem;"><a href="{% url 'account' %}" style="color: var(--glacier);">Back to account</a></p>
+  </div>
+{% endblock %}
