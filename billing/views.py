@@ -95,14 +95,12 @@ def paywall(request):
                 {
                     "id": Profile.PlanTier.BASIC,
                     "name": "Basic",
-                    "monthly": 10,
-                    "annual": 96,
+                    "monthly": 5,
                 },
                 {
                     "id": Profile.PlanTier.PRO,
                     "name": "Pro",
-                    "monthly": 30,
-                    "annual": 288,
+                    "monthly": 15,
                 },
             ],
         },

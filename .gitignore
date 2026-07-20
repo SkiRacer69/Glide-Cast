@@ -44,3 +44,4 @@ tiiny-host/
 tiiny-host 2/
 *.zip
 V1.zip
+.gstack/

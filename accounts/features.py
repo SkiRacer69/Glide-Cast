@@ -44,8 +44,8 @@ FEATURE_PLAN = {
 UPGRADE_PROMPTS = {
     Profile.PlanTier.BASIC: {
         "next_tier": "Pro",
-        "price_monthly": 30,
-        "price_annual": 288,
+        "price_monthly": 15,
+        "price_annual": None,
     },
     Profile.PlanTier.PRO: {
         "next_tier": None,

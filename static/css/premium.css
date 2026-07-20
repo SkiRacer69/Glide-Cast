@@ -1628,3 +1628,66 @@ input[type="range"].slider-teal::-moz-range-track {
   border: 1px solid #e2e8f0;
   background: #f1f5f9;
 }
+
+/* Founders section */
+.paywall-founders-section {
+  margin-top: 3rem;
+  padding: 2.5rem 0;
+  border-top: 1px solid #e2e8f0;
+}
+
+.paywall-founders-inner {
+  max-width: 860px;
+}
+
+.paywall-founders-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 2rem;
+  margin-top: 1.5rem;
+}
+
+@media (max-width: 640px) {
+  .paywall-founders-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
+.paywall-founder-card {
+  background: #f8fafc;
+  border: 1px solid #e2e8f0;
+  border-radius: 10px;
+  padding: 1.5rem;
+}
+
+.paywall-founder-name {
+  font-weight: 700;
+  font-size: 1.1rem;
+  margin: 0 0 0.2rem;
+  color: #0f172a;
+}
+
+.paywall-founder-role {
+  font-size: 0.85rem;
+  color: #64748b;
+  margin: 0 0 1rem;
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+}
+
+.paywall-founder-quote {
+  font-style: italic;
+  color: #1e40af;
+  border-left: 3px solid #3b82f6;
+  padding-left: 0.75rem;
+  margin: 0 0 1rem;
+  font-size: 0.95rem;
+  line-height: 1.5;
+}
+
+.paywall-founder-bio {
+  font-size: 0.9rem;
+  color: #475569;
+  line-height: 1.6;
+  margin: 0;
+}

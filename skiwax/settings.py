@@ -148,7 +148,7 @@ STRIPE_PUBLISHABLE_KEY = os.environ.get("STRIPE_PUBLISHABLE_KEY", "")
 STRIPE_WEBHOOK_SECRET = os.environ.get("STRIPE_WEBHOOK_SECRET", "")
 STRIPE_BILLING_PORTAL_RETURN_URL = os.environ.get("STRIPE_BILLING_PORTAL_RETURN_URL", "")
 
-# Basic ($10/mo) and Pro ($30/mo) × monthly + annual. Create prices in Stripe and set env vars.
+# Basic ($5/mo) and Pro ($15/mo) × monthly. Create prices in Stripe and set env vars.
 STRIPE_PRICE_BASIC_MONTHLY = os.environ.get("STRIPE_PRICE_BASIC_MONTHLY", "")
 STRIPE_PRICE_BASIC_ANNUAL = os.environ.get("STRIPE_PRICE_BASIC_ANNUAL", "")
 STRIPE_PRICE_PRO_MONTHLY = os.environ.get("STRIPE_PRICE_PRO_MONTHLY", "")

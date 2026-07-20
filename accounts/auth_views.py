@@ -119,7 +119,7 @@ def signup_with_tos(request: HttpRequest) -> HttpResponse:
                 user_agent=get_user_agent(request),
             )
             UserSession.objects.filter(user=user).update(is_current=False)
-            login(request, user)
+            login(request, user, backend="django.contrib.auth.backends.ModelBackend")
             request.session.create()
             session_key = request.session.session_key
             UserSession.objects.create(
