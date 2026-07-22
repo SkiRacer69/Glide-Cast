@@ -31,8 +31,9 @@ SECRET_KEY = os.environ.get("DJANGO_SECRET_KEY", "dev-insecure-secret-key")
 # SECURITY WARNING: don't run with debug turned on in production!
 DEBUG = os.environ.get("DJANGO_DEBUG", "1") == "1"
 
-ALLOWED_HOSTS = [h for h in os.environ.get("DJANGO_ALLOWED_HOSTS", "localhost,127.0.0.1").split(",") if h]
-CSRF_TRUSTED_ORIGINS = [o for o in os.environ.get("DJANGO_CSRF_TRUSTED_ORIGINS", "").split(",") if o]
+_default_hosts = "localhost,127.0.0.1" if DEBUG else "*"
+ALLOWED_HOSTS = [h for h in os.environ.get("DJANGO_ALLOWED_HOSTS", _default_hosts).split(",") if h]
+CSRF_TRUSTED_ORIGINS = [o for o in os.environ.get("DJANGO_CSRF_TRUSTED_ORIGINS", "https://glidecast.net,https://www.glidecast.net").split(",") if o]
 
 
 # Application definition
@@ -177,6 +178,9 @@ SHOW_PRO_CALCULATOR_RESULTS = os.environ.get("SHOW_PRO_CALCULATOR_RESULTS", "1")
 SECURE_SSL_REDIRECT = not DEBUG
 SESSION_COOKIE_SECURE = not DEBUG
 CSRF_COOKIE_SECURE = not DEBUG
+# Trust Railway's (and any other reverse-proxy's) X-Forwarded-Proto header so
+# Django knows the original request was HTTPS and won't redirect-loop.
+SECURE_PROXY_SSL_HEADER = ("HTTP_X_FORWARDED_PROTO", "https")
 
 # django-axes brute-force protection
 AXES_FAILURE_LIMIT = 5
