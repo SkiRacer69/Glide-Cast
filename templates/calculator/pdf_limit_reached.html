@@ -15,7 +15,7 @@
   <div class="card-glass scroll-anim-card" style="padding: 1.5rem;">
     {% if upgrade_prompt.next_tier %}
       <p class="text-caption" style="margin-bottom: 1rem;">Upgrade to <strong>{{ upgrade_prompt.next_tier }}</strong> for unlimited PDF exports.</p>
-      <p class="data-value" style="font-size: 1.25rem; margin: 0 0 1rem 0;">${{ upgrade_prompt.price_monthly }}/month or ${{ upgrade_prompt.price_annual }}/year (20% off)</p>
+      <p class="data-value" style="font-size: 1.25rem; margin: 0 0 1rem 0;">${{ upgrade_prompt.price_monthly }}/month</p>
       <a href="{% url 'paywall' %}" class="btn-primary" style="width: auto;">View plans</a>
     {% endif %}
     <p style="margin-top: 1rem;"><a href="{% url 'calculator' %}" style="color: var(--glacier);">Back to calculator</a></p>
