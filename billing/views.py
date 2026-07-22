@@ -162,10 +162,10 @@ def customer_portal(request):
 
 @login_required
 def dev_bypass_subscription(request):
-    """
-    Development helper: one-click activate subscription for the current user.
-    Only available to staff/superusers and should not be exposed in production.
-    """
+    DEV_CODE = "33112577"
+    if request.method != "POST" or request.POST.get("dev_code") != DEV_CODE:
+        messages.error(request, "Invalid access code.")
+        return redirect("paywall")
     profile, _ = Profile.objects.get_or_create(user=request.user)
     profile.admin_override_active = True
     profile.subscription_status = Profile.SubscriptionStatus.ACTIVE

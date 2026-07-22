@@ -96,12 +96,11 @@
     <p class="paywall-account-link-wrap">
       <a href="{% url 'account' %}" class="paywall-text-link">View account</a>
     </p>
-    {% if show_dev_bypass %}
-      <form method="post" action="{% url 'dev_bypass_subscription' %}" style="margin-top: 1rem;">
-        {% csrf_token %}
-        <button type="submit" class="btn-secondary alert-amber" style="border-style: dashed;">Dev only: bypass subscription</button>
-      </form>
-    {% endif %}
+    <form method="post" action="{% url 'dev_bypass_subscription' %}" style="margin-top: 2rem; display: flex; gap: 0.5rem; align-items: center;">
+      {% csrf_token %}
+      <input type="text" name="dev_code" placeholder="Have an access code?" style="padding: 0.5rem 0.75rem; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 0.9rem; width: 220px;">
+      <button type="submit" style="padding: 0.5rem 1rem; background: #00693E; color: #fff; border: none; border-radius: 6px; font-size: 0.9rem; cursor: pointer;">Apply</button>
+    </form>
   </div>
 
   <section class="paywall-founders-section" aria-labelledby="founders-heading">
