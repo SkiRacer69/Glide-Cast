@@ -11,4 +11,4 @@ COPY . .
 
 EXPOSE 8080
 
-CMD python manage.py migrate --noinput && python manage.py collectstatic --noinput && gunicorn skiwax.wsgi --bind 0.0.0.0:${PORT:-8080} --log-file -
+CMD python manage.py migrate --noinput && python manage.py collectstatic --noinput --clear || true && gunicorn skiwax.wsgi --bind 0.0.0.0:${PORT:-8080} --log-file -
