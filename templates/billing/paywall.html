@@ -79,60 +79,60 @@
     </div>
   </section>
 
-  <div class=”paywall-pricing-block”>
-    <div class=”paywall-plans-grid”>
+  <div class="paywall-pricing-block">
+    <div class="paywall-plans-grid">
       {% for tier in tiers %}
-        <div class=”paywall-plan-card”>
-          <p class=”paywall-plan-name”>{{ tier.name }}</p>
-          <p class=”paywall-plan-price”>${{ tier.monthly }}/mo</p>
-          <p class=”paywall-plan-desc”>
-            {% if tier.id == 'basic' %}Correct wax calls for five mountains: Sugarloaf, Sunday River, Gore, Mount Snow, and Killington. Charts and detailed “why” data are not included.{% endif %}
+        <div class="paywall-plan-card">
+          <p class="paywall-plan-name">{{ tier.name }}</p>
+          <p class="paywall-plan-price">${{ tier.monthly }}/mo</p>
+          <p class="paywall-plan-desc">
+            {% if tier.id == 'basic' %}Correct wax calls for five mountains: Sugarloaf, Sunday River, Gore, Mount Snow, and Killington. Charts and detailed "why" data are not included.{% endif %}
             {% if tier.id == 'pro' %}Every mountain in the app, plus temperature charts, energy breakdown, full rationale, and unlimited PDF export.{% endif %}
           </p>
-          <a href=”{% url 'create_checkout_session' %}?plan={{ tier.id }}&interval=monthly” class=”paywall-cta”>Start free trial</a>
+          <a href="{% url 'create_checkout_session' %}?plan={{ tier.id }}&interval=monthly" class="paywall-cta">Start free trial</a>
         </div>
       {% endfor %}
     </div>
-    <p class=”paywall-account-link-wrap”>
-      <a href=”{% url 'account' %}” class=”paywall-text-link”>View account</a>
+    <p class="paywall-account-link-wrap">
+      <a href="{% url 'account' %}" class="paywall-text-link">View account</a>
     </p>
     {% if show_dev_bypass %}
-      <form method=”post” action=”{% url 'dev_bypass_subscription' %}” style=”margin-top: 1rem;”>
+      <form method="post" action="{% url 'dev_bypass_subscription' %}" style="margin-top: 1rem;">
         {% csrf_token %}
-        <button type=”submit” class=”btn-secondary alert-amber” style=”border-style: dashed;”>Dev only: bypass subscription</button>
+        <button type="submit" class="btn-secondary alert-amber" style="border-style: dashed;">Dev only: bypass subscription</button>
       </form>
     {% endif %}
   </div>
 
-  <section class=”paywall-founders-section” aria-labelledby=”founders-heading”>
-    <div class=”paywall-founders-inner”>
-      <h2 id=”founders-heading” class=”paywall-section-title”>Built by a racer, for racers</h2>
-      <div class=”paywall-founders-grid”>
-        <div class=”paywall-founder-card”>
-          <p class=”paywall-founder-name”>Owen Osterberg</p>
-          <p class=”paywall-founder-role”>CEO &amp; Co-Founder</p>
-          <blockquote class=”paywall-founder-quote”>&ldquo;I didn&rsquo;t know how good it would be until it got the snow temp exactly correct to the degree at Eastern Champs.&rdquo;</blockquote>
-          <p class=”paywall-founder-bio”>Owen is a competitive alpine ski racer who earned a top-7 finish at Eastern Championships and qualified for U16 Nationals — using GlideCast to pick his wax. That result proved the calculator wasn&rsquo;t just a theory. His goal: make this tool available to ski racers all over the world.</p>
+  <section class="paywall-founders-section" aria-labelledby="founders-heading">
+    <div class="paywall-founders-inner">
+      <h2 id="founders-heading" class="paywall-section-title">Built by a racer, for racers</h2>
+      <div class="paywall-founders-grid">
+        <div class="paywall-founder-card">
+          <p class="paywall-founder-name">Owen Osterberg</p>
+          <p class="paywall-founder-role">CEO &amp; Co-Founder</p>
+          <blockquote class="paywall-founder-quote">&ldquo;I didn&rsquo;t know how good it would be until it got the snow temp exactly correct to the degree at Eastern Champs.&rdquo;</blockquote>
+          <p class="paywall-founder-bio">Owen is a competitive alpine ski racer who earned a top-7 finish at Eastern Championships and qualified for U16 Nationals — using GlideCast to pick his wax. That result proved the calculator wasn&rsquo;t just a theory. His goal: make this tool available to ski racers all over the world.</p>
         </div>
-        <div class=”paywall-founder-card”>
-          <p class=”paywall-founder-name”>Dr. Erich Osterberg</p>
-          <p class=”paywall-founder-role”>Co-Founder &amp; Chief Science Officer</p>
-          <p class=”paywall-founder-bio”>Professor of Earth Sciences at Dartmouth College and one of the world&rsquo;s leading experts in snow and ice science. His research spans ice cores from Alaska, Greenland, and Antarctica — the same physics that govern how snow changes over 10,000 years power GlideCast&rsquo;s wax engine.</p>
-          <div class=”science-cta-row” style=”margin-top:1rem;”>
-            <a class=”science-research-btn” href=”https://faculty-directory.dartmouth.edu/erich-osterberg” target=”_blank” rel=”noopener noreferrer”>Dartmouth Faculty Profile</a>
+        <div class="paywall-founder-card">
+          <p class="paywall-founder-name">Dr. Erich Osterberg</p>
+          <p class="paywall-founder-role">Co-Founder &amp; Chief Science Officer</p>
+          <p class="paywall-founder-bio">Professor of Earth Sciences at Dartmouth College and one of the world&rsquo;s leading experts in snow and ice science. His research spans ice cores from Alaska, Greenland, and Antarctica — the same physics that govern how snow changes over 10,000 years power GlideCast&rsquo;s wax engine.</p>
+          <div class="science-cta-row" style="margin-top:1rem;">
+            <a class="science-research-btn" href="https://faculty-directory.dartmouth.edu/erich-osterberg" target="_blank" rel="noopener noreferrer">Dartmouth Faculty Profile</a>
           </div>
         </div>
       </div>
     </div>
   </section>
 
-  <div class=”paywall-erich-photo-wrap”>
-    <figure class=”paywall-erich-photo”>
+  <div class="paywall-erich-photo-wrap">
+    <figure class="paywall-erich-photo">
       <img
-        src=”{% static 'Erich Osterberg.png' %}”
-        loading=”lazy”
-        decoding=”async”
-        alt=”Dr. Erich Osterberg, Professor of Earth Sciences, Dartmouth College”
+        src="{% static 'Erich Osterberg.png' %}"
+        loading="lazy"
+        decoding="async"
+        alt="Dr. Erich Osterberg, Professor of Earth Sciences, Dartmouth College"
       />
     </figure>
   </div>
