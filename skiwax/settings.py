@@ -137,7 +137,7 @@ STORAGES = {
 }
 
 LOGIN_URL = "login"
-LOGIN_REDIRECT_URL = "calculator"
+LOGIN_REDIRECT_URL = "paywall"
 LOGOUT_REDIRECT_URL = "login"
 
 EMAIL_BACKEND = os.environ.get("DJANGO_EMAIL_BACKEND", "django.core.mail.backends.console.EmailBackend")
