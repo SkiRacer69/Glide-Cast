@@ -13,4 +13,4 @@ echo "=== Running collectstatic ==="
 python manage.py collectstatic --noinput || echo "collectstatic failed, continuing anyway"
 
 echo "=== Starting gunicorn on port ${PORT:-8080} ==="
-exec gunicorn skiwax.wsgi --bind 0.0.0.0:${PORT:-8080} --log-file - --log-level debug
+exec gunicorn skiwax.wsgi --bind 0.0.0.0:${PORT:-8080} --workers 1 --timeout 120 --log-file - --log-level debug
