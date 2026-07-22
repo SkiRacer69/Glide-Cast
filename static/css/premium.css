@@ -1303,8 +1303,8 @@ input[type="range"].slider-teal::-moz-range-track {
 .paywall-hero {
   width: 100%;
   padding: 2.25rem 1.5rem 2rem;
-  background: #ffffff;
-  border-bottom: 1px solid #e2e8f0;
+  background: linear-gradient(135deg, #00461F 0%, #00693E 50%, #008550 100%);
+  border-bottom: 1px solid #00461F;
 }
 
 .paywall-hero-inner {
@@ -1316,14 +1316,14 @@ input[type="range"].slider-teal::-moz-range-track {
   margin: 0 0 0.2rem 0;
   font-size: 1.0625rem;
   font-weight: 700;
-  color: #0f172a;
+  color: #ffffff;
 }
 
 .paywall-hero-slogan {
   margin: 0 0 1rem 0;
   font-size: 0.9375rem;
   font-weight: 600;
-  color: #334155;
+  color: rgba(255, 255, 255, 0.85);
   line-height: 1.45;
 }
 
@@ -1332,13 +1332,13 @@ input[type="range"].slider-teal::-moz-range-track {
   font-size: clamp(1.5rem, 4vw, 2rem);
   font-weight: 700;
   letter-spacing: -0.02em;
-  color: #0f172a;
+  color: #ffffff;
 }
 
 .paywall-hero-lead {
   margin: 0;
   font-size: 1rem;
-  color: #64748b;
+  color: rgba(255, 255, 255, 0.75);
   line-height: 1.5;
 }
 
