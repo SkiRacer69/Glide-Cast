@@ -112,6 +112,1691 @@ VENUES = {
             "Lower NWS point": {"lat": 43.6680, "lon": -72.7880, "elev_ft": 1800},
         },
     },
+    "Alyeska Resort": {
+        "display_name": "Alyeska Resort Wax Tool",
+        "course_name": "Alyeska Resort Race Venue",
+        "lat": 60.9703,
+        "lon": -149.0987,
+        "elev_ft": 2740,
+        "aspect_deg": 281.5,
+        "slope_deg": 18.0,
+        "finish_ft": 299,
+        "starts_ft": {
+            "GS": 2740,
+            "SL": 2625,
+            "DH": 2740,
+            "SuperG": 2740
+        },
+        "points": {
+            "Upper NWS point": {"lat": 60.9703, "lon": -149.0987, "elev_ft": 2740},
+            "Lower NWS point": {"lat": 60.9703, "lon": -149.0987, "elev_ft": 299},
+        },
+    },
+    "Arctic Valley Ski Area": {
+        "display_name": "Arctic Valley Ski Area Wax Tool",
+        "course_name": "Arctic Valley Ski Area Race Venue",
+        "lat": 61.2477,
+        "lon": -149.5204,
+        "elev_ft": 3599,
+        "aspect_deg": 281.6,
+        "slope_deg": 18.0,
+        "finish_ft": 2667,
+        "starts_ft": {
+            "SL": 3323,
+            "GS": 3599
+        },
+        "points": {
+            "Upper NWS point": {"lat": 61.2477, "lon": -149.5204, "elev_ft": 3599},
+            "Lower NWS point": {"lat": 61.2477, "lon": -149.5204, "elev_ft": 2667},
+        },
+    },
+    "Arizona Snowbowl": {
+        "display_name": "Arizona Snowbowl Wax Tool",
+        "course_name": "Arizona Snowbowl Race Venue",
+        "lat": 35.33,
+        "lon": -111.7053,
+        "elev_ft": 10325,
+        "aspect_deg": 275.8,
+        "slope_deg": 18.0,
+        "finish_ft": 9669,
+        "starts_ft": {
+            "GS": 10325,
+            "SL": 10128
+        },
+        "points": {
+            "Upper NWS point": {"lat": 35.33, "lon": -111.7053, "elev_ft": 10325},
+            "Lower NWS point": {"lat": 35.33, "lon": -111.7053, "elev_ft": 9669},
+        },
+    },
+    "Aspen Mountain": {
+        "display_name": "Aspen Mountain Wax Tool",
+        "course_name": "Aspen Mountain Race Venue",
+        "lat": 39.1513,
+        "lon": -106.8197,
+        "elev_ft": 10650,
+        "aspect_deg": 20.6,
+        "slope_deg": 18.0,
+        "finish_ft": 8081,
+        "starts_ft": {
+            "SL": 9646,
+            "SuperG": 10033,
+            "DH": 10650,
+            "GS": 9557
+        },
+        "points": {
+            "Upper NWS point": {"lat": 39.1513, "lon": -106.8197, "elev_ft": 10650},
+            "Lower NWS point": {"lat": 39.1513, "lon": -106.8197, "elev_ft": 8081},
+        },
+    },
+    "Aspen/Buttermilk": {
+        "display_name": "Aspen/Buttermilk Wax Tool",
+        "course_name": "Aspen/Buttermilk Race Venue",
+        "lat": 39.2056,
+        "lon": -106.8599,
+        "elev_ft": 9682,
+        "aspect_deg": 22.5,
+        "slope_deg": 18.0,
+        "finish_ft": 8205,
+        "starts_ft": {
+            "SL": 8911,
+            "GS": 9337,
+            "SuperG": 9682,
+            "DH": 9682
+        },
+        "points": {
+            "Upper NWS point": {"lat": 39.2056, "lon": -106.8599, "elev_ft": 9682},
+            "Lower NWS point": {"lat": 39.2056, "lon": -106.8599, "elev_ft": 8205},
+        },
+    },
+    "Aspen/Highlands": {
+        "display_name": "Aspen/Highlands Wax Tool",
+        "course_name": "Aspen/Highlands Race Venue",
+        "lat": 39.1553,
+        "lon": -106.8691,
+        "elev_ft": 9672,
+        "aspect_deg": 17.2,
+        "slope_deg": 18.0,
+        "finish_ft": 8140,
+        "starts_ft": {
+            "SL": 9544,
+            "GS": 9580,
+            "DH": 9672,
+            "SuperG": 9672
+        },
+        "points": {
+            "Upper NWS point": {"lat": 39.1553, "lon": -106.8691, "elev_ft": 9672},
+            "Lower NWS point": {"lat": 39.1553, "lon": -106.8691, "elev_ft": 8140},
+        },
+    },
+    "Attitash Ski Area": {
+        "display_name": "Attitash Ski Area Wax Tool",
+        "course_name": "Attitash Ski Area Race Venue",
+        "lat": 44.0855,
+        "lon": -71.2244,
+        "elev_ft": 1969,
+        "aspect_deg": 30.0,
+        "slope_deg": 18.0,
+        "finish_ft": 774,
+        "starts_ft": {
+            "GS": 1969,
+            "SL": 1850,
+            "SuperG": 1969
+        },
+        "points": {
+            "Upper NWS point": {"lat": 44.0855, "lon": -71.2244, "elev_ft": 1969},
+            "Lower NWS point": {"lat": 44.0855, "lon": -71.2244, "elev_ft": 774},
+        },
+    },
+    "Bear Canyon": {
+        "display_name": "Bear Canyon Wax Tool",
+        "course_name": "Bear Canyon Race Venue",
+        "lat": 45.6417,
+        "lon": -110.9427,
+        "elev_ft": 6102,
+        "aspect_deg": 350.9,
+        "slope_deg": 18.0,
+        "finish_ft": 5512,
+        "starts_ft": {
+            "SL": 6102
+        },
+        "points": {
+            "Upper NWS point": {"lat": 45.6417, "lon": -110.9427, "elev_ft": 6102},
+            "Lower NWS point": {"lat": 45.6417, "lon": -110.9427, "elev_ft": 5512},
+        },
+    },
+    "Beaver Creek Resort": {
+        "display_name": "Beaver Creek Resort Wax Tool",
+        "course_name": "Beaver Creek Resort Race Venue",
+        "lat": 39.6034,
+        "lon": -106.5157,
+        "elev_ft": 11427,
+        "aspect_deg": 359.5,
+        "slope_deg": 18.0,
+        "finish_ft": 8199,
+        "starts_ft": {
+            "SL": 9629,
+            "GS": 10351,
+            "SuperG": 10948,
+            "DH": 11427
+        },
+        "points": {
+            "Upper NWS point": {"lat": 39.6034, "lon": -106.5157, "elev_ft": 11427},
+            "Lower NWS point": {"lat": 39.6034, "lon": -106.5157, "elev_ft": 8199},
+        },
+    },
+    "Belleayre Mountain": {
+        "display_name": "Belleayre Mountain Wax Tool",
+        "course_name": "Belleayre Mountain Race Venue",
+        "lat": 42.1269,
+        "lon": -74.4741,
+        "elev_ft": 3428,
+        "aspect_deg": 31.4,
+        "slope_deg": 18.0,
+        "finish_ft": 2559,
+        "starts_ft": {
+            "SL": 3399,
+            "GS": 3428
+        },
+        "points": {
+            "Upper NWS point": {"lat": 42.1269, "lon": -74.4741, "elev_ft": 3428},
+            "Lower NWS point": {"lat": 42.1269, "lon": -74.4741, "elev_ft": 2559},
+        },
+    },
+    "Berkshire East Mountain Resort": {
+        "display_name": "Berkshire East Mountain Resort Wax Tool",
+        "course_name": "Berkshire East Mountain Resort Race Venue",
+        "lat": 42.6286,
+        "lon": -72.9066,
+        "elev_ft": 1512,
+        "aspect_deg": 329.2,
+        "slope_deg": 18.0,
+        "finish_ft": 643,
+        "starts_ft": {
+            "GS": 1512,
+            "SL": 1512
+        },
+        "points": {
+            "Upper NWS point": {"lat": 42.6286, "lon": -72.9066, "elev_ft": 1512},
+            "Lower NWS point": {"lat": 42.6286, "lon": -72.9066, "elev_ft": 643},
+        },
+    },
+    "Big Sky": {
+        "display_name": "Big Sky Wax Tool",
+        "course_name": "Big Sky Race Venue",
+        "lat": 45.2551,
+        "lon": -111.2662,
+        "elev_ft": 8665,
+        "aspect_deg": 38.0,
+        "slope_deg": 18.0,
+        "finish_ft": 7165,
+        "starts_ft": {
+            "DH": 8665,
+            "SuperG": 8665,
+            "GS": 8661,
+            "SL": 8596
+        },
+        "points": {
+            "Upper NWS point": {"lat": 45.2551, "lon": -111.2662, "elev_ft": 8665},
+            "Lower NWS point": {"lat": 45.2551, "lon": -111.2662, "elev_ft": 7165},
+        },
+    },
+    "Blue Mountain Resort": {
+        "display_name": "Blue Mountain Resort Wax Tool",
+        "course_name": "Blue Mountain Resort Race Venue",
+        "lat": 40.8167,
+        "lon": -75.5098,
+        "elev_ft": 1476,
+        "aspect_deg": 2.5,
+        "slope_deg": 18.0,
+        "finish_ft": 623,
+        "starts_ft": {
+            "GS": 1476
+        },
+        "points": {
+            "Upper NWS point": {"lat": 40.8167, "lon": -75.5098, "elev_ft": 1476},
+            "Lower NWS point": {"lat": 40.8167, "lon": -75.5098, "elev_ft": 623},
+        },
+    },
+    "Boreal Mountain Resort": {
+        "display_name": "Boreal Mountain Resort Wax Tool",
+        "course_name": "Boreal Mountain Resort Race Venue",
+        "lat": 39.3361,
+        "lon": -120.3502,
+        "elev_ft": 7671,
+        "aspect_deg": 329.6,
+        "slope_deg": 18.0,
+        "finish_ft": 7313,
+        "starts_ft": {
+            "SL": 7671
+        },
+        "points": {
+            "Upper NWS point": {"lat": 39.3361, "lon": -120.3502, "elev_ft": 7671},
+            "Lower NWS point": {"lat": 39.3361, "lon": -120.3502, "elev_ft": 7313},
+        },
+    },
+    "Boyne Highlands": {
+        "display_name": "Boyne Highlands Wax Tool",
+        "course_name": "Boyne Highlands Race Venue",
+        "lat": 45.477,
+        "lon": -84.9454,
+        "elev_ft": 1211,
+        "aspect_deg": 86.0,
+        "slope_deg": 18.0,
+        "finish_ft": 814,
+        "starts_ft": {
+            "SL": 1211
+        },
+        "points": {
+            "Upper NWS point": {"lat": 45.477, "lon": -84.9454, "elev_ft": 1211},
+            "Lower NWS point": {"lat": 45.477, "lon": -84.9454, "elev_ft": 814},
+        },
+    },
+    "Boyne Mountain": {
+        "display_name": "Boyne Mountain Wax Tool",
+        "course_name": "Boyne Mountain Race Venue",
+        "lat": 45.1586,
+        "lon": -84.9389,
+        "elev_ft": 1145,
+        "aspect_deg": 54.7,
+        "slope_deg": 18.0,
+        "finish_ft": 732,
+        "starts_ft": {
+            "SL": 1145
+        },
+        "points": {
+            "Upper NWS point": {"lat": 45.1586, "lon": -84.9389, "elev_ft": 1145},
+            "Lower NWS point": {"lat": 45.1586, "lon": -84.9389, "elev_ft": 732},
+        },
+    },
+    "Breckenridge Ski Resort": {
+        "display_name": "Breckenridge Ski Resort Wax Tool",
+        "course_name": "Breckenridge Ski Resort Race Venue",
+        "lat": 39.4808,
+        "lon": -106.0666,
+        "elev_ft": 11673,
+        "aspect_deg": 44.4,
+        "slope_deg": 18.0,
+        "finish_ft": 10302,
+        "starts_ft": {
+            "SL": 11161,
+            "GS": 11581,
+            "DH": 11673,
+            "SuperG": 11673
+        },
+        "points": {
+            "Upper NWS point": {"lat": 39.4808, "lon": -106.0666, "elev_ft": 11673},
+            "Lower NWS point": {"lat": 39.4808, "lon": -106.0666, "elev_ft": 10302},
+        },
+    },
+    "Bridger Bowl": {
+        "display_name": "Bridger Bowl Wax Tool",
+        "course_name": "Bridger Bowl Race Venue",
+        "lat": 45.8163,
+        "lon": -110.9104,
+        "elev_ft": 7815,
+        "aspect_deg": 94.3,
+        "slope_deg": 18.0,
+        "finish_ft": 6627,
+        "starts_ft": {
+            "GS": 7815,
+            "SL": 7382
+        },
+        "points": {
+            "Upper NWS point": {"lat": 45.8163, "lon": -110.9104, "elev_ft": 7815},
+            "Lower NWS point": {"lat": 45.8163, "lon": -110.9104, "elev_ft": 6627},
+        },
+    },
+    "Buck Hill": {
+        "display_name": "Buck Hill Wax Tool",
+        "course_name": "Buck Hill Race Venue",
+        "lat": 44.7233,
+        "lon": -93.2856,
+        "elev_ft": 1211,
+        "aspect_deg": 68.1,
+        "slope_deg": 18.0,
+        "finish_ft": 965,
+        "starts_ft": {
+            "SL": 1211
+        },
+        "points": {
+            "Upper NWS point": {"lat": 44.7233, "lon": -93.2856, "elev_ft": 1211},
+            "Lower NWS point": {"lat": 44.7233, "lon": -93.2856, "elev_ft": 965},
+        },
+    },
+    "Burke Mountain": {
+        "display_name": "Burke Mountain Wax Tool",
+        "course_name": "Burke Mountain Race Venue",
+        "lat": 44.5705,
+        "lon": -71.8928,
+        "elev_ft": 3156,
+        "aspect_deg": 332.6,
+        "slope_deg": 18.0,
+        "finish_ft": 1690,
+        "starts_ft": {
+            "GS": 3025,
+            "SL": 2851,
+            "SuperG": 3156
+        },
+        "points": {
+            "Upper NWS point": {"lat": 44.5705, "lon": -71.8928, "elev_ft": 3156},
+            "Lower NWS point": {"lat": 44.5705, "lon": -71.8928, "elev_ft": 1690},
+        },
+    },
+    "Catamount": {
+        "display_name": "Catamount Wax Tool",
+        "course_name": "Catamount Race Venue",
+        "lat": 44.5834,
+        "lon": -74.0893,
+        "elev_ft": 1795,
+        "aspect_deg": 90.0,
+        "slope_deg": 18.0,
+        "finish_ft": 938,
+        "starts_ft": {
+            "SL": 1493,
+            "GS": 1795
+        },
+        "points": {
+            "Upper NWS point": {"lat": 44.5834, "lon": -74.0893, "elev_ft": 1795},
+            "Lower NWS point": {"lat": 44.5834, "lon": -74.0893, "elev_ft": 938},
+        },
+    },
+    "Cochran's Ski Area": {
+        "display_name": "Cochran's Ski Area Wax Tool",
+        "course_name": "Cochran's Ski Area Race Venue",
+        "lat": 44.393,
+        "lon": -72.9819,
+        "elev_ft": 755,
+        "aspect_deg": 261.2,
+        "slope_deg": 18.0,
+        "finish_ft": 390,
+        "starts_ft": {
+            "SL": 755
+        },
+        "points": {
+            "Upper NWS point": {"lat": 44.393, "lon": -72.9819, "elev_ft": 755},
+            "Lower NWS point": {"lat": 44.393, "lon": -72.9819, "elev_ft": 390},
+        },
+    },
+    "Copper Mountain": {
+        "display_name": "Copper Mountain Wax Tool",
+        "course_name": "Copper Mountain Race Venue",
+        "lat": 39.4781,
+        "lon": -106.1629,
+        "elev_ft": 12290,
+        "aspect_deg": 9.8,
+        "slope_deg": 18.0,
+        "finish_ft": 9764,
+        "starts_ft": {
+            "GS": 12037,
+            "SL": 11972,
+            "DH": 12290,
+            "SuperG": 11929
+        },
+        "points": {
+            "Upper NWS point": {"lat": 39.4781, "lon": -106.1629, "elev_ft": 12290},
+            "Lower NWS point": {"lat": 39.4781, "lon": -106.1629, "elev_ft": 9764},
+        },
+    },
+    "Cranmore Mountain Resort": {
+        "display_name": "Cranmore Mountain Resort Wax Tool",
+        "course_name": "Cranmore Mountain Resort Race Venue",
+        "lat": 44.0608,
+        "lon": -71.0973,
+        "elev_ft": 1542,
+        "aspect_deg": 269.8,
+        "slope_deg": 18.0,
+        "finish_ft": 755,
+        "starts_ft": {
+            "SL": 1542
+        },
+        "points": {
+            "Upper NWS point": {"lat": 44.0608, "lon": -71.0973, "elev_ft": 1542},
+            "Lower NWS point": {"lat": 44.0608, "lon": -71.0973, "elev_ft": 755},
+        },
+    },
+    "Crested Butte Mountain Resort": {
+        "display_name": "Crested Butte Mountain Resort Wax Tool",
+        "course_name": "Crested Butte Mountain Resort Race Venue",
+        "lat": 38.897,
+        "lon": -106.9447,
+        "elev_ft": 9823,
+        "aspect_deg": 20.0,
+        "slope_deg": 18.0,
+        "finish_ft": 9301,
+        "starts_ft": {
+            "SL": 9823
+        },
+        "points": {
+            "Upper NWS point": {"lat": 38.897, "lon": -106.9447, "elev_ft": 9823},
+            "Lower NWS point": {"lat": 38.897, "lon": -106.9447, "elev_ft": 9301},
+        },
+    },
+    "Crystal Mountain": {
+        "display_name": "Crystal Mountain Wax Tool",
+        "course_name": "Crystal Mountain Race Venue",
+        "lat": 46.9327,
+        "lon": -121.4877,
+        "elev_ft": 5479,
+        "aspect_deg": 84.5,
+        "slope_deg": 18.0,
+        "finish_ft": 4459,
+        "starts_ft": {
+            "SL": 5190,
+            "GS": 5479
+        },
+        "points": {
+            "Upper NWS point": {"lat": 46.9327, "lon": -121.4877, "elev_ft": 5479},
+            "Lower NWS point": {"lat": 46.9327, "lon": -121.4877, "elev_ft": 4459},
+        },
+    },
+    "Dartmouth Skiway": {
+        "display_name": "Dartmouth Skiway Wax Tool",
+        "course_name": "Dartmouth Skiway Race Venue",
+        "lat": 43.7879,
+        "lon": -72.0943,
+        "elev_ft": 1890,
+        "aspect_deg": 340.4,
+        "slope_deg": 18.0,
+        "finish_ft": 971,
+        "starts_ft": {
+            "SL": 1890,
+            "GS": 1890
+        },
+        "points": {
+            "Upper NWS point": {"lat": 43.7879, "lon": -72.0943, "elev_ft": 1890},
+            "Lower NWS point": {"lat": 43.7879, "lon": -72.0943, "elev_ft": 971},
+        },
+    },
+    "Diamond Peak Ski Resort": {
+        "display_name": "Diamond Peak Ski Resort Wax Tool",
+        "course_name": "Diamond Peak Ski Resort Race Venue",
+        "lat": 39.2428,
+        "lon": -119.9338,
+        "elev_ft": 8524,
+        "aspect_deg": 286.8,
+        "slope_deg": 18.0,
+        "finish_ft": 6906,
+        "starts_ft": {
+            "SL": 8399,
+            "GS": 8524
+        },
+        "points": {
+            "Upper NWS point": {"lat": 39.2428, "lon": -119.9338, "elev_ft": 8524},
+            "Lower NWS point": {"lat": 39.2428, "lon": -119.9338, "elev_ft": 6906},
+        },
+    },
+    "Eldora": {
+        "display_name": "Eldora Wax Tool",
+        "course_name": "Eldora Race Venue",
+        "lat": 39.9569,
+        "lon": -105.5829,
+        "elev_ft": 10315,
+        "aspect_deg": 61.9,
+        "slope_deg": 18.0,
+        "finish_ft": 9442,
+        "starts_ft": {
+            "SL": 10207,
+            "GS": 10315
+        },
+        "points": {
+            "Upper NWS point": {"lat": 39.9569, "lon": -105.5829, "elev_ft": 10315},
+            "Lower NWS point": {"lat": 39.9569, "lon": -105.5829, "elev_ft": 9442},
+        },
+    },
+    "Giants Ridge": {
+        "display_name": "Giants Ridge Wax Tool",
+        "course_name": "Giants Ridge Race Venue",
+        "lat": 47.5714,
+        "lon": -92.314,
+        "elev_ft": 1844,
+        "aspect_deg": 46.6,
+        "slope_deg": 18.0,
+        "finish_ft": 1414,
+        "starts_ft": {
+            "SL": 1844
+        },
+        "points": {
+            "Upper NWS point": {"lat": 47.5714, "lon": -92.314, "elev_ft": 1844},
+            "Lower NWS point": {"lat": 47.5714, "lon": -92.314, "elev_ft": 1414},
+        },
+    },
+    "Grand Targhee": {
+        "display_name": "Grand Targhee Wax Tool",
+        "course_name": "Grand Targhee Race Venue",
+        "lat": 43.785,
+        "lon": -110.947,
+        "elev_ft": 9495,
+        "aspect_deg": 264.2,
+        "slope_deg": 18.0,
+        "finish_ft": 8077,
+        "starts_ft": {
+            "SuperG": 9495,
+            "SL": 8711,
+            "GS": 8934
+        },
+        "points": {
+            "Upper NWS point": {"lat": 43.785, "lon": -110.947, "elev_ft": 9495},
+            "Lower NWS point": {"lat": 43.785, "lon": -110.947, "elev_ft": 8077},
+        },
+    },
+    "Greek Peak": {
+        "display_name": "Greek Peak Wax Tool",
+        "course_name": "Greek Peak Race Venue",
+        "lat": 42.4965,
+        "lon": -76.1498,
+        "elev_ft": 2034,
+        "aspect_deg": 90.0,
+        "slope_deg": 18.0,
+        "finish_ft": 1545,
+        "starts_ft": {
+            "SL": 2034
+        },
+        "points": {
+            "Upper NWS point": {"lat": 42.4965, "lon": -76.1498, "elev_ft": 2034},
+            "Lower NWS point": {"lat": 42.4965, "lon": -76.1498, "elev_ft": 1545},
+        },
+    },
+    "Heavenly Mountain Resort": {
+        "display_name": "Heavenly Mountain Resort Wax Tool",
+        "course_name": "Heavenly Mountain Resort Race Venue",
+        "lat": 38.9405,
+        "lon": -119.8974,
+        "elev_ft": 9459,
+        "aspect_deg": 355.0,
+        "slope_deg": 18.0,
+        "finish_ft": 8264,
+        "starts_ft": {
+            "SL": 9245,
+            "GS": 9459
+        },
+        "points": {
+            "Upper NWS point": {"lat": 38.9405, "lon": -119.8974, "elev_ft": 9459},
+            "Lower NWS point": {"lat": 38.9405, "lon": -119.8974, "elev_ft": 8264},
+        },
+    },
+    "Hogadon Ski Area": {
+        "display_name": "Hogadon Ski Area Wax Tool",
+        "course_name": "Hogadon Ski Area Race Venue",
+        "lat": 42.7466,
+        "lon": -106.3407,
+        "elev_ft": 7897,
+        "aspect_deg": 10.0,
+        "slope_deg": 18.0,
+        "finish_ft": 7382,
+        "starts_ft": {
+            "SL": 7897
+        },
+        "points": {
+            "Upper NWS point": {"lat": 42.7466, "lon": -106.3407, "elev_ft": 7897},
+            "Lower NWS point": {"lat": 42.7466, "lon": -106.3407, "elev_ft": 7382},
+        },
+    },
+    "Holiday Valley Resort": {
+        "display_name": "Holiday Valley Resort Wax Tool",
+        "course_name": "Holiday Valley Resort Race Venue",
+        "lat": 42.2631,
+        "lon": -78.6636,
+        "elev_ft": 2254,
+        "aspect_deg": 20.3,
+        "slope_deg": 18.0,
+        "finish_ft": 1788,
+        "starts_ft": {
+            "SL": 2254
+        },
+        "points": {
+            "Upper NWS point": {"lat": 42.2631, "lon": -78.6636, "elev_ft": 2254},
+            "Lower NWS point": {"lat": 42.2631, "lon": -78.6636, "elev_ft": 1788},
+        },
+    },
+    "Indianhead Mt": {
+        "display_name": "Indianhead Mt Wax Tool",
+        "course_name": "Indianhead Mt Race Venue",
+        "lat": 46.5093,
+        "lon": -89.9799,
+        "elev_ft": 1693,
+        "aspect_deg": 11.1,
+        "slope_deg": 18.0,
+        "finish_ft": 1220,
+        "starts_ft": {
+            "SL": 1693
+        },
+        "points": {
+            "Upper NWS point": {"lat": 46.5093, "lon": -89.9799, "elev_ft": 1693},
+            "Lower NWS point": {"lat": 46.5093, "lon": -89.9799, "elev_ft": 1220},
+        },
+    },
+    "Jackson Hole": {
+        "display_name": "Jackson Hole Wax Tool",
+        "course_name": "Jackson Hole Race Venue",
+        "lat": 43.6088,
+        "lon": -110.738,
+        "elev_ft": 9016,
+        "aspect_deg": 60.0,
+        "slope_deg": 18.0,
+        "finish_ft": 6283,
+        "starts_ft": {
+            "SL": 8825,
+            "GS": 8825,
+            "DH": 9016,
+            "SuperG": 9016
+        },
+        "points": {
+            "Upper NWS point": {"lat": 43.6088, "lon": -110.738, "elev_ft": 9016},
+            "Lower NWS point": {"lat": 43.6088, "lon": -110.738, "elev_ft": 6283},
+        },
+    },
+    "Jay Peak Resort": {
+        "display_name": "Jay Peak Resort Wax Tool",
+        "course_name": "Jay Peak Resort Race Venue",
+        "lat": 44.936,
+        "lon": -72.5079,
+        "elev_ft": 2854,
+        "aspect_deg": 53.3,
+        "slope_deg": 18.0,
+        "finish_ft": 2028,
+        "starts_ft": {
+            "SL": 2854,
+            "GS": 2854
+        },
+        "points": {
+            "Upper NWS point": {"lat": 44.936, "lon": -72.5079, "elev_ft": 2854},
+            "Lower NWS point": {"lat": 44.936, "lon": -72.5079, "elev_ft": 2028},
+        },
+    },
+    "Jiminy Peak Ski Area": {
+        "display_name": "Jiminy Peak Ski Area Wax Tool",
+        "course_name": "Jiminy Peak Ski Area Race Venue",
+        "lat": 42.6953,
+        "lon": -73.2694,
+        "elev_ft": 2356,
+        "aspect_deg": 6.3,
+        "slope_deg": 18.0,
+        "finish_ft": 1453,
+        "starts_ft": {
+            "SL": 2165,
+            "GS": 2356
+        },
+        "points": {
+            "Upper NWS point": {"lat": 42.6953, "lon": -73.2694, "elev_ft": 2356},
+            "Lower NWS point": {"lat": 42.6953, "lon": -73.2694, "elev_ft": 1453},
+        },
+    },
+    "Keystone Ski Resort": {
+        "display_name": "Keystone Ski Resort Wax Tool",
+        "course_name": "Keystone Ski Resort Race Venue",
+        "lat": 39.6069,
+        "lon": -105.9681,
+        "elev_ft": 11624,
+        "aspect_deg": 335.8,
+        "slope_deg": 18.0,
+        "finish_ft": 9288,
+        "starts_ft": {
+            "SL": 10784,
+            "GS": 11624
+        },
+        "points": {
+            "Upper NWS point": {"lat": 39.6069, "lon": -105.9681, "elev_ft": 11624},
+            "Lower NWS point": {"lat": 39.6069, "lon": -105.9681, "elev_ft": 9288},
+        },
+    },
+    "La Crosse": {
+        "display_name": "La Crosse Wax Tool",
+        "course_name": "La Crosse Race Venue",
+        "lat": 43.8123,
+        "lon": -91.2514,
+        "elev_ft": 1211,
+        "aspect_deg": 18.8,
+        "slope_deg": 18.0,
+        "finish_ft": 751,
+        "starts_ft": {
+            "SL": 1211
+        },
+        "points": {
+            "Upper NWS point": {"lat": 43.8123, "lon": -91.2514, "elev_ft": 1211},
+            "Lower NWS point": {"lat": 43.8123, "lon": -91.2514, "elev_ft": 751},
+        },
+    },
+    "Loon Mountain Resort": {
+        "display_name": "Loon Mountain Resort Wax Tool",
+        "course_name": "Loon Mountain Resort Race Venue",
+        "lat": 44.0451,
+        "lon": -71.6366,
+        "elev_ft": 1991,
+        "aspect_deg": 350.0,
+        "slope_deg": 18.0,
+        "finish_ft": 1030,
+        "starts_ft": {
+            "SL": 1991,
+            "GS": 1991
+        },
+        "points": {
+            "Upper NWS point": {"lat": 44.0451, "lon": -71.6366, "elev_ft": 1991},
+            "Lower NWS point": {"lat": 44.0451, "lon": -71.6366, "elev_ft": 1030},
+        },
+    },
+    "Loveland Valley": {
+        "display_name": "Loveland Valley Wax Tool",
+        "course_name": "Loveland Valley Race Venue",
+        "lat": 39.6816,
+        "lon": -105.8774,
+        "elev_ft": 11893,
+        "aspect_deg": 340.0,
+        "slope_deg": 18.0,
+        "finish_ft": 10636,
+        "starts_ft": {
+            "SL": 11617,
+            "GS": 11893
+        },
+        "points": {
+            "Upper NWS point": {"lat": 39.6816, "lon": -105.8774, "elev_ft": 11893},
+            "Lower NWS point": {"lat": 39.6816, "lon": -105.8774, "elev_ft": 10636},
+        },
+    },
+    "Lutsen Mountain": {
+        "display_name": "Lutsen Mountain Wax Tool",
+        "course_name": "Lutsen Mountain Race Venue",
+        "lat": 47.6575,
+        "lon": -90.7114,
+        "elev_ft": 1693,
+        "aspect_deg": 122.1,
+        "slope_deg": 18.0,
+        "finish_ft": 850,
+        "starts_ft": {
+            "GS": 1693,
+            "SL": 1693
+        },
+        "points": {
+            "Upper NWS point": {"lat": 47.6575, "lon": -90.7114, "elev_ft": 1693},
+            "Lower NWS point": {"lat": 47.6575, "lon": -90.7114, "elev_ft": 850},
+        },
+    },
+    "Magic Mountain": {
+        "display_name": "Magic Mountain Wax Tool",
+        "course_name": "Magic Mountain Race Venue",
+        "lat": 43.1955,
+        "lon": -72.764,
+        "elev_ft": 2454,
+        "aspect_deg": 321.6,
+        "slope_deg": 18.0,
+        "finish_ft": 1706,
+        "starts_ft": {
+            "SL": 2454
+        },
+        "points": {
+            "Upper NWS point": {"lat": 43.1955, "lon": -72.764, "elev_ft": 2454},
+            "Lower NWS point": {"lat": 43.1955, "lon": -72.764, "elev_ft": 1706},
+        },
+    },
+    "Mammoth Mountain": {
+        "display_name": "Mammoth Mountain Wax Tool",
+        "course_name": "Mammoth Mountain Race Venue",
+        "lat": 37.6308,
+        "lon": -119.0326,
+        "elev_ft": 11020,
+        "aspect_deg": 17.0,
+        "slope_deg": 18.0,
+        "finish_ft": 8737,
+        "starts_ft": {
+            "SL": 10249,
+            "GS": 10978,
+            "DH": 11020,
+            "SuperG": 11020
+        },
+        "points": {
+            "Upper NWS point": {"lat": 37.6308, "lon": -119.0326, "elev_ft": 11020},
+            "Lower NWS point": {"lat": 37.6308, "lon": -119.0326, "elev_ft": 8737},
+        },
+    },
+    "Maverick Mt": {
+        "display_name": "Maverick Mt Wax Tool",
+        "course_name": "Maverick Mt Race Venue",
+        "lat": 45.4485,
+        "lon": -113.1631,
+        "elev_ft": 8399,
+        "aspect_deg": 108.2,
+        "slope_deg": 18.0,
+        "finish_ft": 7018,
+        "starts_ft": {
+            "SL": 7359,
+            "GS": 8399
+        },
+        "points": {
+            "Upper NWS point": {"lat": 45.4485, "lon": -113.1631, "elev_ft": 8399},
+            "Lower NWS point": {"lat": 45.4485, "lon": -113.1631, "elev_ft": 7018},
+        },
+    },
+    "Middlebury College Snow Bowl": {
+        "display_name": "Middlebury College Snow Bowl Wax Tool",
+        "course_name": "Middlebury College Snow Bowl Race Venue",
+        "lat": 43.9345,
+        "lon": -72.9569,
+        "elev_ft": 2648,
+        "aspect_deg": 44.2,
+        "slope_deg": 18.0,
+        "finish_ft": 1827,
+        "starts_ft": {
+            "SL": 2552,
+            "GS": 2648
+        },
+        "points": {
+            "Upper NWS point": {"lat": 43.9345, "lon": -72.9569, "elev_ft": 2648},
+            "Lower NWS point": {"lat": 43.9345, "lon": -72.9569, "elev_ft": 1827},
+        },
+    },
+    "Mission Ridge": {
+        "display_name": "Mission Ridge Wax Tool",
+        "course_name": "Mission Ridge Race Venue",
+        "lat": 47.3474,
+        "lon": -120.4842,
+        "elev_ft": 6742,
+        "aspect_deg": 90.0,
+        "slope_deg": 18.0,
+        "finish_ft": 4587,
+        "starts_ft": {
+            "SL": 6224,
+            "DH": 6601,
+            "GS": 6414,
+            "SuperG": 6742
+        },
+        "points": {
+            "Upper NWS point": {"lat": 47.3474, "lon": -120.4842, "elev_ft": 6742},
+            "Lower NWS point": {"lat": 47.3474, "lon": -120.4842, "elev_ft": 4587},
+        },
+    },
+    "Mittersill Cannon Mtn": {
+        "display_name": "Mittersill Cannon Mtn Wax Tool",
+        "course_name": "Mittersill Cannon Mtn Race Venue",
+        "lat": 44.1581,
+        "lon": -71.7014,
+        "elev_ft": 3077,
+        "aspect_deg": 2.1,
+        "slope_deg": 18.0,
+        "finish_ft": 1877,
+        "starts_ft": {
+            "GS": 3077,
+            "SL": 2638
+        },
+        "points": {
+            "Upper NWS point": {"lat": 44.1581, "lon": -71.7014, "elev_ft": 3077},
+            "Lower NWS point": {"lat": 44.1581, "lon": -71.7014, "elev_ft": 1877},
+        },
+    },
+    "Mont Ripley": {
+        "display_name": "Mont Ripley Wax Tool",
+        "course_name": "Mont Ripley Race Venue",
+        "lat": 47.1303,
+        "lon": -88.5596,
+        "elev_ft": 1073,
+        "aspect_deg": 182.5,
+        "slope_deg": 18.0,
+        "finish_ft": 666,
+        "starts_ft": {
+            "SL": 1073
+        },
+        "points": {
+            "Upper NWS point": {"lat": 47.1303, "lon": -88.5596, "elev_ft": 1073},
+            "Lower NWS point": {"lat": 47.1303, "lon": -88.5596, "elev_ft": 666},
+        },
+    },
+    "Mount Bachelor": {
+        "display_name": "Mount Bachelor Wax Tool",
+        "course_name": "Mount Bachelor Race Venue",
+        "lat": 43.9794,
+        "lon": -121.6885,
+        "elev_ft": 9055,
+        "aspect_deg": 14.0,
+        "slope_deg": 18.0,
+        "finish_ft": 6211,
+        "starts_ft": {
+            "GS": 7736,
+            "SL": 7169,
+            "SuperG": 8612,
+            "DH": 9055
+        },
+        "points": {
+            "Upper NWS point": {"lat": 43.9794, "lon": -121.6885, "elev_ft": 9055},
+            "Lower NWS point": {"lat": 43.9794, "lon": -121.6885, "elev_ft": 6211},
+        },
+    },
+    "Mount Spokane": {
+        "display_name": "Mount Spokane Wax Tool",
+        "course_name": "Mount Spokane Race Venue",
+        "lat": 47.9213,
+        "lon": -117.1141,
+        "elev_ft": 5410,
+        "aspect_deg": 85.4,
+        "slope_deg": 18.0,
+        "finish_ft": 4334,
+        "starts_ft": {
+            "GS": 5410,
+            "SL": 4990
+        },
+        "points": {
+            "Upper NWS point": {"lat": 47.9213, "lon": -117.1141, "elev_ft": 5410},
+            "Lower NWS point": {"lat": 47.9213, "lon": -117.1141, "elev_ft": 4334},
+        },
+    },
+    "Mount Sunapee": {
+        "display_name": "Mount Sunapee Wax Tool",
+        "course_name": "Mount Sunapee Race Venue",
+        "lat": 43.3406,
+        "lon": -72.0709,
+        "elev_ft": 2231,
+        "aspect_deg": 346.6,
+        "slope_deg": 18.0,
+        "finish_ft": 1312,
+        "starts_ft": {
+            "GS": 2231,
+            "SL": 2231
+        },
+        "points": {
+            "Upper NWS point": {"lat": 43.3406, "lon": -72.0709, "elev_ft": 2231},
+            "Lower NWS point": {"lat": 43.3406, "lon": -72.0709, "elev_ft": 1312},
+        },
+    },
+    "Mt Hood Meadows": {
+        "display_name": "Mt Hood Meadows Wax Tool",
+        "course_name": "Mt Hood Meadows Race Venue",
+        "lat": 45.4746,
+        "lon": -122.3717,
+        "elev_ft": 6539,
+        "aspect_deg": 173.2,
+        "slope_deg": 18.0,
+        "finish_ft": 5390,
+        "starts_ft": {
+            "GS": 6539,
+            "SL": 6430
+        },
+        "points": {
+            "Upper NWS point": {"lat": 45.4746, "lon": -122.3717, "elev_ft": 6539},
+            "Lower NWS point": {"lat": 45.4746, "lon": -122.3717, "elev_ft": 5390},
+        },
+    },
+    "Mt Hood Skibowl": {
+        "display_name": "Mt Hood Skibowl Wax Tool",
+        "course_name": "Mt Hood Skibowl Race Venue",
+        "lat": 45.294,
+        "lon": -121.7805,
+        "elev_ft": 6539,
+        "aspect_deg": 191.4,
+        "slope_deg": 18.0,
+        "finish_ft": 3675,
+        "starts_ft": {
+            "SL": 6539,
+            "GS": 6539
+        },
+        "points": {
+            "Upper NWS point": {"lat": 45.294, "lon": -121.7805, "elev_ft": 6539},
+            "Lower NWS point": {"lat": 45.294, "lon": -121.7805, "elev_ft": 3675},
+        },
+    },
+    "Mt Rose Ski Tahoe": {
+        "display_name": "Mt Rose Ski Tahoe Wax Tool",
+        "course_name": "Mt Rose Ski Tahoe Race Venue",
+        "lat": 39.3192,
+        "lon": -119.8837,
+        "elev_ft": 9531,
+        "aspect_deg": 7.6,
+        "slope_deg": 18.0,
+        "finish_ft": 8346,
+        "starts_ft": {
+            "SL": 9101,
+            "GS": 9531,
+            "SuperG": 9531
+        },
+        "points": {
+            "Upper NWS point": {"lat": 39.3192, "lon": -119.8837, "elev_ft": 9531},
+            "Lower NWS point": {"lat": 39.3192, "lon": -119.8837, "elev_ft": 8346},
+        },
+    },
+    "Northstar California": {
+        "display_name": "Northstar California Wax Tool",
+        "course_name": "Northstar California Race Venue",
+        "lat": 39.2745,
+        "lon": -120.1218,
+        "elev_ft": 8038,
+        "aspect_deg": 3.2,
+        "slope_deg": 18.0,
+        "finish_ft": 6890,
+        "starts_ft": {
+            "GS": 8038,
+            "SuperG": 7940,
+            "SL": 7612
+        },
+        "points": {
+            "Upper NWS point": {"lat": 39.2745, "lon": -120.1218, "elev_ft": 8038},
+            "Lower NWS point": {"lat": 39.2745, "lon": -120.1218, "elev_ft": 6890},
+        },
+    },
+    "Okemo Mountain": {
+        "display_name": "Okemo Mountain Wax Tool",
+        "course_name": "Okemo Mountain Race Venue",
+        "lat": 43.4078,
+        "lon": -72.7343,
+        "elev_ft": 3130,
+        "aspect_deg": 94.7,
+        "slope_deg": 18.0,
+        "finish_ft": 1608,
+        "starts_ft": {
+            "GS": 3130,
+            "SuperG": 3130,
+            "SL": 3130
+        },
+        "points": {
+            "Upper NWS point": {"lat": 43.4078, "lon": -72.7343, "elev_ft": 3130},
+            "Lower NWS point": {"lat": 43.4078, "lon": -72.7343, "elev_ft": 1608},
+        },
+    },
+    "Palisades Tahoe": {
+        "display_name": "Palisades Tahoe Wax Tool",
+        "course_name": "Palisades Tahoe Race Venue",
+        "lat": 39.1966,
+        "lon": -120.2345,
+        "elev_ft": 8694,
+        "aspect_deg": 34.1,
+        "slope_deg": 18.0,
+        "finish_ft": 6253,
+        "starts_ft": {
+            "SL": 8694,
+            "GS": 8346,
+            "SuperG": 8510,
+            "DH": 8510
+        },
+        "points": {
+            "Upper NWS point": {"lat": 39.1966, "lon": -120.2345, "elev_ft": 8694},
+            "Lower NWS point": {"lat": 39.1966, "lon": -120.2345, "elev_ft": 6253},
+        },
+    },
+    "Park City Mountain Resort": {
+        "display_name": "Park City Mountain Resort Wax Tool",
+        "course_name": "Park City Mountain Resort Race Venue",
+        "lat": 40.6541,
+        "lon": -111.5624,
+        "elev_ft": 8153,
+        "aspect_deg": 28.8,
+        "slope_deg": 18.0,
+        "finish_ft": 6929,
+        "starts_ft": {
+            "GS": 8153,
+            "SL": 7618,
+            "SuperG": 8153
+        },
+        "points": {
+            "Upper NWS point": {"lat": 40.6541, "lon": -111.5624, "elev_ft": 8153},
+            "Lower NWS point": {"lat": 40.6541, "lon": -111.5624, "elev_ft": 6929},
+        },
+    },
+    "Pats Peak Ski Area": {
+        "display_name": "Pats Peak Ski Area Wax Tool",
+        "course_name": "Pats Peak Ski Area Race Venue",
+        "lat": 43.1422,
+        "lon": -71.5978,
+        "elev_ft": 1283,
+        "aspect_deg": 347.0,
+        "slope_deg": 18.0,
+        "finish_ft": 735,
+        "starts_ft": {
+            "SL": 1283
+        },
+        "points": {
+            "Upper NWS point": {"lat": 43.1422, "lon": -71.5978, "elev_ft": 1283},
+            "Lower NWS point": {"lat": 43.1422, "lon": -71.5978, "elev_ft": 735},
+        },
+    },
+    "Pico Peak": {
+        "display_name": "Pico Peak Wax Tool",
+        "course_name": "Pico Peak Race Venue",
+        "lat": 43.6394,
+        "lon": -72.8364,
+        "elev_ft": 2805,
+        "aspect_deg": 350.0,
+        "slope_deg": 18.0,
+        "finish_ft": 2320,
+        "starts_ft": {
+            "SL": 2805
+        },
+        "points": {
+            "Upper NWS point": {"lat": 43.6394, "lon": -72.8364, "elev_ft": 2805},
+            "Lower NWS point": {"lat": 43.6394, "lon": -72.8364, "elev_ft": 2320},
+        },
+    },
+    "Powderhorn": {
+        "display_name": "Powderhorn Wax Tool",
+        "course_name": "Powderhorn Race Venue",
+        "lat": 38.2769,
+        "lon": -107.0959,
+        "elev_ft": 9642,
+        "aspect_deg": 30.0,
+        "slope_deg": 18.0,
+        "finish_ft": 8451,
+        "starts_ft": {
+            "GS": 9642,
+            "SL": 8976
+        },
+        "points": {
+            "Upper NWS point": {"lat": 38.2769, "lon": -107.0959, "elev_ft": 9642},
+            "Lower NWS point": {"lat": 38.2769, "lon": -107.0959, "elev_ft": 8451},
+        },
+    },
+    "Proctor Ski Area": {
+        "display_name": "Proctor Ski Area Wax Tool",
+        "course_name": "Proctor Ski Area Race Venue",
+        "lat": 43.4306,
+        "lon": -71.8295,
+        "elev_ft": 1083,
+        "aspect_deg": 15.0,
+        "slope_deg": 18.0,
+        "finish_ft": 620,
+        "starts_ft": {
+            "SL": 1083
+        },
+        "points": {
+            "Upper NWS point": {"lat": 43.4306, "lon": -71.8295, "elev_ft": 1083},
+            "Lower NWS point": {"lat": 43.4306, "lon": -71.8295, "elev_ft": 620},
+        },
+    },
+    "Saddleback": {
+        "display_name": "Saddleback Wax Tool",
+        "course_name": "Saddleback Race Venue",
+        "lat": 44.9789,
+        "lon": -70.5194,
+        "elev_ft": 3602,
+        "aspect_deg": 328.7,
+        "slope_deg": 18.0,
+        "finish_ft": 2677,
+        "starts_ft": {
+            "SL": 3179,
+            "GS": 3602
+        },
+        "points": {
+            "Upper NWS point": {"lat": 44.9789, "lon": -70.5194, "elev_ft": 3602},
+            "Lower NWS point": {"lat": 44.9789, "lon": -70.5194, "elev_ft": 2677},
+        },
+    },
+    "Schweitzer Mtn": {
+        "display_name": "Schweitzer Mtn Wax Tool",
+        "course_name": "Schweitzer Mtn Race Venue",
+        "lat": 48.368,
+        "lon": -116.6232,
+        "elev_ft": 5761,
+        "aspect_deg": 58.5,
+        "slope_deg": 18.0,
+        "finish_ft": 4035,
+        "starts_ft": {
+            "SL": 5761,
+            "GS": 5390,
+            "DH": 5538,
+            "SuperG": 5538
+        },
+        "points": {
+            "Upper NWS point": {"lat": 48.368, "lon": -116.6232, "elev_ft": 5761},
+            "Lower NWS point": {"lat": 48.368, "lon": -116.6232, "elev_ft": 4035},
+        },
+    },
+    "Smugglers Notch Resort": {
+        "display_name": "Smugglers Notch Resort Wax Tool",
+        "course_name": "Smugglers Notch Resort Race Venue",
+        "lat": 44.5727,
+        "lon": -72.7676,
+        "elev_ft": 2546,
+        "aspect_deg": 346.0,
+        "slope_deg": 18.0,
+        "finish_ft": 1680,
+        "starts_ft": {
+            "GS": 2546,
+            "SL": 2546
+        },
+        "points": {
+            "Upper NWS point": {"lat": 44.5727, "lon": -72.7676, "elev_ft": 2546},
+            "Lower NWS point": {"lat": 44.5727, "lon": -72.7676, "elev_ft": 1680},
+        },
+    },
+    "Snow King": {
+        "display_name": "Snow King Wax Tool",
+        "course_name": "Snow King Race Venue",
+        "lat": 43.4655,
+        "lon": -110.7563,
+        "elev_ft": 7520,
+        "aspect_deg": 4.5,
+        "slope_deg": 18.0,
+        "finish_ft": 6283,
+        "starts_ft": {
+            "SuperG": 7520
+        },
+        "points": {
+            "Upper NWS point": {"lat": 43.4655, "lon": -110.7563, "elev_ft": 7520},
+            "Lower NWS point": {"lat": 43.4655, "lon": -110.7563, "elev_ft": 6283},
+        },
+    },
+    "Snowbasin Resort Company": {
+        "display_name": "Snowbasin Resort Company Wax Tool",
+        "course_name": "Snowbasin Resort Company Race Venue",
+        "lat": 41.2163,
+        "lon": -111.8571,
+        "elev_ft": 7900,
+        "aspect_deg": 54.0,
+        "slope_deg": 18.0,
+        "finish_ft": 6391,
+        "starts_ft": {
+            "SuperG": 7900,
+            "GS": 7900,
+            "SL": 7408
+        },
+        "points": {
+            "Upper NWS point": {"lat": 41.2163, "lon": -111.8571, "elev_ft": 7900},
+            "Lower NWS point": {"lat": 41.2163, "lon": -111.8571, "elev_ft": 6391},
+        },
+    },
+    "Snowbird. Ski & Summer Resort UT": {
+        "display_name": "Snowbird. Ski & Summer Resort UT Wax Tool",
+        "course_name": "Snowbird. Ski & Summer Resort UT Race Venue",
+        "lat": 40.6331,
+        "lon": -111.8038,
+        "elev_ft": 8983,
+        "aspect_deg": 340.8,
+        "slope_deg": 18.0,
+        "finish_ft": 7923,
+        "starts_ft": {
+            "GS": 8983,
+            "SL": 8448
+        },
+        "points": {
+            "Upper NWS point": {"lat": 40.6331, "lon": -111.8038, "elev_ft": 8983},
+            "Lower NWS point": {"lat": 40.6331, "lon": -111.8038, "elev_ft": 7923},
+        },
+    },
+    "Snowriver": {
+        "display_name": "Snowriver Wax Tool",
+        "course_name": "Snowriver Race Venue",
+        "lat": 46.5002,
+        "lon": -89.9758,
+        "elev_ft": 1621,
+        "aspect_deg": 11.1,
+        "slope_deg": 18.0,
+        "finish_ft": 1204,
+        "starts_ft": {
+            "SL": 1621
+        },
+        "points": {
+            "Upper NWS point": {"lat": 46.5002, "lon": -89.9758, "elev_ft": 1621},
+            "Lower NWS point": {"lat": 46.5002, "lon": -89.9758, "elev_ft": 1204},
+        },
+    },
+    "Soldier Mountain": {
+        "display_name": "Soldier Mountain Wax Tool",
+        "course_name": "Soldier Mountain Race Venue",
+        "lat": 44.7094,
+        "lon": -115.0909,
+        "elev_ft": 7178,
+        "aspect_deg": 5.0,
+        "slope_deg": 18.0,
+        "finish_ft": 5840,
+        "starts_ft": {
+            "DH": 7178,
+            "GS": 6900,
+            "SuperG": 7178,
+            "SL": 6453
+        },
+        "points": {
+            "Upper NWS point": {"lat": 44.7094, "lon": -115.0909, "elev_ft": 7178},
+            "Lower NWS point": {"lat": 44.7094, "lon": -115.0909, "elev_ft": 5840},
+        },
+    },
+    "Spirit Mountain": {
+        "display_name": "Spirit Mountain Wax Tool",
+        "course_name": "Spirit Mountain Race Venue",
+        "lat": 46.7176,
+        "lon": -92.2124,
+        "elev_ft": 1207,
+        "aspect_deg": 30.0,
+        "slope_deg": 18.0,
+        "finish_ft": 745,
+        "starts_ft": {
+            "SL": 1207
+        },
+        "points": {
+            "Upper NWS point": {"lat": 46.7176, "lon": -92.2124, "elev_ft": 1207},
+            "Lower NWS point": {"lat": 46.7176, "lon": -92.2124, "elev_ft": 745},
+        },
+    },
+    "Steamboat Springs/ Mount Werner CO": {
+        "display_name": "Steamboat Springs/ Mount Werner CO Wax Tool",
+        "course_name": "Steamboat Springs/ Mount Werner CO Race Venue",
+        "lat": 40.4586,
+        "lon": -106.8067,
+        "elev_ft": 8018,
+        "aspect_deg": 10.0,
+        "slope_deg": 18.0,
+        "finish_ft": 6719,
+        "starts_ft": {
+            "GS": 8018,
+            "SL": 8018
+        },
+        "points": {
+            "Upper NWS point": {"lat": 40.4586, "lon": -106.8067, "elev_ft": 8018},
+            "Lower NWS point": {"lat": 40.4586, "lon": -106.8067, "elev_ft": 6719},
+        },
+    },
+    "Stevens Pass": {
+        "display_name": "Stevens Pass Wax Tool",
+        "course_name": "Stevens Pass Race Venue",
+        "lat": 47.7456,
+        "lon": -121.0892,
+        "elev_ft": 5348,
+        "aspect_deg": 46.5,
+        "slope_deg": 18.0,
+        "finish_ft": 4091,
+        "starts_ft": {
+            "GS": 5348,
+            "SL": 4790,
+            "SuperG": 5240
+        },
+        "points": {
+            "Upper NWS point": {"lat": 47.7456, "lon": -121.0892, "elev_ft": 5348},
+            "Lower NWS point": {"lat": 47.7456, "lon": -121.0892, "elev_ft": 4091},
+        },
+    },
+    "Stowe Mountain Resort / Spruce Peak": {
+        "display_name": "Stowe Mountain Resort / Spruce Peak Wax Tool",
+        "course_name": "Stowe Mountain Resort / Spruce Peak Race Venue",
+        "lat": 44.5264,
+        "lon": -72.7816,
+        "elev_ft": 3241,
+        "aspect_deg": 54.4,
+        "slope_deg": 18.0,
+        "finish_ft": 1565,
+        "starts_ft": {
+            "SL": 2861,
+            "GS": 3241,
+            "SuperG": 3241
+        },
+        "points": {
+            "Upper NWS point": {"lat": 44.5264, "lon": -72.7816, "elev_ft": 3241},
+            "Lower NWS point": {"lat": 44.5264, "lon": -72.7816, "elev_ft": 1565},
+        },
+    },
+    "Stratton Mountain": {
+        "display_name": "Stratton Mountain Wax Tool",
+        "course_name": "Stratton Mountain Race Venue",
+        "lat": 43.0863,
+        "lon": -72.9249,
+        "elev_ft": 3848,
+        "aspect_deg": 52.9,
+        "slope_deg": 18.0,
+        "finish_ft": 2543,
+        "starts_ft": {
+            "SL": 3799,
+            "GS": 3848,
+            "SuperG": 3848
+        },
+        "points": {
+            "Upper NWS point": {"lat": 43.0863, "lon": -72.9249, "elev_ft": 3848},
+            "Lower NWS point": {"lat": 43.0863, "lon": -72.9249, "elev_ft": 2543},
+        },
+    },
+    "Sugar Bowl": {
+        "display_name": "Sugar Bowl Wax Tool",
+        "course_name": "Sugar Bowl Race Venue",
+        "lat": 39.3003,
+        "lon": -120.344,
+        "elev_ft": 8360,
+        "aspect_deg": 4.9,
+        "slope_deg": 18.0,
+        "finish_ft": 6936,
+        "starts_ft": {
+            "SL": 7559,
+            "GS": 8360,
+            "SuperG": 8360
+        },
+        "points": {
+            "Upper NWS point": {"lat": 39.3003, "lon": -120.344, "elev_ft": 8360},
+            "Lower NWS point": {"lat": 39.3003, "lon": -120.344, "elev_ft": 6936},
+        },
+    },
+    "Sugarbush/Lincoln Peak": {
+        "display_name": "Sugarbush/Lincoln Peak Wax Tool",
+        "course_name": "Sugarbush/Lincoln Peak Race Venue",
+        "lat": 44.1268,
+        "lon": -72.8995,
+        "elev_ft": 2841,
+        "aspect_deg": 82.5,
+        "slope_deg": 18.0,
+        "finish_ft": 1680,
+        "starts_ft": {
+            "GS": 2841,
+            "SL": 2415
+        },
+        "points": {
+            "Upper NWS point": {"lat": 44.1268, "lon": -72.8995, "elev_ft": 2841},
+            "Lower NWS point": {"lat": 44.1268, "lon": -72.8995, "elev_ft": 1680},
+        },
+    },
+    "Sugarbush/Mount Ellen": {
+        "display_name": "Sugarbush/Mount Ellen Wax Tool",
+        "course_name": "Sugarbush/Mount Ellen Race Venue",
+        "lat": 44.1559,
+        "lon": -72.9283,
+        "elev_ft": 3770,
+        "aspect_deg": 73.1,
+        "slope_deg": 18.0,
+        "finish_ft": 1608,
+        "starts_ft": {
+            "SL": 3770,
+            "GS": 2671,
+            "SuperG": 2674
+        },
+        "points": {
+            "Upper NWS point": {"lat": 44.1559, "lon": -72.9283, "elev_ft": 3770},
+            "Lower NWS point": {"lat": 44.1559, "lon": -72.9283, "elev_ft": 1608},
+        },
+    },
+    "Suicide Six": {
+        "display_name": "Suicide Six Wax Tool",
+        "course_name": "Suicide Six Race Venue",
+        "lat": 43.6627,
+        "lon": -72.5474,
+        "elev_ft": 1329,
+        "aspect_deg": 14.4,
+        "slope_deg": 18.0,
+        "finish_ft": 794,
+        "starts_ft": {
+            "SL": 1329
+        },
+        "points": {
+            "Upper NWS point": {"lat": 43.6627, "lon": -72.5474, "elev_ft": 1329},
+            "Lower NWS point": {"lat": 43.6627, "lon": -72.5474, "elev_ft": 794},
+        },
+    },
+    "Sun Valley": {
+        "display_name": "Sun Valley Wax Tool",
+        "course_name": "Sun Valley Race Venue",
+        "lat": 43.6962,
+        "lon": -114.3531,
+        "elev_ft": 8796,
+        "aspect_deg": 0.0,
+        "slope_deg": 18.0,
+        "finish_ft": 5991,
+        "starts_ft": {
+            "DH": 8796,
+            "SuperG": 8192,
+            "SL": 6952,
+            "GS": 7503
+        },
+        "points": {
+            "Upper NWS point": {"lat": 43.6962, "lon": -114.3531, "elev_ft": 8796},
+            "Lower NWS point": {"lat": 43.6962, "lon": -114.3531, "elev_ft": 5991},
+        },
+    },
+    "Telluride": {
+        "display_name": "Telluride Wax Tool",
+        "course_name": "Telluride Race Venue",
+        "lat": 37.9375,
+        "lon": -107.8123,
+        "elev_ft": 10479,
+        "aspect_deg": 346.3,
+        "slope_deg": 18.0,
+        "finish_ft": 9524,
+        "starts_ft": {
+            "GS": 10479,
+            "SL": 10479
+        },
+        "points": {
+            "Upper NWS point": {"lat": 37.9375, "lon": -107.8123, "elev_ft": 10479},
+            "Lower NWS point": {"lat": 37.9375, "lon": -107.8123, "elev_ft": 9524},
+        },
+    },
+    "Terry Peak Ski Area, Lead": {
+        "display_name": "Terry Peak Ski Area, Lead Wax Tool",
+        "course_name": "Terry Peak Ski Area, Lead Race Venue",
+        "lat": 44.3673,
+        "lon": -103.8228,
+        "elev_ft": 6988,
+        "aspect_deg": 23.6,
+        "slope_deg": 18.0,
+        "finish_ft": 6102,
+        "starts_ft": {
+            "GS": 6988,
+            "SL": 6759
+        },
+        "points": {
+            "Upper NWS point": {"lat": 44.3673, "lon": -103.8228, "elev_ft": 6988},
+            "Lower NWS point": {"lat": 44.3673, "lon": -103.8228, "elev_ft": 6102},
+        },
+    },
+    "Titcomb Mountain": {
+        "display_name": "Titcomb Mountain Wax Tool",
+        "course_name": "Titcomb Mountain Race Venue",
+        "lat": 44.6484,
+        "lon": -70.1717,
+        "elev_ft": 709,
+        "aspect_deg": 22.1,
+        "slope_deg": 18.0,
+        "finish_ft": 400,
+        "starts_ft": {
+            "SL": 709
+        },
+        "points": {
+            "Upper NWS point": {"lat": 44.6484, "lon": -70.1717, "elev_ft": 709},
+            "Lower NWS point": {"lat": 44.6484, "lon": -70.1717, "elev_ft": 400},
+        },
+    },
+    "Utah Olympic Park": {
+        "display_name": "Utah Olympic Park Wax Tool",
+        "course_name": "Utah Olympic Park Race Venue",
+        "lat": 40.7074,
+        "lon": -111.5646,
+        "elev_ft": 8081,
+        "aspect_deg": 33.1,
+        "slope_deg": 18.0,
+        "finish_ft": 6923,
+        "starts_ft": {
+            "SL": 7579,
+            "GS": 8081,
+            "SuperG": 8081
+        },
+        "points": {
+            "Upper NWS point": {"lat": 40.7074, "lon": -111.5646, "elev_ft": 8081},
+            "Lower NWS point": {"lat": 40.7074, "lon": -111.5646, "elev_ft": 6923},
+        },
+    },
+    "Vail": {
+        "display_name": "Vail Wax Tool",
+        "course_name": "Vail Race Venue",
+        "lat": 39.6438,
+        "lon": -106.3888,
+        "elev_ft": 10016,
+        "aspect_deg": 343.9,
+        "slope_deg": 18.0,
+        "finish_ft": 8248,
+        "starts_ft": {
+            "SL": 10007,
+            "GS": 10013,
+            "DH": 10016,
+            "SuperG": 10016
+        },
+        "points": {
+            "Upper NWS point": {"lat": 39.6438, "lon": -106.3888, "elev_ft": 10016},
+            "Lower NWS point": {"lat": 39.6438, "lon": -106.3888, "elev_ft": 8248},
+        },
+    },
+    "Waterville Valley": {
+        "display_name": "Waterville Valley Wax Tool",
+        "course_name": "Waterville Valley Race Venue",
+        "lat": 43.9496,
+        "lon": -71.5057,
+        "elev_ft": 3448,
+        "aspect_deg": 60.5,
+        "slope_deg": 18.0,
+        "finish_ft": 1978,
+        "starts_ft": {
+            "SL": 2769,
+            "SuperG": 3448,
+            "GS": 3245
+        },
+        "points": {
+            "Upper NWS point": {"lat": 43.9496, "lon": -71.5057, "elev_ft": 3448},
+            "Lower NWS point": {"lat": 43.9496, "lon": -71.5057, "elev_ft": 1978},
+        },
+    },
+    "West Mountain": {
+        "display_name": "West Mountain Wax Tool",
+        "course_name": "West Mountain Race Venue",
+        "lat": 43.8601,
+        "lon": -74.706,
+        "elev_ft": 1381,
+        "aspect_deg": 80.0,
+        "slope_deg": 18.0,
+        "finish_ft": 430,
+        "starts_ft": {
+            "SL": 1362,
+            "GS": 1381
+        },
+        "points": {
+            "Upper NWS point": {"lat": 43.8601, "lon": -74.706, "elev_ft": 1381},
+            "Lower NWS point": {"lat": 43.8601, "lon": -74.706, "elev_ft": 430},
+        },
+    },
+    "Whiteface Mountain": {
+        "display_name": "Whiteface Mountain Wax Tool",
+        "course_name": "Whiteface Mountain Race Venue",
+        "lat": 44.3658,
+        "lon": -73.903,
+        "elev_ft": 3117,
+        "aspect_deg": 106.9,
+        "slope_deg": 18.0,
+        "finish_ft": 1280,
+        "starts_ft": {
+            "SL": 2723,
+            "SuperG": 3117,
+            "DH": 3117,
+            "GS": 2943
+        },
+        "points": {
+            "Upper NWS point": {"lat": 44.3658, "lon": -73.903, "elev_ft": 3117},
+            "Lower NWS point": {"lat": 44.3658, "lon": -73.903, "elev_ft": 1280},
+        },
+    },
+    "Winter Park": {
+        "display_name": "Winter Park Wax Tool",
+        "course_name": "Winter Park Race Venue",
+        "lat": 39.918,
+        "lon": -105.7856,
+        "elev_ft": 10705,
+        "aspect_deg": 15.0,
+        "slope_deg": 18.0,
+        "finish_ft": 9068,
+        "starts_ft": {
+            "SuperG": 10705,
+            "DH": 10705,
+            "GS": 10545,
+            "SL": 9790
+        },
+        "points": {
+            "Upper NWS point": {"lat": 39.918, "lon": -105.7856, "elev_ft": 10705},
+            "Lower NWS point": {"lat": 39.918, "lon": -105.7856, "elev_ft": 9068},
+        },
+    },
+
 }
 
 OBS_COLUMNS = [
