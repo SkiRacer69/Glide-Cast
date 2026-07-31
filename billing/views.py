@@ -168,10 +168,10 @@ def dev_bypass_subscription(request):
         return redirect("paywall")
     profile, _ = Profile.objects.get_or_create(user=request.user)
     profile.admin_override_active = True
+    profile.admin_override_plan = Profile.PlanTier.PRO
     profile.subscription_status = Profile.SubscriptionStatus.ACTIVE
-    if not profile.plan_tier:
-        profile.plan_tier = Profile.PlanTier.PRO
-    profile.save(update_fields=["admin_override_active", "subscription_status", "plan_tier", "updated_at"])
+    profile.plan_tier = Profile.PlanTier.PRO
+    profile.save(update_fields=["admin_override_active", "admin_override_plan", "subscription_status", "plan_tier", "updated_at"])
     messages.success(request, "Dev bypass enabled: subscription marked active for this account.")
     return redirect("calculator")
 
