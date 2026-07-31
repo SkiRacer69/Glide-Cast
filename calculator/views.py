@@ -79,13 +79,110 @@ VENUE_IMAGES = {
 }
 
 
-def _venue_choices_for_user(user) -> list[tuple[str, str]]:
-    all_keys = list(ENGINE.VENUES.keys())
-    if check_feature_access(user, "multiple_venues"):
-        keys = all_keys
+# European WC venues grouped by country (display order)
+_EU_GROUPS = [
+    ("🇦🇩 Andorra",        ["Soldeu"]),
+    ("🇦🇹 Austria",        ["Altenmarkt-Zauchensee", "Flachau", "Hinterstoder", "Kitzbühel",
+                             "Mayrhofen", "Pitztal", "Saalbach", "Schladming", "Semmering", "Sölden"]),
+    ("🇧🇬 Bulgaria",       ["Bansko"]),
+    ("🇨🇿 Czech Republic", ["Spindlerův Mlýn"]),
+    ("🇫🇮 Finland",        ["Levi", "Ruka"]),
+    ("🇫🇷 France",         ["Chamonix", "Courchevel", "Méribel", "Val d'Isère"]),
+    ("🇩🇪 Germany",        ["Garmisch-Partenkirchen", "Ofterschwang"]),
+    ("🇮🇹 Italy",          ["Alta Badia", "Bormio", "Cortina d'Ampezzo", "Madonna di Campiglio",
+                             "Santa Caterina Valfurva", "Sestriere", "Val Gardena"]),
+    ("🇳🇴 Norway",         ["Kvitfjell", "Narvik"]),
+    ("🇸🇰 Slovakia",       ["Jasná"]),
+    ("🇸🇮 Slovenia",       ["Kranjska Gora"]),
+    ("🇸🇪 Sweden",         ["Åre"]),
+    ("🇨🇭 Switzerland",    ["Adelboden", "Crans-Montana", "Lenzerheide", "Meiringen-Hasliberg",
+                             "Veysonnaz", "Wengen", "Zermatt"]),
+]
+
+# US venues grouped by region (display order)
+_US_GROUPS = [
+    ("🇺🇸 New England", [
+        "Sugarloaf", "Sunday River", "Saddleback", "Titcomb Mountain",
+        "Burke Mountain", "Jay Peak Resort", "Killington", "Magic Mountain",
+        "Middlebury College Snow Bowl", "Okemo Mountain", "Pico Peak",
+        "Smugglers Notch Resort", "Stowe Mountain Resort / Spruce Peak",
+        "Stratton Mountain", "Sugarbush/Lincoln Peak", "Sugarbush/Mount Ellen", "Suicide Six",
+        "Attitash Ski Area", "Cranmore Mountain Resort", "Dartmouth Skiway",
+        "Loon Mountain Resort", "Mittersill Cannon Mtn", "Mount Sunapee",
+        "Pats Peak Ski Area", "Proctor Ski Area", "Waterville Valley",
+        "Belleayre Mountain", "Catamount", "Gore Mountain", "Greek Peak",
+        "Holiday Valley Resort", "Jiminy Peak Ski Area", "West Mountain", "Whiteface Mountain",
+        "Berkshire East Mountain Resort",
+    ]),
+    ("🇺🇸 Mid-Atlantic & Midwest", [
+        "Blue Mountain Resort",
+        "Boyne Highlands", "Boyne Mountain", "Indianhead Mt", "Mont Ripley", "Snowriver",
+        "Buck Hill", "Giants Ridge", "La Crosse", "Lutsen Mountain", "Spirit Mountain",
+    ]),
+    ("🇺🇸 Colorado", [
+        "Aspen Mountain", "Aspen/Buttermilk", "Aspen/Highlands",
+        "Beaver Creek Resort", "Breckenridge Ski Resort", "Copper Mountain",
+        "Crested Butte Mountain Resort", "Eldora", "Keystone Ski Resort",
+        "Loveland Valley", "Powderhorn",
+        "Steamboat Springs/ Mount Werner CO", "Telluride", "Vail", "Winter Park",
+    ]),
+    ("🇺🇸 Utah", [
+        "Park City Mountain Resort", "Snowbasin Resort Company",
+        "Snowbird. Ski & Summer Resort UT", "Utah Olympic Park",
+    ]),
+    ("🇺🇸 Mountain West", [
+        "Soldier Mountain", "Sun Valley",
+        "Grand Targhee", "Hogadon Ski Area", "Jackson Hole", "Snow King",
+        "Big Sky", "Bridger Bowl", "Maverick Mt",
+        "Terry Peak Ski Area, Lead",
+        "Arizona Snowbowl",
+    ]),
+    ("🇺🇸 Pacific Northwest", [
+        "Crystal Mountain", "Mission Ridge", "Mount Spokane", "Stevens Pass",
+        "Mount Bachelor", "Mt Hood Meadows", "Mt Hood Skibowl",
+    ]),
+    ("🇺🇸 California", [
+        "Bear Canyon", "Boreal Mountain Resort", "Diamond Peak Ski Resort",
+        "Heavenly Mountain Resort", "Mammoth Mountain", "Mt Rose Ski Tahoe",
+        "Northstar California", "Palisades Tahoe", "Sugar Bowl",
+    ]),
+    ("🇺🇸 Alaska", [
+        "Alyeska Resort", "Arctic Valley Ski Area",
+    ]),
+]
+
+
+def _venue_choices_for_user(user) -> list:
+    engine_keys = set(ENGINE.VENUES.keys())
+    has_multi = check_feature_access(user, "multiple_venues")
+    groups = []
+
+    # FIS World Cup Europe — open to all plans
+    for country, keys in _EU_GROUPS:
+        opts = [(k, k) for k in keys if k in engine_keys]
+        if opts:
+            groups.append((f"FIS World Cup · {country}", opts))
+
+    # US venues
+    if has_multi:
+        for region, keys in _US_GROUPS:
+            opts = [(k, k) for k in keys if k in engine_keys]
+            if opts:
+                groups.append((region, opts))
     else:
-        keys = basic_venues_for_engine(all_keys)
-    return [(v, v) for v in keys]
+        basic = basic_venues_for_engine(list(engine_keys))
+        if basic:
+            groups.append(("🇺🇸 US Venues", [(k, k) for k in basic]))
+
+    return groups
+
+
+def _first_venue_key(grouped_choices: list) -> str:
+    """Extract the first venue key from grouped choices."""
+    for _group_label, opts in grouped_choices:
+        if opts:
+            return opts[0][0]
+    return "Sugarloaf"
 
 
 def _require_active_subscription(request) -> bool:
@@ -140,10 +237,13 @@ def calculator(request):
             params = ENGINE.ModelParams(*params_args)
 
             try:
+                _weather_api = venue.get("weather_api", "nws")
                 upper = ENGINE.get_hourly_forecast(
+                    weather_api=_weather_api,
                     **{k: v for k, v in venue["points"]["Upper NWS point"].items() if k in {"lat", "lon"}}
                 )
                 lower = ENGINE.get_hourly_forecast(
+                    weather_api=_weather_api,
                     **{k: v for k, v in venue["points"]["Lower NWS point"].items() if k in {"lat", "lon"}}
                 )
                 merged = ENGINE.merge_forecasts(upper, lower)
@@ -269,7 +369,7 @@ def calculator(request):
             messages.error(request, "Please correct the errors below.")
     else:
         vc = _venue_choices_for_user(request.user)
-        default_venue = vc[0][0] if vc else "Sugarloaf"
+        default_venue = _first_venue_key(vc)
         form = CalculatorForm(
             venue_choices=vc,
             initial={

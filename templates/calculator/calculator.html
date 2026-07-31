@@ -7,6 +7,61 @@
 {% if user.is_authenticated %}
 <meta name="csrf-token" content="{{ csrf_token }}" />
 {% endif %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/css/tom-select.min.css" />
+<style>
+  /* Tom Select — white control + white dropdown, black text throughout */
+  .ts-wrapper.input-dark { padding: 0; border: none; }
+  .ts-wrapper .ts-control {
+    background: #ffffff !important;
+    border: 1px solid rgba(0,0,0,0.25) !important;
+    border-radius: 12px !important;
+    color: #111827 !important;
+    padding: 0.6rem 0.75rem !important;
+    font-size: 1rem !important;
+    font-family: inherit !important;
+    box-shadow: none !important;
+    min-height: unset !important;
+    cursor: text !important;
+  }
+  .ts-wrapper .ts-control .item { color: #111827 !important; }
+  .ts-wrapper.focus .ts-control {
+    border-color: #3b82f6 !important;
+    box-shadow: 0 0 0 2px rgba(59,130,246,0.35) !important;
+  }
+  .ts-wrapper .ts-control input {
+    color: #111827 !important;
+    background: transparent !important;
+    font-size: 1rem !important;
+    font-family: inherit !important;
+  }
+  .ts-wrapper .ts-control input::placeholder { color: rgba(0,0,0,0.35) !important; }
+  .ts-dropdown {
+    background: #ffffff !important;
+    border: 1px solid rgba(0,0,0,0.15) !important;
+    border-radius: 12px !important;
+    margin-top: 4px !important;
+    box-shadow: 0 8px 24px rgba(0,0,0,0.2) !important;
+    color: #111827 !important;
+  }
+  .ts-dropdown .ts-dropdown-content { padding: 0.25rem 0 !important; }
+  .ts-dropdown .optgroup-header {
+    color: rgba(0,0,0,0.45) !important;
+    font-size: 0.7rem !important;
+    font-weight: 600 !important;
+    text-transform: uppercase !important;
+    letter-spacing: 0.07em !important;
+    padding: 0.5rem 0.75rem 0.25rem !important;
+    background: #f3f4f6 !important;
+  }
+  .ts-dropdown .option {
+    color: #111827 !important;
+    padding: 0.45rem 1rem !important;
+    font-size: 0.9rem !important;
+  }
+  .ts-dropdown .option:hover,
+  .ts-dropdown .option.active { background: #eff6ff !important; color: #1d4ed8 !important; }
+  .ts-dropdown .option.selected { background: #dbeafe !important; color: #1d4ed8 !important; }
+</style>
 {% endblock %}
 
 {% block hero %}
@@ -46,8 +101,12 @@
           <div class="input-wrap">
             <label for="id_venue">Venue</label>
             <select name="venue" id="id_venue" class="input-dark">
-              {% for value, label in form.venue.field.choices %}
-                <option value="{{ value }}" {% if form.venue.value == value %}selected{% endif %}>{{ label }}</option>
+              {% for group_label, group_choices in form.venue.field.choices %}
+                <optgroup label="{{ group_label }}">
+                  {% for value, label in group_choices %}
+                    <option value="{{ value }}" {% if form.venue.value == value %}selected{% endif %}>{{ label }}</option>
+                  {% endfor %}
+                </optgroup>
               {% endfor %}
             </select>
           </div>
@@ -134,6 +193,7 @@
 {% endblock %}
 
 {% block extra_js %}
+<script src="https://cdn.jsdelivr.net/npm/tom-select@2.3.1/dist/js/tom-select.complete.min.js"></script>
 <script>
 (function () {
   var VENUES = {{ venues_json|safe }};
@@ -176,9 +236,16 @@
     }
   }
 
-  venueEl.addEventListener("change", updateForVenue);
   // Run once on load to sync discipline list with the default venue
   updateForVenue();
+
+  // Searchable venue dropdown via Tom Select
+  new TomSelect(venueEl, {
+    maxOptions: 300,
+    placeholder: "Search venues…",
+    selectOnTab: true,
+    onChange: function() { updateForVenue(); }
+  });
 })();
 </script>
 <script src="{% static 'js/calculator-hero-sync.js' %}" defer></script>
