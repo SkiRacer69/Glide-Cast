@@ -129,7 +129,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 60.9703, "lon": -149.0987, "elev_ft": 2740},
-            "Lower NWS point": {"lat": 60.9703, "lon": -149.0987, "elev_ft": 299},
+            "Lower NWS point": {"lat": 60.9739, "lon": -149.135, "elev_ft": 299},
         },
     },
     "Arctic Valley Ski Area": {
@@ -147,7 +147,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 61.2477, "lon": -149.5204, "elev_ft": 3599},
-            "Lower NWS point": {"lat": 61.2477, "lon": -149.5204, "elev_ft": 2667},
+            "Lower NWS point": {"lat": 61.2513, "lon": -149.5571, "elev_ft": 2667},
         },
     },
     "Arizona Snowbowl": {
@@ -165,7 +165,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 35.33, "lon": -111.7053, "elev_ft": 10325},
-            "Lower NWS point": {"lat": 35.33, "lon": -111.7053, "elev_ft": 9669},
+            "Lower NWS point": {"lat": 35.3318, "lon": -111.7273, "elev_ft": 9669},
         },
     },
     "Aspen Mountain": {
@@ -185,7 +185,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 39.1513, "lon": -106.8197, "elev_ft": 10650},
-            "Lower NWS point": {"lat": 39.1513, "lon": -106.8197, "elev_ft": 8081},
+            "Lower NWS point": {"lat": 39.1681, "lon": -106.8115, "elev_ft": 8081},
         },
     },
     "Aspen/Buttermilk": {
@@ -205,7 +205,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 39.2056, "lon": -106.8599, "elev_ft": 9682},
-            "Lower NWS point": {"lat": 39.2056, "lon": -106.8599, "elev_ft": 8205},
+            "Lower NWS point": {"lat": 39.2222, "lon": -106.851, "elev_ft": 8205},
         },
     },
     "Aspen/Highlands": {
@@ -225,7 +225,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 39.1553, "lon": -106.8691, "elev_ft": 9672},
-            "Lower NWS point": {"lat": 39.1553, "lon": -106.8691, "elev_ft": 8140},
+            "Lower NWS point": {"lat": 39.1725, "lon": -106.8622, "elev_ft": 8140},
         },
     },
     "Attitash Ski Area": {
@@ -244,7 +244,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 44.0855, "lon": -71.2244, "elev_ft": 1969},
-            "Lower NWS point": {"lat": 44.0855, "lon": -71.2244, "elev_ft": 774},
+            "Lower NWS point": {"lat": 44.1011, "lon": -71.2119, "elev_ft": 774},
         },
     },
     "Bear Canyon": {
@@ -261,7 +261,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 45.6417, "lon": -110.9427, "elev_ft": 6102},
-            "Lower NWS point": {"lat": 45.6417, "lon": -110.9427, "elev_ft": 5512},
+            "Lower NWS point": {"lat": 45.6595, "lon": -110.9468, "elev_ft": 5512},
         },
     },
     "Beaver Creek Resort": {
@@ -281,7 +281,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 39.6034, "lon": -106.5157, "elev_ft": 11427},
-            "Lower NWS point": {"lat": 39.6034, "lon": -106.5157, "elev_ft": 8199},
+            "Lower NWS point": {"lat": 39.6214, "lon": -106.5159, "elev_ft": 8199},
         },
     },
     "Belleayre Mountain": {
@@ -299,7 +299,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 42.1269, "lon": -74.4741, "elev_ft": 3428},
-            "Lower NWS point": {"lat": 42.1269, "lon": -74.4741, "elev_ft": 2559},
+            "Lower NWS point": {"lat": 42.1423, "lon": -74.4615, "elev_ft": 2559},
         },
     },
     "Berkshire East Mountain Resort": {
@@ -317,7 +317,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 42.6286, "lon": -72.9066, "elev_ft": 1512},
-            "Lower NWS point": {"lat": 42.6286, "lon": -72.9066, "elev_ft": 643},
+            "Lower NWS point": {"lat": 42.6441, "lon": -72.9191, "elev_ft": 643},
         },
     },
     "Big Sky": {
@@ -337,7 +337,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 45.2551, "lon": -111.2662, "elev_ft": 8665},
-            "Lower NWS point": {"lat": 45.2551, "lon": -111.2662, "elev_ft": 7165},
+            "Lower NWS point": {"lat": 45.2693, "lon": -111.2505, "elev_ft": 7165},
         },
     },
     "Blue Mountain Resort": {
@@ -354,7 +354,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 40.8167, "lon": -75.5098, "elev_ft": 1476},
-            "Lower NWS point": {"lat": 40.8167, "lon": -75.5098, "elev_ft": 623},
+            "Lower NWS point": {"lat": 40.8347, "lon": -75.5088, "elev_ft": 623},
         },
     },
     "Boreal Mountain Resort": {
@@ -371,7 +371,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 39.3361, "lon": -120.3502, "elev_ft": 7671},
-            "Lower NWS point": {"lat": 39.3361, "lon": -120.3502, "elev_ft": 7313},
+            "Lower NWS point": {"lat": 39.3516, "lon": -120.362, "elev_ft": 7313},
         },
     },
     "Boyne Highlands": {
@@ -388,7 +388,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 45.477, "lon": -84.9454, "elev_ft": 1211},
-            "Lower NWS point": {"lat": 45.477, "lon": -84.9454, "elev_ft": 814},
+            "Lower NWS point": {"lat": 45.4783, "lon": -84.9198, "elev_ft": 814},
         },
     },
     "Boyne Mountain": {
@@ -405,7 +405,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 45.1586, "lon": -84.9389, "elev_ft": 1145},
-            "Lower NWS point": {"lat": 45.1586, "lon": -84.9389, "elev_ft": 732},
+            "Lower NWS point": {"lat": 45.169, "lon": -84.9181, "elev_ft": 732},
         },
     },
     "Breckenridge Ski Resort": {
@@ -425,7 +425,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 39.4808, "lon": -106.0666, "elev_ft": 11673},
-            "Lower NWS point": {"lat": 39.4808, "lon": -106.0666, "elev_ft": 10302},
+            "Lower NWS point": {"lat": 39.4937, "lon": -106.0503, "elev_ft": 10302},
         },
     },
     "Bridger Bowl": {
@@ -443,7 +443,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 45.8163, "lon": -110.9104, "elev_ft": 7815},
-            "Lower NWS point": {"lat": 45.8163, "lon": -110.9104, "elev_ft": 6627},
+            "Lower NWS point": {"lat": 45.815, "lon": -110.8846, "elev_ft": 6627},
         },
     },
     "Buck Hill": {
@@ -460,7 +460,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 44.7233, "lon": -93.2856, "elev_ft": 1211},
-            "Lower NWS point": {"lat": 44.7233, "lon": -93.2856, "elev_ft": 965},
+            "Lower NWS point": {"lat": 44.73, "lon": -93.2621, "elev_ft": 965},
         },
     },
     "Burke Mountain": {
@@ -479,7 +479,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 44.5705, "lon": -71.8928, "elev_ft": 3156},
-            "Lower NWS point": {"lat": 44.5705, "lon": -71.8928, "elev_ft": 1690},
+            "Lower NWS point": {"lat": 44.5865, "lon": -71.9044, "elev_ft": 1690},
         },
     },
     "Catamount": {
@@ -497,7 +497,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 44.5834, "lon": -74.0893, "elev_ft": 1795},
-            "Lower NWS point": {"lat": 44.5834, "lon": -74.0893, "elev_ft": 938},
+            "Lower NWS point": {"lat": 44.5834, "lon": -74.064, "elev_ft": 938},
         },
     },
     "Cochran's Ski Area": {
@@ -514,7 +514,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 44.393, "lon": -72.9819, "elev_ft": 755},
-            "Lower NWS point": {"lat": 44.393, "lon": -72.9819, "elev_ft": 390},
+            "Lower NWS point": {"lat": 44.3902, "lon": -73.0068, "elev_ft": 390},
         },
     },
     "Copper Mountain": {
@@ -534,7 +534,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 39.4781, "lon": -106.1629, "elev_ft": 12290},
-            "Lower NWS point": {"lat": 39.4781, "lon": -106.1629, "elev_ft": 9764},
+            "Lower NWS point": {"lat": 39.4958, "lon": -106.1589, "elev_ft": 9764},
         },
     },
     "Cranmore Mountain Resort": {
@@ -551,7 +551,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 44.0608, "lon": -71.0973, "elev_ft": 1542},
-            "Lower NWS point": {"lat": 44.0608, "lon": -71.0973, "elev_ft": 755},
+            "Lower NWS point": {"lat": 44.0607, "lon": -71.1223, "elev_ft": 755},
         },
     },
     "Crested Butte Mountain Resort": {
@@ -568,7 +568,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 38.897, "lon": -106.9447, "elev_ft": 9823},
-            "Lower NWS point": {"lat": 38.897, "lon": -106.9447, "elev_ft": 9301},
+            "Lower NWS point": {"lat": 38.9139, "lon": -106.9368, "elev_ft": 9301},
         },
     },
     "Crystal Mountain": {
@@ -586,7 +586,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 46.9327, "lon": -121.4877, "elev_ft": 5479},
-            "Lower NWS point": {"lat": 46.9327, "lon": -121.4877, "elev_ft": 4459},
+            "Lower NWS point": {"lat": 46.9344, "lon": -121.4615, "elev_ft": 4459},
         },
     },
     "Dartmouth Skiway": {
@@ -604,7 +604,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 43.7879, "lon": -72.0943, "elev_ft": 1890},
-            "Lower NWS point": {"lat": 43.7879, "lon": -72.0943, "elev_ft": 971},
+            "Lower NWS point": {"lat": 43.8049, "lon": -72.1027, "elev_ft": 971},
         },
     },
     "Diamond Peak Ski Resort": {
@@ -622,7 +622,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 39.2428, "lon": -119.9338, "elev_ft": 8524},
-            "Lower NWS point": {"lat": 39.2428, "lon": -119.9338, "elev_ft": 6906},
+            "Lower NWS point": {"lat": 39.248, "lon": -119.956, "elev_ft": 6906},
         },
     },
     "Eldora": {
@@ -640,7 +640,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 39.9569, "lon": -105.5829, "elev_ft": 10315},
-            "Lower NWS point": {"lat": 39.9569, "lon": -105.5829, "elev_ft": 9442},
+            "Lower NWS point": {"lat": 39.9654, "lon": -105.5622, "elev_ft": 9442},
         },
     },
     "Giants Ridge": {
@@ -657,7 +657,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 47.5714, "lon": -92.314, "elev_ft": 1844},
-            "Lower NWS point": {"lat": 47.5714, "lon": -92.314, "elev_ft": 1414},
+            "Lower NWS point": {"lat": 47.5838, "lon": -92.2946, "elev_ft": 1414},
         },
     },
     "Grand Targhee": {
@@ -676,7 +676,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 43.785, "lon": -110.947, "elev_ft": 9495},
-            "Lower NWS point": {"lat": 43.785, "lon": -110.947, "elev_ft": 8077},
+            "Lower NWS point": {"lat": 43.7832, "lon": -110.9718, "elev_ft": 8077},
         },
     },
     "Greek Peak": {
@@ -693,7 +693,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 42.4965, "lon": -76.1498, "elev_ft": 2034},
-            "Lower NWS point": {"lat": 42.4965, "lon": -76.1498, "elev_ft": 1545},
+            "Lower NWS point": {"lat": 42.4965, "lon": -76.1254, "elev_ft": 1545},
         },
     },
     "Heavenly Mountain Resort": {
@@ -711,7 +711,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 38.9405, "lon": -119.8974, "elev_ft": 9459},
-            "Lower NWS point": {"lat": 38.9405, "lon": -119.8974, "elev_ft": 8264},
+            "Lower NWS point": {"lat": 38.9584, "lon": -119.8994, "elev_ft": 8264},
         },
     },
     "Hogadon Ski Area": {
@@ -728,7 +728,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 42.7466, "lon": -106.3407, "elev_ft": 7897},
-            "Lower NWS point": {"lat": 42.7466, "lon": -106.3407, "elev_ft": 7382},
+            "Lower NWS point": {"lat": 42.7643, "lon": -106.3364, "elev_ft": 7382},
         },
     },
     "Holiday Valley Resort": {
@@ -745,7 +745,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 42.2631, "lon": -78.6636, "elev_ft": 2254},
-            "Lower NWS point": {"lat": 42.2631, "lon": -78.6636, "elev_ft": 1788},
+            "Lower NWS point": {"lat": 42.28, "lon": -78.6552, "elev_ft": 1788},
         },
     },
     "Indianhead Mt": {
@@ -762,7 +762,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 46.5093, "lon": -89.9799, "elev_ft": 1693},
-            "Lower NWS point": {"lat": 46.5093, "lon": -89.9799, "elev_ft": 1220},
+            "Lower NWS point": {"lat": 46.527, "lon": -89.9749, "elev_ft": 1220},
         },
     },
     "Jackson Hole": {
@@ -782,7 +782,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 43.6088, "lon": -110.738, "elev_ft": 9016},
-            "Lower NWS point": {"lat": 43.6088, "lon": -110.738, "elev_ft": 6283},
+            "Lower NWS point": {"lat": 43.6178, "lon": -110.7165, "elev_ft": 6283},
         },
     },
     "Jay Peak Resort": {
@@ -800,7 +800,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 44.936, "lon": -72.5079, "elev_ft": 2854},
-            "Lower NWS point": {"lat": 44.936, "lon": -72.5079, "elev_ft": 2028},
+            "Lower NWS point": {"lat": 44.9468, "lon": -72.4875, "elev_ft": 2028},
         },
     },
     "Jiminy Peak Ski Area": {
@@ -818,7 +818,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 42.6953, "lon": -73.2694, "elev_ft": 2356},
-            "Lower NWS point": {"lat": 42.6953, "lon": -73.2694, "elev_ft": 1453},
+            "Lower NWS point": {"lat": 42.7132, "lon": -73.2667, "elev_ft": 1453},
         },
     },
     "Keystone Ski Resort": {
@@ -836,7 +836,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 39.6069, "lon": -105.9681, "elev_ft": 11624},
-            "Lower NWS point": {"lat": 39.6069, "lon": -105.9681, "elev_ft": 9288},
+            "Lower NWS point": {"lat": 39.6233, "lon": -105.9777, "elev_ft": 9288},
         },
     },
     "La Crosse": {
@@ -853,7 +853,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 43.8123, "lon": -91.2514, "elev_ft": 1211},
-            "Lower NWS point": {"lat": 43.8123, "lon": -91.2514, "elev_ft": 751},
+            "Lower NWS point": {"lat": 43.8293, "lon": -91.2434, "elev_ft": 751},
         },
     },
     "Loon Mountain Resort": {
@@ -871,7 +871,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 44.0451, "lon": -71.6366, "elev_ft": 1991},
-            "Lower NWS point": {"lat": 44.0451, "lon": -71.6366, "elev_ft": 1030},
+            "Lower NWS point": {"lat": 44.0628, "lon": -71.6409, "elev_ft": 1030},
         },
     },
     "Loveland Valley": {
@@ -889,7 +889,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 39.6816, "lon": -105.8774, "elev_ft": 11893},
-            "Lower NWS point": {"lat": 39.6816, "lon": -105.8774, "elev_ft": 10636},
+            "Lower NWS point": {"lat": 39.6985, "lon": -105.8854, "elev_ft": 10636},
         },
     },
     "Lutsen Mountain": {
@@ -907,7 +907,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 47.6575, "lon": -90.7114, "elev_ft": 1693},
-            "Lower NWS point": {"lat": 47.6575, "lon": -90.7114, "elev_ft": 850},
+            "Lower NWS point": {"lat": 47.6479, "lon": -90.6888, "elev_ft": 850},
         },
     },
     "Magic Mountain": {
@@ -924,7 +924,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 43.1955, "lon": -72.764, "elev_ft": 2454},
-            "Lower NWS point": {"lat": 43.1955, "lon": -72.764, "elev_ft": 1706},
+            "Lower NWS point": {"lat": 43.2096, "lon": -72.7793, "elev_ft": 1706},
         },
     },
     "Mammoth Mountain": {
@@ -944,7 +944,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 37.6308, "lon": -119.0326, "elev_ft": 11020},
-            "Lower NWS point": {"lat": 37.6308, "lon": -119.0326, "elev_ft": 8737},
+            "Lower NWS point": {"lat": 37.648, "lon": -119.026, "elev_ft": 8737},
         },
     },
     "Maverick Mt": {
@@ -962,7 +962,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 45.4485, "lon": -113.1631, "elev_ft": 8399},
-            "Lower NWS point": {"lat": 45.4485, "lon": -113.1631, "elev_ft": 7018},
+            "Lower NWS point": {"lat": 45.4429, "lon": -113.1387, "elev_ft": 7018},
         },
     },
     "Middlebury College Snow Bowl": {
@@ -980,7 +980,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 43.9345, "lon": -72.9569, "elev_ft": 2648},
-            "Lower NWS point": {"lat": 43.9345, "lon": -72.9569, "elev_ft": 1827},
+            "Lower NWS point": {"lat": 43.9474, "lon": -72.9395, "elev_ft": 1827},
         },
     },
     "Mission Ridge": {
@@ -1000,7 +1000,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 47.3474, "lon": -120.4842, "elev_ft": 6742},
-            "Lower NWS point": {"lat": 47.3474, "lon": -120.4842, "elev_ft": 4587},
+            "Lower NWS point": {"lat": 47.3474, "lon": -120.4576, "elev_ft": 4587},
         },
     },
     "Mittersill Cannon Mtn": {
@@ -1018,7 +1018,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 44.1581, "lon": -71.7014, "elev_ft": 3077},
-            "Lower NWS point": {"lat": 44.1581, "lon": -71.7014, "elev_ft": 1877},
+            "Lower NWS point": {"lat": 44.1761, "lon": -71.7005, "elev_ft": 1877},
         },
     },
     "Mont Ripley": {
@@ -1035,7 +1035,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 47.1303, "lon": -88.5596, "elev_ft": 1073},
-            "Lower NWS point": {"lat": 47.1303, "lon": -88.5596, "elev_ft": 666},
+            "Lower NWS point": {"lat": 47.1123, "lon": -88.5608, "elev_ft": 666},
         },
     },
     "Mount Bachelor": {
@@ -1055,7 +1055,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 43.9794, "lon": -121.6885, "elev_ft": 9055},
-            "Lower NWS point": {"lat": 43.9794, "lon": -121.6885, "elev_ft": 6211},
+            "Lower NWS point": {"lat": 43.9969, "lon": -121.6824, "elev_ft": 6211},
         },
     },
     "Mount Spokane": {
@@ -1073,7 +1073,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 47.9213, "lon": -117.1141, "elev_ft": 5410},
-            "Lower NWS point": {"lat": 47.9213, "lon": -117.1141, "elev_ft": 4334},
+            "Lower NWS point": {"lat": 47.9227, "lon": -117.0873, "elev_ft": 4334},
         },
     },
     "Mount Sunapee": {
@@ -1091,7 +1091,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 43.3406, "lon": -72.0709, "elev_ft": 2231},
-            "Lower NWS point": {"lat": 43.3406, "lon": -72.0709, "elev_ft": 1312},
+            "Lower NWS point": {"lat": 43.3581, "lon": -72.0766, "elev_ft": 1312},
         },
     },
     "Mt Hood Meadows": {
@@ -1109,7 +1109,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 45.4746, "lon": -122.3717, "elev_ft": 6539},
-            "Lower NWS point": {"lat": 45.4746, "lon": -122.3717, "elev_ft": 5390},
+            "Lower NWS point": {"lat": 45.4567, "lon": -122.3687, "elev_ft": 5390},
         },
     },
     "Mt Hood Skibowl": {
@@ -1127,7 +1127,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 45.294, "lon": -121.7805, "elev_ft": 6539},
-            "Lower NWS point": {"lat": 45.294, "lon": -121.7805, "elev_ft": 3675},
+            "Lower NWS point": {"lat": 45.2764, "lon": -121.7856, "elev_ft": 3675},
         },
     },
     "Mt Rose Ski Tahoe": {
@@ -1146,7 +1146,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 39.3192, "lon": -119.8837, "elev_ft": 9531},
-            "Lower NWS point": {"lat": 39.3192, "lon": -119.8837, "elev_ft": 8346},
+            "Lower NWS point": {"lat": 39.337, "lon": -119.8806, "elev_ft": 8346},
         },
     },
     "Northstar California": {
@@ -1165,7 +1165,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 39.2745, "lon": -120.1218, "elev_ft": 8038},
-            "Lower NWS point": {"lat": 39.2745, "lon": -120.1218, "elev_ft": 6890},
+            "Lower NWS point": {"lat": 39.2925, "lon": -120.1205, "elev_ft": 6890},
         },
     },
     "Okemo Mountain": {
@@ -1184,7 +1184,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 43.4078, "lon": -72.7343, "elev_ft": 3130},
-            "Lower NWS point": {"lat": 43.4078, "lon": -72.7343, "elev_ft": 1608},
+            "Lower NWS point": {"lat": 43.4063, "lon": -72.7096, "elev_ft": 1608},
         },
     },
     "Palisades Tahoe": {
@@ -1204,7 +1204,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 39.1966, "lon": -120.2345, "elev_ft": 8694},
-            "Lower NWS point": {"lat": 39.1966, "lon": -120.2345, "elev_ft": 6253},
+            "Lower NWS point": {"lat": 39.2115, "lon": -120.2215, "elev_ft": 6253},
         },
     },
     "Park City Mountain Resort": {
@@ -1223,7 +1223,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 40.6541, "lon": -111.5624, "elev_ft": 8153},
-            "Lower NWS point": {"lat": 40.6541, "lon": -111.5624, "elev_ft": 6929},
+            "Lower NWS point": {"lat": 40.6699, "lon": -111.551, "elev_ft": 6929},
         },
     },
     "Pats Peak Ski Area": {
@@ -1240,7 +1240,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 43.1422, "lon": -71.5978, "elev_ft": 1283},
-            "Lower NWS point": {"lat": 43.1422, "lon": -71.5978, "elev_ft": 735},
+            "Lower NWS point": {"lat": 43.1597, "lon": -71.6033, "elev_ft": 735},
         },
     },
     "Pico Peak": {
@@ -1257,7 +1257,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 43.6394, "lon": -72.8364, "elev_ft": 2805},
-            "Lower NWS point": {"lat": 43.6394, "lon": -72.8364, "elev_ft": 2320},
+            "Lower NWS point": {"lat": 43.6571, "lon": -72.8407, "elev_ft": 2320},
         },
     },
     "Powderhorn": {
@@ -1275,7 +1275,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 38.2769, "lon": -107.0959, "elev_ft": 9642},
-            "Lower NWS point": {"lat": 38.2769, "lon": -107.0959, "elev_ft": 8451},
+            "Lower NWS point": {"lat": 38.2925, "lon": -107.0844, "elev_ft": 8451},
         },
     },
     "Proctor Ski Area": {
@@ -1292,7 +1292,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 43.4306, "lon": -71.8295, "elev_ft": 1083},
-            "Lower NWS point": {"lat": 43.4306, "lon": -71.8295, "elev_ft": 620},
+            "Lower NWS point": {"lat": 43.448, "lon": -71.8231, "elev_ft": 620},
         },
     },
     "Saddleback": {
@@ -1310,7 +1310,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 44.9789, "lon": -70.5194, "elev_ft": 3602},
-            "Lower NWS point": {"lat": 44.9789, "lon": -70.5194, "elev_ft": 2677},
+            "Lower NWS point": {"lat": 44.9943, "lon": -70.5326, "elev_ft": 2677},
         },
     },
     "Schweitzer Mtn": {
@@ -1330,7 +1330,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 48.368, "lon": -116.6232, "elev_ft": 5761},
-            "Lower NWS point": {"lat": 48.368, "lon": -116.6232, "elev_ft": 4035},
+            "Lower NWS point": {"lat": 48.3774, "lon": -116.6001, "elev_ft": 4035},
         },
     },
     "Smugglers Notch Resort": {
@@ -1348,7 +1348,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 44.5727, "lon": -72.7676, "elev_ft": 2546},
-            "Lower NWS point": {"lat": 44.5727, "lon": -72.7676, "elev_ft": 1680},
+            "Lower NWS point": {"lat": 44.5902, "lon": -72.7737, "elev_ft": 1680},
         },
     },
     "Snow King": {
@@ -1365,7 +1365,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 43.4655, "lon": -110.7563, "elev_ft": 7520},
-            "Lower NWS point": {"lat": 43.4655, "lon": -110.7563, "elev_ft": 6283},
+            "Lower NWS point": {"lat": 43.4834, "lon": -110.7544, "elev_ft": 6283},
         },
     },
     "Snowbasin Resort Company": {
@@ -1384,7 +1384,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 41.2163, "lon": -111.8571, "elev_ft": 7900},
-            "Lower NWS point": {"lat": 41.2163, "lon": -111.8571, "elev_ft": 6391},
+            "Lower NWS point": {"lat": 41.2269, "lon": -111.8377, "elev_ft": 6391},
         },
     },
     "Snowbird. Ski & Summer Resort UT": {
@@ -1402,7 +1402,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 40.6331, "lon": -111.8038, "elev_ft": 8983},
-            "Lower NWS point": {"lat": 40.6331, "lon": -111.8038, "elev_ft": 7923},
+            "Lower NWS point": {"lat": 40.6501, "lon": -111.8116, "elev_ft": 7923},
         },
     },
     "Snowriver": {
@@ -1419,7 +1419,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 46.5002, "lon": -89.9758, "elev_ft": 1621},
-            "Lower NWS point": {"lat": 46.5002, "lon": -89.9758, "elev_ft": 1204},
+            "Lower NWS point": {"lat": 46.5179, "lon": -89.9708, "elev_ft": 1204},
         },
     },
     "Soldier Mountain": {
@@ -1439,7 +1439,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 44.7094, "lon": -115.0909, "elev_ft": 7178},
-            "Lower NWS point": {"lat": 44.7094, "lon": -115.0909, "elev_ft": 5840},
+            "Lower NWS point": {"lat": 44.7273, "lon": -115.0887, "elev_ft": 5840},
         },
     },
     "Spirit Mountain": {
@@ -1456,7 +1456,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 46.7176, "lon": -92.2124, "elev_ft": 1207},
-            "Lower NWS point": {"lat": 46.7176, "lon": -92.2124, "elev_ft": 745},
+            "Lower NWS point": {"lat": 46.7332, "lon": -92.1993, "elev_ft": 745},
         },
     },
     "Steamboat Springs/ Mount Werner CO": {
@@ -1474,7 +1474,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 40.4586, "lon": -106.8067, "elev_ft": 8018},
-            "Lower NWS point": {"lat": 40.4586, "lon": -106.8067, "elev_ft": 6719},
+            "Lower NWS point": {"lat": 40.4763, "lon": -106.8026, "elev_ft": 6719},
         },
     },
     "Stevens Pass": {
@@ -1493,7 +1493,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 47.7456, "lon": -121.0892, "elev_ft": 5348},
-            "Lower NWS point": {"lat": 47.7456, "lon": -121.0892, "elev_ft": 4091},
+            "Lower NWS point": {"lat": 47.758, "lon": -121.0698, "elev_ft": 4091},
         },
     },
     "Stowe Mountain Resort / Spruce Peak": {
@@ -1512,7 +1512,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 44.5264, "lon": -72.7816, "elev_ft": 3241},
-            "Lower NWS point": {"lat": 44.5264, "lon": -72.7816, "elev_ft": 1565},
+            "Lower NWS point": {"lat": 44.5369, "lon": -72.7611, "elev_ft": 1565},
         },
     },
     "Stratton Mountain": {
@@ -1531,7 +1531,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 43.0863, "lon": -72.9249, "elev_ft": 3848},
-            "Lower NWS point": {"lat": 43.0863, "lon": -72.9249, "elev_ft": 2543},
+            "Lower NWS point": {"lat": 43.0972, "lon": -72.9052, "elev_ft": 2543},
         },
     },
     "Sugar Bowl": {
@@ -1550,7 +1550,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 39.3003, "lon": -120.344, "elev_ft": 8360},
-            "Lower NWS point": {"lat": 39.3003, "lon": -120.344, "elev_ft": 6936},
+            "Lower NWS point": {"lat": 39.3182, "lon": -120.342, "elev_ft": 6936},
         },
     },
     "Sugarbush/Lincoln Peak": {
@@ -1568,7 +1568,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 44.1268, "lon": -72.8995, "elev_ft": 2841},
-            "Lower NWS point": {"lat": 44.1268, "lon": -72.8995, "elev_ft": 1680},
+            "Lower NWS point": {"lat": 44.1291, "lon": -72.8746, "elev_ft": 1680},
         },
     },
     "Sugarbush/Mount Ellen": {
@@ -1587,7 +1587,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 44.1559, "lon": -72.9283, "elev_ft": 3770},
-            "Lower NWS point": {"lat": 44.1559, "lon": -72.9283, "elev_ft": 1608},
+            "Lower NWS point": {"lat": 44.1611, "lon": -72.9043, "elev_ft": 1608},
         },
     },
     "Suicide Six": {
@@ -1604,7 +1604,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 43.6627, "lon": -72.5474, "elev_ft": 1329},
-            "Lower NWS point": {"lat": 43.6627, "lon": -72.5474, "elev_ft": 794},
+            "Lower NWS point": {"lat": 43.6801, "lon": -72.5412, "elev_ft": 794},
         },
     },
     "Sun Valley": {
@@ -1624,7 +1624,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 43.6962, "lon": -114.3531, "elev_ft": 8796},
-            "Lower NWS point": {"lat": 43.6962, "lon": -114.3531, "elev_ft": 5991},
+            "Lower NWS point": {"lat": 43.7142, "lon": -114.3531, "elev_ft": 5991},
         },
     },
     "Telluride": {
@@ -1642,7 +1642,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 37.9375, "lon": -107.8123, "elev_ft": 10479},
-            "Lower NWS point": {"lat": 37.9375, "lon": -107.8123, "elev_ft": 9524},
+            "Lower NWS point": {"lat": 37.955, "lon": -107.8177, "elev_ft": 9524},
         },
     },
     "Terry Peak Ski Area, Lead": {
@@ -1660,7 +1660,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 44.3673, "lon": -103.8228, "elev_ft": 6988},
-            "Lower NWS point": {"lat": 44.3673, "lon": -103.8228, "elev_ft": 6102},
+            "Lower NWS point": {"lat": 44.3838, "lon": -103.8127, "elev_ft": 6102},
         },
     },
     "Titcomb Mountain": {
@@ -1677,7 +1677,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 44.6484, "lon": -70.1717, "elev_ft": 709},
-            "Lower NWS point": {"lat": 44.6484, "lon": -70.1717, "elev_ft": 400},
+            "Lower NWS point": {"lat": 44.6651, "lon": -70.1622, "elev_ft": 400},
         },
     },
     "Utah Olympic Park": {
@@ -1696,7 +1696,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 40.7074, "lon": -111.5646, "elev_ft": 8081},
-            "Lower NWS point": {"lat": 40.7074, "lon": -111.5646, "elev_ft": 6923},
+            "Lower NWS point": {"lat": 40.7225, "lon": -111.5516, "elev_ft": 6923},
         },
     },
     "Vail": {
@@ -1716,7 +1716,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 39.6438, "lon": -106.3888, "elev_ft": 10016},
-            "Lower NWS point": {"lat": 39.6438, "lon": -106.3888, "elev_ft": 8248},
+            "Lower NWS point": {"lat": 39.6611, "lon": -106.3953, "elev_ft": 8248},
         },
     },
     "Waterville Valley": {
@@ -1735,7 +1735,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 43.9496, "lon": -71.5057, "elev_ft": 3448},
-            "Lower NWS point": {"lat": 43.9496, "lon": -71.5057, "elev_ft": 1978},
+            "Lower NWS point": {"lat": 43.9585, "lon": -71.4839, "elev_ft": 1978},
         },
     },
     "West Mountain": {
@@ -1753,7 +1753,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 43.8601, "lon": -74.706, "elev_ft": 1381},
-            "Lower NWS point": {"lat": 43.8601, "lon": -74.706, "elev_ft": 430},
+            "Lower NWS point": {"lat": 43.8632, "lon": -74.6814, "elev_ft": 430},
         },
     },
     "Whiteface Mountain": {
@@ -1773,7 +1773,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 44.3658, "lon": -73.903, "elev_ft": 3117},
-            "Lower NWS point": {"lat": 44.3658, "lon": -73.903, "elev_ft": 1280},
+            "Lower NWS point": {"lat": 44.3606, "lon": -73.8789, "elev_ft": 1280},
         },
     },
     "Winter Park": {
@@ -1793,7 +1793,7 @@ VENUES = {
         },
         "points": {
             "Upper NWS point": {"lat": 39.918, "lon": -105.7856, "elev_ft": 10705},
-            "Lower NWS point": {"lat": 39.918, "lon": -105.7856, "elev_ft": 9068},
+            "Lower NWS point": {"lat": 39.9354, "lon": -105.7795, "elev_ft": 9068},
         },
     },
 
