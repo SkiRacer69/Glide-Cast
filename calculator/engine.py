@@ -195,7 +195,7 @@ VENUES = {
         "lat": 42.9583,
         "lon": -72.8981,
         "elev_ft": 3600,
-        "aspect_deg": 160.0,
+        "aspect_deg": 71.3,
         "slope_deg": 18.0,
         "finish_ft": 1900,
         "starts_ft": {"SL": 3300, "GS": 3600, "SuperG": 3600},
@@ -210,7 +210,7 @@ VENUES = {
         "lat": 60.9703,
         "lon": -149.0987,
         "elev_ft": 2740,
-        "aspect_deg": 180.0,
+        "aspect_deg": 281.5,
         "slope_deg": 18.0,
         "finish_ft": 299,
         "starts_ft": {
@@ -230,7 +230,7 @@ VENUES = {
         "lat": 61.2477,
         "lon": -149.5204,
         "elev_ft": 3599,
-        "aspect_deg": 180.0,
+        "aspect_deg": 281.6,
         "slope_deg": 18.0,
         "finish_ft": 2667,
         "starts_ft": {
@@ -248,7 +248,7 @@ VENUES = {
         "lat": 35.33,
         "lon": -111.7053,
         "elev_ft": 10325,
-        "aspect_deg": 180.0,
+        "aspect_deg": 275.8,
         "slope_deg": 18.0,
         "finish_ft": 9669,
         "starts_ft": {
@@ -266,7 +266,7 @@ VENUES = {
         "lat": 39.1513,
         "lon": -106.8197,
         "elev_ft": 10650,
-        "aspect_deg": 180.0,
+        "aspect_deg": 20.6,
         "slope_deg": 18.0,
         "finish_ft": 8081,
         "starts_ft": {
@@ -286,7 +286,7 @@ VENUES = {
         "lat": 39.2056,
         "lon": -106.8599,
         "elev_ft": 9682,
-        "aspect_deg": 180.0,
+        "aspect_deg": 22.5,
         "slope_deg": 18.0,
         "finish_ft": 8205,
         "starts_ft": {
@@ -306,7 +306,7 @@ VENUES = {
         "lat": 39.1553,
         "lon": -106.8691,
         "elev_ft": 9672,
-        "aspect_deg": 180.0,
+        "aspect_deg": 17.2,
         "slope_deg": 18.0,
         "finish_ft": 8140,
         "starts_ft": {
@@ -326,7 +326,7 @@ VENUES = {
         "lat": 44.0855,
         "lon": -71.2244,
         "elev_ft": 1969,
-        "aspect_deg": 180.0,
+        "aspect_deg": 30.0,
         "slope_deg": 18.0,
         "finish_ft": 774,
         "starts_ft": {
@@ -345,7 +345,7 @@ VENUES = {
         "lat": 45.6417,
         "lon": -110.9427,
         "elev_ft": 6102,
-        "aspect_deg": 180.0,
+        "aspect_deg": 350.9,
         "slope_deg": 18.0,
         "finish_ft": 5512,
         "starts_ft": {
@@ -362,7 +362,7 @@ VENUES = {
         "lat": 39.6034,
         "lon": -106.5157,
         "elev_ft": 11427,
-        "aspect_deg": 180.0,
+        "aspect_deg": 359.5,
         "slope_deg": 18.0,
         "finish_ft": 8199,
         "starts_ft": {
@@ -382,7 +382,7 @@ VENUES = {
         "lat": 42.1269,
         "lon": -74.4741,
         "elev_ft": 3428,
-        "aspect_deg": 180.0,
+        "aspect_deg": 31.4,
         "slope_deg": 18.0,
         "finish_ft": 2559,
         "starts_ft": {
@@ -400,7 +400,7 @@ VENUES = {
         "lat": 42.6286,
         "lon": -72.9066,
         "elev_ft": 1512,
-        "aspect_deg": 180.0,
+        "aspect_deg": 329.2,
         "slope_deg": 18.0,
         "finish_ft": 643,
         "starts_ft": {
@@ -418,7 +418,7 @@ VENUES = {
         "lat": 45.2551,
         "lon": -111.2662,
         "elev_ft": 8665,
-        "aspect_deg": 180.0,
+        "aspect_deg": 38.0,
         "slope_deg": 18.0,
         "finish_ft": 7165,
         "starts_ft": {
@@ -438,7 +438,7 @@ VENUES = {
         "lat": 40.8167,
         "lon": -75.5098,
         "elev_ft": 1476,
-        "aspect_deg": 180.0,
+        "aspect_deg": 2.5,
         "slope_deg": 18.0,
         "finish_ft": 623,
         "starts_ft": {
@@ -455,7 +455,7 @@ VENUES = {
         "lat": 39.3361,
         "lon": -120.3502,
         "elev_ft": 7671,
-        "aspect_deg": 180.0,
+        "aspect_deg": 329.6,
         "slope_deg": 18.0,
         "finish_ft": 7313,
         "starts_ft": {
@@ -472,7 +472,7 @@ VENUES = {
         "lat": 45.477,
         "lon": -84.9454,
         "elev_ft": 1211,
-        "aspect_deg": 180.0,
+        "aspect_deg": 86.0,
         "slope_deg": 18.0,
         "finish_ft": 814,
         "starts_ft": {
@@ -489,7 +489,7 @@ VENUES = {
         "lat": 45.1586,
         "lon": -84.9389,
         "elev_ft": 1145,
-        "aspect_deg": 180.0,
+        "aspect_deg": 54.7,
         "slope_deg": 18.0,
         "finish_ft": 732,
         "starts_ft": {
@@ -506,7 +506,7 @@ VENUES = {
         "lat": 39.4808,
         "lon": -106.0666,
         "elev_ft": 11673,
-        "aspect_deg": 180.0,
+        "aspect_deg": 44.4,
         "slope_deg": 18.0,
         "finish_ft": 10302,
         "starts_ft": {
@@ -526,7 +526,7 @@ VENUES = {
         "lat": 45.8163,
         "lon": -110.9104,
         "elev_ft": 7815,
-        "aspect_deg": 180.0,
+        "aspect_deg": 94.3,
         "slope_deg": 18.0,
         "finish_ft": 6627,
         "starts_ft": {
@@ -544,7 +544,7 @@ VENUES = {
         "lat": 44.7233,
         "lon": -93.2856,
         "elev_ft": 1211,
-        "aspect_deg": 180.0,
+        "aspect_deg": 68.1,
         "slope_deg": 18.0,
         "finish_ft": 965,
         "starts_ft": {
@@ -561,7 +561,7 @@ VENUES = {
         "lat": 44.5705,
         "lon": -71.8928,
         "elev_ft": 3156,
-        "aspect_deg": 180.0,
+        "aspect_deg": 332.6,
         "slope_deg": 18.0,
         "finish_ft": 1690,
         "starts_ft": {
@@ -580,7 +580,7 @@ VENUES = {
         "lat": 44.5834,
         "lon": -74.0893,
         "elev_ft": 1795,
-        "aspect_deg": 180.0,
+        "aspect_deg": 90.0,
         "slope_deg": 18.0,
         "finish_ft": 938,
         "starts_ft": {
@@ -598,7 +598,7 @@ VENUES = {
         "lat": 44.393,
         "lon": -72.9819,
         "elev_ft": 755,
-        "aspect_deg": 180.0,
+        "aspect_deg": 261.2,
         "slope_deg": 18.0,
         "finish_ft": 390,
         "starts_ft": {
@@ -615,7 +615,7 @@ VENUES = {
         "lat": 39.4781,
         "lon": -106.1629,
         "elev_ft": 12290,
-        "aspect_deg": 180.0,
+        "aspect_deg": 9.8,
         "slope_deg": 18.0,
         "finish_ft": 9764,
         "starts_ft": {
@@ -635,7 +635,7 @@ VENUES = {
         "lat": 44.0608,
         "lon": -71.0973,
         "elev_ft": 1542,
-        "aspect_deg": 180.0,
+        "aspect_deg": 269.8,
         "slope_deg": 18.0,
         "finish_ft": 755,
         "starts_ft": {
@@ -652,7 +652,7 @@ VENUES = {
         "lat": 38.897,
         "lon": -106.9447,
         "elev_ft": 9823,
-        "aspect_deg": 180.0,
+        "aspect_deg": 20.0,
         "slope_deg": 18.0,
         "finish_ft": 9301,
         "starts_ft": {
@@ -669,7 +669,7 @@ VENUES = {
         "lat": 46.9327,
         "lon": -121.4877,
         "elev_ft": 5479,
-        "aspect_deg": 180.0,
+        "aspect_deg": 84.5,
         "slope_deg": 18.0,
         "finish_ft": 4459,
         "starts_ft": {
@@ -687,7 +687,7 @@ VENUES = {
         "lat": 43.7879,
         "lon": -72.0943,
         "elev_ft": 1890,
-        "aspect_deg": 180.0,
+        "aspect_deg": 340.4,
         "slope_deg": 18.0,
         "finish_ft": 971,
         "starts_ft": {
@@ -705,7 +705,7 @@ VENUES = {
         "lat": 39.2428,
         "lon": -119.9338,
         "elev_ft": 8524,
-        "aspect_deg": 180.0,
+        "aspect_deg": 286.8,
         "slope_deg": 18.0,
         "finish_ft": 6906,
         "starts_ft": {
@@ -723,7 +723,7 @@ VENUES = {
         "lat": 39.9569,
         "lon": -105.5829,
         "elev_ft": 10315,
-        "aspect_deg": 180.0,
+        "aspect_deg": 61.9,
         "slope_deg": 18.0,
         "finish_ft": 9442,
         "starts_ft": {
@@ -741,7 +741,7 @@ VENUES = {
         "lat": 47.5714,
         "lon": -92.314,
         "elev_ft": 1844,
-        "aspect_deg": 180.0,
+        "aspect_deg": 46.6,
         "slope_deg": 18.0,
         "finish_ft": 1414,
         "starts_ft": {
@@ -758,7 +758,7 @@ VENUES = {
         "lat": 43.785,
         "lon": -110.947,
         "elev_ft": 9495,
-        "aspect_deg": 180.0,
+        "aspect_deg": 264.2,
         "slope_deg": 18.0,
         "finish_ft": 8077,
         "starts_ft": {
@@ -777,7 +777,7 @@ VENUES = {
         "lat": 42.4965,
         "lon": -76.1498,
         "elev_ft": 2034,
-        "aspect_deg": 180.0,
+        "aspect_deg": 90.0,
         "slope_deg": 18.0,
         "finish_ft": 1545,
         "starts_ft": {
@@ -794,7 +794,7 @@ VENUES = {
         "lat": 38.9405,
         "lon": -119.8974,
         "elev_ft": 9459,
-        "aspect_deg": 180.0,
+        "aspect_deg": 355.0,
         "slope_deg": 18.0,
         "finish_ft": 8264,
         "starts_ft": {
@@ -812,7 +812,7 @@ VENUES = {
         "lat": 42.7466,
         "lon": -106.3407,
         "elev_ft": 7897,
-        "aspect_deg": 180.0,
+        "aspect_deg": 10.0,
         "slope_deg": 18.0,
         "finish_ft": 7382,
         "starts_ft": {
@@ -829,7 +829,7 @@ VENUES = {
         "lat": 42.2631,
         "lon": -78.6636,
         "elev_ft": 2254,
-        "aspect_deg": 180.0,
+        "aspect_deg": 20.3,
         "slope_deg": 18.0,
         "finish_ft": 1788,
         "starts_ft": {
@@ -846,7 +846,7 @@ VENUES = {
         "lat": 46.5093,
         "lon": -89.9799,
         "elev_ft": 1693,
-        "aspect_deg": 180.0,
+        "aspect_deg": 11.1,
         "slope_deg": 18.0,
         "finish_ft": 1220,
         "starts_ft": {
@@ -863,7 +863,7 @@ VENUES = {
         "lat": 43.6088,
         "lon": -110.738,
         "elev_ft": 9016,
-        "aspect_deg": 180.0,
+        "aspect_deg": 60.0,
         "slope_deg": 18.0,
         "finish_ft": 6283,
         "starts_ft": {
@@ -883,7 +883,7 @@ VENUES = {
         "lat": 44.936,
         "lon": -72.5079,
         "elev_ft": 2854,
-        "aspect_deg": 180.0,
+        "aspect_deg": 53.3,
         "slope_deg": 18.0,
         "finish_ft": 2028,
         "starts_ft": {
@@ -901,7 +901,7 @@ VENUES = {
         "lat": 42.6953,
         "lon": -73.2694,
         "elev_ft": 2356,
-        "aspect_deg": 180.0,
+        "aspect_deg": 6.3,
         "slope_deg": 18.0,
         "finish_ft": 1453,
         "starts_ft": {
@@ -919,7 +919,7 @@ VENUES = {
         "lat": 39.6069,
         "lon": -105.9681,
         "elev_ft": 11624,
-        "aspect_deg": 180.0,
+        "aspect_deg": 335.8,
         "slope_deg": 18.0,
         "finish_ft": 9288,
         "starts_ft": {
@@ -937,7 +937,7 @@ VENUES = {
         "lat": 43.6743,
         "lon": -72.7784,
         "elev_ft": 3714,
-        "aspect_deg": 180.0,
+        "aspect_deg": 55.2,
         "slope_deg": 18.0,
         "finish_ft": 2438,
         "starts_ft": {
@@ -955,7 +955,7 @@ VENUES = {
         "lat": 43.8123,
         "lon": -91.2514,
         "elev_ft": 1211,
-        "aspect_deg": 180.0,
+        "aspect_deg": 18.8,
         "slope_deg": 18.0,
         "finish_ft": 751,
         "starts_ft": {
@@ -972,7 +972,7 @@ VENUES = {
         "lat": 44.0451,
         "lon": -71.6366,
         "elev_ft": 1991,
-        "aspect_deg": 180.0,
+        "aspect_deg": 350.0,
         "slope_deg": 18.0,
         "finish_ft": 1030,
         "starts_ft": {
@@ -990,7 +990,7 @@ VENUES = {
         "lat": 39.6816,
         "lon": -105.8774,
         "elev_ft": 11893,
-        "aspect_deg": 180.0,
+        "aspect_deg": 340.0,
         "slope_deg": 18.0,
         "finish_ft": 10636,
         "starts_ft": {
@@ -1008,7 +1008,7 @@ VENUES = {
         "lat": 47.6575,
         "lon": -90.7114,
         "elev_ft": 1693,
-        "aspect_deg": 180.0,
+        "aspect_deg": 122.1,
         "slope_deg": 18.0,
         "finish_ft": 850,
         "starts_ft": {
@@ -1026,7 +1026,7 @@ VENUES = {
         "lat": 43.1955,
         "lon": -72.764,
         "elev_ft": 2454,
-        "aspect_deg": 180.0,
+        "aspect_deg": 321.6,
         "slope_deg": 18.0,
         "finish_ft": 1706,
         "starts_ft": {
@@ -1043,7 +1043,7 @@ VENUES = {
         "lat": 37.6308,
         "lon": -119.0326,
         "elev_ft": 11020,
-        "aspect_deg": 180.0,
+        "aspect_deg": 17.0,
         "slope_deg": 18.0,
         "finish_ft": 8737,
         "starts_ft": {
@@ -1063,7 +1063,7 @@ VENUES = {
         "lat": 45.4485,
         "lon": -113.1631,
         "elev_ft": 8399,
-        "aspect_deg": 180.0,
+        "aspect_deg": 108.2,
         "slope_deg": 18.0,
         "finish_ft": 7018,
         "starts_ft": {
@@ -1081,7 +1081,7 @@ VENUES = {
         "lat": 43.9345,
         "lon": -72.9569,
         "elev_ft": 2648,
-        "aspect_deg": 180.0,
+        "aspect_deg": 44.2,
         "slope_deg": 18.0,
         "finish_ft": 1827,
         "starts_ft": {
@@ -1099,7 +1099,7 @@ VENUES = {
         "lat": 47.3474,
         "lon": -120.4842,
         "elev_ft": 6742,
-        "aspect_deg": 180.0,
+        "aspect_deg": 90.0,
         "slope_deg": 18.0,
         "finish_ft": 4587,
         "starts_ft": {
@@ -1119,7 +1119,7 @@ VENUES = {
         "lat": 44.1581,
         "lon": -71.7014,
         "elev_ft": 3077,
-        "aspect_deg": 180.0,
+        "aspect_deg": 2.1,
         "slope_deg": 18.0,
         "finish_ft": 1877,
         "starts_ft": {
@@ -1137,7 +1137,7 @@ VENUES = {
         "lat": 47.1303,
         "lon": -88.5596,
         "elev_ft": 1073,
-        "aspect_deg": 180.0,
+        "aspect_deg": 182.5,
         "slope_deg": 18.0,
         "finish_ft": 666,
         "starts_ft": {
@@ -1154,7 +1154,7 @@ VENUES = {
         "lat": 43.9794,
         "lon": -121.6885,
         "elev_ft": 9055,
-        "aspect_deg": 180.0,
+        "aspect_deg": 14.0,
         "slope_deg": 18.0,
         "finish_ft": 6211,
         "starts_ft": {
@@ -1174,7 +1174,7 @@ VENUES = {
         "lat": 47.9213,
         "lon": -117.1141,
         "elev_ft": 5410,
-        "aspect_deg": 180.0,
+        "aspect_deg": 85.4,
         "slope_deg": 18.0,
         "finish_ft": 4334,
         "starts_ft": {
@@ -1192,7 +1192,7 @@ VENUES = {
         "lat": 43.3406,
         "lon": -72.0709,
         "elev_ft": 2231,
-        "aspect_deg": 180.0,
+        "aspect_deg": 346.6,
         "slope_deg": 18.0,
         "finish_ft": 1312,
         "starts_ft": {
@@ -1210,7 +1210,7 @@ VENUES = {
         "lat": 45.4746,
         "lon": -122.3717,
         "elev_ft": 6539,
-        "aspect_deg": 180.0,
+        "aspect_deg": 173.2,
         "slope_deg": 18.0,
         "finish_ft": 5390,
         "starts_ft": {
@@ -1228,7 +1228,7 @@ VENUES = {
         "lat": 45.294,
         "lon": -121.7805,
         "elev_ft": 6539,
-        "aspect_deg": 180.0,
+        "aspect_deg": 191.4,
         "slope_deg": 18.0,
         "finish_ft": 3675,
         "starts_ft": {
@@ -1246,7 +1246,7 @@ VENUES = {
         "lat": 39.3192,
         "lon": -119.8837,
         "elev_ft": 9531,
-        "aspect_deg": 180.0,
+        "aspect_deg": 7.6,
         "slope_deg": 18.0,
         "finish_ft": 8346,
         "starts_ft": {
@@ -1265,7 +1265,7 @@ VENUES = {
         "lat": 39.2745,
         "lon": -120.1218,
         "elev_ft": 8038,
-        "aspect_deg": 180.0,
+        "aspect_deg": 3.2,
         "slope_deg": 18.0,
         "finish_ft": 6890,
         "starts_ft": {
@@ -1284,7 +1284,7 @@ VENUES = {
         "lat": 43.4078,
         "lon": -72.7343,
         "elev_ft": 3130,
-        "aspect_deg": 180.0,
+        "aspect_deg": 94.7,
         "slope_deg": 18.0,
         "finish_ft": 1608,
         "starts_ft": {
@@ -1303,7 +1303,7 @@ VENUES = {
         "lat": 39.1966,
         "lon": -120.2345,
         "elev_ft": 8694,
-        "aspect_deg": 180.0,
+        "aspect_deg": 34.1,
         "slope_deg": 18.0,
         "finish_ft": 6253,
         "starts_ft": {
@@ -1323,7 +1323,7 @@ VENUES = {
         "lat": 40.6541,
         "lon": -111.5624,
         "elev_ft": 8153,
-        "aspect_deg": 180.0,
+        "aspect_deg": 28.8,
         "slope_deg": 18.0,
         "finish_ft": 6929,
         "starts_ft": {
@@ -1342,7 +1342,7 @@ VENUES = {
         "lat": 43.1422,
         "lon": -71.5978,
         "elev_ft": 1283,
-        "aspect_deg": 180.0,
+        "aspect_deg": 347.0,
         "slope_deg": 18.0,
         "finish_ft": 735,
         "starts_ft": {
@@ -1359,7 +1359,7 @@ VENUES = {
         "lat": 43.6394,
         "lon": -72.8364,
         "elev_ft": 2805,
-        "aspect_deg": 180.0,
+        "aspect_deg": 350.0,
         "slope_deg": 18.0,
         "finish_ft": 2320,
         "starts_ft": {
@@ -1376,7 +1376,7 @@ VENUES = {
         "lat": 38.2769,
         "lon": -107.0959,
         "elev_ft": 9642,
-        "aspect_deg": 180.0,
+        "aspect_deg": 30.0,
         "slope_deg": 18.0,
         "finish_ft": 8451,
         "starts_ft": {
@@ -1394,7 +1394,7 @@ VENUES = {
         "lat": 43.4306,
         "lon": -71.8295,
         "elev_ft": 1083,
-        "aspect_deg": 180.0,
+        "aspect_deg": 15.0,
         "slope_deg": 18.0,
         "finish_ft": 620,
         "starts_ft": {
@@ -1411,7 +1411,7 @@ VENUES = {
         "lat": 44.9789,
         "lon": -70.5194,
         "elev_ft": 3602,
-        "aspect_deg": 180.0,
+        "aspect_deg": 328.7,
         "slope_deg": 18.0,
         "finish_ft": 2677,
         "starts_ft": {
@@ -1429,7 +1429,7 @@ VENUES = {
         "lat": 48.368,
         "lon": -116.6232,
         "elev_ft": 5761,
-        "aspect_deg": 180.0,
+        "aspect_deg": 58.5,
         "slope_deg": 18.0,
         "finish_ft": 4035,
         "starts_ft": {
@@ -1449,7 +1449,7 @@ VENUES = {
         "lat": 44.5727,
         "lon": -72.7676,
         "elev_ft": 2546,
-        "aspect_deg": 180.0,
+        "aspect_deg": 346.0,
         "slope_deg": 18.0,
         "finish_ft": 1680,
         "starts_ft": {
@@ -1467,7 +1467,7 @@ VENUES = {
         "lat": 43.4655,
         "lon": -110.7563,
         "elev_ft": 7520,
-        "aspect_deg": 180.0,
+        "aspect_deg": 4.5,
         "slope_deg": 18.0,
         "finish_ft": 6283,
         "starts_ft": {
@@ -1484,7 +1484,7 @@ VENUES = {
         "lat": 41.2163,
         "lon": -111.8571,
         "elev_ft": 7900,
-        "aspect_deg": 180.0,
+        "aspect_deg": 54.0,
         "slope_deg": 18.0,
         "finish_ft": 6391,
         "starts_ft": {
@@ -1503,7 +1503,7 @@ VENUES = {
         "lat": 40.6331,
         "lon": -111.8038,
         "elev_ft": 8983,
-        "aspect_deg": 180.0,
+        "aspect_deg": 340.8,
         "slope_deg": 18.0,
         "finish_ft": 7923,
         "starts_ft": {
@@ -1521,7 +1521,7 @@ VENUES = {
         "lat": 46.5002,
         "lon": -89.9758,
         "elev_ft": 1621,
-        "aspect_deg": 180.0,
+        "aspect_deg": 11.1,
         "slope_deg": 18.0,
         "finish_ft": 1204,
         "starts_ft": {
@@ -1538,7 +1538,7 @@ VENUES = {
         "lat": 44.7094,
         "lon": -115.0909,
         "elev_ft": 7178,
-        "aspect_deg": 180.0,
+        "aspect_deg": 5.0,
         "slope_deg": 18.0,
         "finish_ft": 5840,
         "starts_ft": {
@@ -1558,7 +1558,7 @@ VENUES = {
         "lat": 46.7176,
         "lon": -92.2124,
         "elev_ft": 1207,
-        "aspect_deg": 180.0,
+        "aspect_deg": 30.0,
         "slope_deg": 18.0,
         "finish_ft": 745,
         "starts_ft": {
@@ -1575,7 +1575,7 @@ VENUES = {
         "lat": 40.4586,
         "lon": -106.8067,
         "elev_ft": 8018,
-        "aspect_deg": 180.0,
+        "aspect_deg": 10.0,
         "slope_deg": 18.0,
         "finish_ft": 6719,
         "starts_ft": {
@@ -1593,7 +1593,7 @@ VENUES = {
         "lat": 47.7456,
         "lon": -121.0892,
         "elev_ft": 5348,
-        "aspect_deg": 180.0,
+        "aspect_deg": 46.5,
         "slope_deg": 18.0,
         "finish_ft": 4091,
         "starts_ft": {
@@ -1612,7 +1612,7 @@ VENUES = {
         "lat": 44.5264,
         "lon": -72.7816,
         "elev_ft": 3241,
-        "aspect_deg": 180.0,
+        "aspect_deg": 54.4,
         "slope_deg": 18.0,
         "finish_ft": 1565,
         "starts_ft": {
@@ -1631,7 +1631,7 @@ VENUES = {
         "lat": 43.0863,
         "lon": -72.9249,
         "elev_ft": 3848,
-        "aspect_deg": 180.0,
+        "aspect_deg": 52.9,
         "slope_deg": 18.0,
         "finish_ft": 2543,
         "starts_ft": {
@@ -1650,7 +1650,7 @@ VENUES = {
         "lat": 39.3003,
         "lon": -120.344,
         "elev_ft": 8360,
-        "aspect_deg": 180.0,
+        "aspect_deg": 4.9,
         "slope_deg": 18.0,
         "finish_ft": 6936,
         "starts_ft": {
@@ -1669,7 +1669,7 @@ VENUES = {
         "lat": 44.1268,
         "lon": -72.8995,
         "elev_ft": 2841,
-        "aspect_deg": 180.0,
+        "aspect_deg": 82.5,
         "slope_deg": 18.0,
         "finish_ft": 1680,
         "starts_ft": {
@@ -1687,7 +1687,7 @@ VENUES = {
         "lat": 44.1559,
         "lon": -72.9283,
         "elev_ft": 3770,
-        "aspect_deg": 180.0,
+        "aspect_deg": 73.1,
         "slope_deg": 18.0,
         "finish_ft": 1608,
         "starts_ft": {
@@ -1706,7 +1706,7 @@ VENUES = {
         "lat": 43.6627,
         "lon": -72.5474,
         "elev_ft": 1329,
-        "aspect_deg": 180.0,
+        "aspect_deg": 14.4,
         "slope_deg": 18.0,
         "finish_ft": 794,
         "starts_ft": {
@@ -1723,7 +1723,7 @@ VENUES = {
         "lat": 43.6962,
         "lon": -114.3531,
         "elev_ft": 8796,
-        "aspect_deg": 180.0,
+        "aspect_deg": 0.0,
         "slope_deg": 18.0,
         "finish_ft": 5991,
         "starts_ft": {
@@ -1743,7 +1743,7 @@ VENUES = {
         "lat": 37.9375,
         "lon": -107.8123,
         "elev_ft": 10479,
-        "aspect_deg": 180.0,
+        "aspect_deg": 346.3,
         "slope_deg": 18.0,
         "finish_ft": 9524,
         "starts_ft": {
@@ -1761,7 +1761,7 @@ VENUES = {
         "lat": 44.3673,
         "lon": -103.8228,
         "elev_ft": 6988,
-        "aspect_deg": 180.0,
+        "aspect_deg": 23.6,
         "slope_deg": 18.0,
         "finish_ft": 6102,
         "starts_ft": {
@@ -1779,7 +1779,7 @@ VENUES = {
         "lat": 44.6484,
         "lon": -70.1717,
         "elev_ft": 709,
-        "aspect_deg": 180.0,
+        "aspect_deg": 22.1,
         "slope_deg": 18.0,
         "finish_ft": 400,
         "starts_ft": {
@@ -1796,7 +1796,7 @@ VENUES = {
         "lat": 40.7074,
         "lon": -111.5646,
         "elev_ft": 8081,
-        "aspect_deg": 180.0,
+        "aspect_deg": 33.1,
         "slope_deg": 18.0,
         "finish_ft": 6923,
         "starts_ft": {
@@ -1815,7 +1815,7 @@ VENUES = {
         "lat": 39.6438,
         "lon": -106.3888,
         "elev_ft": 10016,
-        "aspect_deg": 180.0,
+        "aspect_deg": 343.9,
         "slope_deg": 18.0,
         "finish_ft": 8248,
         "starts_ft": {
@@ -1835,7 +1835,7 @@ VENUES = {
         "lat": 43.9496,
         "lon": -71.5057,
         "elev_ft": 3448,
-        "aspect_deg": 180.0,
+        "aspect_deg": 60.5,
         "slope_deg": 18.0,
         "finish_ft": 1978,
         "starts_ft": {
@@ -1854,7 +1854,7 @@ VENUES = {
         "lat": 43.8601,
         "lon": -74.706,
         "elev_ft": 1381,
-        "aspect_deg": 180.0,
+        "aspect_deg": 80.0,
         "slope_deg": 18.0,
         "finish_ft": 430,
         "starts_ft": {
@@ -1872,7 +1872,7 @@ VENUES = {
         "lat": 44.3658,
         "lon": -73.903,
         "elev_ft": 3117,
-        "aspect_deg": 180.0,
+        "aspect_deg": 106.9,
         "slope_deg": 18.0,
         "finish_ft": 1280,
         "starts_ft": {
@@ -1892,7 +1892,7 @@ VENUES = {
         "lat": 39.918,
         "lon": -105.7856,
         "elev_ft": 10705,
-        "aspect_deg": 180.0,
+        "aspect_deg": 15.0,
         "slope_deg": 18.0,
         "finish_ft": 9068,
         "starts_ft": {
