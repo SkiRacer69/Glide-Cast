@@ -95,8 +95,8 @@
           </div>
         </div>
 
-        <input type="hidden" name="slope_deg" value="{{ form.slope_deg.value|default:19 }}" />
-        <input type="hidden" name="aspect_deg" value="{{ form.aspect_deg.value|default:20 }}" />
+        <input type="hidden" name="slope_deg" id="id_slope_deg" value="{{ form.slope_deg.value|default:19 }}" />
+        <input type="hidden" name="aspect_deg" id="id_aspect_deg" value="{{ form.aspect_deg.value|default:20 }}" />
         <input type="hidden" name="wind_coeff" value="{{ form.wind_coeff.value|default:0.12 }}" />
         <input type="hidden" name="solar_coeff" value="{{ form.solar_coeff.value|default:2 }}" />
         <input type="hidden" name="clear_night_coeff" value="{{ form.clear_night_coeff.value|default:1.4 }}" />
@@ -134,6 +134,53 @@
 {% endblock %}
 
 {% block extra_js %}
+<script>
+(function () {
+  var VENUES = {{ venues_json|safe }};
+  var DISC_ORDER = ["SL", "GS", "SuperG", "DH"];
+
+  var venueEl = document.getElementById("id_venue");
+  var discEl  = document.getElementById("id_discipline");
+  var slopeEl = document.getElementById("id_slope_deg");
+  var aspectEl = document.getElementById("id_aspect_deg");
+
+  if (!venueEl || !discEl) return;
+
+  function updateForVenue() {
+    var key = venueEl.value;
+    var data = VENUES[key];
+    if (!data) return;
+
+    // Update hidden physics fields
+    if (slopeEl)  slopeEl.value  = data.slope_deg;
+    if (aspectEl) aspectEl.value = data.aspect_deg;
+
+    // Rebuild discipline options, keeping current selection if still valid
+    var current = discEl.value;
+    var discs = data.disciplines;
+    // Sort by preferred order, then any extras
+    var ordered = DISC_ORDER.filter(function(d){ return discs.indexOf(d) !== -1; });
+    discs.forEach(function(d){ if (ordered.indexOf(d) === -1) ordered.push(d); });
+
+    discEl.innerHTML = "";
+    ordered.forEach(function(d) {
+      var opt = document.createElement("option");
+      opt.value = d;
+      opt.textContent = d;
+      if (d === current) opt.selected = true;
+      discEl.appendChild(opt);
+    });
+    // If old selection is gone, pick first available
+    if (discs.indexOf(current) === -1 && ordered.length) {
+      discEl.value = ordered[0];
+    }
+  }
+
+  venueEl.addEventListener("change", updateForVenue);
+  // Run once on load to sync discipline list with the default venue
+  updateForVenue();
+})();
+</script>
 <script src="{% static 'js/calculator-hero-sync.js' %}" defer></script>
 {% if user.is_authenticated %}
 <div style="display:none" aria-hidden="true">{% csrf_token %}</div>

@@ -10,7 +10,7 @@ class CalculatorForm(forms.Form):
         super().__init__(*args, **kwargs)
         if venue_choices:
             self.fields["venue"].choices = venue_choices
-    discipline = forms.ChoiceField(choices=[("SL", "SL"), ("GS", "GS"), ("SuperG", "SuperG")])
+    discipline = forms.ChoiceField(choices=[("SL", "SL"), ("GS", "GS"), ("SuperG", "SuperG"), ("DH", "DH")])
     race_date = forms.DateField(widget=forms.DateInput(attrs={"type": "date"}))
     run1_time = forms.TimeField(widget=forms.TimeInput(attrs={"type": "time"}))
     run2_time = forms.TimeField(widget=forms.TimeInput(attrs={"type": "time"}))

@@ -3,6 +3,7 @@ from __future__ import annotations
 import dataclasses
 import hashlib
 import hmac
+import json as _json
 import math
 import traceback
 from datetime import date, datetime, time
@@ -108,6 +109,9 @@ def calculator(request):
 
             venue = ENGINE.VENUES[cd["venue"]]
             discipline = cd["discipline"]
+            if discipline not in venue["starts_ft"]:
+                messages.error(request, f"{discipline} is not available at {cd['venue']}.")
+                return redirect("calculator")
             start_ft = venue["starts_ft"][discipline]
             finish_ft = venue["finish_ft"]
 
@@ -284,6 +288,17 @@ def calculator(request):
     hero_venue = (form.data.get("venue") if form.is_bound else form.initial.get("venue")) or "Sugarloaf"
     hero_discipline = (form.data.get("discipline") if form.is_bound else form.initial.get("discipline")) or "GS"
     hero_race_date, hero_run1_time, hero_run2_time = _hero_schedule_from_form(form)
+
+    # Per-venue data for JS: aspect, slope, available disciplines
+    venues_json = _json.dumps({
+        key: {
+            "aspect_deg": v["aspect_deg"],
+            "slope_deg": v["slope_deg"],
+            "disciplines": list(v["starts_ft"].keys()),
+        }
+        for key, v in ENGINE.VENUES.items()
+    })
+
     return render(
         request,
         "calculator/calculator.html",
@@ -294,6 +309,7 @@ def calculator(request):
             "hero_race_date": hero_race_date,
             "hero_run1_time": hero_run1_time,
             "hero_run2_time": hero_run2_time,
+            "venues_json": venues_json,
         },
     )
 
