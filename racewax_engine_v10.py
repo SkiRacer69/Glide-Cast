@@ -57,14 +57,18 @@ VENUES = {
         "course_name": "Sunday River Race Venue",
         "lat": 44.48515,
         "lon": -70.8828,
-        "elev_ft": 2615,
+        "elev_ft": 2569,   # FIS Homol: SG start 783m (highest certified start)
         "aspect_deg": 10.0,
         "slope_deg": 18.0,
-        "finish_ft": 1210,
-        "starts_ft": {"SL": 1932, "GS": 2460, "SuperG": 2460},
+        "finish_ft": 1257,  # FIS Homol: SG finish 383m
+        "starts_ft": {
+            "SuperG": 2569, # FIS Homol: 783m (highest SG cert)
+            "GS": 2543,     # FIS Homol: GS M 775m
+            "SL": 2543      # FIS Homol: SL A 775m (highest certified)
+        },
         "points": {
-            "Upper NWS point": {"lat": 44.4720, "lon": -70.8770, "elev_ft": 2615},
-            "Lower NWS point": {"lat": 44.4983, "lon": -70.8886, "elev_ft": 1388},
+            "Upper NWS point": {"lat": 44.4720, "lon": -70.8770, "elev_ft": 2569},
+            "Lower NWS point": {"lat": 44.4983, "lon": -70.8886, "elev_ft": 1257},
         },
     },
     "Gore Mountain": {
@@ -102,14 +106,14 @@ VENUES = {
         "course_name": "Killington Race Venue",
         "lat": 43.6770,
         "lon": -72.7800,
-        "elev_ft": 4241,
+        "elev_ft": 3714,   # FIS Homol 16205/04/26: Super Star GS start 1132m
         "aspect_deg": 22.0,
         "slope_deg": 18.0,
-        "finish_ft": 1650,
-        "starts_ft": {"SL": 3100, "GS": 3800, "SuperG": 4241},
+        "finish_ft": 2559,  # FIS Homol 16205/04/26: finish 780m
+        "starts_ft": {"GS": 3714, "SL": 3215},  # GS: Homol 16205/04/26 1132m; SL: Homol 12011/02/16 980m
         "points": {
-            "Upper NWS point": {"lat": 43.6820, "lon": -72.7750, "elev_ft": 4241},
-            "Lower NWS point": {"lat": 43.6680, "lon": -72.7880, "elev_ft": 1800},
+            "Upper NWS point": {"lat": 43.6820, "lon": -72.7750, "elev_ft": 3714},
+            "Lower NWS point": {"lat": 43.6680, "lon": -72.7880, "elev_ft": 2559},
         },
     },
     "Alyeska Resort": {
@@ -173,18 +177,16 @@ VENUES = {
         "course_name": "Aspen Mountain Race Venue",
         "lat": 39.1513,
         "lon": -106.8197,
-        "elev_ft": 10650,
+        "elev_ft": 9558,   # FIS Homol: GS M start 2913m (highest certified WC course start)
         "aspect_deg": 20.6,
         "slope_deg": 18.0,
-        "finish_ft": 8081,
+        "finish_ft": 8081,  # FIS Homol: GS M finish 2463m (lowest certified finish)
         "starts_ft": {
-            "SL": 9646,
-            "SuperG": 10033,
-            "DH": 10650,
-            "GS": 9557
+            "GS": 9558,     # FIS Homol: GS M 2913m
+            "SL": 8825      # FIS Homol: SL A 2690m (WC SL course start)
         },
         "points": {
-            "Upper NWS point": {"lat": 39.1513, "lon": -106.8197, "elev_ft": 10650},
+            "Upper NWS point": {"lat": 39.1513, "lon": -106.8197, "elev_ft": 9558},
             "Lower NWS point": {"lat": 39.1681, "lon": -106.8115, "elev_ft": 8081},
         },
     },
@@ -269,19 +271,18 @@ VENUES = {
         "course_name": "Beaver Creek Resort Race Venue",
         "lat": 39.6034,
         "lon": -106.5157,
-        "elev_ft": 11427,
+        "elev_ft": 11427,   # FIS: Men's DH start 3483m (raceid 122771)
         "aspect_deg": 359.5,
         "slope_deg": 18.0,
-        "finish_ft": 8199,
+        "finish_ft": 8957,  # FIS: DH/SG finish 2730m; GS finish 2721m=8927ft
         "starts_ft": {
-            "SL": 9629,
-            "GS": 10351,
-            "SuperG": 10948,
-            "DH": 11427
+            "GS": 10351,    # FIS: Men's GS start 3155m (raceid 122773)
+            "SuperG": 10948, # FIS: Men's SG start 3337m (raceid 122772)
+            "DH": 11427     # FIS: Men's DH start 3483m (raceid 122771); no WC SL at BC
         },
         "points": {
             "Upper NWS point": {"lat": 39.6034, "lon": -106.5157, "elev_ft": 11427},
-            "Lower NWS point": {"lat": 39.6214, "lon": -106.5159, "elev_ft": 8199},
+            "Lower NWS point": {"lat": 39.6214, "lon": -106.5159, "elev_ft": 8957},
         },
     },
     "Belleayre Mountain": {
@@ -932,19 +933,19 @@ VENUES = {
         "course_name": "Mammoth Mountain Race Venue",
         "lat": 37.6308,
         "lon": -119.0326,
-        "elev_ft": 11020,
+        "elev_ft": 11020,   # FIS Homol: DH/SG start 3359m (highest certified start)
         "aspect_deg": 17.0,
         "slope_deg": 18.0,
-        "finish_ft": 8737,
+        "finish_ft": 8937,  # FIS Homol: DH lowest finish 2724m
         "starts_ft": {
-            "SL": 10249,
-            "GS": 10978,
-            "DH": 11020,
-            "SuperG": 11020
+            "SL": 10249,    # FIS Homol: SL A 3124m ✓
+            "GS": 10978,    # FIS Homol: GS A 3346m ✓
+            "DH": 11020,    # FIS Homol: DH A 3359m
+            "SuperG": 11020 # FIS Homol: SG A 3359m
         },
         "points": {
             "Upper NWS point": {"lat": 37.6308, "lon": -119.0326, "elev_ft": 11020},
-            "Lower NWS point": {"lat": 37.648, "lon": -119.026, "elev_ft": 8737},
+            "Lower NWS point": {"lat": 37.648, "lon": -119.026, "elev_ft": 8937},
         },
     },
     "Maverick Mt": {
@@ -1612,19 +1613,19 @@ VENUES = {
         "course_name": "Sun Valley Race Venue",
         "lat": 43.6962,
         "lon": -114.3531,
-        "elev_ft": 8796,
+        "elev_ft": 8796,   # FIS Homol: DH M/A start 2681m (highest certified start)
         "aspect_deg": 0.0,
         "slope_deg": 18.0,
-        "finish_ft": 5991,
+        "finish_ft": 6060,  # FIS Homol: DH finish 1847m
         "starts_ft": {
-            "DH": 8796,
-            "SuperG": 8192,
-            "SL": 6952,
-            "GS": 7503
+            "DH": 8796,     # FIS Homol: DH M/A 2681m
+            "SuperG": 8192, # FIS Homol: SG M 2497m
+            "GS": 7503,     # FIS Homol: GS M 2287m
+            "SL": 6952      # FIS Homol: SL M 2119m
         },
         "points": {
             "Upper NWS point": {"lat": 43.6962, "lon": -114.3531, "elev_ft": 8796},
-            "Lower NWS point": {"lat": 43.7142, "lon": -114.3531, "elev_ft": 5991},
+            "Lower NWS point": {"lat": 43.7142, "lon": -114.3531, "elev_ft": 6060},
         },
     },
     "Telluride": {
