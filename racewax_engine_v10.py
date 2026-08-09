@@ -1804,114 +1804,113 @@ VENUES = {
 
     # --- Andorra ---
     "Soldeu": {
-        # Àliga/Gran Valira — north-facing
+        # Àliga/Gran Valira — north-facing (Finals venue; FIS raceid=114125/130/132/118480/81)
         "display_name": "Soldeu Wax Tool",
         "course_name": "Soldeu Race Venue",
         "region": "europe",
         "weather_api": "open-meteo",
         "lat": 42.5706,
         "lon": 1.6678,
-        "elev_ft": 8661,
+        "elev_ft": 7989,
         "aspect_deg": 5.0,
         "slope_deg": 20.0,
-        "finish_ft": 5610,
-        "starts_ft": {"SL": 7579, "GS": 8399},
+        "finish_ft": 5659,
+        "starts_ft": {"DH": 7989, "SuperG": 7628, "GS": 7303, "SL": 6700},
         "points": {
-            "Upper NWS point": {"lat": 42.5681, "lon": 1.6714, "elev_ft": 8661},
-            "Lower NWS point": {"lat": 42.5744, "lon": 1.6672, "elev_ft": 5610},
+            "Upper NWS point": {"lat": 42.5681, "lon": 1.6714, "elev_ft": 7989},
+            "Lower NWS point": {"lat": 42.5744, "lon": 1.6672, "elev_ft": 5659},
         },
     },
 
     # --- Austria ---
     "Altenmarkt-Zauchensee": {
-        # Emma Piste — north-facing speed course
+        # Emma Piste — north-facing speed course (FIS raceid=118465/118349)
         "display_name": "Altenmarkt-Zauchensee Wax Tool",
         "course_name": "Altenmarkt-Zauchensee Race Venue",
         "region": "europe",
         "weather_api": "open-meteo",
         "lat": 47.3694,
         "lon": 13.3628,
-        "elev_ft": 6430,
+        "elev_ft": 7139,
         "aspect_deg": 355.0,
         "slope_deg": 22.0,
-        "finish_ft": 4462,
-        "starts_ft": {"DH": 6430, "SuperG": 5906},
+        "finish_ft": 4527,
+        "starts_ft": {"DH": 7139, "SuperG": 6152},
         "points": {
-            "Upper NWS point": {"lat": 47.3644, "lon": 13.3578, "elev_ft": 6430},
-            "Lower NWS point": {"lat": 47.3744, "lon": 13.3650, "elev_ft": 4462},
+            "Upper NWS point": {"lat": 47.3644, "lon": 13.3578, "elev_ft": 7139},
+            "Lower NWS point": {"lat": 47.3744, "lon": 13.3650, "elev_ft": 4527},
         },
     },
     "Flachau": {
-        # Hermann Maier Weltcupstrecke night SL — north-facing
+        # Hermann Maier Weltcupstrecke night SL — north-facing (FIS raceid=122810)
         "display_name": "Flachau Wax Tool",
         "course_name": "Flachau Race Venue",
         "region": "europe",
         "weather_api": "open-meteo",
         "lat": 47.3347,
         "lon": 13.3886,
-        "elev_ft": 3281,
+        "elev_ft": 3835,
         "aspect_deg": 355.0,
         "slope_deg": 16.0,
-        "finish_ft": 2779,
-        "starts_ft": {"SL": 3117},
+        "finish_ft": 3150,
+        "starts_ft": {"SL": 3835},
         "points": {
-            "Upper NWS point": {"lat": 47.3297, "lon": 13.3836, "elev_ft": 3281},
-            "Lower NWS point": {"lat": 47.3397, "lon": 13.3936, "elev_ft": 2779},
+            "Upper NWS point": {"lat": 47.3297, "lon": 13.3836, "elev_ft": 3835},
+            "Lower NWS point": {"lat": 47.3397, "lon": 13.3936, "elev_ft": 3150},
         },
     },
     "Hinterstoder": {
-        # Hannes-Trinkl-Weltcupstrecke — NNE-facing, big drop to valley finish
+        # Hannes-Trinkl-Weltcupstrecke — NNE-facing (FIS raceid=100158/100113; no WC SL held)
         "display_name": "Hinterstoder Wax Tool",
         "course_name": "Hinterstoder Race Venue",
         "region": "europe",
         "weather_api": "open-meteo",
         "lat": 47.6944,
         "lon": 14.1472,
-        "elev_ft": 6030,
+        "elev_ft": 4239,
         "aspect_deg": 15.0,
         "slope_deg": 22.0,
-        "finish_ft": 1929,
-        "starts_ft": {"SL": 4593, "GS": 6030},
+        "finish_ft": 2119,
+        "starts_ft": {"SuperG": 4239, "GS": 3517},
         "points": {
-            "Upper NWS point": {"lat": 47.6894, "lon": 14.1422, "elev_ft": 6030},
-            "Lower NWS point": {"lat": 47.6994, "lon": 14.1522, "elev_ft": 1929},
+            "Upper NWS point": {"lat": 47.6894, "lon": 14.1422, "elev_ft": 4239},
+            "Lower NWS point": {"lat": 47.6994, "lon": 14.1522, "elev_ft": 2119},
         },
     },
     "Kitzbühel": {
-        # Streif DH/SG faces NNW; Ganslernhang SL faces NE
-        # aspect_deg uses Streif (primary speed course)
+        # Streif DH/SG faces NNW; Ganslernhang SL faces NE (FIS raceid=122820/19/21)
         "display_name": "Kitzbühel Wax Tool",
         "course_name": "Kitzbühel Hahnenkamm Race Venue",
         "region": "europe",
         "weather_api": "open-meteo",
         "lat": 47.4310,
         "lon": 12.3850,
-        "elev_ft": 5617,
+        "elev_ft": 5463,
         "aspect_deg": 330.0,
         "slope_deg": 27.0,
-        "finish_ft": 2493,
-        "starts_ft": {"SL": 3143, "SuperG": 5184, "DH": 5463},
+        "finish_ft": 2641,
+        "starts_ft": {"DH": 5463, "SuperG": 4413, "SL": 3294},
         "points": {
-            "Upper NWS point": {"lat": 47.4250, "lon": 12.3800, "elev_ft": 5617},
-            "Lower NWS point": {"lat": 47.4457, "lon": 12.3908, "elev_ft": 2493},
+            "Upper NWS point": {"lat": 47.4250, "lon": 12.3800, "elev_ft": 5463},
+            "Lower NWS point": {"lat": 47.4457, "lon": 12.3908, "elev_ft": 2641},
         },
     },
     "Mayrhofen": {
-        # Night SL on Ahorn — north-facing
+        # Night SL on Ahorn — north-facing (historical WC SL 1997-2007; ~1900m start/~1650m finish, topographic estimate)
         "display_name": "Mayrhofen Wax Tool",
         "course_name": "Mayrhofen Race Venue",
         "region": "europe",
         "weather_api": "open-meteo",
         "lat": 47.1644,
         "lon": 11.8631,
-        "elev_ft": 3182,
+        "elev_ft": 6234,
         "aspect_deg": 5.0,
         "slope_deg": 16.0,
-        "finish_ft": 2067,
-        "starts_ft": {"SL": 3182},
+        "finish_ft": 5413,
+        "starts_ft": {"SL": 6234},
         "points": {
-            "Upper NWS point": {"lat": 47.1594, "lon": 11.8581, "elev_ft": 3182},
-            "Lower NWS point": {"lat": 47.1694, "lon": 11.8681, "elev_ft": 2067},
+            "Upper NWS point": {"lat": 47.1594, "lon": 11.8581, "elev_ft": 6234},
+            "Lower NWS point": {"lat": 47.1694, "lon": 11.8681, "elev_ft": 5413},
         },
     },
     "Pitztal": {
@@ -1933,57 +1932,57 @@ VENUES = {
         },
     },
     "Saalbach": {
-        # Schattberg/Hinterglemm — north-facing (2025 Worlds venue)
+        # Schattberg/Hinterglemm — north-facing (2025 Worlds; FIS raceid=118505/503/495/497)
         "display_name": "Saalbach Wax Tool",
         "course_name": "Saalbach Race Venue",
         "region": "europe",
         "weather_api": "open-meteo",
         "lat": 47.3917,
         "lon": 12.6444,
-        "elev_ft": 6890,
+        "elev_ft": 6004,
         "aspect_deg": 355.0,
         "slope_deg": 22.0,
-        "finish_ft": 3291,
-        "starts_ft": {"SL": 4265, "GS": 5249, "SuperG": 6234, "DH": 6890},
+        "finish_ft": 3511,
+        "starts_ft": {"DH": 6004, "SuperG": 5338, "GS": 4869, "SL": 4196},
         "points": {
-            "Upper NWS point": {"lat": 47.3867, "lon": 12.6394, "elev_ft": 6890},
-            "Lower NWS point": {"lat": 47.3967, "lon": 12.6494, "elev_ft": 3291},
+            "Upper NWS point": {"lat": 47.3867, "lon": 12.6394, "elev_ft": 6004},
+            "Lower NWS point": {"lat": 47.3967, "lon": 12.6494, "elev_ft": 3511},
         },
     },
     "Schladming": {
-        # Planai — NNW-facing; SL Nightrace start is mid-mountain
+        # Planai — NNW-facing; SL Nightrace start is mid-mountain (FIS raceid=122826/122827)
         "display_name": "Schladming Wax Tool",
         "course_name": "Schladming Planai Race Venue",
         "region": "europe",
         "weather_api": "open-meteo",
         "lat": 47.3886,
         "lon": 13.6897,
-        "elev_ft": 6253,
+        "elev_ft": 3445,
         "aspect_deg": 350.0,
         "slope_deg": 18.0,
-        "finish_ft": 2444,
-        "starts_ft": {"SL": 3510, "GS": 5249},
+        "finish_ft": 2441,
+        "starts_ft": {"SL": 3445, "GS": 3143},
         "points": {
-            "Upper NWS point": {"lat": 47.3836, "lon": 13.6847, "elev_ft": 6253},
-            "Lower NWS point": {"lat": 47.3936, "lon": 13.6947, "elev_ft": 2444},
+            "Upper NWS point": {"lat": 47.3836, "lon": 13.6847, "elev_ft": 3445},
+            "Lower NWS point": {"lat": 47.3936, "lon": 13.6947, "elev_ft": 2441},
         },
     },
     "Semmering": {
-        # Hirschenkogel / Giganten course — NE-facing
+        # Hirschenkogel / Giganten course — NE-facing (FIS raceid=123079/123080)
         "display_name": "Semmering Wax Tool",
         "course_name": "Semmering Race Venue",
         "region": "europe",
         "weather_api": "open-meteo",
         "lat": 47.6397,
         "lon": 15.8314,
-        "elev_ft": 4396,
+        "elev_ft": 4379,
         "aspect_deg": 30.0,
         "slope_deg": 14.0,
-        "finish_ft": 3238,
-        "starts_ft": {"SL": 3609, "GS": 4396},
+        "finish_ft": 3346,
+        "starts_ft": {"GS": 4379, "SL": 4036},
         "points": {
-            "Upper NWS point": {"lat": 47.6347, "lon": 15.8264, "elev_ft": 4396},
-            "Lower NWS point": {"lat": 47.6447, "lon": 15.8364, "elev_ft": 3238},
+            "Upper NWS point": {"lat": 47.6347, "lon": 15.8264, "elev_ft": 4379},
+            "Lower NWS point": {"lat": 47.6447, "lon": 15.8364, "elev_ft": 3346},
         },
     },
     "Sölden": {
@@ -2007,61 +2006,61 @@ VENUES = {
 
     # --- Bulgaria ---
     "Bansko": {
-        # Todorka/Banderishka Polyana — NE-facing
+        # Todorka/Banderishka Polyana — NE-facing (FIS raceid=100043/100064/118558/118559)
         "display_name": "Bansko Wax Tool",
         "course_name": "Bansko Race Venue",
         "region": "europe",
         "weather_api": "open-meteo",
         "lat": 41.7950,
         "lon": 23.4733,
-        "elev_ft": 8530,
+        "elev_ft": 7923,
         "aspect_deg": 30.0,
         "slope_deg": 22.0,
-        "finish_ft": 3609,
-        "starts_ft": {"SL": 5906, "GS": 7218, "SuperG": 7874, "DH": 8530},
+        "finish_ft": 5282,
+        "starts_ft": {"DH": 7923, "SuperG": 7267, "GS": 6759, "SL": 6004},
         "points": {
-            "Upper NWS point": {"lat": 41.7900, "lon": 23.4683, "elev_ft": 8530},
-            "Lower NWS point": {"lat": 41.8000, "lon": 23.4783, "elev_ft": 3609},
+            "Upper NWS point": {"lat": 41.7900, "lon": 23.4683, "elev_ft": 7923},
+            "Lower NWS point": {"lat": 41.8000, "lon": 23.4783, "elev_ft": 5282},
         },
     },
 
     # --- Czech Republic ---
     "Spindlerův Mlýn": {
-        # Medvědín/Obří sjezd — NNE-facing
+        # Medvědín/Obří sjezd — NNE-facing (FIS raceid=114202/95583)
         "display_name": "Spindlerův Mlýn Wax Tool",
         "course_name": "Spindlerův Mlýn Race Venue",
         "region": "europe",
         "weather_api": "open-meteo",
         "lat": 50.7239,
         "lon": 15.6058,
-        "elev_ft": 3780,
+        "elev_ft": 3740,
         "aspect_deg": 15.0,
         "slope_deg": 15.0,
-        "finish_ft": 2329,
-        "starts_ft": {"SL": 3445, "GS": 3780},
+        "finish_ft": 2483,
+        "starts_ft": {"GS": 3740, "SL": 3097},
         "points": {
-            "Upper NWS point": {"lat": 50.7189, "lon": 15.6008, "elev_ft": 3780},
-            "Lower NWS point": {"lat": 50.7289, "lon": 15.6108, "elev_ft": 2329},
+            "Upper NWS point": {"lat": 50.7189, "lon": 15.6008, "elev_ft": 3740},
+            "Lower NWS point": {"lat": 50.7289, "lon": 15.6108, "elev_ft": 2483},
         },
     },
 
     # --- Finland ---
     "Levi": {
-        # Levi/Tähtiniemi — north-facing, tight WC SL
+        # Levi/Tähtiniemi — north-facing, tight WC SL (FIS raceid=122762/122763)
         "display_name": "Levi Wax Tool",
         "course_name": "Levi Race Venue",
         "region": "europe",
         "weather_api": "open-meteo",
         "lat": 67.7833,
         "lon": 24.8333,
-        "elev_ft": 1742,
+        "elev_ft": 1437,
         "aspect_deg": 5.0,
         "slope_deg": 15.0,
-        "finish_ft": 755,
-        "starts_ft": {"SL": 1742},
+        "finish_ft": 846,
+        "starts_ft": {"SL": 1437},
         "points": {
-            "Upper NWS point": {"lat": 67.7783, "lon": 24.8283, "elev_ft": 1742},
-            "Lower NWS point": {"lat": 67.7883, "lon": 24.8383, "elev_ft": 755},
+            "Upper NWS point": {"lat": 67.7783, "lon": 24.8283, "elev_ft": 1437},
+            "Lower NWS point": {"lat": 67.7883, "lon": 24.8383, "elev_ft": 846},
         },
     },
     "Ruka": {
@@ -2085,435 +2084,453 @@ VENUES = {
 
     # --- France ---
     "Chamonix": {
-        # Les Houches / Piste Verte — NNW-facing
+        # Les Houches / Piste Verte — NNW-facing (FIS raceid=82820/118557; no WC GS held)
         "display_name": "Chamonix Wax Tool",
         "course_name": "Chamonix Les Houches Race Venue",
         "region": "europe",
         "weather_api": "open-meteo",
         "lat": 45.8847,
         "lon": 6.8144,
-        "elev_ft": 6234,
+        "elev_ft": 6168,
         "aspect_deg": 350.0,
         "slope_deg": 20.0,
-        "finish_ft": 3304,
-        "starts_ft": {"SL": 4921, "GS": 6234},
+        "finish_ft": 3232,
+        "starts_ft": {"DH": 6168, "SL": 3835},
         "points": {
-            "Upper NWS point": {"lat": 45.8797, "lon": 6.8094, "elev_ft": 6234},
-            "Lower NWS point": {"lat": 45.8897, "lon": 6.8194, "elev_ft": 3304},
+            "Upper NWS point": {"lat": 45.8797, "lon": 6.8094, "elev_ft": 6168},
+            "Lower NWS point": {"lat": 45.8897, "lon": 6.8194, "elev_ft": 3232},
         },
     },
     "Courchevel": {
-        # Emile Allais course — NE-facing
+        # Emile Allais course — NE-facing (FIS raceid=123081/104376)
         "display_name": "Courchevel Wax Tool",
         "course_name": "Courchevel Race Venue",
         "region": "europe",
         "weather_api": "open-meteo",
         "lat": 45.4050,
         "lon": 6.6528,
-        "elev_ft": 8858,
+        "elev_ft": 7136,
         "aspect_deg": 30.0,
         "slope_deg": 18.0,
-        "finish_ft": 6070,
-        "starts_ft": {"SL": 7874, "GS": 8858},
+        "finish_ft": 5922,
+        "starts_ft": {"GS": 7136, "SL": 6611},
         "points": {
-            "Upper NWS point": {"lat": 45.4000, "lon": 6.6478, "elev_ft": 8858},
-            "Lower NWS point": {"lat": 45.4100, "lon": 6.6578, "elev_ft": 6070},
+            "Upper NWS point": {"lat": 45.4000, "lon": 6.6478, "elev_ft": 7136},
+            "Lower NWS point": {"lat": 45.4100, "lon": 6.6578, "elev_ft": 5922},
         },
     },
     "Méribel": {
-        # Roc de Fer (2023 Worlds DH/SG) — north-facing
+        # Roc de Fer (2015 WC Finals DH/SG) — north-facing (FIS raceid=78979/80/81/82)
         "display_name": "Méribel Wax Tool",
         "course_name": "Méribel Race Venue",
         "region": "europe",
         "weather_api": "open-meteo",
         "lat": 45.3833,
         "lon": 6.5628,
-        "elev_ft": 8858,
+        "elev_ft": 7379,
         "aspect_deg": 355.0,
         "slope_deg": 24.0,
-        "finish_ft": 5751,
-        "starts_ft": {"SuperG": 8530, "DH": 8858},
+        "finish_ft": 4698,
+        "starts_ft": {"DH": 7379, "SuperG": 6430},
         "points": {
-            "Upper NWS point": {"lat": 45.3783, "lon": 6.5578, "elev_ft": 8858},
-            "Lower NWS point": {"lat": 45.3883, "lon": 6.5678, "elev_ft": 5751},
+            "Upper NWS point": {"lat": 45.3783, "lon": 6.5578, "elev_ft": 7379},
+            "Lower NWS point": {"lat": 45.3883, "lon": 6.5678, "elev_ft": 4698},
         },
     },
     "Val d'Isère": {
-        # Bellevarde / Oreiller-Killy (DH,SG) + La Face (GS) — north-facing
+        # Bellevarde / Oreiller-Killy (DH,SG) + La Face (GS) — north-facing (FIS raceid=107381/82/122781/82)
         "display_name": "Val d'Isère Wax Tool",
         "course_name": "Val d'Isère Bellevarde Race Venue",
         "region": "europe",
         "weather_api": "open-meteo",
         "lat": 45.4447,
         "lon": 6.9503,
-        "elev_ft": 9275,
+        "elev_ft": 8877,
         "aspect_deg": 5.0,
         "slope_deg": 25.0,
-        "finish_ft": 6086,
-        "starts_ft": {"SL": 7546, "GS": 8202, "SuperG": 8858, "DH": 9275},
+        "finish_ft": 5938,
+        "starts_ft": {"DH": 8877, "SuperG": 7536, "GS": 7428, "SL": 6749},
         "points": {
-            "Upper NWS point": {"lat": 45.4397, "lon": 6.9453, "elev_ft": 9275},
-            "Lower NWS point": {"lat": 45.4497, "lon": 6.9553, "elev_ft": 6086},
+            "Upper NWS point": {"lat": 45.4397, "lon": 6.9453, "elev_ft": 8877},
+            "Lower NWS point": {"lat": 45.4497, "lon": 6.9553, "elev_ft": 5938},
         },
     },
 
     # --- Germany ---
     "Garmisch-Partenkirchen": {
-        # Kandahar DH/SG — NNE-facing; SL on Gudiberg, GS on Steilhang
+        # Kandahar DH/SG — NNE-facing; SL on Gudiberg, GS on Steilhang (FIS raceid=122824/25/104332/31/109057/100147)
         "display_name": "Garmisch-Partenkirchen Wax Tool",
         "course_name": "Garmisch-Partenkirchen Kandahar Race Venue",
         "region": "europe",
         "weather_api": "open-meteo",
         "lat": 47.5017,
         "lon": 11.0733,
-        "elev_ft": 5512,
+        "elev_ft": 4888,
         "aspect_deg": 15.0,
         "slope_deg": 22.0,
-        "finish_ft": 2297,
-        "starts_ft": {"SL": 3937, "GS": 4659, "SuperG": 4921, "DH": 5512},
+        "finish_ft": 2461,
+        "starts_ft": {"DH": 4888, "SuperG": 4291, "GS": 3543, "SL": 3091},
         "points": {
-            "Upper NWS point": {"lat": 47.4967, "lon": 11.0683, "elev_ft": 5512},
-            "Lower NWS point": {"lat": 47.5067, "lon": 11.0783, "elev_ft": 2297},
+            "Upper NWS point": {"lat": 47.4967, "lon": 11.0683, "elev_ft": 4888},
+            "Lower NWS point": {"lat": 47.5067, "lon": 11.0783, "elev_ft": 2461},
         },
     },
     "Ofterschwang": {
-        # Ofterschwanger Horn — north-facing
+        # Ofterschwanger Horn — north-facing (FIS raceid=91020/91021)
         "display_name": "Ofterschwang Wax Tool",
         "course_name": "Ofterschwang Race Venue",
         "region": "europe",
         "weather_api": "open-meteo",
         "lat": 47.5803,
         "lon": 10.2136,
-        "elev_ft": 4364,
+        "elev_ft": 4265,
         "aspect_deg": 5.0,
         "slope_deg": 14.0,
-        "finish_ft": 3166,
-        "starts_ft": {"SL": 3937, "GS": 4364},
+        "finish_ft": 3018,
+        "starts_ft": {"GS": 4265, "SL": 3658},
         "points": {
-            "Upper NWS point": {"lat": 47.5753, "lon": 10.2086, "elev_ft": 4364},
-            "Lower NWS point": {"lat": 47.5853, "lon": 10.2186, "elev_ft": 3166},
+            "Upper NWS point": {"lat": 47.5753, "lon": 10.2086, "elev_ft": 4265},
+            "Lower NWS point": {"lat": 47.5853, "lon": 10.2186, "elev_ft": 3018},
         },
     },
 
     # --- Italy ---
     "Alta Badia": {
-        # Gran Risa — north-facing
+        # Gran Risa — north-facing (FIS raceid=122789/122790)
         "display_name": "Alta Badia Wax Tool",
         "course_name": "Alta Badia Gran Risa Race Venue",
         "region": "europe",
         "weather_api": "open-meteo",
         "lat": 46.5928,
         "lon": 11.9097,
-        "elev_ft": 7283,
+        "elev_ft": 6129,
         "aspect_deg": 355.0,
         "slope_deg": 18.0,
-        "finish_ft": 5361,
-        "starts_ft": {"SL": 6398, "GS": 7283},
+        "finish_ft": 4659,
+        "starts_ft": {"GS": 6129, "SL": 5282},
         "points": {
-            "Upper NWS point": {"lat": 46.5878, "lon": 11.9047, "elev_ft": 7283},
-            "Lower NWS point": {"lat": 46.5978, "lon": 11.9147, "elev_ft": 5361},
+            "Upper NWS point": {"lat": 46.5878, "lon": 11.9047, "elev_ft": 6129},
+            "Lower NWS point": {"lat": 46.5978, "lon": 11.9147, "elev_ft": 4659},
         },
     },
     "Bormio": {
-        # Stelvio — NNE-facing; long DH with big vertical
+        # Stelvio — NNE-facing; long DH with big vertical (FIS raceid=122793/122794)
         "display_name": "Bormio Wax Tool",
         "course_name": "Bormio Stelvio Race Venue",
         "region": "europe",
         "weather_api": "open-meteo",
         "lat": 46.4650,
         "lon": 10.3720,
-        "elev_ft": 7316,
+        "elev_ft": 7441,
         "aspect_deg": 20.0,
         "slope_deg": 22.0,
-        "finish_ft": 4019,
-        "starts_ft": {"SuperG": 6775, "DH": 7316},
+        "finish_ft": 4085,
+        "starts_ft": {"DH": 7441, "SuperG": 6427},
         "points": {
-            "Upper NWS point": {"lat": 46.4600, "lon": 10.3670, "elev_ft": 7316},
-            "Lower NWS point": {"lat": 46.4700, "lon": 10.3770, "elev_ft": 4019},
+            "Upper NWS point": {"lat": 46.4600, "lon": 10.3670, "elev_ft": 7441},
+            "Lower NWS point": {"lat": 46.4700, "lon": 10.3770, "elev_ft": 4085},
         },
     },
     "Cortina d'Ampezzo": {
-        # Olympia delle Tofane — NW-facing
+        # Olympia delle Tofane — NW-facing (FIS raceid=122813/122814; no WC GS held)
         "display_name": "Cortina d'Ampezzo Wax Tool",
         "course_name": "Cortina d'Ampezzo Olympia Race Venue",
         "region": "europe",
         "weather_api": "open-meteo",
         "lat": 46.5280,
         "lon": 12.1378,
-        "elev_ft": 8104,
+        "elev_ft": 7612,
         "aspect_deg": 315.0,
         "slope_deg": 22.0,
-        "finish_ft": 4016,
-        "starts_ft": {"GS": 7241, "SuperG": 7759, "DH": 8104},
+        "finish_ft": 5118,
+        "starts_ft": {"DH": 7612, "SuperG": 7201},
         "points": {
-            "Upper NWS point": {"lat": 46.5230, "lon": 12.1328, "elev_ft": 8104},
-            "Lower NWS point": {"lat": 46.5330, "lon": 12.1428, "elev_ft": 4016},
+            "Upper NWS point": {"lat": 46.5230, "lon": 12.1328, "elev_ft": 7612},
+            "Lower NWS point": {"lat": 46.5330, "lon": 12.1428, "elev_ft": 5118},
         },
     },
     "Madonna di Campiglio": {
-        # 3Tre — north-facing compact SL
+        # 3Tre — north-facing compact SL (FIS raceid=122797)
         "display_name": "Madonna di Campiglio Wax Tool",
         "course_name": "Madonna di Campiglio 3Tre Race Venue",
         "region": "europe",
         "weather_api": "open-meteo",
         "lat": 46.2294,
         "lon": 10.8253,
-        "elev_ft": 5807,
+        "elev_ft": 5659,
         "aspect_deg": 355.0,
         "slope_deg": 16.0,
-        "finish_ft": 4872,
-        "starts_ft": {"SL": 5807},
+        "finish_ft": 5069,
+        "starts_ft": {"SL": 5659},
         "points": {
-            "Upper NWS point": {"lat": 46.2244, "lon": 10.8203, "elev_ft": 5807},
-            "Lower NWS point": {"lat": 46.2344, "lon": 10.8303, "elev_ft": 4872},
+            "Upper NWS point": {"lat": 46.2244, "lon": 10.8203, "elev_ft": 5659},
+            "Lower NWS point": {"lat": 46.2344, "lon": 10.8303, "elev_ft": 5069},
         },
     },
     "Santa Caterina Valfurva": {
-        # Deborah Compagnoni course — NE-facing
+        # Deborah Compagnoni course — NE-facing (FIS raceid=86824/86806)
         "display_name": "Santa Caterina Valfurva Wax Tool",
         "course_name": "Santa Caterina Valfurva Race Venue",
         "region": "europe",
         "weather_api": "open-meteo",
         "lat": 46.4167,
         "lon": 10.4833,
-        "elev_ft": 8940,
+        "elev_ft": 8924,
         "aspect_deg": 45.0,
         "slope_deg": 24.0,
-        "finish_ft": 5768,
-        "starts_ft": {"SuperG": 8208, "DH": 8940},
+        "finish_ft": 5725,
+        "starts_ft": {"DH": 8924, "SuperG": 7858},
         "points": {
-            "Upper NWS point": {"lat": 46.4117, "lon": 10.4783, "elev_ft": 8940},
-            "Lower NWS point": {"lat": 46.4217, "lon": 10.4883, "elev_ft": 5768},
+            "Upper NWS point": {"lat": 46.4117, "lon": 10.4783, "elev_ft": 8924},
+            "Lower NWS point": {"lat": 46.4217, "lon": 10.4883, "elev_ft": 5725},
         },
     },
     "Sestriere": {
-        # Borgata course — north-facing; WC GS starts ~2521m
+        # Borgata course — north-facing (FIS raceid=122774/122836)
         "display_name": "Sestriere Wax Tool",
         "course_name": "Sestriere Race Venue",
         "region": "europe",
         "weather_api": "open-meteo",
         "lat": 44.9597,
         "lon": 6.8797,
-        "elev_ft": 8271,
+        "elev_ft": 7874,
         "aspect_deg": 5.0,
         "slope_deg": 18.0,
-        "finish_ft": 6677,
-        "starts_ft": {"SL": 7546, "GS": 8271},
+        "finish_ft": 6706,
+        "starts_ft": {"GS": 7874, "SL": 7382},
         "points": {
-            "Upper NWS point": {"lat": 44.9547, "lon": 6.8747, "elev_ft": 8271},
-            "Lower NWS point": {"lat": 44.9647, "lon": 6.8847, "elev_ft": 6677},
+            "Upper NWS point": {"lat": 44.9547, "lon": 6.8747, "elev_ft": 7874},
+            "Lower NWS point": {"lat": 44.9647, "lon": 6.8847, "elev_ft": 6706},
         },
     },
     "Val Gardena": {
-        # Saslong — NW-facing (faces the Langkofel massif)
+        # Saslong — NW-facing (faces the Langkofel massif) (FIS raceid=122788/122787)
         "display_name": "Val Gardena Wax Tool",
         "course_name": "Val Gardena Saslong Race Venue",
         "region": "europe",
         "weather_api": "open-meteo",
         "lat": 46.5550,
         "lon": 11.7778,
-        "elev_ft": 7415,
+        "elev_ft": 7379,
         "aspect_deg": 315.0,
         "slope_deg": 22.0,
-        "finish_ft": 4557,
-        "starts_ft": {"SuperG": 6890, "DH": 7415},
+        "finish_ft": 4626,
+        "starts_ft": {"DH": 7379, "SuperG": 6594},
         "points": {
-            "Upper NWS point": {"lat": 46.5500, "lon": 11.7728, "elev_ft": 7415},
-            "Lower NWS point": {"lat": 46.5600, "lon": 11.7828, "elev_ft": 4557},
+            "Upper NWS point": {"lat": 46.5500, "lon": 11.7728, "elev_ft": 7379},
+            "Lower NWS point": {"lat": 46.5600, "lon": 11.7828, "elev_ft": 4626},
         },
     },
 
     # --- Norway ---
     "Kvitfjell": {
-        # Kvitfjell Alpinsenter — north-facing; large vertical drop
+        # Kvitfjell Alpinsenter — north-facing; WC DH/SG only (GS at Hafjell) (FIS raceid=122830/122847)
         "display_name": "Kvitfjell Wax Tool",
         "course_name": "Kvitfjell Race Venue",
         "region": "europe",
         "weather_api": "open-meteo",
         "lat": 61.4828,
         "lon": 10.1683,
-        "elev_ft": 3373,
+        "elev_ft": 3346,
         "aspect_deg": 5.0,
         "slope_deg": 25.0,
-        "finish_ft": 689,
-        "starts_ft": {"GS": 2493, "SuperG": 2854, "DH": 3373},
+        "finish_ft": 597,
+        "starts_ft": {"DH": 3346, "SuperG": 2326},
         "points": {
-            "Upper NWS point": {"lat": 61.4778, "lon": 10.1633, "elev_ft": 3373},
-            "Lower NWS point": {"lat": 61.4878, "lon": 10.1733, "elev_ft": 689},
+            "Upper NWS point": {"lat": 61.4778, "lon": 10.1633, "elev_ft": 3346},
+            "Lower NWS point": {"lat": 61.4878, "lon": 10.1733, "elev_ft": 597},
+        },
+    },
+    "Hafjell": {
+        # Hafjell — north-facing; WC GS during Norwegian double-header (FIS raceid=122850)
+        "display_name": "Hafjell Wax Tool",
+        "course_name": "Hafjell Race Venue",
+        "region": "europe",
+        "weather_api": "open-meteo",
+        "lat": 61.3711,
+        "lon": 10.4756,
+        "elev_ft": 2113,
+        "aspect_deg": 5.0,
+        "slope_deg": 18.0,
+        "finish_ft": 896,
+        "starts_ft": {"GS": 2113},
+        "points": {
+            "Upper NWS point": {"lat": 61.3661, "lon": 10.4706, "elev_ft": 2113},
+            "Lower NWS point": {"lat": 61.3761, "lon": 10.4806, "elev_ft": 896},
         },
     },
     "Narvik": {
-        # Fagernesfjellet — north-facing Arctic SL
+        # Fagernesfjellet — north-facing Arctic SL (last WC 1997; summit 578m, topographic estimate)
         "display_name": "Narvik Wax Tool",
         "course_name": "Narvik Fagernesfjellet Race Venue",
         "region": "europe",
         "weather_api": "open-meteo",
         "lat": 68.4133,
         "lon": 17.4019,
-        "elev_ft": 3307,
+        "elev_ft": 1804,
         "aspect_deg": 5.0,
         "slope_deg": 18.0,
-        "finish_ft": 1280,
-        "starts_ft": {"SL": 2461},
+        "finish_ft": 427,
+        "starts_ft": {"SL": 1804},
         "points": {
-            "Upper NWS point": {"lat": 68.4083, "lon": 17.3969, "elev_ft": 3307},
-            "Lower NWS point": {"lat": 68.4183, "lon": 17.4069, "elev_ft": 1280},
+            "Upper NWS point": {"lat": 68.4083, "lon": 17.3969, "elev_ft": 1804},
+            "Lower NWS point": {"lat": 68.4183, "lon": 17.4069, "elev_ft": 427},
         },
     },
 
     # --- Slovakia ---
     "Jasná": {
-        # Chopok north face — north-facing
+        # Chopok north face — north-facing (WC GS/SL only; FIS raceid=118468/118469)
         "display_name": "Jasná Wax Tool",
         "course_name": "Jasná Race Venue",
         "region": "europe",
         "weather_api": "open-meteo",
         "lat": 48.9308,
         "lon": 19.5944,
-        "elev_ft": 6575,
+        "elev_ft": 5413,
         "aspect_deg": 5.0,
         "slope_deg": 20.0,
-        "finish_ft": 3527,
-        "starts_ft": {"SL": 4593, "GS": 5249, "SuperG": 5906, "DH": 6575},
+        "finish_ft": 4101,
+        "starts_ft": {"GS": 5413, "SL": 4757},
         "points": {
-            "Upper NWS point": {"lat": 48.9258, "lon": 19.5894, "elev_ft": 6575},
-            "Lower NWS point": {"lat": 48.9358, "lon": 19.5994, "elev_ft": 3527},
+            "Upper NWS point": {"lat": 48.9258, "lon": 19.5894, "elev_ft": 5413},
+            "Lower NWS point": {"lat": 48.9358, "lon": 19.5994, "elev_ft": 4101},
         },
     },
 
     # --- Slovenia ---
     "Kranjska Gora": {
-        # Vitranc — NW-facing; classic WC GS/SL venue
+        # Vitranc — NW-facing; classic WC GS/SL venue (FIS raceid=122842/122843)
         "display_name": "Kranjska Gora Wax Tool",
         "course_name": "Kranjska Gora Vitranc Race Venue",
         "region": "europe",
         "weather_api": "open-meteo",
         "lat": 46.4797,
         "lon": 13.7736,
-        "elev_ft": 5643,
+        "elev_ft": 4193,
         "aspect_deg": 315.0,
         "slope_deg": 18.0,
-        "finish_ft": 2641,
-        "starts_ft": {"SL": 4446, "GS": 5643},
+        "finish_ft": 2766,
+        "starts_ft": {"GS": 4193, "SL": 3406},
         "points": {
-            "Upper NWS point": {"lat": 46.4747, "lon": 13.7686, "elev_ft": 5643},
-            "Lower NWS point": {"lat": 46.4847, "lon": 13.7786, "elev_ft": 2641},
+            "Upper NWS point": {"lat": 46.4747, "lon": 13.7686, "elev_ft": 4193},
+            "Lower NWS point": {"lat": 46.4847, "lon": 13.7786, "elev_ft": 2766},
         },
     },
 
     # --- Sweden ---
     "Åre": {
-        # Areskutan — north-facing; hosts full WC programme
+        # Areskutan — north-facing; hosts full WC programme (FIS raceid=91050-56/122848/49)
         "display_name": "Åre Wax Tool",
         "course_name": "Åre Race Venue",
         "region": "europe",
         "weather_api": "open-meteo",
         "lat": 63.3950,
         "lon": 13.0675,
-        "elev_ft": 4659,
+        "elev_ft": 3389,
         "aspect_deg": 5.0,
         "slope_deg": 20.0,
-        "finish_ft": 1273,
-        "starts_ft": {"SL": 2953, "GS": 3543, "SuperG": 3976, "DH": 4659},
+        "finish_ft": 1286,
+        "starts_ft": {"DH": 3389, "SuperG": 2956, "GS": 2369, "SL": 1923},
         "points": {
-            "Upper NWS point": {"lat": 63.3900, "lon": 13.0625, "elev_ft": 4659},
-            "Lower NWS point": {"lat": 63.4000, "lon": 13.0725, "elev_ft": 1273},
+            "Upper NWS point": {"lat": 63.3900, "lon": 13.0625, "elev_ft": 3389},
+            "Lower NWS point": {"lat": 63.4000, "lon": 13.0725, "elev_ft": 1286},
         },
     },
 
     # --- Switzerland ---
     "Adelboden": {
-        # Chuenisbärgli — NNW-facing; classic GS venue
+        # Chuenisbärgli — NNW-facing; classic GS venue (FIS raceid=122802/122803)
         "display_name": "Adelboden Wax Tool",
         "course_name": "Adelboden Chuenisbärgli Race Venue",
         "region": "europe",
         "weather_api": "open-meteo",
         "lat": 46.4800,
         "lon": 7.5550,
-        "elev_ft": 7890,
+        "elev_ft": 5676,
         "aspect_deg": 330.0,
         "slope_deg": 16.0,
-        "finish_ft": 4439,
-        "starts_ft": {"SL": 6102, "GS": 7890},
+        "finish_ft": 4272,
+        "starts_ft": {"GS": 5676, "SL": 4964},
         "points": {
-            "Upper NWS point": {"lat": 46.4750, "lon": 7.5500, "elev_ft": 7890},
-            "Lower NWS point": {"lat": 46.4850, "lon": 7.5600, "elev_ft": 4439},
+            "Upper NWS point": {"lat": 46.4750, "lon": 7.5500, "elev_ft": 5676},
+            "Lower NWS point": {"lat": 46.4850, "lon": 7.5600, "elev_ft": 4272},
         },
     },
     "Crans-Montana": {
-        # Downhill of Champions — south-facing (sun-exposed, unique)
+        # Downhill of Champions — south-facing (sun-exposed, unique) (FIS raceid=118485/118749)
         "display_name": "Crans-Montana Wax Tool",
         "course_name": "Crans-Montana Race Venue",
         "region": "europe",
         "weather_api": "open-meteo",
         "lat": 46.2994,
         "lon": 7.5028,
-        "elev_ft": 7415,
+        "elev_ft": 7251,
         "aspect_deg": 180.0,
         "slope_deg": 18.0,
-        "finish_ft": 4921,
-        "starts_ft": {"SuperG": 6890, "DH": 7415},
+        "finish_ft": 5069,
+        "starts_ft": {"DH": 7251, "SuperG": 6942},
         "points": {
-            "Upper NWS point": {"lat": 46.2944, "lon": 7.4978, "elev_ft": 7415},
-            "Lower NWS point": {"lat": 46.3044, "lon": 7.5078, "elev_ft": 4921},
+            "Upper NWS point": {"lat": 46.2944, "lon": 7.4978, "elev_ft": 7251},
+            "Lower NWS point": {"lat": 46.3044, "lon": 7.5078, "elev_ft": 5069},
         },
     },
     "Lenzerheide": {
-        # Alp Farur / Cassons — NE-facing; season-finale venue
+        # Alp Farur / Cassons — NE-facing; season-finale venue (FIS raceid=104415-23)
         "display_name": "Lenzerheide Wax Tool",
         "course_name": "Lenzerheide Race Venue",
         "region": "europe",
         "weather_api": "open-meteo",
         "lat": 46.7228,
         "lon": 9.5681,
-        "elev_ft": 7546,
+        "elev_ft": 7513,
         "aspect_deg": 30.0,
         "slope_deg": 22.0,
-        "finish_ft": 4856,
-        "starts_ft": {"SL": 5577, "GS": 6562, "SuperG": 6890, "DH": 7546},
+        "finish_ft": 5020,
+        "starts_ft": {"DH": 7513, "SuperG": 7087, "GS": 6299, "SL": 5741},
         "points": {
-            "Upper NWS point": {"lat": 46.7178, "lon": 9.5631, "elev_ft": 7546},
-            "Lower NWS point": {"lat": 46.7278, "lon": 9.5731, "elev_ft": 4856},
+            "Upper NWS point": {"lat": 46.7178, "lon": 9.5631, "elev_ft": 7513},
+            "Lower NWS point": {"lat": 46.7278, "lon": 9.5731, "elev_ft": 5020},
         },
     },
     "Meiringen-Hasliberg": {
-        # Käserstatt / Hasliberg — NNW-facing; GS only
+        # Käserstatt / Hasliberg — NNW-facing; GS (WC races cancelled repeatedly; Planplatten 2245m; topographic estimate)
         "display_name": "Meiringen-Hasliberg Wax Tool",
         "course_name": "Meiringen-Hasliberg Race Venue",
         "region": "europe",
         "weather_api": "open-meteo",
         "lat": 46.7350,
         "lon": 8.1969,
-        "elev_ft": 7982,
+        "elev_ft": 6299,
         "aspect_deg": 350.0,
         "slope_deg": 20.0,
-        "finish_ft": 3461,
-        "starts_ft": {"GS": 7982},
+        "finish_ft": 4921,
+        "starts_ft": {"GS": 6299},
         "points": {
-            "Upper NWS point": {"lat": 46.7300, "lon": 8.1919, "elev_ft": 7982},
-            "Lower NWS point": {"lat": 46.7400, "lon": 8.2019, "elev_ft": 3461},
+            "Upper NWS point": {"lat": 46.7300, "lon": 8.1919, "elev_ft": 6299},
+            "Lower NWS point": {"lat": 46.7400, "lon": 8.2019, "elev_ft": 4921},
         },
     },
     "Veysonnaz": {
-        # Mont-Rouge (4 Vallées) — NNW-facing
+        # Mont-Rouge (4 Vallées) — NNW-facing (last WC 1993; Graoully course ~2000-2100m; topographic estimate)
         "display_name": "Veysonnaz Wax Tool",
         "course_name": "Veysonnaz Race Venue",
         "region": "europe",
         "weather_api": "open-meteo",
         "lat": 46.1428,
         "lon": 7.3244,
-        "elev_ft": 7169,
+        "elev_ft": 6890,
         "aspect_deg": 350.0,
         "slope_deg": 20.0,
-        "finish_ft": 4216,
-        "starts_ft": {"SL": 6234, "GS": 7169},
+        "finish_ft": 5085,
+        "starts_ft": {"GS": 6890, "SL": 6234},
         "points": {
-            "Upper NWS point": {"lat": 46.1378, "lon": 7.3194, "elev_ft": 7169},
-            "Lower NWS point": {"lat": 46.1478, "lon": 7.3294, "elev_ft": 4216},
+            "Upper NWS point": {"lat": 46.1378, "lon": 7.3194, "elev_ft": 6890},
+            "Lower NWS point": {"lat": 46.1478, "lon": 7.3294, "elev_ft": 5085},
         },
     },
     "Wengen": {
-        # Lauberhorn — east-facing (toward Kleine Scheidegg); longest WC DH
+        # Lauberhorn — east-facing (toward Kleine Scheidegg); no WC GS held (FIS raceid=122808/07/09)
         "display_name": "Wengen Wax Tool",
         "course_name": "Wengen Lauberhorn Race Venue",
         "region": "europe",
@@ -2523,29 +2540,29 @@ VENUES = {
         "elev_ft": 7595,
         "aspect_deg": 90.0,
         "slope_deg": 20.0,
-        "finish_ft": 4222,
-        "starts_ft": {"SL": 5577, "GS": 6890, "SuperG": 7595, "DH": 7595},
+        "finish_ft": 4216,
+        "starts_ft": {"DH": 7595, "SuperG": 6644, "SL": 4839},
         "points": {
             "Upper NWS point": {"lat": 46.4890, "lon": 7.9103, "elev_ft": 7595},
-            "Lower NWS point": {"lat": 46.4990, "lon": 7.9203, "elev_ft": 4222},
+            "Lower NWS point": {"lat": 46.4990, "lon": 7.9203, "elev_ft": 4216},
         },
     },
     "Zermatt": {
-        # Matterhorn Glacier (high-altitude speed events) — north-facing
+        # Matterhorn Glacier (high-altitude speed events) — north-facing (FIS raceid=118510/118338)
         "display_name": "Zermatt Wax Tool",
         "course_name": "Zermatt Matterhorn Glacier Race Venue",
         "region": "europe",
         "weather_api": "open-meteo",
         "lat": 45.9842,
         "lon": 7.7358,
-        "elev_ft": 12740,
+        "elev_ft": 12205,
         "aspect_deg": 5.0,
         "slope_deg": 20.0,
-        "finish_ft": 9459,
-        "starts_ft": {"GS": 11155, "SuperG": 11811, "DH": 12740},
+        "finish_ft": 9318,
+        "starts_ft": {"DH": 12205},
         "points": {
-            "Upper NWS point": {"lat": 45.9792, "lon": 7.7308, "elev_ft": 12740},
-            "Lower NWS point": {"lat": 45.9892, "lon": 7.7408, "elev_ft": 9459},
+            "Upper NWS point": {"lat": 45.9792, "lon": 7.7308, "elev_ft": 12205},
+            "Lower NWS point": {"lat": 45.9892, "lon": 7.7408, "elev_ft": 9318},
         },
     },
 

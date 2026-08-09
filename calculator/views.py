@@ -91,7 +91,7 @@ _EU_GROUPS = [
     ("🇩🇪 Germany",        ["Garmisch-Partenkirchen", "Ofterschwang"]),
     ("🇮🇹 Italy",          ["Alta Badia", "Bormio", "Cortina d'Ampezzo", "Madonna di Campiglio",
                              "Santa Caterina Valfurva", "Sestriere", "Val Gardena"]),
-    ("🇳🇴 Norway",         ["Kvitfjell", "Narvik"]),
+    ("🇳🇴 Norway",         ["Hafjell", "Kvitfjell", "Narvik"]),
     ("🇸🇰 Slovakia",       ["Jasná"]),
     ("🇸🇮 Slovenia",       ["Kranjska Gora"]),
     ("🇸🇪 Sweden",         ["Åre"]),

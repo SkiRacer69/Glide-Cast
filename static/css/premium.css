@@ -1691,3 +1691,193 @@ input[type="range"].slider-teal::-moz-range-track {
   line-height: 1.6;
   margin: 0;
 }
+
+/* ── Light / Dark theme toggle ──────────────────────────────────────────── */
+
+/* Theme toggle button in nav */
+.theme-toggle {
+  padding: 0.45rem !important;
+  width: 34px !important;
+  height: 34px !important;
+  display: flex !important;
+  align-items: center !important;
+  justify-content: center !important;
+  border-radius: 10px !important;
+  flex-shrink: 0;
+  cursor: pointer;
+}
+.theme-toggle svg {
+  width: 15px;
+  height: 15px;
+  display: block;
+  fill: none;
+  stroke: currentColor;
+  stroke-width: 2;
+  stroke-linecap: round;
+  stroke-linejoin: round;
+  pointer-events: none;
+}
+/* Dark mode shows moon icon; light mode shows sun icon */
+.theme-toggle .icon-sun  { display: none; }
+.theme-toggle .icon-moon { display: block; }
+html[data-theme="light"] .theme-toggle .icon-sun  { display: block; }
+html[data-theme="light"] .theme-toggle .icon-moon { display: none; }
+
+/* Light theme variable overrides */
+html[data-theme="light"] {
+  --navy:         #f1f5f9;
+  --ice:          #0f172a;
+  --navy-light:   #e2e8f0;
+  --glass-bg:     rgba(0, 0, 0, 0.03);
+  --glass-border: rgba(0, 0, 0, 0.10);
+  --glass-nav:    rgba(255, 255, 255, 0.92);
+  --input-bg:     #ffffff;
+  --input-border: rgba(0, 0, 0, 0.15);
+}
+
+html[data-theme="light"] body {
+  background: #f1f5f9;
+  color: #0f172a;
+}
+
+html[data-theme="light"] .nav-sticky {
+  background: rgba(255, 255, 255, 0.92);
+  border-bottom-color: rgba(0, 0, 0, 0.1);
+}
+
+html[data-theme="light"] .nav-links a,
+html[data-theme="light"] .nav-links button {
+  color: #0f172a;
+  background: rgba(0, 0, 0, 0.04);
+  border-color: rgba(0, 0, 0, 0.12);
+}
+
+html[data-theme="light"] .nav-links a:hover,
+html[data-theme="light"] .nav-links button:hover {
+  background: rgba(0, 0, 0, 0.08);
+  border-color: rgba(0, 0, 0, 0.2);
+}
+
+html[data-theme="light"] .nav-cta {
+  background: var(--glacier) !important;
+  border-color: var(--glacier) !important;
+  color: #fff !important;
+}
+
+html[data-theme="light"] .card-glass {
+  background: rgba(255, 255, 255, 0.88);
+  border-color: rgba(0, 0, 0, 0.1);
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+}
+
+html[data-theme="light"] .card-glass:hover {
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
+}
+
+html[data-theme="light"] .hero-premium::before {
+  background: radial-gradient(ellipse 80% 60% at 50% 0%, #dbeafe 0%, #f1f5f9 55%);
+  animation: none;
+}
+
+html[data-theme="light"] .hero-title,
+html[data-theme="light"] .hero-subtitle,
+html[data-theme="light"] .hero-brand-kicker,
+html[data-theme="light"] .text-section-title,
+html[data-theme="light"] .text-page-title {
+  color: #0f172a;
+}
+
+html[data-theme="light"] .text-caption,
+html[data-theme="light"] .text-label {
+  color: #475569;
+  opacity: 1;
+}
+
+html[data-theme="light"] .text-data,
+html[data-theme="light"] .wax-value {
+  color: #0f172a;
+}
+
+html[data-theme="light"] .input-dark,
+html[data-theme="light"] select.input-dark,
+html[data-theme="light"] input[type="text"].input-dark,
+html[data-theme="light"] input[type="password"].input-dark,
+html[data-theme="light"] input[type="email"].input-dark,
+html[data-theme="light"] input[type="date"].input-dark,
+html[data-theme="light"] input[type="time"].input-dark {
+  background: #ffffff !important;
+  border-color: rgba(0, 0, 0, 0.15) !important;
+  color: #0f172a !important;
+}
+
+html[data-theme="light"] select.input-dark option {
+  background: #ffffff;
+  color: #0f172a;
+}
+
+html[data-theme="light"] .msg {
+  background: rgba(255, 255, 255, 0.9);
+  border-color: rgba(0, 0, 0, 0.12);
+  color: #0f172a;
+}
+
+html[data-theme="light"] .site-footer {
+  background: rgba(226, 232, 240, 0.7);
+  border-top-color: rgba(0, 0, 0, 0.1);
+}
+
+html[data-theme="light"] .site-footer-legal {
+  color: #0f172a;
+  opacity: 0.7;
+}
+
+/* Calculator page — mountain photo stays, panels go light */
+html[data-theme="light"] .page-calculator .hero-premium::before {
+  background: linear-gradient(180deg, rgba(255,255,255,0.55) 0%, rgba(241,245,249,0.82) 100%);
+  animation: none;
+}
+
+html[data-theme="light"] .page-calculator .nav-sticky {
+  background: rgba(255, 255, 255, 0.94);
+  border-bottom-color: rgba(0, 0, 0, 0.12);
+}
+
+html[data-theme="light"] .page-calculator .nav-links a,
+html[data-theme="light"] .page-calculator .nav-links button {
+  background: rgba(255, 255, 255, 0.8);
+  border-color: rgba(0, 0, 0, 0.12);
+  color: #0f172a;
+}
+
+html[data-theme="light"] .page-calculator .card-glass {
+  background: rgba(255, 255, 255, 0.92);
+  border-color: rgba(0, 0, 0, 0.12);
+  backdrop-filter: blur(12px);
+  -webkit-backdrop-filter: blur(12px);
+}
+
+html[data-theme="light"] .page-calculator .card-glass .card-glass {
+  background: rgba(255, 255, 255, 0.82);
+}
+
+html[data-theme="light"] .page-calculator .input-dark,
+html[data-theme="light"] .page-calculator select.input-dark,
+html[data-theme="light"] .page-calculator input[type="date"].input-dark,
+html[data-theme="light"] .page-calculator input[type="time"].input-dark {
+  background: #ffffff !important;
+  border-color: rgba(0, 0, 0, 0.18) !important;
+  color: #0f172a !important;
+}
+
+html[data-theme="light"] .page-calculator select.input-dark option {
+  background: #ffffff;
+  color: #0f172a;
+}
+
+/* Input checkbox label in light mode */
+html[data-theme="light"] .input-check-wrap .text-data {
+  color: #0f172a;
+}
+
+/* Snow animation — hide in light mode (looks odd on light bg) */
+html[data-theme="light"] #snow-container { opacity: 0.15; }
