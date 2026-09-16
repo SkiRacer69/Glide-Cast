@@ -14,28 +14,30 @@
 {% block content %}
   <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; align-items: start;">
     <div class="card-glass scroll-anim-card" style="padding: 1.5rem;">
-      <p class="text-label" style="font-size: 0.75rem; margin-bottom: 0.25rem;">Plan & billing</p>
+      <p class="text-label" style="font-size: 0.75rem; margin-bottom: 0.25rem;" data-i18n="account.plan_billing">Plan & billing</p>
       <p class="data-value" style="font-size: 1.1rem; margin: 0 0 0.25rem 0;">
         {% if profile.admin_override_active %}Admin override · {{ profile.effective_plan_tier }}{% else %}{{ profile.get_plan_tier_display }}{% if profile.billing_interval %} · {{ profile.get_billing_interval_display }}{% endif %}{% endif %}
       </p>
-      <p class="text-caption" style="margin: 0 0 0.5rem 0;">Status: {% if profile.admin_override_active %}Active{% else %}{{ profile.subscription_status|default:"none"|capfirst }}{% endif %}</p>
+      <p class="text-caption" style="margin: 0 0 0.5rem 0;"><span data-i18n="account.status_prefix">Status: </span>{% if profile.admin_override_active %}Active{% else %}{{ profile.subscription_status|default:"none"|capfirst }}{% endif %}</p>
       {% if profile.current_period_end %}
-        <p class="text-caption" style="margin: 0 0 1rem 0;">Current period ends {{ profile.current_period_end|date:"M j, Y" }}</p>
+        <p class="text-caption" style="margin: 0 0 1rem 0;"><span data-i18n="account.period_ends_prefix">Current period ends </span>{{ profile.current_period_end|date:"M j, Y" }}</p>
       {% endif %}
       {% if pdf_limit is not None and pdf_remaining is not None %}
-        <p class="text-caption" style="margin: 0 0 1rem 0;">PDF downloads this period: {{ pdf_remaining }} of {{ pdf_limit }} remaining</p>
+        <p class="text-caption" style="margin: 0 0 1rem 0;"><span data-i18n="account.pdf_remaining_prefix">PDF downloads this period: </span>{{ pdf_remaining }}<span data-i18n="account.pdf_remaining_suffix"> remaining</span></p>
       {% endif %}
       <div style="display: flex; flex-wrap: wrap; gap: 0.5rem;">
-        <a href="{% url 'calculator' %}" class="btn-primary" style="width: auto;">Open calculator</a>
-        <a href="{% url 'customer_portal' %}" class="btn-secondary">Manage billing</a>
+        <a href="{% url 'calculator' %}" class="btn-primary" style="width: auto;" data-i18n="account.open_calc">Open calculator</a>
+        <a href="{% url 'billing_settings' %}" class="btn-secondary" data-i18n="account.manage_billing">Manage billing</a>
       </div>
       {% if upgrade_prompt.next_tier %}
-        <p class="text-caption" style="margin-top: 1rem;"><a href="{% url 'paywall' %}" style="color: var(--glacier);">Upgrade to {{ upgrade_prompt.next_tier }}</a> — ${{ upgrade_prompt.price_monthly }}/mo or ${{ upgrade_prompt.price_annual }}/yr</p>
+        <p class="text-caption" style="margin-top: 1rem;">
+          <a href="{% url 'paywall' %}" style="color: var(--glacier);"><span data-i18n="account.upgrade_to">Upgrade to</span> {{ upgrade_prompt.next_tier }}</a><span data-i18n="account.upgrade_sep"> — $</span>{{ upgrade_prompt.price_monthly }}<span data-i18n="account.upgrade_mo">/mo or $</span>{% if upgrade_prompt.price_annual %}{{ upgrade_prompt.price_annual }}<span data-i18n="account.upgrade_yr">/yr</span>{% endif %}
+        </p>
       {% endif %}
     </div>
     <div class="card-glass scroll-anim-card" style="padding: 1.5rem;">
-      <h2 class="text-section-title" style="font-size: 1.25rem; margin: 0 0 0.5rem 0;">Login history</h2>
-      <p class="text-caption" style="margin-bottom: 0.75rem;">Recent logins — when and from where.</p>
+      <h2 class="text-section-title" style="font-size: 1.25rem; margin: 0 0 0.5rem 0;" data-i18n="account.login_history_title">Login history</h2>
+      <p class="text-caption" style="margin-bottom: 0.75rem;" data-i18n="account.login_history_desc">Recent logins — when and from where.</p>
       {% if login_history %}
         <ul style="list-style: none; padding: 0; margin: 0; font-size: 0.875rem;">
           {% for entry in login_history %}
@@ -45,36 +47,36 @@
           {% endfor %}
         </ul>
       {% else %}
-        <p class="text-caption" style="margin: 0;">No login history yet.</p>
+        <p class="text-caption" style="margin: 0;" data-i18n="account.no_logins">No login history yet.</p>
       {% endif %}
     </div>
   </div>
   {% if show_conditions_log %}
   <div class="card-glass scroll-anim-card" style="padding: 1.5rem; margin-top: 1rem;">
-    <h2 class="text-section-title" style="font-size: 1.25rem; margin: 0 0 0.5rem 0;">Conditions log</h2>
-    <p class="text-caption" style="margin-bottom: 0.75rem;">Your personal race log — track wax choices and results.</p>
+    <h2 class="text-section-title" style="font-size: 1.25rem; margin: 0 0 0.5rem 0;" data-i18n="account.conditions_log_title">Conditions log</h2>
+    <p class="text-caption" style="margin-bottom: 0.75rem;" data-i18n="account.conditions_log_desc">Your personal race log — track wax choices and results.</p>
     {% if conditions_summary.total_entries %}
-      <p class="data-value" style="font-size: 1.1rem; margin: 0 0 0.5rem 0;">Wax accuracy: {{ conditions_summary.accuracy_rate|default:"—" }}% · {{ conditions_summary.total_entries }} entries</p>
+      <p class="data-value" style="font-size: 1.1rem; margin: 0 0 0.5rem 0;"><span data-i18n="account.wax_accuracy_prefix">Wax accuracy: </span>{{ conditions_summary.accuracy_rate|default:"—" }}%<span data-i18n="account.entries_suffix"> entries</span></p>
       {% if conditions_summary.most_used_products %}
-        <p class="text-caption" style="margin: 0 0 0.5rem 0;">Top products: {% for name, count in conditions_summary.most_used_products %}{{ name }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
+        <p class="text-caption" style="margin: 0 0 0.5rem 0;"><span data-i18n="account.top_products_prefix">Top products: </span>{% for name, count in conditions_summary.most_used_products %}{{ name }}{% if not forloop.last %}, {% endif %}{% endfor %}</p>
       {% endif %}
     {% else %}
-      <p class="text-caption" style="margin: 0 0 0.5rem 0;">Add entries to see your wax accuracy rate.</p>
+      <p class="text-caption" style="margin: 0 0 0.5rem 0;" data-i18n="account.add_entries_prompt">Add entries to see your wax accuracy rate.</p>
     {% endif %}
-    <a href="{% url 'conditions_log_list' %}" class="btn-secondary" style="width: auto;">Open conditions log</a>
+    <a href="{% url 'conditions_log_list' %}" class="btn-secondary" style="width: auto;" data-i18n="account.open_log">Open conditions log</a>
   </div>
   {% endif %}
   <div class="card-glass scroll-anim-card" style="padding: 1.5rem; margin-top: 1rem;">
-    <h2 class="text-section-title" style="font-size: 1.25rem; margin: 0 0 0.5rem 0;">Terms of service</h2>
-    <p class="text-caption" style="margin: 0 0 0.75rem 0;"><a href="{% url 'terms_of_service' %}" style="color: var(--glacier);">Read the Terms of Service</a></p>
+    <h2 class="text-section-title" style="font-size: 1.25rem; margin: 0 0 0.5rem 0;" data-i18n="account.tos_title">Terms of service</h2>
+    <p class="text-caption" style="margin: 0 0 0.75rem 0;"><a href="{% url 'terms_of_service' %}" style="color: var(--glacier);" data-i18n="account.read_tos">Read the Terms of Service</a></p>
     {% if tos_acceptance %}
-      <p class="text-caption" style="margin: 0;">You accepted the terms on {{ tos_acceptance.accepted_at|date:"M j, Y" }} at {{ tos_acceptance.accepted_at|time }} from IP {{ tos_acceptance.ip_address|default:"—" }}.</p>
+      <p class="text-caption" style="margin: 0;"><span data-i18n="account.tos_accepted_prefix">You accepted the terms on </span>{{ tos_acceptance.accepted_at|date:"M j, Y" }}<span data-i18n="account.tos_at"> at </span>{{ tos_acceptance.accepted_at|time }}<span data-i18n="account.tos_from"> from IP </span>{{ tos_acceptance.ip_address|default:"—" }}.</p>
     {% else %}
-      <p class="text-caption" style="margin: 0;">Terms acceptance not recorded.</p>
+      <p class="text-caption" style="margin: 0;" data-i18n="account.tos_not_recorded">Terms acceptance not recorded.</p>
     {% endif %}
   </div>
   <div class="card-glass scroll-anim-card" style="padding: 1.5rem; margin-top: 1rem;">
-    <h2 class="text-section-title" style="font-size: 1.25rem; margin: 0 0 0.5rem 0;">Support</h2>
-    <p class="text-caption" style="margin: 0;">For billing issues, use Manage billing. Calculation history is stored for admin review and your continuity.</p>
+    <h2 class="text-section-title" style="font-size: 1.25rem; margin: 0 0 0.5rem 0;" data-i18n="account.support_title">Support</h2>
+    <p class="text-caption" style="margin: 0;" data-i18n="account.support_body">For billing issues, use Manage billing. Calculation history is stored for admin review and your continuity.</p>
   </div>
 {% endblock %}

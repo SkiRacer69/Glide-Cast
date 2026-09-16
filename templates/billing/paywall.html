@@ -1,6 +1,6 @@
 {% extends "base.html" %}
 {% load static %}
-{% block title %}Subscribe · GlideCast — Wax Done Right{% endblock %}
+{% block title %}GlideCast — Physics-Based Ski Wax Recommendations{% endblock %}
 {% block body_class %}page-paywall{% endblock %}
 
 {% block hero %}
@@ -8,121 +8,67 @@
     <div class="paywall-hero-inner">
       <p class="paywall-hero-brand">GlideCast<sup class="mark-tm">™</sup></p>
       <p class="paywall-hero-slogan">&ldquo;Stop Guessing. Start Winning.&rdquo;<sup class="mark-tm">™</sup></p>
-      <h1 class="paywall-hero-title">Choose your plan</h1>
-      <p class="paywall-hero-lead">7-day free trial on all plans.</p>
+      <h1 class="paywall-hero-title">Physics-Based Wax Recommendations for Race Morning</h1>
+      <p class="paywall-hero-lead">Physics-based wax calls built on real snow science — for Alpine ski racing and Nordic XC.</p>
+      {% if not user.is_authenticated %}
+      <div class="paywall-hero-cta-row">
+        <a href="{% url 'signup' %}" class="paywall-hero-cta-primary">Create free account</a>
+        <a href="{% url 'login' %}" class="paywall-hero-cta-secondary">Log in</a>
+      </div>
+      {% endif %}
     </div>
   </section>
 {% endblock %}
 
 {% block content %}
-  <section class="paywall-features" aria-labelledby="paywall-features-heading">
-    <h2 id="paywall-features-heading" class="paywall-section-title">What GlideCast does</h2>
-    <p class="paywall-features-services">The GlideCast Calculator<sup class="mark-sm">℠</sup> delivers physics-based wax recommendations for race morning.</p>
-    <p class="paywall-section-lead">Venue-specific inputs, clear physics-based reasoning, and wax recommendations for race morning.</p>
-    <div class="paywall-features-grid">
-      <div class="paywall-feature-card">
-        <h3>Mountain-specific</h3>
-        <p>Uses each venue’s geometry and your schedule—not a generic hill profile.</p>
-      </div>
-      <div class="paywall-feature-card">
-        <h3>Energy terms spelled out</h3>
-        <p>On Pro: solar, longwave, latent and sensible heat, and deep-snow evolution shown with each recommendation.</p>
-      </div>
-      <div class="paywall-feature-card">
-        <h3>Fast to use</h3>
-        <p>Short form, direct output; PDFs when you need a brief for staff or athletes.</p>
-      </div>
-    </div>
-  </section>
-
-  <section class="science-credibility-section section-full-bleed" aria-labelledby="science-credibility-heading">
-    <div class="science-credibility-inner">
-      <h2 id="science-credibility-heading" class="science-credibility-heading">Built on real science. Not guesswork.</h2>
-      <div class="science-credibility-grid">
-        <div class="science-credential-card">
-          <p class="science-credential-name">
-            <a href="https://faculty-directory.dartmouth.edu/erich-osterberg" target="_blank" rel="noopener noreferrer">Dr. Erich Osterberg</a>
-          </p>
-          <p class="science-credential-title">Professor of Earth Sciences, Dartmouth College</p>
-          <p class="science-credential-label">Education</p>
-          <p class="science-credential-degrees">B.A. from Middlebury College, M.S. from the University of Otago, and Ph.D. from the University of Maine.</p>
-          <p class="science-credential-label">Areas of expertise</p>
-          <div class="science-expertise-pills" role="list">
-            <span class="science-expertise-pill" role="listitem">Paleoclimatology</span>
-            <span class="science-expertise-pill" role="listitem">Climate dynamics</span>
-            <span class="science-expertise-pill" role="listitem">Atmospheric chemistry</span>
-            <span class="science-expertise-pill" role="listitem">Snow and ice chemistry</span>
-          </div>
-        </div>
-        <div class="science-credibility-copy">
-          <blockquote class="science-pull-quote">The same physics that govern how snow changes over 10,000 years govern how it changes over two hours.</blockquote>
-          <p>GlideCast&rsquo;s wax prediction engine<sup class="mark-sm">℠</sup> is grounded in physical principles from snow and ice science research. <a class="paywall-text-link" href="https://faculty-directory.dartmouth.edu/erich-osterberg" target="_blank" rel="noopener noreferrer">Dr. Erich Osterberg</a> is Professor of Earth Sciences at Dartmouth College and one of the world&rsquo;s leading experts in ice, snow, and climate science &mdash; his specialty is analyzing the chemistry and physical properties of snow and ice to understand how they change over time and in response to atmospheric conditions.</p>
-          <p>His research spans ice cores from mountain glaciers and ice sheets across Alaska, Greenland, and Antarctica, giving him a uniquely deep understanding of how snow temperature, crystal structure, humidity, solar radiation, and atmospheric chemistry interact at the surface level &mdash; the exact conditions that determine how a ski glides.</p>
-          <p>Dr. Osterberg holds a B.A. from Middlebury College, an M.S. from the University of Otago, and a Ph.D. from the University of Maine. He has published dozens of peer-reviewed papers in journals including <em>Nature Geoscience</em>, <em>Geophysical Research Letters</em>, and the <em>Journal of Glaciology</em>. His areas of expertise include paleoclimatology, climate dynamics, atmospheric chemistry, and snow and ice chemistry.</p>
-          <p>The snow surface energy model<sup class="mark-sm">℠</sup> at the core of GlideCast &mdash; combining solar radiation, longwave exchange, latent heat, sensible heat, and deep snow temperature evolution &mdash; is grounded in the same physical principles researchers apply to understand how snow changes across decades and centuries. GlideCast applies that science to a two-hour race window.</p>
-          <div class="science-cta-row">
-            <a class="science-research-btn" href="https://icecore.host.dartmouth.edu/" target="_blank" rel="noopener noreferrer">Explore Dr. Osterberg&rsquo;s Research</a>
-            <a class="science-dartmouth-linkcard" href="https://faculty-directory.dartmouth.edu/erich-osterberg" target="_blank" rel="noopener noreferrer">
-              <span class="science-dartmouth-linkcard-text">
-                <span class="science-dartmouth-linkcard-name">Dartmouth College</span>
-                <span class="science-dartmouth-linkcard-sub">Faculty profile · Earth Sciences</span>
-              </span>
-              <svg class="science-external-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
-                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
-                <polyline points="15 3 21 3 21 9" />
-                <line x1="10" y1="14" x2="21" y2="3" />
-              </svg>
-            </a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
   <div class="paywall-pricing-block">
+    <h2 class="paywall-pricing-heading">Pick your plan</h2>
+    <p class="paywall-pricing-subhead">7-day free trial on all plans. Cancel any time.</p>
+    <div class="paywall-sport-tabs">
+      <a href="?sport=alpine" class="paywall-sport-tab{% if sport == 'alpine' %} active{% endif %}">Alpine</a>
+      <a href="?sport=nordic" class="paywall-sport-tab{% if sport == 'nordic' %} active{% endif %}">Nordic XC</a>
+    </div>
     <div class="paywall-plans-grid">
       {% for tier in tiers %}
-        <div class="paywall-plan-card">
+        <div class="paywall-plan-card{% if tier.id == 'all' %} paywall-plan-card--featured{% endif %}">
+          {% if tier.id == 'all' %}<p class="paywall-plan-badge">Best Value</p>{% endif %}
           <p class="paywall-plan-name">{{ tier.name }}</p>
-          <p class="paywall-plan-price">${{ tier.monthly }}/mo</p>
+          <p class="paywall-plan-price">${{ tier.monthly }}<span style="font-size:0.9rem;font-weight:500;color:#64748b;">/mo</span></p>
           <p class="paywall-plan-desc">
-            {% if tier.id == 'basic' %}Correct wax calls for five mountains: Sugarloaf, Sunday River, Gore, Mount Snow, and Killington. Charts and detailed "why" data are not included.{% endif %}
-            {% if tier.id == 'pro' %}Every mountain in the app, plus temperature charts, energy breakdown, full rationale, and unlimited PDF export.{% endif %}
+            {% if tier.id == 'basic' and sport == 'nordic' %}
+              Grip and glide wax calls for Nordic XC — Classic (kick wax and klister) and Skate. Covers major FIS venues.
+            {% elif tier.id == 'basic' %}
+              Wax calls for five mountains: Sugarloaf, Sunday River, Gore Mountain, Mount Snow, and Killington.
+            {% elif tier.id == 'pro' and sport == 'nordic' %}
+              Every nordic venue plus GPX course analysis, per-segment snow temps, wax zone maps, and full energy breakdown.
+            {% elif tier.id == 'pro' %}
+              Every mountain in the app, temperature charts, full energy breakdown, and unlimited PDF export.
+            {% elif tier.id == 'all' %}
+              Full Pro access to both Alpine and Nordic — every venue, all charts, GPX course analysis, and PDF export. One plan, everything.
+            {% endif %}
           </p>
-          <a href="{% url 'create_checkout_session' %}?plan={{ tier.id }}&interval=monthly" class="paywall-cta">Start free trial</a>
+          {% if user.is_authenticated %}
+            <a href="{% url 'create_checkout_session' %}?plan={{ tier.id }}&interval=monthly&sport={{ sport }}" class="paywall-cta{% if tier.id == 'all' %} paywall-cta--featured{% endif %}">Start 7-day free trial</a>
+          {% else %}
+            <a href="{% url 'signup' %}" class="paywall-cta{% if tier.id == 'all' %} paywall-cta--featured{% endif %}">Create free account</a>
+          {% endif %}
         </div>
       {% endfor %}
     </div>
-    <p class="paywall-account-link-wrap">
-      <a href="{% url 'account' %}" class="paywall-text-link">View account</a>
-    </p>
-    <form method="post" action="{% url 'dev_bypass_subscription' %}" style="margin-top: 2rem; display: flex; gap: 0.5rem; align-items: center;">
-      {% csrf_token %}
-      <input type="text" name="dev_code" placeholder="Have an access code?" style="padding: 0.5rem 0.75rem; border: 1px solid #e2e8f0; border-radius: 6px; font-size: 0.9rem; width: 220px;">
-      <button type="submit" style="padding: 0.5rem 1rem; background: #00693E; color: #fff; border: none; border-radius: 6px; font-size: 0.9rem; cursor: pointer;">Apply</button>
-    </form>
+
+    {% if user.is_authenticated %}
+      <p class="paywall-account-link-wrap">
+        <a href="{% url 'account' %}" class="paywall-text-link">View account</a>
+      </p>
+      {% if show_dev_bypass %}
+      <form method="post" action="{% url 'dev_bypass_subscription' %}" style="margin-top:2rem;display:flex;gap:0.5rem;align-items:center;">
+        {% csrf_token %}
+        <input type="text" name="dev_code" placeholder="Have an access code?" style="padding:0.5rem 0.75rem;border:1px solid #e2e8f0;border-radius:6px;font-size:0.9rem;width:220px;">
+        <button type="submit" style="padding:0.5rem 1rem;background:#00693E;color:#fff;border:none;border-radius:6px;font-size:0.9rem;cursor:pointer;">Apply</button>
+      </form>
+      {% endif %}
+    {% else %}
+      <p style="text-align:center;margin-top:1.25rem;font-size:0.9rem;color:#475569;">Already have an account? <a href="{% url 'login' %}" class="paywall-text-link">Log in</a></p>
+    {% endif %}
   </div>
-
-  <section class="paywall-founders-section" aria-labelledby="founders-heading">
-    <div class="paywall-founders-inner">
-      <h2 id="founders-heading" class="paywall-section-title">Built by a racer, for racers</h2>
-      <div class="paywall-founders-grid">
-        <div class="paywall-founder-card">
-          <p class="paywall-founder-name">Owen Osterberg</p>
-          <p class="paywall-founder-role">CEO &amp; Co-Founder</p>
-          <blockquote class="paywall-founder-quote">&ldquo;I didn&rsquo;t know how good it would be until it got the snow temp exactly correct to the degree at Eastern Champs.&rdquo;</blockquote>
-          <p class="paywall-founder-bio">Owen is a competitive alpine ski racer who earned a top-7 finish at Eastern Championships and qualified for U16 Nationals — using GlideCast to pick his wax. That result proved the calculator wasn&rsquo;t just a theory. His goal: make this tool available to ski racers all over the world.</p>
-        </div>
-        <div class="paywall-founder-card">
-          <p class="paywall-founder-name">Dr. Erich Osterberg</p>
-          <p class="paywall-founder-role">Co-Founder &amp; Chief Science Officer</p>
-          <p class="paywall-founder-bio">Professor of Earth Sciences at Dartmouth College and one of the world&rsquo;s leading experts in snow and ice science. His research spans ice cores from Alaska, Greenland, and Antarctica — the same physics that govern how snow changes over 10,000 years power GlideCast&rsquo;s wax engine.</p>
-          <div class="science-cta-row" style="margin-top:1rem;">
-            <a class="science-research-btn" href="https://faculty-directory.dartmouth.edu/erich-osterberg" target="_blank" rel="noopener noreferrer">Dartmouth Faculty Profile</a>
-          </div>
-        </div>
-      </div>
-    </div>
-  </section>
-
 {% endblock %}

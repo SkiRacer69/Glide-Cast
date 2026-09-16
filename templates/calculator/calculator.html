@@ -4,6 +4,7 @@
 {% block title %}Calculator · GlideCast — Wax Done Right{% endblock %}
 
 {% block extra_head %}
+<script>(function(){if(localStorage.getItem('glidecast-theme')!=='light')document.documentElement.removeAttribute('data-theme');})();</script>
 {% if user.is_authenticated %}
 <meta name="csrf-token" content="{{ csrf_token }}" />
 {% endif %}
@@ -71,18 +72,25 @@
       <p id="calc-hero-schedule" class="hero-subtitle hero-stagger-2">{{ hero_race_date|date:"l, M j, Y" }} · Run 1 {{ hero_run1_time|time:"g:i A" }} · Run 2 {{ hero_run2_time|time:"g:i A" }}</p>
       <p class="hero-brand-kicker hero-stagger-2" style="margin-top: 0.25rem;">GlideCast<sup class="mark-tm">™</sup></p>
       <p id="calc-hero-caption" class="text-caption hero-stagger-2" style="margin-top: 0.35rem; opacity: 0.92;">Wax Done Right<sup class="mark-sm">℠</sup> &mdash; configure run parameters and compute wax recommendations</p>
+      <a href="{% url 'venue_map' %}" data-i18n="calc.globe_btn" class="hero-stagger-2 hero-globe-btn" style="display:inline-flex;align-items:center;gap:0.4rem;margin-top:0.75rem;padding:0.32rem 0.85rem;border-radius:9px;border:1px solid rgba(255,255,255,0.18);background:rgba(255,255,255,0.07);font-size:0.72rem;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;text-decoration:none;backdrop-filter:blur(8px);transition:all 0.15s ease;" onmouseover="this.style.background='rgba(255,255,255,0.14)'" onmouseout="this.style.background='rgba(255,255,255,0.07)'">🌍 Venue Globe</a>
+      {% if debug %}
+      <div class="hero-stagger-2" style="display:flex;gap:0.5rem;justify-content:center;margin-top:0.6rem;">
+        <a href="{% url 'calculator' %}" style="padding:0.35rem 0.9rem;border-radius:8px;border:1.5px solid rgba(255,255,255,0.5);background:rgba(255,255,255,0.16);color:#fff;font-size:0.72rem;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;text-decoration:none;">Alpine</a>
+        <a href="{% url 'nordic_calculator' %}" style="padding:0.35rem 0.9rem;border-radius:8px;border:1.5px solid rgba(255,255,255,0.2);background:rgba(255,255,255,0.06);color:#fff;font-size:0.72rem;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;text-decoration:none;opacity:0.7;">Nordic</a>
+      </div>
+      {% endif %}
     </div>
   </section>
 {% endblock %}
 
 {% block content %}
-  <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 1.5rem; align-items: start;">
-    <div class="card-glass scroll-anim-card" style="padding: 1.5rem;">
-      <p class="text-label" style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.25rem;">Wax calculator</p>
+  <div style="display: flex; justify-content: center;">
+    <div class="card-glass scroll-anim-card" style="padding: 1.5rem; width: 100%; max-width: 600px;">
+      <p class="text-label" data-i18n="calc.label" style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.25rem;">Wax calculator</p>
       <h2 class="text-section-title" style="font-size: 1.5rem; margin: 0 0 0.25rem 0;">GlideCast Calculator<sup class="mark-sm">℠</sup> engine</h2>
-      <p class="text-caption" style="font-size: 0.875rem; margin-bottom: 1.5rem;">Set venue, discipline, times, and snow context. Engine runs on submit.</p>
+      <p class="text-caption" data-i18n="calc.subtitle" style="font-size: 0.875rem; margin-bottom: 1.5rem;">Set venue, discipline, times, and snow context. Engine runs on submit.</p>
 
-      <form method="post" action="" style="display: flex; flex-direction: column; gap: 1rem;">
+      <form method="post" action="" enctype="multipart/form-data" style="display: flex; flex-direction: column; gap: 1rem;">
         {% csrf_token %}
 
         {% if form.errors %}
@@ -99,7 +107,7 @@
 
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
           <div class="input-wrap">
-            <label for="id_venue">Venue</label>
+            <label for="id_venue" data-i18n="calc.venue">Venue</label>
             <select name="venue" id="id_venue" class="input-dark">
               {% for group_label, group_choices in form.venue.field.choices %}
                 <optgroup label="{{ group_label }}">
@@ -111,7 +119,7 @@
             </select>
           </div>
           <div class="input-wrap">
-            <label for="id_discipline">Discipline</label>
+            <label for="id_discipline" data-i18n="calc.discipline">Discipline</label>
             <select name="discipline" id="id_discipline" class="input-dark">
               {% for value, label in form.discipline.field.choices %}
                 <option value="{{ value }}" {% if form.discipline.value == value %}selected{% endif %}>{{ label }}</option>
@@ -122,11 +130,11 @@
 
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
           <div class="input-wrap">
-            <label for="id_race_date">Race date</label>
+            <label for="id_race_date" data-i18n="calc.race_date">Race date</label>
             <input type="date" name="race_date" id="id_race_date" class="input-dark" value="{{ form.race_date.value|date:'Y-m-d' }}" />
           </div>
           <div class="input-wrap">
-            <label for="id_snow_mode">Snow mode</label>
+            <label for="id_snow_mode" data-i18n="calc.snow_mode">Snow mode</label>
             <select name="snow_mode" id="id_snow_mode" class="input-dark">
               {% for value, label in form.snow_mode.field.choices %}
                 <option value="{{ value }}" {% if form.snow_mode.value == value %}selected{% endif %}>{{ label }}</option>
@@ -137,11 +145,11 @@
 
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
           <div class="input-wrap">
-            <label for="id_run1_time">Run 1 time</label>
+            <label for="id_run1_time" data-i18n="calc.run1">Run 1 time</label>
             <input type="time" name="run1_time" id="id_run1_time" class="input-dark" value="{{ form.run1_time.value|time:'H:i' }}" />
           </div>
           <div class="input-wrap">
-            <label for="id_run2_time">Run 2 time</label>
+            <label for="id_run2_time" data-i18n="calc.run2">Run 2 time</label>
             <input type="time" name="run2_time" id="id_run2_time" class="input-dark" value="{{ form.run2_time.value|time:'H:i' }}" />
           </div>
         </div>
@@ -149,8 +157,8 @@
         <div class="input-check-wrap">
           <input type="checkbox" name="dirty_abrasive" id="id_dirty_abrasive" {% if form.dirty_abrasive.value %}checked{% endif %} />
           <div>
-            <span class="text-data" style="font-size: 0.875rem;">Dirty / abrasive snow</span>
-            <span class="text-caption" style="display: block; font-size: 0.75rem;">Adjusts confidence slightly downward</span>
+            <span class="text-data" data-i18n="calc.dirty" style="font-size: 0.875rem;">Dirty / abrasive snow</span>
+            <span class="text-caption" data-i18n="calc.dirty_hint" style="display: block; font-size: 0.75rem;">Adjusts confidence slightly downward</span>
           </div>
         </div>
 
@@ -171,24 +179,30 @@
         <input type="hidden" name="wet_refreeze_strength" value="{{ form.wet_refreeze_strength.value|default:3.5 }}" />
         <input type="hidden" name="wet_deep_relax_scale" value="{{ form.wet_deep_relax_scale.value|default:0.4 }}" />
 
-        <button type="submit" class="btn-primary">Compute recommendation</button>
+        <div>
+          <label style="display:block;font-size:0.72rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;opacity:0.7;margin-bottom:0.4rem;">
+            GPX run file <span style="font-weight:400;opacity:0.6;text-transform:none;letter-spacing:0;">(optional — auto-sets slope &amp; aspect)</span>
+          </label>
+          <div id="alpine-gpx-dropzone" style="border-radius:10px;border:2px dashed rgba(255,255,255,0.2);padding:1rem;text-align:center;background:rgba(255,255,255,0.04);transition:all 0.2s;cursor:pointer;">
+            <input type="file" name="gpx_file" id="id_gpx_file" accept=".gpx" style="display:none;" />
+            <label id="alpine-gpx-empty" for="id_gpx_file" style="cursor:pointer;display:block;">
+              <span style="font-size:1.3rem;display:block;margin-bottom:0.2rem;">📍</span>
+              <span style="font-size:0.82rem;font-weight:700;color:#60a5fa;">Upload GPX race run</span>
+              <span style="font-size:0.7rem;opacity:0.5;display:block;margin-top:0.15rem;">.gpx · max 10 MB</span>
+            </label>
+            <div id="alpine-gpx-filled" style="display:none;">
+              <div style="font-size:1.8rem;font-weight:900;color:#22c55e;line-height:1;">&#10003;</div>
+              <div style="font-size:0.9rem;font-weight:700;color:#4ade80;margin-top:0.15rem;">GPX track loaded</div>
+              <div id="alpine-gpx-fname" style="font-size:0.72rem;color:#86efac;word-break:break-all;margin-top:0.1rem;"></div>
+              <label for="id_gpx_file" style="display:inline-block;margin-top:0.3rem;font-size:0.68rem;color:#94a3b8;cursor:pointer;text-decoration:underline;">Change file</label>
+            </div>
+          </div>
+        </div>
+
+        <button type="submit" class="btn-primary" data-i18n="calc.submit">Compute recommendation</button>
       </form>
     </div>
 
-    <div class="card-glass scroll-anim-card" style="padding: 1.5rem;">
-      <h2 class="text-section-title" style="font-size: 1.25rem; margin: 0 0 0.5rem 0;">At a glance</h2>
-      <p class="text-caption" style="font-size: 0.875rem; margin-bottom: 1rem;">HS primary, TS/TSP options, and boundary warnings. Calculation history is stored per user.</p>
-      <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
-        <div class="card-glass" style="padding: 1rem;">
-          <div class="text-label" style="font-size: 0.7rem;">Output</div>
-          <div class="text-data" style="font-size: 0.9rem;">Clear wax call</div>
-        </div>
-        <div class="card-glass" style="padding: 1rem;">
-          <div class="text-label" style="font-size: 0.7rem;">Subscription</div>
-          <div class="text-data" style="font-size: 0.9rem;">Basic &amp; Pro · see Subscribe</div>
-        </div>
-      </div>
-    </div>
   </div>
 {% endblock %}
 
@@ -206,8 +220,49 @@
 
   if (!venueEl || !discEl) return;
 
+  var gpxZone   = document.getElementById("alpine-gpx-dropzone");
+  var gpxLabel  = gpxZone && gpxZone.previousElementSibling;
+
+  function setGpxRequired(required) {
+    if (!gpxZone) return;
+    if (required) {
+      gpxZone.style.border     = "2px dashed #60a5fa";
+      gpxZone.style.background = "rgba(96,165,250,0.08)";
+      if (gpxLabel) gpxLabel.style.opacity = "1";
+    } else {
+      var hasFile = document.getElementById("id_gpx_file") &&
+                    document.getElementById("id_gpx_file").files &&
+                    document.getElementById("id_gpx_file").files.length > 0;
+      if (!hasFile) {
+        gpxZone.style.border     = "2px dashed rgba(255,255,255,0.2)";
+        gpxZone.style.background = "rgba(255,255,255,0.04)";
+      }
+      if (gpxLabel) gpxLabel.style.opacity = "";
+    }
+  }
+
   function updateForVenue() {
     var key = venueEl.value;
+
+    if (key === "__gpx__") {
+      // GPX mode: all disciplines available, highlight drop zone
+      var current = discEl.value;
+      discEl.innerHTML = "";
+      DISC_ORDER.forEach(function(d) {
+        var opt = document.createElement("option");
+        opt.value = d;
+        opt.textContent = d;
+        if (d === current) opt.selected = true;
+        discEl.appendChild(opt);
+      });
+      if (!discEl.value && DISC_ORDER.length) discEl.value = DISC_ORDER[0];
+      setGpxRequired(true);
+      if (gpxZone) gpxZone.scrollIntoView({ behavior: "smooth", block: "center" });
+      return;
+    }
+
+    setGpxRequired(false);
+
     var data = VENUES[key];
     if (!data) return;
 
@@ -248,7 +303,31 @@
   });
 })();
 </script>
-<script src="{% static 'js/calculator-hero-sync.js' %}" defer></script>
+<script>
+(function() {
+  var input  = document.getElementById("id_gpx_file");
+  var zone   = document.getElementById("alpine-gpx-dropzone");
+  var empty  = document.getElementById("alpine-gpx-empty");
+  var filled = document.getElementById("alpine-gpx-filled");
+  var fname  = document.getElementById("alpine-gpx-fname");
+  if (!input) return;
+  input.addEventListener("change", function() {
+    if (input.files && input.files.length > 0) {
+      zone.style.border     = "2px solid #22c55e";
+      zone.style.background = "rgba(34,197,94,0.08)";
+      empty.style.display   = "none";
+      fname.textContent     = input.files[0].name;
+      filled.style.display  = "block";
+    } else {
+      zone.style.border     = "2px dashed rgba(255,255,255,0.2)";
+      zone.style.background = "rgba(255,255,255,0.04)";
+      filled.style.display  = "none";
+      empty.style.display   = "block";
+    }
+  });
+})();
+</script>
+<script src="{% static 'js/calculator-hero-sync.js' %}?v=2" defer></script>
 {% if user.is_authenticated %}
 <div style="display:none" aria-hidden="true">{% csrf_token %}</div>
 <script>window.SCREENSHOT_SIGNAL_URL = "{% url 'report_screenshot_attempt' %}";</script>

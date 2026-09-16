@@ -1,0 +1,87 @@
+{% extends "base.html" %}
+{% block title %}Billing Settings · GlideCast — Wax Done Right{% endblock %}
+
+{% block hero %}
+  <section class="hero-premium">
+    <div class="hero-inner">
+      <p class="hero-brand-kicker hero-stagger-1">GlideCast<sup class="mark-tm">™</sup></p>
+      <h1 class="hero-title hero-stagger-1" data-i18n="billing.title">Billing Settings</h1>
+      <p class="hero-subtitle hero-stagger-2" data-i18n="billing.subtitle">Manage your subscription, payment method, and invoices.</p>
+    </div>
+  </section>
+{% endblock %}
+
+{% block content %}
+  <div style="max-width: 640px; margin: 0 auto; display: flex; flex-direction: column; gap: 1.25rem;">
+
+    <!-- Current plan -->
+    <div class="card-glass scroll-anim-card" style="padding: 1.5rem;">
+      <p class="text-label" style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.25rem;" data-i18n="billing.current_plan">Current plan</p>
+      <p class="data-value" style="font-size: 1.15rem; font-weight: 800; margin: 0 0 0.2rem 0;">
+        {% if profile.admin_override_active %}Admin override · {{ profile.effective_plan_tier }}{% else %}{{ profile.get_plan_tier_display }}{% if profile.billing_interval %} · {{ profile.get_billing_interval_display }}{% endif %}{% endif %}
+      </p>
+      <p class="text-caption" style="margin: 0 0 0.25rem 0;"><span data-i18n="billing.status_prefix">Status: </span>{% if profile.admin_override_active %}Active{% else %}{{ profile.subscription_status|default:"none"|capfirst }}{% endif %}</p>
+      {% if profile.current_period_end %}
+        <p class="text-caption" style="margin: 0;"><span data-i18n="billing.renews_prefix">Renews </span>{{ profile.current_period_end|date:"M j, Y" }}</p>
+      {% endif %}
+    </div>
+
+    <!-- Payment & invoices -->
+    <div class="card-glass scroll-anim-card" style="padding: 1.5rem;">
+      <p class="text-label" style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.4rem;" data-i18n="billing.payment_invoices">Payment &amp; invoices</p>
+      <p class="text-caption" style="margin: 0 0 1rem 0;" data-i18n="billing.payment_desc">Update your payment method, download invoices, or switch billing interval in the Stripe portal.</p>
+      <a href="{% url 'customer_portal' %}" class="btn-secondary" style="width: auto;" data-i18n="billing.open_portal">Open Stripe portal →</a>
+    </div>
+
+    <!-- Settings / danger zone -->
+    <div class="card-glass scroll-anim-card" style="padding: 1.5rem;">
+      <p class="text-label" style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.4rem;" data-i18n="billing.settings_lbl">Settings</p>
+
+      {% if show_cancel %}
+      <details style="margin-top: 0.25rem;">
+        <summary style="cursor: pointer; font-size: 0.82rem; font-weight: 600; color: rgba(255,255,255,0.5); list-style: none; display: flex; align-items: center; gap: 0.4rem; user-select: none;">
+          <span style="font-size: 0.7rem; transition: transform 0.15s;">▶</span> <span data-i18n="billing.cancel_plan">Cancel plan</span>
+        </summary>
+        <div style="margin-top: 1rem; padding: 1rem; border: 1px solid rgba(239,68,68,0.2); border-radius: 10px; background: rgba(239,68,68,0.05);">
+          <p class="text-caption" style="margin: 0 0 0.6rem 0; color: rgba(255,255,255,0.65);" data-i18n="billing.cancel_warning">
+            Cancelling will end your access at the close of the current billing period. This action cannot be undone from here.
+          </p>
+          <form method="post" action="{% url 'cancel_subscription' %}"
+                onsubmit="return confirm('Are you sure you want to cancel? You will keep access until the end of your current billing period.');">
+            {% csrf_token %}
+            <button type="submit" style="
+              background: none; border: 1px solid rgba(239,68,68,0.5); border-radius: 8px;
+              color: rgba(239,68,68,0.8); font-size: 0.78rem; font-weight: 700;
+              padding: 0.4rem 1rem; cursor: pointer; transition: all 0.14s ease;
+            " onmouseover="this.style.background='rgba(239,68,68,0.12)';this.style.color='#ef4444';"
+               onmouseout="this.style.background='none';this.style.color='rgba(239,68,68,0.8)';"
+               data-i18n="billing.confirm_cancel">
+              Confirm cancellation
+            </button>
+          </form>
+        </div>
+      </details>
+      {% else %}
+        <p class="text-caption" style="margin: 0;" data-i18n="billing.no_subscription">No active subscription to manage.</p>
+      {% endif %}
+    </div>
+
+    <p style="text-align: center; font-size: 0.72rem; color: rgba(255,255,255,0.28);">
+      <a href="{% url 'account' %}" style="color: rgba(255,255,255,0.4);" data-i18n="billing.back_to_account">← Back to account</a>
+    </p>
+
+  </div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+(function () {
+  document.querySelectorAll('details').forEach(function (d) {
+    var arrow = d.querySelector('summary span');
+    d.addEventListener('toggle', function () {
+      if (arrow) arrow.style.transform = d.open ? 'rotate(90deg)' : '';
+    });
+  });
+})();
+</script>
+{% endblock %}

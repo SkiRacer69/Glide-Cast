@@ -16,8 +16,10 @@ Including another URLconf
 """
 from pathlib import Path
 
+from django.conf import settings
 from django.contrib import admin
 from django.urls import include, path, re_path
+from django.views.generic import RedirectView
 from django.views.static import serve
 
 BASE_DIR = Path(__file__).resolve().parent.parent
@@ -36,5 +38,10 @@ urlpatterns = [
     path("accounts/", include("accounts.urls")),
     path("accounts/", include("django.contrib.auth.urls")),
     path("billing/", include("billing.urls")),
+    path("calculator/", RedirectView.as_view(url="/", permanent=False)),
     path("", include("calculator.urls")),
+]
+
+urlpatterns += [
+    path("nordic/", include("nordic.urls")),
 ]

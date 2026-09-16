@@ -14,6 +14,7 @@ class Profile(models.Model):
     class PlanTier(models.TextChoices):
         BASIC = "basic", "Basic"
         PRO = "pro", "Pro"
+        ALL = "all", "All Access"
 
     class BillingInterval(models.TextChoices):
         MONTHLY = "monthly", "Monthly"
@@ -34,6 +35,7 @@ class Profile(models.Model):
     )
     current_period_end = models.DateTimeField(null=True, blank=True)
     pdf_period_start = models.DateTimeField(null=True, blank=True)  # start of current billing period for PDF count
+    sport_access = models.CharField(max_length=16, default="alpine")  # "alpine" | "nordic" | "all"
     admin_override_active = models.BooleanField(default=False)
     admin_override_plan = models.CharField(max_length=32, blank=True, default="")  # if set, use this plan
     suspended_at = models.DateTimeField(null=True, blank=True)
@@ -66,9 +68,19 @@ class Profile(models.Model):
         }
         if t in legacy:
             return legacy[t]
-        if t in (self.PlanTier.BASIC, self.PlanTier.PRO):
+        if t in (self.PlanTier.BASIC, self.PlanTier.PRO, self.PlanTier.ALL):
             return t
         return self.PlanTier.BASIC
+
+    def has_access_to_sport(self, sport: str) -> bool:
+        """Return True if this profile's subscription covers the requested sport."""
+        if not self.has_active_subscription():
+            return False
+        tier = self.effective_plan_tier()
+        if tier == self.PlanTier.ALL:
+            return True
+        access = self.admin_override_plan and "all" in self.admin_override_plan or self.sport_access
+        return access == sport or access == "all"
 
     def __str__(self) -> str:
         return f"Profile({self.user.username})"

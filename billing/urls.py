@@ -7,6 +7,8 @@ urlpatterns = [
     path("paywall/", views.paywall, name="paywall"),
     path("checkout/", views.create_checkout_session, name="create_checkout_session"),
     path("portal/", views.customer_portal, name="customer_portal"),
+    path("settings/", views.billing_settings, name="billing_settings"),
+    path("cancel/", views.cancel_subscription, name="cancel_subscription"),
     path("webhook/", views.stripe_webhook, name="stripe_webhook"),
     path("dev-bypass/", views.dev_bypass_subscription, name="dev_bypass_subscription"),
 ]

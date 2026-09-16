@@ -6,7 +6,7 @@
     <div class="hero-inner">
       <p class="hero-brand-kicker hero-stagger-1">GlideCast<sup class="mark-tm">™</sup></p>
       <h1 class="hero-title hero-stagger-1">{{ title }}</h1>
-      <p class="hero-subtitle hero-stagger-2">Date, venue, discipline, wax used, result, snow notes</p>
+      <p class="hero-subtitle hero-stagger-2" data-i18n="log.form_subtitle">Date, venue, discipline, wax used, result, snow notes</p>
     </div>
   </section>
 {% endblock %}
@@ -17,8 +17,8 @@
       {% csrf_token %}
       {{ form.as_p }}
       <div style="display: flex; gap: 0.5rem;">
-        <button type="submit" class="btn-primary">Save</button>
-        <a href="{% url 'conditions_log_list' %}" class="btn-secondary">Cancel</a>
+        <button type="submit" class="btn-primary" data-i18n="log.save">Save</button>
+        <a href="{% url 'conditions_log_list' %}" class="btn-secondary" data-i18n="log.cancel">Cancel</a>
       </div>
     </form>
   </div>

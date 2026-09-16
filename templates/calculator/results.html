@@ -13,9 +13,9 @@
   <section class="hero-premium">
     <div class="hero-inner">
       <p class="hero-brand-kicker hero-stagger-1">GlideCast<sup class="mark-tm">™</sup></p>
-      <h1 class="hero-title hero-stagger-1">Wax calls for both runs</h1>
+      <h1 class="hero-title hero-stagger-1" data-i18n="results.title">Wax calls for both runs</h1>
       <p class="hero-subtitle hero-stagger-2">{{ calc_venue }} · {{ calc_discipline }} · {{ calc_race_date|date:"l, M j, Y" }}</p>
-      <p class="text-caption hero-stagger-2" style="margin-top: 0.35rem; opacity: 0.92;">Run 1 {{ calc_run1_time|time:"g:i A" }} · Run 2 {{ calc_run2_time|time:"g:i A" }}</p>
+      <p class="text-caption hero-stagger-2" style="margin-top: 0.35rem; opacity: 0.92;"><span data-i18n="hero.run1">Run 1</span> {{ calc_run1_time|time:"g:i A" }} · <span data-i18n="hero.run2">Run 2</span> {{ calc_run2_time|time:"g:i A" }}</p>
     </div>
   </section>
 {% endblock %}
@@ -28,41 +28,41 @@
   </figure>
   {% endif %}
   <div class="scroll-anim-header section-header" style="display: flex; align-items: center; justify-content: space-between; flex-wrap: wrap; gap: 1rem;">
-    <span>Recommendation</span>
+    <span data-i18n="results.recommendation">Recommendation</span>
     <div style="display: flex; gap: 0.5rem;">
       {% if can_download_pdf %}
-        <a href="{% url 'export_race_report_pdf' %}" class="btn-primary">Download PDF</a>
-        {% if pdf_remaining is not None %}<span class="text-caption" style="align-self: center;">{{ pdf_remaining }} PDFs left this period</span>{% endif %}
+        <a href="{% url 'export_race_report_pdf' %}" class="btn-primary" data-i18n="results.download_pdf">Download PDF</a>
+        {% if pdf_remaining is not None %}<span class="text-caption" style="align-self: center;">{{ pdf_remaining }} <span data-i18n="results.pdfs_left">PDFs left this period</span></span>{% endif %}
       {% else %}
         {% if pdf_remaining == 0 or pdf_remaining is None %}
-          <span class="text-caption">PDF export: <a href="{% url 'paywall' %}" style="color: var(--glacier);">Upgrade for PDF</a></span>
+          <span class="text-caption"><span data-i18n="results.pdf_export_prefix">PDF export: </span><a href="{% url 'paywall' %}" style="color: var(--glacier);" data-i18n="results.upgrade_pdf">Upgrade for PDF</a></span>
         {% endif %}
       {% endif %}
-      <a href="{% url 'calculator' %}" class="btn-secondary">New calculation</a>
+      <a href="{% url 'calculator' %}" class="btn-secondary" data-i18n="results.new_calc">New calculation</a>
     </div>
   </div>
 
   <div class="card-glass scroll-anim-card" style="padding: 1rem 1.25rem; margin-bottom: 1.25rem;">
-    <p class="text-label" style="font-size: 0.7rem; margin-bottom: 0.6rem;">Calculation inputs</p>
+    <p class="text-label" style="font-size: 0.7rem; margin-bottom: 0.6rem;" data-i18n="results.calc_inputs">Calculation inputs</p>
     <div style="display: grid; grid-template-columns: repeat(auto-fit, minmax(140px, 1fr)); gap: 0.75rem 1.25rem;">
       <div>
-        <p class="text-caption" style="font-size: 0.65rem; margin: 0 0 0.2rem 0; opacity: 0.85; text-transform: uppercase; letter-spacing: 0.04em;">Venue</p>
+        <p class="text-caption" style="font-size: 0.65rem; margin: 0 0 0.2rem 0; opacity: 0.85; text-transform: uppercase; letter-spacing: 0.04em;" data-i18n="results.venue_lbl">Venue</p>
         <p class="data-value" style="margin: 0; font-size: 0.95rem;">{{ calc_venue }}</p>
       </div>
       <div>
-        <p class="text-caption" style="font-size: 0.65rem; margin: 0 0 0.2rem 0; opacity: 0.85; text-transform: uppercase; letter-spacing: 0.04em;">Discipline</p>
+        <p class="text-caption" style="font-size: 0.65rem; margin: 0 0 0.2rem 0; opacity: 0.85; text-transform: uppercase; letter-spacing: 0.04em;" data-i18n="results.discipline_lbl">Discipline</p>
         <p class="data-value" style="margin: 0; font-size: 0.95rem;">{{ calc_discipline }}</p>
       </div>
       <div>
-        <p class="text-caption" style="font-size: 0.65rem; margin: 0 0 0.2rem 0; opacity: 0.85; text-transform: uppercase; letter-spacing: 0.04em;">Race day</p>
+        <p class="text-caption" style="font-size: 0.65rem; margin: 0 0 0.2rem 0; opacity: 0.85; text-transform: uppercase; letter-spacing: 0.04em;" data-i18n="results.race_day_lbl">Race day</p>
         <p class="data-value" style="margin: 0; font-size: 0.95rem;">{{ calc_race_date|date:"l, M j, Y" }}</p>
       </div>
       <div>
-        <p class="text-caption" style="font-size: 0.65rem; margin: 0 0 0.2rem 0; opacity: 0.85; text-transform: uppercase; letter-spacing: 0.04em;">Run 1 time</p>
+        <p class="text-caption" style="font-size: 0.65rem; margin: 0 0 0.2rem 0; opacity: 0.85; text-transform: uppercase; letter-spacing: 0.04em;" data-i18n="results.run1_time_lbl">Run 1 time</p>
         <p class="data-value" style="margin: 0; font-size: 0.95rem;">{{ calc_run1_time|time:"g:i A" }}</p>
       </div>
       <div>
-        <p class="text-caption" style="font-size: 0.65rem; margin: 0 0 0.2rem 0; opacity: 0.85; text-transform: uppercase; letter-spacing: 0.04em;">Run 2 time</p>
+        <p class="text-caption" style="font-size: 0.65rem; margin: 0 0 0.2rem 0; opacity: 0.85; text-transform: uppercase; letter-spacing: 0.04em;" data-i18n="results.run2_time_lbl">Run 2 time</p>
         <p class="data-value" style="margin: 0; font-size: 0.95rem;">{{ calc_run2_time|time:"g:i A" }}</p>
       </div>
     </div>
@@ -73,7 +73,11 @@
       <div class="card-glass scroll-anim-card" style="padding: 1.5rem;">
         <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; flex-wrap: wrap;">
           <div>
-            <p class="text-label" style="font-size: 0.75rem; margin-bottom: 0.15rem;">{{ item.label }}</p>
+            {% if item.label == "Run 1" %}
+              <p class="text-label" style="font-size: 0.75rem; margin-bottom: 0.15rem;" data-i18n="hero.run1">Run 1</p>
+            {% else %}
+              <p class="text-label" style="font-size: 0.75rem; margin-bottom: 0.15rem;" data-i18n="hero.run2">Run 2</p>
+            {% endif %}
             <p class="text-caption" style="font-size: 0.78rem; margin: 0 0 0.35rem 0; opacity: 0.9;">
               {% if item.label == "Run 1" %}{{ calc_run1_time|time:"g:i A" }}{% else %}{{ calc_run2_time|time:"g:i A" }}{% endif %}
               · {{ calc_discipline }} · {{ calc_race_date|date:"M j, Y" }}
@@ -94,13 +98,13 @@
             <p class="text-caption" style="font-size: 0.875rem; margin-top: 0.35rem;">{{ item.run.hs }}</p>
           </div>
           <div class="card-glass" style="padding: 0.35rem 0.75rem; font-size: 0.75rem; opacity: 0.8;">
-            {{ item.run.confidence }} confidence
+            {{ item.run.confidence }} <span data-i18n="results.confidence">confidence</span>
           </div>
         </div>
 
         {% if show_pro_insights and item.run.snow_type %}
         <div class="card-glass" style="padding: 1rem; margin-top: 1rem;">
-          <p class="text-label" style="font-size: 0.7rem; margin-bottom: 0.25rem;">Snow type</p>
+          <p class="text-label" style="font-size: 0.7rem; margin-bottom: 0.25rem;" data-i18n="results.snow_type">Snow type</p>
           <p class="data-value" style="margin: 0;">{{ item.run.snow_type }}</p>
           {% if item.run.snow_type_note %}
           <p class="text-caption" style="font-size: 0.75rem; margin: 0.25rem 0 0 0;">{{ item.run.snow_type_note }}</p>
@@ -110,7 +114,7 @@
 
         {% if show_pro_insights and item.run.glide_regime %}
         <div class="card-glass" style="padding: 1rem; margin-top: 1rem;">
-          <p class="text-label" style="font-size: 0.7rem; margin-bottom: 0.25rem;">Glide regime</p>
+          <p class="text-label" style="font-size: 0.7rem; margin-bottom: 0.25rem;" data-i18n="results.glide_regime">Glide regime</p>
           <p class="data-value" style="margin: 0;">{{ item.run.glide_regime }}</p>
           {% if item.run.glide_note %}
           <p class="text-caption" style="font-size: 0.75rem; margin: 0.25rem 0 0 0;">{{ item.run.glide_note }}</p>
@@ -120,7 +124,7 @@
 
         {% if show_pro_insights and item.run.hs_note %}
         <div class="card-glass" style="padding: 1rem; margin-top: 1rem;">
-          <p class="text-label" style="font-size: 0.7rem; margin-bottom: 0.25rem;">HS call rationale</p>
+          <p class="text-label" style="font-size: 0.7rem; margin-bottom: 0.25rem;" data-i18n="results.hs_rationale">HS call rationale</p>
           <p class="text-data" style="margin: 0; font-size: 0.9rem;">{{ item.run.hs_note }}</p>
         </div>
         {% endif %}
@@ -128,27 +132,27 @@
         {% if show_pro_insights %}
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-top: 1rem;">
           <div class="card-glass" style="padding: 0.75rem;">
-            <p class="text-label" style="font-size: 0.65rem; margin: 0 0 0.2rem 0;">Snow temps (start → finish)</p>
+            <p class="text-label" style="font-size: 0.65rem; margin: 0 0 0.2rem 0;" data-i18n="results.snow_temps">Snow temps (start → finish)</p>
             <p class="data-value" style="margin: 0; font-size: 1rem;">{{ item.run.snow_start_f|floatformat:1 }} → {{ item.run.snow_finish_f|floatformat:1 }} °F</p>
           </div>
           <div class="card-glass" style="padding: 0.75rem;">
-            <p class="text-label" style="font-size: 0.65rem; margin: 0 0 0.2rem 0;">Air range</p>
+            <p class="text-label" style="font-size: 0.65rem; margin: 0 0 0.2rem 0;" data-i18n="results.air_range">Air range</p>
             <p class="data-value" style="margin: 0; font-size: 1rem;">{{ item.run.air_range_f }}</p>
           </div>
           <div class="card-glass" style="padding: 0.75rem;">
-            <p class="text-label" style="font-size: 0.65rem; margin: 0 0 0.2rem 0;">Deep snow (start)</p>
+            <p class="text-label" style="font-size: 0.65rem; margin: 0 0 0.2rem 0;" data-i18n="results.deep_start">Deep snow (start)</p>
             <p class="data-value" style="margin: 0; font-size: 1rem;">{{ item.run.deep_start_f|floatformat:1 }} °F</p>
           </div>
           <div class="card-glass" style="padding: 0.75rem;">
-            <p class="text-label" style="font-size: 0.65rem; margin: 0 0 0.2rem 0;">Deep snow (finish)</p>
+            <p class="text-label" style="font-size: 0.65rem; margin: 0 0 0.2rem 0;" data-i18n="results.deep_finish">Deep snow (finish)</p>
             <p class="data-value" style="margin: 0; font-size: 1rem;">{{ item.run.deep_finish_f|floatformat:1 }} °F</p>
           </div>
           <div class="card-glass" style="padding: 0.75rem;">
-            <p class="text-label" style="font-size: 0.65rem; margin: 0 0 0.2rem 0;">TS Turbo</p>
+            <p class="text-label" style="font-size: 0.65rem; margin: 0 0 0.2rem 0;" data-i18n="results.ts_turbo">TS Turbo</p>
             <p class="data-value" style="margin: 0; font-size: 1rem;">{{ item.run.tst }}</p>
           </div>
           <div class="card-glass" style="padding: 0.75rem;">
-            <p class="text-label" style="font-size: 0.65rem; margin: 0 0 0.2rem 0;">TSP</p>
+            <p class="text-label" style="font-size: 0.65rem; margin: 0 0 0.2rem 0;" data-i18n="results.tsp">TSP</p>
             <p class="data-value" style="margin: 0; font-size: 1rem;">{{ item.run.tsp }}</p>
           </div>
         </div>
@@ -156,14 +160,14 @@
 
         {% if show_pro_insights and item.run.uncertainty_band_f %}
         <div class="card-glass" style="padding: 0.75rem; margin-top: 0.75rem; grid-column: span 2;">
-          <p class="text-label" style="font-size: 0.65rem; margin: 0 0 0.2rem 0;">Uncertainty band</p>
+          <p class="text-label" style="font-size: 0.65rem; margin: 0 0 0.2rem 0;" data-i18n="results.uncertainty">Uncertainty band</p>
           <p class="data-value" style="margin: 0;">±{{ item.run.uncertainty_band_f|floatformat:1 }} °F</p>
         </div>
         {% endif %}
 
         {% if show_pro_insights and item.run.hs_overlap_split and item.run.hs_overlap_text %}
         <div class="card-glass" style="padding: 1rem; margin-top: 1rem;">
-          <p class="text-label" style="font-size: 0.7rem; margin-bottom: 0.25rem;">Overlap products</p>
+          <p class="text-label" style="font-size: 0.7rem; margin-bottom: 0.25rem;" data-i18n="results.overlap">Overlap products</p>
           <p class="data-value" style="margin: 0;">{{ item.run.hs_overlap_text }}</p>
           {% if item.run.tie_note %}
           <p class="text-caption" style="font-size: 0.75rem; margin-top: 0.25rem;">{{ item.run.tie_note }}</p>
@@ -173,7 +177,7 @@
 
         {% if show_energy_panel and item.run.energy_contrib_wm2 %}
         <div class="card-glass" style="padding: 1rem; margin-top: 1rem;">
-          <p class="text-label" style="font-size: 0.7rem; margin-bottom: 0.5rem;">Energy balance (W/m²)</p>
+          <p class="text-label" style="font-size: 0.7rem; margin-bottom: 0.5rem;" data-i18n="results.energy_balance">Energy balance (W/m²)</p>
           <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.35rem;">
             {% for key, val in item.run.energy_contrib_wm2.items %}
             {% if val != None %}
@@ -187,11 +191,11 @@
         </div>
         {% endif %}
 
-        <p class="text-caption" style="font-size: 0.7rem; margin-top: 0.75rem; opacity: 0.8;">Licensed to: {{ licensed_to_email }}</p>
+        <p class="text-caption" style="font-size: 0.7rem; margin-top: 0.75rem; opacity: 0.8;"><span data-i18n="results.licensed_prefix">Licensed to: </span>{{ licensed_to_email }}</p>
 
         {% if show_pro_insights %}
         <div class="card-glass" style="padding: 1rem; margin-top: 1rem;">
-          <p class="text-label" style="font-size: 0.7rem; margin-bottom: 0.25rem;">Boundary note</p>
+          <p class="text-label" style="font-size: 0.7rem; margin-bottom: 0.25rem;" data-i18n="results.boundary_note">Boundary note</p>
           <p class="text-data" style="margin: 0; font-size: 0.9rem;">{{ item.run.boundary_note }}</p>
         </div>
         {% endif %}
@@ -202,35 +206,47 @@
   {% if show_pro_insights %}
   {% if chart_wax_html %}
   <div class="chart-container scroll-anim-chart" style="margin-top: 1.5rem;">
-    <p class="text-label" style="font-size: 0.75rem; margin-bottom: 0.75rem;">Visual wax decision chart</p>
+    <p class="text-label" style="font-size: 0.75rem; margin-bottom: 0.75rem;" data-i18n="results.wax_chart">Visual wax decision chart</p>
     <div style="width: 100%; overflow-x: auto;">{{ chart_wax_html|safe }}</div>
   </div>
   {% endif %}
   {% if chart_html %}
   <div class="chart-container scroll-anim-chart" style="margin-top: 1.5rem;">
-    <p class="text-label" style="font-size: 0.75rem; margin-bottom: 0.75rem;">Start and finish: air &amp; snow temperatures</p>
+    <p class="text-label" style="font-size: 0.75rem; margin-bottom: 0.75rem;" data-i18n="results.air_snow_chart">Start and finish: air &amp; snow temperatures</p>
     <div style="width: 100%; overflow-x: auto;">{{ chart_html|safe }}</div>
   </div>
   {% endif %}
   {% if chart_met_html %}
   <div class="chart-container scroll-anim-chart" style="margin-top: 1.5rem;">
-    <p class="text-label" style="font-size: 0.75rem; margin-bottom: 0.75rem;">Wind, humidity, and sky cover</p>
+    <p class="text-label" style="font-size: 0.75rem; margin-bottom: 0.75rem;" data-i18n="results.wind_chart">Wind, humidity, and sky cover</p>
     <div style="width: 100%; overflow-x: auto;">{{ chart_met_html|safe }}</div>
   </div>
   {% endif %}
   {% if chart_solar_html %}
   <div class="chart-container scroll-anim-chart" style="margin-top: 1.5rem;">
-    <p class="text-label" style="font-size: 0.75rem; margin-bottom: 0.75rem;">Slope solar and overnight radiative forcing</p>
+    <p class="text-label" style="font-size: 0.75rem; margin-bottom: 0.75rem;" data-i18n="results.solar_chart">Slope solar and overnight radiative forcing</p>
     <div style="width: 100%; overflow-x: auto;">{{ chart_solar_html|safe }}</div>
   </div>
   {% endif %}
   {% endif %}
 
+  {% if gpx_chart_html %}
+  <div class="card-glass scroll-anim-card" style="padding: 1.5rem; margin-top: 1.5rem;">
+    <p class="text-label" style="font-size: 0.75rem; margin-bottom: 0.25rem;">GPX race run · elevation profile</p>
+    <p class="text-caption" style="font-size: 0.72rem; margin: 0 0 0.75rem 0; opacity: 0.7;">
+      Slope and aspect auto-set from your uploaded GPX —
+      {% if gpx_slope_deg is not None %}slope {{ gpx_slope_deg }}°{% endif %}
+      {% if gpx_aspect_deg is not None %}, aspect {{ gpx_aspect_deg }}°{% endif %}
+    </p>
+    <div style="width: 100%; overflow-x: auto; border-radius: 10px;">{{ gpx_chart_html|safe }}</div>
+  </div>
+  {% endif %}
+
   {% if not show_pro_insights and upgrade_prompt.next_tier %}
   <div class="card-glass scroll-anim-card" style="padding: 1.25rem; margin-top: 1.5rem;">
-    <p class="text-label" style="font-size: 0.75rem; margin-bottom: 0.35rem;">Pro plan</p>
+    <p class="text-label" style="font-size: 0.75rem; margin-bottom: 0.35rem;" data-i18n="results.pro_plan_lbl">Pro plan</p>
     <p class="text-caption" style="margin: 0 0 0.75rem 0;">Upgrade to <strong>{{ upgrade_prompt.next_tier }}</strong> for temperature charts, energy breakdown, full snow and air data, overlap calls, and PDF export (${{ upgrade_prompt.price_monthly }}/mo{% if upgrade_prompt.price_annual %} or ${{ upgrade_prompt.price_annual }}/yr{% endif %}).</p>
-    <a href="{% url 'paywall' %}" class="btn-primary" style="width: auto; display: inline-block;">View Pro</a>
+    <a href="{% url 'paywall' %}" class="btn-primary" style="width: auto; display: inline-block;" data-i18n="results.view_pro">View Pro</a>
   </div>
   {% endif %}
 </div>

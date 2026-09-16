@@ -1,0 +1,336 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body_class %}page-calculator{% endblock %}
+{% block title %}Nordic Wax · GlideCast — Wax Done Right{% endblock %}
+
+{% block extra_head %}
+<script>(function(){if(localStorage.getItem('glidecast-theme')!=='light')document.documentElement.removeAttribute('data-theme');})();</script>
+<style>
+  .nordic-dev-banner {
+    background: #166534;
+    color: #fff;
+    text-align: center;
+    padding: 0.4rem 1rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .sport-toggle-btn {
+    padding: 0.45rem 1.1rem;
+    border-radius: 9px;
+    border: 1.5px solid rgba(255,255,255,0.2);
+    background: rgba(255,255,255,0.07);
+    color: #fff;
+    font-size: 0.82rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    text-transform: uppercase;
+    text-decoration: none;
+    cursor: pointer;
+    transition: all 0.15s;
+  }
+  .sport-toggle-btn.active {
+    background: rgba(255,255,255,0.18);
+    border-color: rgba(255,255,255,0.5);
+  }
+  .nordic-card {
+    background: #0f1629;
+    border: 1px solid rgba(255,255,255,0.1);
+    border-radius: 18px;
+    padding: 1.75rem;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.55);
+    color: #e2e8f0;
+  }
+  [data-theme="light"] .nordic-card {
+    background: #1e2d4a;
+    border-color: rgba(255,255,255,0.12);
+    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
+    color: #e2e8f0;
+  }
+  .form-label {
+    display: block;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    opacity: 0.7;
+    margin-bottom: 0.3rem;
+    color: #e2e8f0;
+  }
+  .form-hint {
+    font-size: 0.72rem;
+    opacity: 0.6;
+    margin-top: 0.25rem;
+    color: #cbd5e1;
+  }
+  .input-dark {
+    width: 100%;
+    padding: 0.6rem 0.75rem;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    border-radius: 10px;
+    color: #f1f5f9;
+    font-size: 0.95rem;
+    font-family: inherit;
+    box-sizing: border-box;
+    appearance: none;
+    -webkit-appearance: none;
+  }
+  .input-dark option { background: #1e2d4a; color: #f1f5f9; }
+  [data-theme="light"] .input-dark {
+    background: rgba(255,255,255,0.1);
+    border-color: rgba(255,255,255,0.2);
+    color: #f1f5f9;
+  }
+  .input-dark:focus {
+    outline: none;
+    border-color: #22c55e;
+    box-shadow: 0 0 0 2px rgba(34,197,94,0.3);
+  }
+  .file-input-wrap {
+    position: relative;
+  }
+  .file-input-wrap input[type="file"] {
+    width: 100%;
+    padding: 0.55rem 0.75rem;
+    background: rgba(255,255,255,0.06);
+    border: 1.5px dashed rgba(255,255,255,0.25);
+    border-radius: 10px;
+    color: #e2e8f0;
+    font-size: 0.88rem;
+    font-family: inherit;
+    box-sizing: border-box;
+    cursor: pointer;
+  }
+  .section-divider {
+    border: none;
+    border-top: 1px solid rgba(255,255,255,0.1);
+    margin: 1.25rem 0;
+  }
+  .section-title {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.55;
+    margin-bottom: 0.85rem;
+    color: #94a3b8;
+  }
+  .submit-btn {
+    width: 100%;
+    padding: 0.85rem;
+    background: #15803d;
+    color: #fff;
+    border: none;
+    border-radius: 12px;
+    font-size: 1rem;
+    font-weight: 700;
+    cursor: pointer;
+    letter-spacing: 0.03em;
+    margin-top: 1rem;
+    transition: background 0.15s;
+  }
+  .submit-btn:hover { background: #166534; }
+  .field-row { margin-bottom: 1rem; }
+  .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
+  .unit-btn {
+    display: inline-block;
+    padding: 0.3rem 0.75rem;
+    font-size: 0.8rem;
+    font-weight: 700;
+    color: rgba(255,255,255,0.45);
+    background: transparent;
+    transition: all 0.12s;
+    user-select: none;
+  }
+  input[type="radio"]:checked + .unit-btn {
+    background: #15803d;
+    color: #fff;
+  }
+  .gpx-badge {
+    display: inline-block;
+    background: rgba(34,197,94,0.15);
+    border: 1px solid rgba(34,197,94,0.4);
+    color: #4ade80;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.15rem 0.5rem;
+    border-radius: 5px;
+    margin-left: 0.4rem;
+    vertical-align: middle;
+  }
+</style>
+{% endblock %}
+
+{% block hero %}
+  <div class="nordic-dev-banner">⚠ Dev-only feature — not shown in production</div>
+  <section class="hero-premium">
+    <div class="hero-inner">
+      <h1 class="hero-title hero-stagger-1">Nordic Wax Calculator</h1>
+      <p class="hero-subtitle hero-stagger-2">Classic &amp; Skate · Grip and glide wax for cross-country skiing</p>
+      <p class="hero-brand-kicker hero-stagger-2" style="margin-top: 0.25rem;">GlideCast<sup class="mark-tm">™</sup></p>
+      <div style="display:flex;gap:0.5rem;justify-content:center;margin-top:0.75rem;" class="hero-stagger-2">
+        <a href="{% url 'calculator' %}" class="sport-toggle-btn">Alpine</a>
+        <a href="{% url 'nordic_calculator' %}" class="sport-toggle-btn active">Nordic</a>
+      </div>
+    </div>
+  </section>
+{% endblock %}
+
+{% block content %}
+<div style="max-width: 580px; margin: 0 auto;">
+  <div class="nordic-card">
+    <form method="post" enctype="multipart/form-data">
+      {% csrf_token %}
+
+      <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;">
+        <p class="section-title" style="margin:0;">Race settings</p>
+        <div style="display:flex;gap:0;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,0.18);">
+          <label style="cursor:pointer;">
+            <input type="radio" name="temp_unit" value="C" style="display:none;"
+              {% if not form.temp_unit.value or form.temp_unit.value == 'C' %}checked{% endif %} />
+            <span class="unit-btn" id="unit-C">°C</span>
+          </label>
+          <label style="cursor:pointer;">
+            <input type="radio" name="temp_unit" value="F" style="display:none;"
+              {% if form.temp_unit.value == 'F' %}checked{% endif %} />
+            <span class="unit-btn" id="unit-F">°F</span>
+          </label>
+        </div>
+      </div>
+
+      <div class="two-col">
+        <div class="field-row">
+          <label class="form-label" for="{{ form.discipline.id_for_label }}">Discipline</label>
+          <select name="discipline" id="{{ form.discipline.id_for_label }}" class="input-dark">
+            {% for val, display in form.discipline.field.choices %}
+              <option value="{{ val }}" {% if form.discipline.value == val or not form.is_bound and val == 'Classic' %}selected{% endif %}>{{ display }}</option>
+            {% endfor %}
+          </select>
+        </div>
+        <div class="field-row">
+          <label class="form-label" for="{{ form.tier.id_for_label }}">Wax tier</label>
+          <select name="tier" id="{{ form.tier.id_for_label }}" class="input-dark">
+            {% for val, display in form.tier.field.choices %}
+              <option value="{{ val }}" {% if form.tier.value == val or not form.is_bound and val == 'race' %}selected{% endif %}>{{ display }}</option>
+            {% endfor %}
+          </select>
+        </div>
+      </div>
+
+      <div class="field-row">
+        <label class="form-label" for="{{ form.snow_mode.id_for_label }}">Snow condition</label>
+        <select name="snow_mode" id="{{ form.snow_mode.id_for_label }}" class="input-dark">
+          {% for val, display in form.snow_mode.field.choices %}
+            <option value="{{ val }}" {% if form.snow_mode.value == val or not form.is_bound and val == 'auto' %}selected{% endif %}>{{ display }}</option>
+          {% endfor %}
+        </select>
+      </div>
+
+      <hr class="section-divider" />
+      <p class="section-title">Course &amp; conditions</p>
+
+      <div class="field-row">
+        <label class="form-label" for="{{ form.race_datetime.id_for_label }}">Race / training start time</label>
+        <input type="datetime-local" name="race_datetime" id="{{ form.race_datetime.id_for_label }}"
+               class="input-dark"
+               value="{{ form.race_datetime.value|default:'' }}" />
+        <p class="form-hint">Used for solar position calculations. Leave blank to use tomorrow 10:00 AM.</p>
+      </div>
+
+      <div class="field-row">
+        <label class="form-label" for="{{ form.pre_loaded_course.id_for_label }}">
+          Pre-loaded FIS course
+        </label>
+        <select name="pre_loaded_course" id="{{ form.pre_loaded_course.id_for_label }}" class="input-dark">
+          {% for val, display in form.pre_loaded_course.field.choices %}
+            <option value="{{ val }}" {% if form.pre_loaded_course.value == val %}selected{% endif %}>{{ display }}</option>
+          {% endfor %}
+        </select>
+        <p class="form-hint">18 FIS World Cup venues pre-loaded. Select one, or upload your own GPX below.</p>
+      </div>
+
+      <div style="display:flex;align-items:center;gap:0.75rem;margin:1.1rem 0 0.9rem;">
+        <div style="flex:1;height:1px;background:rgba(255,255,255,0.12);"></div>
+        <span style="font-size:0.72rem;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#64748b;">or upload your own</span>
+        <div style="flex:1;height:1px;background:rgba(255,255,255,0.12);"></div>
+      </div>
+
+      <div class="field-row">
+        <label class="form-label" style="opacity:1;font-size:0.78rem;">
+          Upload GPX file
+        </label>
+        <div id="gpx-dropzone" class="file-input-wrap" style="border-radius:12px;border:2px dashed rgba(255,255,255,0.25);padding:1.25rem 1rem;text-align:center;background:rgba(255,255,255,0.05);transition:all 0.2s;">
+          <input type="file" name="gpx_file" id="{{ form.gpx_file.id_for_label }}" accept=".gpx" style="display:none;" />
+
+          <!-- empty state -->
+          <label id="gpx-empty" for="{{ form.gpx_file.id_for_label }}" style="cursor:pointer;display:block;">
+            <span style="font-size:1.8rem;display:block;margin-bottom:0.35rem;">📍</span>
+            <span style="font-size:0.88rem;font-weight:700;color:#4ade80;display:block;">Click to upload your GPX track</span>
+            <span style="font-size:0.75rem;color:#94a3b8;display:block;margin-top:0.2rem;">.gpx files only · max 10 MB</span>
+          </label>
+
+          <!-- filled state (hidden until file selected) -->
+          <div id="gpx-filled" style="display:none;">
+            <div style="font-size:2.2rem;font-weight:900;color:#22c55e;line-height:1;margin-bottom:0.3rem;">&#10003;</div>
+            <div style="font-size:1rem;font-weight:700;color:#4ade80;margin-bottom:0.25rem;">GPX track loaded</div>
+            <div id="gpx-fname" style="font-size:0.8rem;color:#86efac;word-break:break-all;"></div>
+            <label for="{{ form.gpx_file.id_for_label }}" style="display:inline-block;margin-top:0.5rem;font-size:0.72rem;color:#94a3b8;cursor:pointer;text-decoration:underline;">Change file</label>
+          </div>
+        </div>
+        {% if form.gpx_file.errors %}
+          <p style="color: #ef4444; font-size: 0.82rem; margin-top: 0.3rem;">{{ form.gpx_file.errors.0 }}</p>
+        {% endif %}
+        {% if form.non_field_errors %}
+          {% for error in form.non_field_errors %}
+            <p style="color: #ef4444; font-size: 0.82rem; margin-top: 0.5rem;">{{ error }}</p>
+          {% endfor %}
+        {% endif %}
+      </div>
+
+      <div class="field-row">
+        <label class="form-label" for="{{ form.canopy.id_for_label }}">Forest canopy</label>
+        <select name="canopy" id="{{ form.canopy.id_for_label }}" class="input-dark">
+          {% for val, display in form.canopy.field.choices %}
+            <option value="{{ val }}" {% if form.canopy.value == val or not form.is_bound and val == 'mixed' %}selected{% endif %}>{{ display }}</option>
+          {% endfor %}
+        </select>
+        <p class="form-hint">Tree cover controls solar shade on snow surface — affects kick wax selection in shaded segments.</p>
+      </div>
+
+      <button type="submit" class="submit-btn">Get Wax Recommendation →</button>
+    </form>
+  </div>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script>
+(function() {
+  var input  = document.getElementById("{{ form.gpx_file.id_for_label }}");
+  var zone   = document.getElementById("gpx-dropzone");
+  var empty  = document.getElementById("gpx-empty");
+  var filled = document.getElementById("gpx-filled");
+  var fname  = document.getElementById("gpx-fname");
+  if (!input) return;
+
+  input.addEventListener("change", function() {
+    if (input.files && input.files.length > 0) {
+      zone.style.border     = "2px solid #22c55e";
+      zone.style.background = "rgba(34,197,94,0.12)";
+      empty.style.display   = "none";
+      fname.textContent     = input.files[0].name;
+      filled.style.display  = "block";
+    } else {
+      zone.style.border     = "2px dashed rgba(255,255,255,0.25)";
+      zone.style.background = "rgba(255,255,255,0.05)";
+      filled.style.display  = "none";
+      empty.style.display   = "block";
+    }
+  });
+})();
+</script>
+{% endblock extra_js %}

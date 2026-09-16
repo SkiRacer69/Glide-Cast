@@ -5,7 +5,7 @@
   <section class="hero-premium">
     <div class="hero-inner">
       <p class="hero-brand-kicker hero-stagger-1">GlideCast<sup class="mark-tm">™</sup></p>
-      <h1 class="hero-title hero-stagger-1">Delete log entry</h1>
+      <h1 class="hero-title hero-stagger-1" data-i18n="log.delete_title">Delete log entry</h1>
       <p class="hero-subtitle hero-stagger-2">{{ entry.date|date:"M j, Y" }} — {{ entry.venue }} {{ entry.discipline }}</p>
     </div>
   </section>
@@ -13,11 +13,11 @@
 
 {% block content %}
   <div class="card-glass scroll-anim-card" style="padding: 1.5rem;">
-    <p class="text-caption" style="margin-bottom: 1rem;">Are you sure you want to delete this entry? This cannot be undone.</p>
+    <p class="text-caption" style="margin-bottom: 1rem;" data-i18n="log.delete_confirm">Are you sure you want to delete this entry? This cannot be undone.</p>
     <form method="post" style="display: flex; gap: 0.5rem;">
       {% csrf_token %}
-      <button type="submit" class="btn-primary alert-amber">Delete</button>
-      <a href="{% url 'conditions_log_list' %}" class="btn-secondary">Cancel</a>
+      <button type="submit" class="btn-primary alert-amber" data-i18n="log.delete_btn">Delete</button>
+      <a href="{% url 'conditions_log_list' %}" class="btn-secondary" data-i18n="log.cancel">Cancel</a>
     </form>
   </div>
 {% endblock %}

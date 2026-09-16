@@ -5,8 +5,8 @@
   <section class="hero-premium">
     <div class="hero-inner">
       <p class="hero-brand-kicker hero-stagger-1">GlideCast<sup class="mark-tm">™</sup></p>
-      <h1 class="hero-title hero-stagger-1">Log in</h1>
-      <p class="hero-subtitle hero-stagger-2">Access the wax calculator and your billing status</p>
+      <h1 class="hero-title hero-stagger-1" data-i18n="login.title">Log in</h1>
+      <p class="hero-subtitle hero-stagger-2" data-i18n="login.subtitle">Access the wax calculator and your billing status</p>
     </div>
   </section>
 {% endblock %}
@@ -19,30 +19,30 @@
       </div>
       {% if request.GET.session_ended or messages %}
         <div class="msg warning" style="margin-bottom: 1rem;">
-          {% if request.GET.session_ended %}Your session was ended because your account was accessed from another device.{% else %}{% for m in messages %}{{ m }}{% endfor %}{% endif %}
+          {% if request.GET.session_ended %}<span data-i18n="login.session_ended">Your session was ended because your account was accessed from another device.</span>{% else %}{% for m in messages %}{{ m }}{% endfor %}{% endif %}
         </div>
       {% endif %}
       <form method="post" style="display: flex; flex-direction: column; gap: 1rem;">
         {% csrf_token %}
         <div class="input-wrap">
-          <label for="id_username">Username</label>
+          <label for="id_username" data-i18n="login.username">Username</label>
           <input type="text" name="username" id="id_username" class="input-dark" required autofocus />
         </div>
         <div class="input-wrap">
-          <label for="id_password">Password</label>
+          <label for="id_password" data-i18n="login.password">Password</label>
           <input type="password" name="password" id="id_password" class="input-dark" required />
         </div>
-        <button type="submit" class="btn-primary">Log in</button>
+        <button type="submit" class="btn-primary" data-i18n="login.btn">Log in</button>
         <div style="display: flex; justify-content: space-between; font-size: 0.875rem;">
-          <a href="{% url 'password_reset' %}" style="color: var(--glacier);">Forgot password</a>
-          <a href="{% url 'signup' %}" style="color: var(--glacier);">Create account</a>
+          <a href="{% url 'password_reset' %}" style="color: var(--glacier);" data-i18n="login.forgot">Forgot password</a>
+          <a href="{% url 'signup' %}" style="color: var(--glacier);" data-i18n="login.create">Create account</a>
         </div>
       </form>
     </div>
     <div class="card-glass scroll-anim-card" style="padding: 1.5rem;">
-      <p class="text-label" style="font-size: 0.75rem; margin-bottom: 0.5rem;">What you get</p>
-      <h2 class="text-section-title" style="font-size: 1.5rem; margin: 0 0 0.5rem 0;">A professional wax call, fast</h2>
-      <p class="text-caption" style="margin-bottom: 1rem;">Forecast ingestion, slope-aware solar forcing, and start/finish recommendations for race-day decisions.</p>
+      <p class="text-label" style="font-size: 0.75rem; margin-bottom: 0.5rem;" data-i18n="login.what_you_get">What you get</p>
+      <h2 class="text-section-title" style="font-size: 1.5rem; margin: 0 0 0.5rem 0;" data-i18n="login.pitch_title">A professional wax call, fast</h2>
+      <p class="text-caption" style="margin-bottom: 1rem;" data-i18n="login.pitch_body">Forecast ingestion, slope-aware solar forcing, and start/finish recommendations for race-day decisions.</p>
     </div>
   </div>
 {% endblock %}

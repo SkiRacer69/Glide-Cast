@@ -1,0 +1,306 @@
+{% extends "base.html" %}
+{% load static %}
+{% block title %}GlideCast — Physics-Based Ski Wax Recommendations{% endblock %}
+{% block body_class %}page-paywall page-landing{% endblock %}
+
+{% block extra_head %}
+<style>
+  /* ── Landing page overrides: white bg, black text, black borders ── */
+
+  .page-landing {
+    background: #ebebeb;
+    color: #000;
+  }
+  .page-landing main {
+    background: #ebebeb;
+  }
+
+  /* Features section */
+  .page-landing .paywall-features {
+    background: #fff;
+    border: 2.5px solid #000;
+    border-radius: 12px;
+    padding: 2rem 1.75rem 2.25rem;
+    margin-bottom: 2rem;
+  }
+  .page-landing .paywall-section-title {
+    color: #000;
+    font-weight: 900;
+    font-size: 1.55rem;
+  }
+  .page-landing .paywall-section-lead {
+    color: #000;
+    font-weight: 600;
+  }
+
+  /* Feature cards */
+  .page-landing .paywall-feature-card {
+    background: #f0f0f0;
+    border: 2.5px solid #000;
+    border-top: 2.5px solid #000;
+    border-radius: 10px;
+    box-shadow: 4px 4px 0 #000;
+  }
+  .page-landing .paywall-feature-card h3 {
+    color: #000;
+    font-weight: 900;
+    font-size: 1.05rem;
+  }
+  .page-landing .paywall-feature-card p {
+    color: #000;
+    font-weight: 600;
+  }
+
+  /* Science / credentials section — override dark navy to white */
+  .page-landing .science-credibility-section {
+    background: #fff;
+    border: 2.5px solid #000;
+    border-radius: 12px;
+    padding: 2.25rem 1.75rem;
+    margin-bottom: 2rem;
+    box-shadow: 4px 4px 0 #000;
+  }
+  .page-landing .science-credibility-heading {
+    color: #000;
+    font-weight: 900;
+  }
+
+  /* Credential card (left column) */
+  .page-landing .science-credential-card {
+    background: #e2e2e2;
+    border: 2px solid #000;
+    border-radius: 10px;
+  }
+  .page-landing .science-credential-name,
+  .page-landing .science-credential-name a {
+    color: #000;
+    font-weight: 900;
+  }
+  .page-landing .science-credential-name a:hover {
+    color: #333;
+  }
+  .page-landing .science-credential-title {
+    color: #000;
+    font-weight: 700;
+  }
+  .page-landing .science-credential-label {
+    color: #333;
+    font-weight: 800;
+    text-transform: uppercase;
+    font-size: 0.7rem;
+    letter-spacing: 0.08em;
+  }
+  .page-landing .science-credential-degrees {
+    color: #000;
+    font-weight: 600;
+  }
+  .page-landing .science-expertise-pill {
+    background: #f0f0f0;
+    border: 1.5px solid #000;
+    color: #000;
+    font-weight: 700;
+  }
+
+  /* Right column copy */
+  .page-landing .science-credibility-copy,
+  .page-landing .science-credibility-copy p {
+    color: #000;
+    font-weight: 600;
+  }
+  .page-landing .science-pull-quote {
+    color: #000;
+    font-weight: 900;
+    border-left: 4px solid #000;
+    font-size: clamp(1.05rem, 2.2vw, 1.3rem);
+  }
+  .page-landing .paywall-text-link {
+    color: #000;
+    font-weight: 700;
+    text-decoration: underline;
+  }
+  .page-landing .science-research-btn {
+    background: #000;
+    color: #fff;
+    font-weight: 700;
+    border: 2px solid #000;
+  }
+  .page-landing .science-research-btn:hover {
+    background: #222;
+    filter: none;
+  }
+  .page-landing .science-dartmouth-linkcard {
+    border: 2px solid #000;
+    background: #fff;
+    box-shadow: 3px 3px 0 #000;
+  }
+  .page-landing .science-dartmouth-linkcard:hover {
+    background: #f5f5f5;
+    border-color: #000;
+  }
+  .page-landing .science-dartmouth-linkcard-name {
+    color: #000;
+    font-weight: 900;
+  }
+  .page-landing .science-dartmouth-linkcard-sub {
+    color: #333;
+    font-weight: 600;
+  }
+  .page-landing .science-external-icon {
+    color: #000;
+  }
+
+  /* Denali photo block */
+  .landing-denali-wrap {
+    margin-top: 1.25rem;
+    border: 2px solid #000;
+    border-radius: 8px;
+    overflow: hidden;
+  }
+  .landing-denali-heading {
+    margin: 0;
+    padding: 0.5rem 0.9rem;
+    background: #000;
+    color: #fff;
+    font-size: 0.78rem;
+    font-weight: 800;
+    letter-spacing: 0.03em;
+  }
+  .landing-denali-img {
+    display: block;
+    width: 100%;
+    max-height: 200px;
+    object-fit: cover;
+    object-position: center 30%;
+  }
+  .landing-denali-caption {
+    margin: 0;
+    padding: 0.4rem 0.9rem;
+    background: #e2e2e2;
+    font-size: 0.62rem;
+    font-weight: 600;
+    color: #444;
+    border-top: 1px solid #000;
+    letter-spacing: 0.02em;
+  }
+
+  /* Bottom CTA block */
+  .landing-bottom-cta {
+    text-align: center;
+    padding: 2.5rem 1.5rem 3rem;
+    border: 2.5px solid #000;
+    border-radius: 12px;
+    margin-bottom: 2rem;
+    box-shadow: 4px 4px 0 #000;
+  }
+  .landing-bottom-cta .paywall-hero-cta-primary {
+    background: #000;
+    color: #fff;
+    border: 2px solid #000;
+    font-weight: 800;
+  }
+  .landing-bottom-cta .paywall-hero-cta-primary:hover {
+    background: #222;
+    color: #fff;
+  }
+  .landing-bottom-cta p {
+    margin-top: 1rem;
+    font-size: 0.875rem;
+    color: #000;
+    font-weight: 600;
+  }
+  .landing-bottom-cta a {
+    color: #000;
+    font-weight: 700;
+    text-decoration: underline;
+  }
+</style>
+{% endblock %}
+
+{% block hero %}
+  <section class="paywall-hero">
+    <div class="paywall-hero-inner">
+      <p class="paywall-hero-brand">GlideCast<sup class="mark-tm">™</sup></p>
+      <p class="paywall-hero-slogan">&ldquo;Stop Guessing. Start Winning.&rdquo;<sup class="mark-tm">™</sup></p>
+      <h1 class="paywall-hero-title">Physics-Based Wax Recommendations for Race Morning</h1>
+      <p class="paywall-hero-lead">Venue-specific snow science — for Alpine ski racing and Nordic XC.</p>
+      <div class="paywall-hero-cta-row">
+        <a href="{% url 'signup' %}" class="paywall-hero-cta-primary">Create free account</a>
+        <a href="{% url 'login' %}" class="paywall-hero-cta-secondary">Log in</a>
+      </div>
+    </div>
+  </section>
+{% endblock %}
+
+{% block content %}
+  <section class="paywall-features" aria-labelledby="paywall-features-heading">
+    <h2 id="paywall-features-heading" class="paywall-section-title">What GlideCast does</h2>
+    <p class="paywall-section-lead">Venue-specific inputs, clear physics-based reasoning, and wax recommendations for race morning.</p>
+    <div class="paywall-features-grid">
+      <div class="paywall-feature-card">
+        <h3>Mountain-specific</h3>
+        <p>Uses each venue's geometry and your race schedule — not a generic hill profile.</p>
+      </div>
+      <div class="paywall-feature-card">
+        <h3>Energy terms spelled out</h3>
+        <p>Solar, longwave, latent and sensible heat, and deep-snow evolution shown with each recommendation.</p>
+      </div>
+      <div class="paywall-feature-card">
+        <h3>Fast to use</h3>
+        <p>Short form, direct output. PDFs when you need a brief for staff or athletes.</p>
+      </div>
+    </div>
+  </section>
+
+  <section class="science-credibility-section section-full-bleed" aria-labelledby="science-credibility-heading">
+    <div class="science-credibility-inner">
+      <h2 id="science-credibility-heading" class="science-credibility-heading">Built on real science. Not guesswork.</h2>
+      <div class="science-credibility-grid">
+        <div class="science-credential-card">
+          <p class="science-credential-name">Dr. Erich Osterberg</p>
+          <p class="science-credential-title">Professor of Earth Sciences, Dartmouth College</p>
+          <p class="science-credential-label">Education</p>
+          <p class="science-credential-degrees">B.A. from Middlebury College, M.S. from the University of Otago, and Ph.D. from the University of Maine.</p>
+          <p class="science-credential-label">Areas of expertise</p>
+          <p class="science-credential-degrees">Paleoclimatology, climate dynamics, atmospheric chemistry, and snow and ice chemistry.</p>
+          <div class="landing-denali-wrap">
+            <p class="landing-denali-heading">Ice Core Research from Denali</p>
+            <img
+              src="{% static 'img/erich-denali.jpg' %}"
+              alt="Dr. Osterberg's research team at Mt. Hunter automatic weather station, Denali National Park, Alaska"
+              class="landing-denali-img"
+              loading="lazy"
+            />
+            <p class="landing-denali-caption">Mt. Hunter automatic weather station · Denali National Park, Alaska</p>
+          </div>
+        </div>
+        <div class="science-credibility-copy">
+          <blockquote class="science-pull-quote">The same physics that govern how snow changes over 10,000 years govern how it changes over two hours.</blockquote>
+          <p>GlideCast&rsquo;s wax prediction engine is grounded in physical principles from snow and ice science research. <a class="paywall-text-link" href="https://faculty-directory.dartmouth.edu/erich-osterberg" target="_blank" rel="noopener noreferrer">Dr. Erich Osterberg</a> is Professor of Earth Sciences at Dartmouth College and one of the world&rsquo;s leading experts in ice, snow, and climate science &mdash; his specialty is analyzing the chemistry and physical properties of snow and ice to understand how they change over time and in response to atmospheric conditions.</p>
+          <p>His research spans ice cores from mountain glaciers and ice sheets across Alaska, Greenland, and Antarctica, giving him a uniquely deep understanding of how snow temperature, crystal structure, humidity, solar radiation, and atmospheric chemistry interact at the surface level &mdash; the exact conditions that determine how a ski glides.</p>
+          <p>Dr. Osterberg holds a B.A. from Middlebury College, an M.S. from the University of Otago, and a Ph.D. from the University of Maine. He has published dozens of peer-reviewed papers in journals including <em>Nature Geoscience</em>, <em>Geophysical Research Letters</em>, and the <em>Journal of Glaciology</em>.</p>
+          <p>The snow surface energy model at the core of GlideCast &mdash; combining solar radiation, longwave exchange, latent heat, sensible heat, and deep snow temperature evolution &mdash; is grounded in the same physical principles researchers apply to understand how snow changes across decades and centuries. GlideCast applies that science to a two-hour race window.</p>
+          <div class="science-cta-row">
+            <a class="science-research-btn" href="https://icecore.host.dartmouth.edu/" target="_blank" rel="noopener noreferrer">Explore Dr. Osterberg&rsquo;s Research</a>
+            <a class="science-dartmouth-linkcard" href="https://faculty-directory.dartmouth.edu/erich-osterberg" target="_blank" rel="noopener noreferrer">
+              <span class="science-dartmouth-linkcard-text">
+                <span class="science-dartmouth-linkcard-name">Dartmouth College</span>
+                <span class="science-dartmouth-linkcard-sub">Faculty profile · Earth Sciences</span>
+              </span>
+              <svg class="science-external-icon" viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true">
+                <path d="M18 13v6a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V8a2 2 0 0 1 2-2h6" />
+                <polyline points="15 3 21 3 21 9" />
+                <line x1="10" y1="14" x2="21" y2="3" />
+              </svg>
+            </a>
+          </div>
+        </div>
+      </div>
+
+    </div>
+  </section>
+
+  <div class="landing-bottom-cta">
+    <a href="{% url 'signup' %}" class="paywall-hero-cta-primary" style="display:inline-block;">Create free account</a>
+    <p>Already have an account? <a href="{% url 'login' %}">Log in</a></p>
+  </div>
+{% endblock %}

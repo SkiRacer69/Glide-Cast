@@ -51,6 +51,21 @@ class CalculatorForm(forms.Form):
     wet_refreeze_strength = forms.FloatField(min_value=0.0, max_value=10.0, initial=3.5)
     wet_deep_relax_scale = forms.FloatField(min_value=0.1, max_value=1.0, initial=0.4)
 
+    gpx_file = forms.FileField(
+        required=False,
+        help_text="Optional: upload your race run GPX to auto-set slope and aspect from the actual course.",
+    )
+
+    def clean_gpx_file(self):
+        f = self.cleaned_data.get("gpx_file")
+        if f is None:
+            return None
+        if f.size > 10 * 1024 * 1024:
+            raise forms.ValidationError("GPX file must be under 10 MB.")
+        if not f.name.lower().endswith(".gpx"):
+            raise forms.ValidationError("File must have a .gpx extension.")
+        return f
+
     def clean(self):
         cleaned = super().clean()
         if cleaned.get("use_manual_deep"):

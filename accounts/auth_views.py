@@ -130,7 +130,7 @@ def signup_with_tos(request: HttpRequest) -> HttpResponse:
                 is_current=True,
             )
             LoginIPHistory.objects.create(user=user, ip_address=ip or "0.0.0.0", location="")
-            return redirect(settings.LOGIN_REDIRECT_URL)
+            return redirect("paywall")
         messages.error(request, "Please correct the errors below.")
     else:
         form = SignupFormWithToS()

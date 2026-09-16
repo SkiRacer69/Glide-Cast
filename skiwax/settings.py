@@ -48,6 +48,7 @@ INSTALLED_APPS = [
     'accounts',
     'billing',
     'calculator',
+    'nordic',
 ]
 
 MIDDLEWARE = [
@@ -137,8 +138,8 @@ STORAGES = {
 }
 
 LOGIN_URL = "login"
-LOGIN_REDIRECT_URL = "paywall"
-LOGOUT_REDIRECT_URL = "login"
+LOGIN_REDIRECT_URL = "calculator"
+LOGOUT_REDIRECT_URL = "calculator"
 
 EMAIL_BACKEND = os.environ.get("DJANGO_EMAIL_BACKEND", "django.core.mail.backends.console.EmailBackend")
 DEFAULT_FROM_EMAIL = os.environ.get("DEFAULT_FROM_EMAIL", "noreply@glidecast.com")
@@ -148,11 +149,21 @@ STRIPE_PUBLISHABLE_KEY = os.environ.get("STRIPE_PUBLISHABLE_KEY", "")
 STRIPE_WEBHOOK_SECRET = os.environ.get("STRIPE_WEBHOOK_SECRET", "")
 STRIPE_BILLING_PORTAL_RETURN_URL = os.environ.get("STRIPE_BILLING_PORTAL_RETURN_URL", "")
 
-# Basic ($5/mo) and Pro ($15/mo) × monthly. Create prices in Stripe and set env vars.
+# Alpine: Basic ($5/mo), Pro ($15/mo). Nordic: Basic ($7/mo), Pro ($20/mo). All Access: $30/mo.
 STRIPE_PRICE_BASIC_MONTHLY = os.environ.get("STRIPE_PRICE_BASIC_MONTHLY", "")
 STRIPE_PRICE_BASIC_ANNUAL = os.environ.get("STRIPE_PRICE_BASIC_ANNUAL", "")
 STRIPE_PRICE_PRO_MONTHLY = os.environ.get("STRIPE_PRICE_PRO_MONTHLY", "")
 STRIPE_PRICE_PRO_ANNUAL = os.environ.get("STRIPE_PRICE_PRO_ANNUAL", "")
+
+# Nordic-specific prices
+STRIPE_PRICE_NORDIC_BASIC_MONTHLY = os.environ.get("STRIPE_PRICE_NORDIC_BASIC_MONTHLY", "")
+STRIPE_PRICE_NORDIC_BASIC_ANNUAL = os.environ.get("STRIPE_PRICE_NORDIC_BASIC_ANNUAL", "")
+STRIPE_PRICE_NORDIC_PRO_MONTHLY = os.environ.get("STRIPE_PRICE_NORDIC_PRO_MONTHLY", "")
+STRIPE_PRICE_NORDIC_PRO_ANNUAL = os.environ.get("STRIPE_PRICE_NORDIC_PRO_ANNUAL", "")
+
+# All Access — Alpine + Nordic Pro ($30/mo)
+STRIPE_PRICE_ALL_MONTHLY = os.environ.get("STRIPE_PRICE_ALL_MONTHLY", "")
+STRIPE_PRICE_ALL_ANNUAL = os.environ.get("STRIPE_PRICE_ALL_ANNUAL", "")
 
 # Legacy env names (optional) — mapped in billing.views if new vars are empty
 STRIPE_PRICE_CLUB_MONTHLY = os.environ.get("STRIPE_PRICE_CLUB_MONTHLY", "")

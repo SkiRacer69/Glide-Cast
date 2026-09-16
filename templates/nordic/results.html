@@ -1,0 +1,451 @@
+{% extends "base.html" %}
+{% load static nordic_filters %}
+{% block body_class %}page-calculator{% endblock %}
+{% block title %}Nordic Results · GlideCast — Wax Done Right{% endblock %}
+
+{% block extra_head %}
+<style>
+  .nordic-dev-banner {
+    background: #7c3aed;
+    color: #fff;
+    text-align: center;
+    padding: 0.4rem 1rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+  }
+  .wax-card {
+    background: #111827;
+    border: 1px solid rgba(255,255,255,0.12);
+    border-radius: 18px;
+    padding: 1.75rem;
+    margin-bottom: 1.25rem;
+    box-shadow: 0 8px 32px rgba(0,0,0,0.6);
+  }
+  [data-theme="light"] .wax-card {
+    background: #fff;
+    border-color: #e5e7eb;
+    box-shadow: 0 4px 20px rgba(0,0,0,0.12);
+  }
+  .wax-card-header {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    margin-bottom: 1rem;
+  }
+  .wax-swatch {
+    width: 42px;
+    height: 42px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    border: 2px solid rgba(255,255,255,0.15);
+  }
+  .wax-product-name {
+    font-size: 1.4rem;
+    font-weight: 800;
+    line-height: 1.15;
+  }
+  .wax-product-brand {
+    font-size: 0.78rem;
+    opacity: 0.55;
+    text-transform: uppercase;
+    letter-spacing: 0.07em;
+  }
+  .wax-notes {
+    font-size: 0.88rem;
+    opacity: 0.8;
+    margin-bottom: 0.75rem;
+  }
+  .band-row {
+    display: flex;
+    align-items: center;
+    gap: 0.6rem;
+    font-size: 0.82rem;
+    opacity: 0.7;
+    margin-top: 0.35rem;
+    flex-wrap: wrap;
+  }
+  .section-label {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.5;
+    margin-bottom: 0.6rem;
+  }
+  .confidence-pill {
+    display: inline-block;
+    padding: 0.2rem 0.7rem;
+    border-radius: 999px;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: #fff;
+    margin-left: 0.5rem;
+  }
+  .alt-list { font-size: 0.82rem; opacity: 0.65; }
+  .conditions-grid {
+    display: grid;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 0.75rem;
+    margin-top: 0.75rem;
+  }
+  .snow-temp-highlight {
+    background: rgba(96,165,250,0.1);
+    border: 1px solid rgba(96,165,250,0.25);
+    border-radius: 10px;
+    padding: 0.6rem 0.75rem;
+    text-align: center;
+  }
+  .snow-temp-value {
+    font-size: 1.6rem;
+    font-weight: 900;
+    color: #60a5fa;
+    line-height: 1;
+  }
+  .snow-temp-range {
+    font-size: 0.72rem;
+    opacity: 0.55;
+    margin-top: 0.2rem;
+    font-variant-numeric: tabular-nums;
+  }
+  .condition-cell { text-align: center; }
+  .condition-value { font-size: 1.35rem; font-weight: 800; line-height: 1; }
+  .condition-label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    opacity: 0.5;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    margin-top: 0.2rem;
+  }
+  .snow-badge {
+    display: inline-block;
+    padding: 0.2rem 0.65rem;
+    border-radius: 8px;
+    font-size: 0.78rem;
+    font-weight: 700;
+    background: rgba(255,255,255,0.08);
+    border: 1px solid rgba(255,255,255,0.15);
+    margin-top: 0.5rem;
+  }
+  [data-theme="light"] .snow-badge {
+    background: #f3f4f6;
+    border-color: #d1d5db;
+    color: #374151;
+  }
+  .klister-tag {
+    display: inline-block;
+    background: #dc2626;
+    color: #fff;
+    font-size: 0.7rem;
+    font-weight: 800;
+    letter-spacing: 0.07em;
+    text-transform: uppercase;
+    padding: 0.15rem 0.5rem;
+    border-radius: 5px;
+    margin-left: 0.5rem;
+    vertical-align: middle;
+  }
+  .back-btn {
+    display: inline-block;
+    margin-top: 1.25rem;
+    padding: 0.55rem 1.2rem;
+    border-radius: 10px;
+    background: #7c3aed;
+    color: #fff;
+    font-size: 0.9rem;
+    font-weight: 700;
+    text-decoration: none;
+    transition: background 0.15s;
+  }
+  .back-btn:hover { background: #6d28d9; }
+
+  /* Course analysis */
+  .course-stats-grid {
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    gap: 0.75rem;
+    margin-bottom: 1.25rem;
+  }
+  .course-stat { text-align: center; }
+  .course-stat-value { font-size: 1.15rem; font-weight: 800; }
+  .course-stat-label {
+    font-size: 0.68rem;
+    font-weight: 700;
+    opacity: 0.5;
+    letter-spacing: 0.05em;
+    text-transform: uppercase;
+    margin-top: 0.15rem;
+  }
+  .zone-row {
+    display: flex;
+    align-items: center;
+    gap: 0.75rem;
+    padding: 0.6rem 0.75rem;
+    border-radius: 10px;
+    background: rgba(255,255,255,0.07);
+    margin-bottom: 0.5rem;
+    border: 1px solid rgba(255,255,255,0.12);
+  }
+  [data-theme="light"] .zone-row {
+    background: #f9fafb;
+    border-color: #e5e7eb;
+  }
+  .zone-swatch {
+    width: 28px;
+    height: 28px;
+    border-radius: 50%;
+    flex-shrink: 0;
+    border: 2px solid rgba(255,255,255,0.15);
+  }
+  .zone-range {
+    font-size: 0.78rem;
+    opacity: 0.55;
+    font-variant-numeric: tabular-nums;
+  }
+  .zone-wax { font-weight: 700; font-size: 0.9rem; }
+  .zone-meta { font-size: 0.75rem; opacity: 0.6; margin-left: auto; text-align: right; }
+  .canopy-badge {
+    display: inline-block;
+    background: rgba(124,58,237,0.15);
+    border: 1px solid rgba(124,58,237,0.3);
+    color: #a78bfa;
+    font-size: 0.68rem;
+    font-weight: 700;
+    letter-spacing: 0.06em;
+    text-transform: uppercase;
+    padding: 0.15rem 0.5rem;
+    border-radius: 5px;
+    margin-left: 0.4rem;
+    vertical-align: middle;
+  }
+  .chart-wrap { margin-top: 1rem; border-radius: 10px; overflow: hidden; }
+  .chart-wrap .js-plotly-plot { border-radius: 10px; }
+</style>
+{% endblock %}
+
+{% block hero %}
+  <div class="nordic-dev-banner">⚠ Dev-only feature — not shown in production</div>
+  <section class="hero-premium">
+    <div class="hero-inner">
+      <h1 class="hero-title hero-stagger-1">{{ discipline }} · Nordic Wax</h1>
+      <p class="hero-subtitle hero-stagger-2">
+        Nordic Wax Recommendation
+        <span class="confidence-pill hero-stagger-2"
+          style="background: {{ result.confidence_color }};">
+          {{ result.confidence_label }} confidence
+        </span>
+      </p>
+      <p class="hero-brand-kicker hero-stagger-2" style="margin-top: 0.25rem;">GlideCast<sup class="mark-tm">™</sup></p>
+    </div>
+  </section>
+{% endblock %}
+
+{% block content %}
+<div style="max-width: 700px; margin: 0 auto;">
+
+  {% if not result.ok %}
+    <div class="wax-card">
+      <p style="color: #ef4444; font-weight: 700;">Error: {{ result.error }}</p>
+    </div>
+
+  {% else %}
+
+  {% if gpx_error %}
+    <div class="wax-card" style="border-color: rgba(251,146,60,0.3);">
+      <p style="color: #fb923c; font-size: 0.88rem;">⚠ GPX issue: {{ gpx_error }}</p>
+    </div>
+  {% endif %}
+
+  {# — Conditions ——————————————————————————————————————————————————————————— #}
+  <div class="wax-card">
+    <p class="section-label">
+      Current conditions · GPX track midpoint
+      {% if result.canopy %}
+        <span class="canopy-badge">{{ result.canopy }} canopy</span>
+      {% endif %}
+    </p>
+
+    {% if result.snow_temp_c is not None %}
+    <div class="snow-temp-highlight" style="margin-bottom: 1rem;">
+      <div style="font-size: 0.68rem; font-weight: 700; letter-spacing: 0.08em; text-transform: uppercase; opacity: 0.55; margin-bottom: 0.35rem;">Snow surface temperature</div>
+      <div class="snow-temp-value">{{ result.snow_temp_c|temp:temp_unit }}</div>
+      <div class="snow-temp-range">
+        Range: {{ result.snow_temp_min_c|temp:temp_unit }} – {{ result.snow_temp_max_c|temp:temp_unit }} across course
+      </div>
+    </div>
+    {% endif %}
+
+    <div class="conditions-grid">
+      <div class="condition-cell">
+        <div class="condition-value">{{ result.conditions.temp_c|temp:temp_unit }}</div>
+        <div class="condition-label">Air temp</div>
+      </div>
+      <div class="condition-cell">
+        <div class="condition-value">{{ result.conditions.humidity_pct }}%</div>
+        <div class="condition-label">Humidity</div>
+      </div>
+      <div class="condition-cell">
+        <div class="condition-value">{{ result.conditions.wind_kmh }} km/h</div>
+        <div class="condition-label">Wind</div>
+      </div>
+      <div class="condition-cell">
+        <div class="condition-value">{{ result.conditions.snow_depth_m }} m</div>
+        <div class="condition-label">Snow depth</div>
+      </div>
+    </div>
+    <div style="margin-top: 0.75rem;">
+      <span class="snow-badge">{{ result.snow_type|title }}</span>
+      <span style="font-size: 0.8rem; opacity: 0.6; margin-left: 0.5rem;">{{ result.snow_reason }}</span>
+    </div>
+  </div>
+
+  {# — Kick wax (Classic only) ————————————————————————————————————————————— #}
+  {% if discipline == "Classic" and result.grip %}
+  <div class="wax-card">
+    <p class="section-label">
+      Kick wax{% if result.grip.is_klister %}<span class="klister-tag">Klister</span>{% endif %}
+    </p>
+    <div class="wax-card-header">
+      <div class="wax-swatch" style="background: {{ result.grip.hex }};"></div>
+      <div>
+        <div class="wax-product-brand">{{ result.grip.brand }}</div>
+        <div class="wax-product-name">{{ result.grip.product }}</div>
+      </div>
+    </div>
+    <p class="wax-notes">{{ result.grip.notes }}</p>
+    <div class="band-row">
+      <span>Temp band:</span>
+      <strong>{{ result.grip.band_min_c|temp:temp_unit }} to {{ result.grip.band_max_c|temp:temp_unit }}</strong>
+      {% if result.grip.in_band %}
+        <span style="color: #16a34a;">✓ in band</span>
+      {% else %}
+        <span style="color: #d97706;">⚠ near edge — consider layering</span>
+      {% endif %}
+    </div>
+    {% if result.grip.alternates %}
+      <p class="alt-list" style="margin-top: 0.6rem;">Alternates: {{ result.grip.alternates|join:", " }}</p>
+    {% endif %}
+  </div>
+  {% endif %}
+
+  {# — Binder (Classic only) ——————————————————————————————————————————————— #}
+  {% if discipline == "Classic" and result.binder %}
+  <div class="wax-card" style="border-color: rgba(251,191,36,0.25);">
+    <p class="section-label">Binder / base wax</p>
+    <div class="wax-card-header">
+      <div class="wax-swatch" style="background: #78350f; border-color: rgba(251,191,36,0.35);"></div>
+      <div>
+        <div class="wax-product-brand">{{ result.binder.brand }}</div>
+        <div class="wax-product-name">{{ result.binder.name }}</div>
+      </div>
+    </div>
+    <p class="wax-notes">{{ result.binder.notes }}</p>
+    {% if result.binder.fluoro_free %}
+      <span style="display:inline-block;background:rgba(34,197,94,0.1);border:1px solid rgba(34,197,94,0.3);color:#4ade80;font-size:0.68rem;font-weight:700;letter-spacing:0.06em;text-transform:uppercase;padding:0.15rem 0.5rem;border-radius:5px;">Fluoro-free</span>
+    {% endif %}
+  </div>
+  {% endif %}
+
+  {# — Glide wax ——————————————————————————————————————————————————————————— #}
+  <div class="wax-card">
+    <p class="section-label">Glide wax · {{ discipline }}</p>
+    <div class="wax-card-header">
+      <div class="wax-swatch" style="background: {{ result.glide.hex }};"></div>
+      <div>
+        <div class="wax-product-brand">{{ result.glide.brand }}</div>
+        <div class="wax-product-name">{{ result.glide.product }}</div>
+      </div>
+    </div>
+    <p class="wax-notes">{{ result.glide.notes }}</p>
+    <div class="band-row">
+      <span>Temp band:</span>
+      <strong>{{ result.glide.band_min_c|temp:temp_unit }} to {{ result.glide.band_max_c|temp:temp_unit }}</strong>
+      {% if result.glide.in_band %}
+        <span style="color: #16a34a;">✓ in band</span>
+      {% else %}
+        <span style="color: #d97706;">⚠ near edge</span>
+      {% endif %}
+    </div>
+    {% if result.glide.alternates %}
+      <p class="alt-list" style="margin-top: 0.6rem;">Alternates: {{ result.glide.alternates|join:", " }}</p>
+    {% endif %}
+  </div>
+
+  {# — Course analysis (GPX) ——————————————————————————————————————————————— #}
+  {% if has_course and result.course %}
+  {% with course=result.course %}
+  <div class="wax-card">
+    <p class="section-label">
+      Course profile · {{ course.stats.total_dist_km }} km
+      <span class="canopy-badge">{{ course.canopy }} canopy</span>
+      {% if gpx_source == "osm" %}
+        <span class="canopy-badge" style="background:rgba(16,185,129,0.15);border-color:rgba(16,185,129,0.3);color:#34d399;">OpenStreetMap</span>
+      {% elif gpx_source == "uploaded" %}
+        <span class="canopy-badge" style="background:rgba(59,130,246,0.15);border-color:rgba(59,130,246,0.3);color:#60a5fa;">GPX uploaded</span>
+      {% endif %}
+      {% if result.course.weather_source == "open-meteo per-point" %}
+        <span class="canopy-badge" style="background:rgba(251,191,36,0.12);border-color:rgba(251,191,36,0.3);color:#fbbf24;">Open-Meteo per point</span>
+      {% elif result.course.weather_source == "nws per-segment" %}
+        <span class="canopy-badge" style="background:rgba(59,130,246,0.12);border-color:rgba(59,130,246,0.3);color:#60a5fa;">NWS per segment</span>
+      {% endif %}
+    </p>
+
+    <div class="course-stats-grid">
+      <div class="course-stat">
+        <div class="course-stat-value">{{ course.stats.total_dist_km }} km</div>
+        <div class="course-stat-label">Total distance</div>
+      </div>
+      <div class="course-stat">
+        <div class="course-stat-value">+{{ course.stats.elev_gain_m }} m</div>
+        <div class="course-stat-label">Elevation gain</div>
+      </div>
+      <div class="course-stat">
+        <div class="course-stat-value">{{ course.stats.elev_min_m }}–{{ course.stats.elev_max_m }} m</div>
+        <div class="course-stat-label">Elev range</div>
+      </div>
+    </div>
+
+    {% if course.chart_html %}
+      <div class="chart-wrap">{{ course.chart_html|safe }}</div>
+    {% endif %}
+
+    {% if course.zones %}
+      <p class="section-label" style="margin-top: 1.25rem;">
+        {% if discipline == "Classic" %}Kick wax zones along course{% else %}Glide wax zones along course{% endif %}
+      </p>
+      {% for zone in course.zones %}
+        <div class="zone-row">
+          <div class="zone-swatch" style="background: {{ zone.color }};"></div>
+          <div style="flex: 1; min-width: 0;">
+            <div class="zone-wax">
+              {{ zone.wax }}
+              {% if zone.is_klister %}<span class="klister-tag">K</span>{% endif %}
+            </div>
+            <div class="zone-range">{{ zone.start_km }} km → {{ zone.end_km }} km</div>
+          </div>
+          <div class="zone-meta">
+            {{ zone.avg_temp_c|temp:temp_unit }} avg<br>
+            {{ zone.snow_types|join:" / " }}
+          </div>
+        </div>
+      {% endfor %}
+    {% endif %}
+  </div>
+  {% endwith %}
+  {% else %}
+  <div class="wax-card" style="border-style: dashed; border-color: rgba(255,255,255,0.2); text-align: center; padding: 2rem;">
+    <span style="font-size: 1.8rem; display: block; margin-bottom: 0.5rem;">📍</span>
+    <p class="section-label" style="opacity: 0.8;">No course data available</p>
+    <p style="font-size: 0.88rem; opacity: 0.7; margin-bottom: 0.75rem;">Upload a GPX track on the previous screen to get live Open-Meteo weather at every point along the course — per-segment temperature, humidity, snow conditions, and wax zone analysis.</p>
+    <a href="{% url 'nordic_calculator' %}" style="display:inline-block;background:#7c3aed;color:#fff;padding:0.5rem 1.25rem;border-radius:9px;font-size:0.85rem;font-weight:700;text-decoration:none;">Upload GPX track →</a>
+  </div>
+  {% endif %}
+
+  {% endif %}
+
+  <a href="{% url 'nordic_calculator' %}" class="back-btn">← New calculation</a>
+</div>
+{% endblock %}

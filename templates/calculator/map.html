@@ -1,0 +1,554 @@
+{% extends "base.html" %}
+{% load static %}
+{% block body_class %}page-map{% endblock %}
+{% block title %}Venue Globe · GlideCast — Wax Done Right{% endblock %}
+
+{% block extra_head %}
+<link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/maplibre-gl@3.6.2/dist/maplibre-gl.css" />
+<style>
+  body.page-map { overflow: hidden; background: #020816; }
+  body.page-map .nav-sticky {
+    background: rgba(2, 8, 22, 0.6);
+    backdrop-filter: blur(12px);
+    border-bottom: 1px solid rgba(100, 180, 255, 0.08);
+  }
+  body.page-map main { padding: 0; }
+  body.page-map .main-inner { max-width: 100%; padding: 0; }
+  body.page-map #snow-container { display: none; }
+  body.page-map .site-footer { display: none; }
+
+  #globe-container {
+    position: fixed;
+    inset: 0;
+    z-index: 0;
+  }
+
+  /* ─── Mountain markers ─────────────────────────────── */
+  .globe-marker {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    cursor: pointer;
+    user-select: none;
+  }
+  .globe-marker svg {
+    display: block;
+    overflow: visible;
+    transition: transform 0.12s ease;
+  }
+  .globe-marker:hover svg {
+    transform: scale(1.55) translateY(-4px);
+  }
+  .marker-label {
+    font-family: 'Inter', system-ui, sans-serif;
+    font-size: 11px;
+    font-weight: 700;
+    white-space: nowrap;
+    letter-spacing: 0.02em;
+    line-height: 1;
+    margin-top: 3px;
+    pointer-events: none;
+    text-shadow:
+      0 1px 5px rgba(0,0,0,1),
+      0 0 12px rgba(0,0,0,1),
+      -1px 0 3px rgba(0,0,0,1),
+       1px 0 3px rgba(0,0,0,1),
+      0 2px 8px rgba(0,0,0,0.9);
+    opacity: 0;
+    transition: opacity 0.18s ease;
+  }
+  body.show-labels .marker-label { opacity: 1; }
+  .globe-marker:hover .marker-label { opacity: 1; font-size: 13px; }
+
+  /* ─── Tooltip ──────────────────────────────────────── */
+  #venue-tooltip {
+    position: fixed;
+    z-index: 50;
+    pointer-events: none;
+    opacity: 0;
+    transition: opacity 0.14s ease;
+    min-width: 230px;
+    max-width: 290px;
+  }
+  #venue-tooltip.visible { opacity: 1; }
+  .tooltip-card {
+    background: rgba(4, 10, 28, 0.96);
+    border: 1px solid rgba(100, 180, 255, 0.16);
+    border-radius: 14px;
+    padding: 0.85rem 1.05rem;
+    backdrop-filter: blur(24px);
+    box-shadow: 0 10px 44px rgba(0,0,0,0.7), 0 0 0 1px rgba(100,180,255,0.05);
+  }
+  .tooltip-name { font-size: 0.92rem; font-weight: 700; color: #fff; margin: 0 0 0.12rem 0; line-height: 1.25; }
+  .tooltip-region { font-size: 0.67rem; color: rgba(100,180,255,0.65); text-transform: uppercase; letter-spacing: 0.07em; margin-bottom: 0.5rem; }
+  .tooltip-wax { display: flex; align-items: center; gap: 0.4rem; margin-bottom: 0.5rem; font-size: 0.78rem; color: rgba(255,255,255,0.88); font-weight: 600; }
+  .tooltip-wax-dot { width: 11px; height: 11px; border-radius: 50%; flex-shrink: 0; }
+  .tooltip-wax-temp { font-size: 0.66rem; color: rgba(255,255,255,0.38); font-weight: 400; }
+  .tooltip-elev { display: flex; gap: 1.1rem; margin-bottom: 0.5rem; }
+  .tooltip-elev-item { display: flex; flex-direction: column; gap: 0.12rem; }
+  .tooltip-elev-val { font-size: 1.05rem; font-weight: 800; color: #fff; font-variant-numeric: tabular-nums; }
+  .tooltip-elev-lbl { font-size: 0.72rem; font-weight: 600; color: rgba(255,255,255,0.72); text-transform: uppercase; letter-spacing: 0.07em; }
+  .tooltip-discs { display: flex; gap: 0.26rem; flex-wrap: wrap; margin-top: 0.28rem; }
+  .disc-badge { font-size: 0.6rem; font-weight: 700; padding: 0.1rem 0.4rem; border-radius: 4px; text-transform: uppercase; letter-spacing: 0.05em; }
+  .disc-DH     { background: rgba(220,53,69,0.22);  color: #ff6b7a; border: 1px solid rgba(220,53,69,0.35); }
+  .disc-SuperG { background: rgba(255,140,0,0.18);  color: #ffaa44; border: 1px solid rgba(255,140,0,0.3); }
+  .disc-GS     { background: rgba(25,180,100,0.18); color: #5de8a0; border: 1px solid rgba(25,180,100,0.3); }
+  .disc-SL     { background: rgba(59,130,246,0.18); color: #7eb8ff; border: 1px solid rgba(59,130,246,0.3); }
+  .tooltip-cta { margin-top: 0.5rem; font-size: 0.65rem; color: rgba(100,180,255,0.48); text-align: right; }
+
+  /* ─── Discipline filters ───────────────────────────── */
+  .map-filters {
+    position: fixed; top: 80px; right: 1.25rem; z-index: 20;
+    display: flex; flex-direction: column; gap: 0.32rem;
+  }
+  .map-filter-btn {
+    display: flex; align-items: center; gap: 0.35rem;
+    padding: 0.3rem 0.68rem; border-radius: 8px;
+    border: 1px solid rgba(255,255,255,0.1);
+    background: rgba(4,10,28,0.75); backdrop-filter: blur(10px);
+    color: rgba(255,255,255,0.52); font-size: 0.68rem; font-weight: 700;
+    letter-spacing: 0.05em; cursor: pointer; transition: all 0.14s ease; text-transform: uppercase;
+  }
+  .map-filter-btn.active { color: #fff; border-color: rgba(255,255,255,0.28); background: rgba(15,25,55,0.9); }
+  .map-filter-btn:hover  { background: rgba(15,25,55,0.85); }
+  .filter-dot { width: 7px; height: 7px; border-radius: 50%; flex-shrink: 0; }
+
+  /* ─── Page title ───────────────────────────────────── */
+  .globe-title { position: fixed; top: 80px; left: 1.5rem; z-index: 20; }
+  .globe-title h1 { font-size: 1.35rem; font-weight: 800; color: #fff; margin: 0 0 0.1rem; text-shadow: 0 2px 20px rgba(0,0,0,0.9); }
+  .globe-title p  { font-size: 0.73rem; color: rgba(255,255,255,0.42); margin: 0; text-shadow: 0 1px 8px rgba(0,0,0,0.9); }
+
+  /* ─── Bottom bar ───────────────────────────────────── */
+  .map-bar {
+    position: fixed; bottom: 0; left: 0; right: 0; z-index: 20;
+    display: flex; align-items: center; justify-content: space-between;
+    padding: 0.5rem 1.5rem;
+    background: rgba(2, 8, 22, 0.82); backdrop-filter: blur(14px);
+    border-top: 1px solid rgba(100, 180, 255, 0.09);
+    font-size: 0.7rem; color: rgba(255,255,255,0.45); gap: 1rem; flex-wrap: wrap;
+  }
+  .map-bar-count { font-weight: 700; color: rgba(255,255,255,0.8); }
+  .wax-legend { display: flex; align-items: center; gap: 0.55rem; flex-wrap: wrap; }
+  .wax-legend-lbl { font-size: 0.62rem; letter-spacing: 0.06em; text-transform: uppercase; color: rgba(255,255,255,0.38); margin-right: 0.1rem; }
+  .wax-sw { display: flex; align-items: center; gap: 0.26rem; font-size: 0.64rem; color: rgba(255,255,255,0.6); }
+  .wax-dot { width: 8px; height: 8px; border-radius: 50%; flex-shrink: 0; box-shadow: 0 0 5px currentColor; }
+  .map-bar-hint { font-size: 0.62rem; letter-spacing: 0.04em; text-transform: uppercase; }
+  .live-dot { display: inline-block; width: 6px; height: 6px; border-radius: 50%; background: #6b7280; margin-right: 4px; transition: background 0.4s; }
+
+  /* ─── Globe / Calculator view toggle ──────────────── */
+  .map-view-toggle {
+    display: flex; align-items: center; gap: 0.18rem;
+    margin-bottom: 0.52rem; width: fit-content;
+    background: rgba(4,10,28,0.72); border: 1px solid rgba(100,180,255,0.13);
+    border-radius: 9px; padding: 0.17rem 0.2rem; backdrop-filter: blur(10px);
+  }
+  .map-view-btn {
+    display: inline-block; padding: 0.2rem 0.7rem; border-radius: 6px;
+    font-size: 0.68rem; font-weight: 700; letter-spacing: 0.05em; text-transform: uppercase;
+    text-decoration: none; color: rgba(255,255,255,0.42); transition: color 0.13s; cursor: pointer; line-height: 1.4;
+  }
+  .map-view-btn:hover { color: rgba(255,255,255,0.75); }
+  .map-view-active { background: rgba(59,130,246,0.22); color: #93c5fd !important; border: 1px solid rgba(59,130,246,0.28); border-radius: 5px; }
+
+  /* ─── Basic-plan upgrade nudge ─────────────────────── */
+  .wax-upgrade { display: flex; align-items: center; gap: 0.35rem; font-size: 0.68rem; color: rgba(255,255,255,0.42); }
+  .wax-upgrade a { color: #93c5fd; text-decoration: none; font-weight: 600; }
+  .wax-upgrade a:hover { text-decoration: underline; }
+
+  /* ─── Loading overlay ──────────────────────────────── */
+  #globe-loading {
+    position: fixed; inset: 0; z-index: 100;
+    display: flex; align-items: center; justify-content: center;
+    background: #020816; transition: opacity 0.7s ease;
+  }
+  #globe-loading.fade-out { opacity: 0; pointer-events: none; }
+  .loading-inner { display: flex; flex-direction: column; align-items: center; gap: 1rem; }
+  .loading-ring {
+    width: 44px; height: 44px; border-radius: 50%;
+    border: 3px solid rgba(100,180,255,0.12);
+    border-top-color: rgba(100,180,255,0.75);
+    animation: spin 0.85s linear infinite;
+  }
+  @keyframes spin { to { transform: rotate(360deg); } }
+  .loading-inner p { color: rgba(255,255,255,0.35); font-size: 0.72rem; letter-spacing: 0.1em; text-transform: uppercase; margin: 0; }
+
+  /* MapLibre UI overrides */
+  .maplibregl-ctrl-bottom-right { bottom: 44px !important; }
+  .maplibregl-ctrl-attrib { background: rgba(2,8,22,0.65) !important; }
+  .maplibregl-ctrl-attrib-inner { color: rgba(255,255,255,0.28) !important; font-size: 0.55rem !important; }
+  .maplibregl-ctrl-attrib a { color: rgba(100,180,255,0.45) !important; }
+  .maplibregl-ctrl-zoom button, .maplibregl-ctrl-compass button {
+    background-color: rgba(4,10,28,0.8) !important;
+    border-color: rgba(100,180,255,0.12) !important;
+  }
+</style>
+{% endblock %}
+
+{% block hero %}{% endblock %}
+
+{% block content %}
+<div id="globe-loading">
+  <div class="loading-inner">
+    <div class="loading-ring"></div>
+    <p data-i18n="map.loading_terrain">Loading terrain…</p>
+  </div>
+</div>
+<div id="globe-container"></div>
+
+<div class="globe-title">
+  <div class="map-view-toggle">
+    <span class="map-view-btn map-view-active" data-i18n="map.toggle.globe">Globe</span>
+    <a href="{% url 'calculator' %}" class="map-view-btn" data-i18n="map.toggle.calc">Calculator</a>
+  </div>
+  <h1>GlideCast<sup style="font-size:0.5em;vertical-align:super;margin-left:1px">™</sup> <span data-i18n="map.heading">Venue Globe</span></h1>
+  <p>{{ venue_count }} <span data-i18n="map.venues_label">FIS venues</span> · <span id="globe-subtitle" data-i18n="map.loading_wax">loading wax data…</span></p>
+</div>
+
+<div class="map-filters">
+  <button class="map-filter-btn active" onclick="setFilter(this,'ALL')"><span class="filter-dot" style="background:#fff"></span><span data-i18n="map.filter.all">All</span></button>
+  <button class="map-filter-btn" onclick="setFilter(this,'DH')"><span class="filter-dot" style="background:#ff6b7a"></span>DH</button>
+  <button class="map-filter-btn" onclick="setFilter(this,'SuperG')"><span class="filter-dot" style="background:#ffaa44"></span>Super G</button>
+  <button class="map-filter-btn" onclick="setFilter(this,'GS')"><span class="filter-dot" style="background:#5de8a0"></span>GS</button>
+  <button class="map-filter-btn" onclick="setFilter(this,'SL')"><span class="filter-dot" style="background:#7eb8ff"></span>SL</button>
+</div>
+
+<div id="venue-tooltip">
+  <div class="tooltip-card">
+    <div class="tooltip-name"   id="tt-name"></div>
+    <div class="tooltip-region" id="tt-region"></div>
+    <div class="tooltip-wax">
+      <span class="tooltip-wax-dot" id="tt-wax-dot"></span>
+      <span id="tt-wax-label"></span>
+      <span class="tooltip-wax-temp" id="tt-wax-temp"></span>
+    </div>
+    <div class="tooltip-elev">
+      <div class="tooltip-elev-item"><span class="tooltip-elev-val" id="tt-start"></span><span class="tooltip-elev-lbl">Start</span></div>
+      <div class="tooltip-elev-item"><span class="tooltip-elev-val" id="tt-finish"></span><span class="tooltip-elev-lbl">Finish</span></div>
+      <div class="tooltip-elev-item"><span class="tooltip-elev-val" id="tt-vert"></span><span class="tooltip-elev-lbl">Vert</span></div>
+    </div>
+    <div class="tooltip-discs" id="tt-discs"></div>
+    <div class="tooltip-cta" data-i18n="map.tooltip_cta">Click to calculate →</div>
+  </div>
+</div>
+
+<div class="map-bar">
+  <span><span class="map-bar-count">{{ venue_count }}</span> <span data-i18n="map.venues_label">FIS venues</span></span>
+  {% if can_see_wax_colors %}
+  <div class="wax-legend">
+    <span class="wax-legend-lbl" data-i18n="map.wax_legend">Current Wax</span>
+    <span class="wax-sw"><span class="wax-dot" style="background:#1bb3c8;color:#1bb3c8"></span>HS5 Turquoise · Very Cold</span>
+    <span class="wax-sw"><span class="wax-dot" style="background:#2563eb;color:#2563eb"></span>HS6 Blue · Cold</span>
+    <span class="wax-sw"><span class="wax-dot" style="background:#7c3aed;color:#7c3aed"></span>HS7 Violet · Cold</span>
+    <span class="wax-sw"><span class="wax-dot" style="background:#dc2626;color:#dc2626"></span>HS8 Red · Warm</span>
+    <span class="wax-sw"><span class="wax-dot" style="background:#f59e0b;color:#f59e0b"></span>HS10 Yellow · Very Warm</span>
+  </div>
+  {% else %}
+  <div class="wax-upgrade">
+    🔒 <a href="{% url 'paywall' %}" data-i18n="map.upgrade_link">Upgrade to Pro</a><span data-i18n="map.upgrade_suffix"> to unlock live wax color recommendations on the globe</span>
+  </div>
+  {% endif %}
+  <span class="map-bar-hint">
+    <span class="live-dot" id="live-dot"></span><span id="wax-status">Loading</span>
+    &nbsp;·&nbsp; <span data-i18n="map.hint">Scroll to zoom · Drag to rotate</span>
+  </span>
+</div>
+{% endblock %}
+
+{% block extra_js %}
+<script src="https://cdn.jsdelivr.net/npm/maplibre-gl@3.6.2/dist/maplibre-gl.js"></script>
+<script>
+(function () {
+  'use strict';
+  var ALL_VENUES = {{ venues_json|safe }};
+  var CAN_SEE_WAX = {{ can_see_wax_colors|yesno:"true,false" }};
+  var activeFilter = 'ALL';
+  var WAX_DATA = {};
+  var _markers = [];
+  var _mapLoaded = false;
+  var tooltip = document.getElementById('venue-tooltip');
+
+  var WAX_META = {
+    '#1bb3c8': { name: 'HS5 Turquoise', desc: 'Very Cold'  },
+    '#2563eb': { name: 'HS6 Blue',      desc: 'Cold'       },
+    '#7c3aed': { name: 'HS7 Violet',    desc: 'Cold'       },
+    '#dc2626': { name: 'HS8 Red',       desc: 'Warm'       },
+    '#f59e0b': { name: 'HS10 Yellow',   desc: 'Very Warm'  },
+    '#6b7280': { name: '—',             desc: 'No data'    },
+  };
+
+  function getWaxColor(name) {
+    if (!CAN_SEE_WAX) return '#6b7280';
+    return (WAX_DATA[name] && WAX_DATA[name].color) || '#6b7280';
+  }
+
+  /* ── Tooltip ─────────────────────────────────────── */
+  function positionTooltip(x, y) {
+    var tw = tooltip.offsetWidth  || 260;
+    var th = tooltip.offsetHeight || 190;
+    var lx = Math.min(x + 18, window.innerWidth  - tw - 12);
+    var ly = y - th - 16;
+    if (ly < 72) ly = y + 18;
+    tooltip.style.left = lx + 'px';
+    tooltip.style.top  = ly + 'px';
+  }
+
+  function showTooltip(venue, x, y) {
+    document.getElementById('tt-name').textContent   = venue.name;
+    document.getElementById('tt-region').textContent = venue.region;
+    document.getElementById('tt-start').textContent  = venue.elev_ft.toLocaleString() + ' ft';
+    document.getElementById('tt-finish').textContent = venue.finish_ft.toLocaleString() + ' ft';
+    document.getElementById('tt-vert').textContent   = (venue.elev_ft - venue.finish_ft).toLocaleString() + ' ft';
+
+    var dot = document.getElementById('tt-wax-dot');
+    if (CAN_SEE_WAX) {
+      var wd    = WAX_DATA[venue.name];
+      var color = wd ? wd.color : '#6b7280';
+      var meta  = WAX_META[color] || WAX_META['#6b7280'];
+      dot.style.background = color;
+      dot.style.boxShadow  = '0 0 7px ' + color;
+      document.getElementById('tt-wax-label').textContent = meta.name + ' · ' + meta.desc;
+      document.getElementById('tt-wax-temp').textContent  =
+        (wd && wd.temp_c !== null) ? wd.temp_c + '°C at start' : '';
+    } else {
+      dot.style.background = '#6b7280';
+      dot.style.boxShadow  = 'none';
+      document.getElementById('tt-wax-label').textContent = i('map.tooltip_pro_lock');
+      document.getElementById('tt-wax-temp').textContent  = '';
+    }
+
+    var discsEl = document.getElementById('tt-discs');
+    discsEl.innerHTML = venue.disciplines.map(function (d) {
+      return '<span class="disc-badge disc-' + d + '">' + d + '</span>';
+    }).join('');
+
+    positionTooltip(x, y);
+    tooltip.classList.add('visible');
+  }
+
+  function hideTooltip() { tooltip.classList.remove('visible'); }
+
+  /* ── Mountain SVG ────────────────────────────────── */
+  function makeMtnSVG(color, isDH) {
+    var w = isDH ? 26 : 20;
+    var h = isDH ? 22 : 17;
+    var cx = w / 2;
+    var snowY = h * 0.42;
+    var snowW = w * 0.28;
+    return (
+      '<svg width="' + w + '" height="' + h + '" viewBox="0 0 ' + w + ' ' + h + '" overflow="visible">' +
+        '<polygon class="mb" points="' + cx + ',0.5 ' + (w - 0.5) + ',' + (h - 0.5) + ' 0.5,' + (h - 0.5) + '"' +
+          ' fill="' + color + '" stroke="rgba(0,0,0,0.55)" stroke-width="1.3" stroke-linejoin="round"/>' +
+        '<polygon class="ms" points="' + cx + ',0.5 ' + (cx + snowW) + ',' + snowY + ' ' + (cx - snowW) + ',' + snowY + '"' +
+          ' fill="rgba(255,255,255,0.78)"/>' +
+      '</svg>'
+    );
+  }
+
+  /* ── Build marker DOM element ─────────────────────── */
+  function makeMarkerEl(d) {
+    var color = getWaxColor(d.name);
+    var isDH  = d.disciplines.indexOf('DH') !== -1 || d.disciplines.indexOf('SuperG') !== -1;
+    var el    = document.createElement('div');
+    el.className     = 'globe-marker';
+    el.dataset.venue = d.name;
+    el.innerHTML     = makeMtnSVG(color, isDH) +
+      '<div class="marker-label" style="color:' + color + '">' + d.name + '</div>';
+    el.addEventListener('mouseenter', function (e) { showTooltip(d, e.clientX, e.clientY); });
+    el.addEventListener('mousemove',  function (e) { positionTooltip(e.clientX, e.clientY); });
+    el.addEventListener('mouseleave', hideTooltip);
+    el.addEventListener('click', function (e) {
+      e.stopPropagation();
+      window.location.href = '/?venue=' + encodeURIComponent(d.name);
+    });
+    return el;
+  }
+
+  /* ── Refresh marker colors in-place ─────────────── */
+  function applyWaxColors() {
+    document.querySelectorAll('.globe-marker').forEach(function (el) {
+      var name  = el.dataset.venue;
+      var color = getWaxColor(name);
+      var body  = el.querySelector('.mb');
+      if (body) body.setAttribute('fill', color);
+      var lbl   = el.querySelector('.marker-label');
+      if (lbl)  lbl.style.color = color;
+    });
+  }
+
+  /* ── Filter ──────────────────────────────────────── */
+  function filteredVenues() {
+    if (activeFilter === 'ALL') return ALL_VENUES;
+    return ALL_VENUES.filter(function (v) {
+      return v.disciplines.indexOf(activeFilter) !== -1;
+    });
+  }
+
+  function renderMarkers(venues) {
+    _markers.forEach(function (m) { m.remove(); });
+    _markers = [];
+    venues.forEach(function (d) {
+      var el = makeMarkerEl(d);
+      var m  = new maplibregl.Marker({ element: el, anchor: 'bottom' })
+        .setLngLat([d.lon, d.lat])
+        .addTo(map);
+      _markers.push(m);
+    });
+  }
+
+  window.setFilter = function (btn, disc) {
+    activeFilter = disc;
+    document.querySelectorAll('.map-filter-btn').forEach(function (b) {
+      b.classList.toggle('active', b === btn);
+    });
+    if (_mapLoaded) renderMarkers(filteredVenues());
+  };
+
+  /* ── i18n helper ─────────────────────────────────── */
+  function i(key) { return window.I18N ? window.I18N.t(key) : key; }
+
+  /* ── Wax status ──────────────────────────────────── */
+  function setStatus(text, dotColor) {
+    var dot = document.getElementById('live-dot');
+    var txt = document.getElementById('wax-status');
+    if (dot) dot.style.background = dotColor;
+    if (txt) txt.textContent = text;
+  }
+
+  var _waxState = 'loading';
+
+  function applyStatusLang() {
+    var sub = document.getElementById('globe-subtitle');
+    if (_waxState === 'live') {
+      setStatus(i('map.wax_live'), '#4ade80');
+      if (sub) sub.textContent = i('map.subtitle_live');
+    } else if (_waxState === 'offline') {
+      setStatus(i('map.wax_offline'), '#ef4444');
+      if (sub) sub.textContent = i('map.subtitle_unavailable');
+    } else if (_waxState === 'basic') {
+      setStatus(i('map.status_basic'), '#6b7280');
+      if (sub) sub.textContent = i('map.subtitle_basic');
+    } else {
+      setStatus(i('map.wax_loading'), '#6b7280');
+    }
+  }
+
+  /* ── MapLibre Map ────────────────────────────────── */
+  function dismissOverlay() {
+    var ov = document.getElementById('globe-loading');
+    if (ov && !ov.classList.contains('fade-out')) {
+      ov.classList.add('fade-out');
+      setTimeout(function () { ov.style.display = 'none'; }, 750);
+    }
+  }
+
+  var map;
+  try {
+    map = new maplibregl.Map({
+      container: 'globe-container',
+      style: {
+        version: 8,
+        sources: {
+          voyager: {
+            type: 'raster',
+            tiles: [
+              'https://a.tile.opentopomap.org/{z}/{x}/{y}.png',
+              'https://b.tile.opentopomap.org/{z}/{x}/{y}.png',
+              'https://c.tile.opentopomap.org/{z}/{x}/{y}.png'
+            ],
+            tileSize: 256,
+            maxzoom: 17,
+            attribution: 'Map data: &copy; <a href="https://www.openstreetmap.org/copyright">OpenStreetMap</a> contributors, SRTM | Map style: &copy; <a href="https://opentopomap.org">OpenTopoMap</a> (CC-BY-SA)'
+          }
+        },
+        layers: [{
+          id: 'voyager',
+          type: 'raster',
+          source: 'voyager',
+          paint: {
+            'raster-saturation': 0.2,
+            'raster-contrast': 0.05,
+            'raster-resampling': 'linear',
+            'raster-fade-duration': 100
+          }
+        }]
+      },
+      center: [-30, 35],
+      zoom: 2,
+      minZoom: 0.5,
+      maxZoom: 20,
+      attributionControl: false,
+      antialias: true,
+      renderWorldCopies: false,
+      fadeDuration: 100
+    });
+  } catch (e) {
+    dismissOverlay();
+  }
+
+  if (map) {
+    /* Fallback: dismiss after 8 s even if load event never fires */
+    var _loadFallback = setTimeout(dismissOverlay, 8000);
+
+    map.on('error', function () { /* swallow tile errors silently */ });
+
+    map.on('load', function () {
+      clearTimeout(_loadFallback);
+      _mapLoaded = true;
+
+      /* Switch to globe projection */
+      try { map.setProjection({ name: 'globe' }); } catch (e) {}
+
+      /* Space / atmosphere effect */
+      try {
+        map.setFog({
+          color: 'rgba(186, 210, 235, 0.4)',
+          'horizon-blend': 0.05,
+          'high-color': '#0d1f45',
+          'space-color': '#020816',
+          'star-intensity': 0.7
+        });
+      } catch (e) {}
+
+      /* Place venue markers */
+      renderMarkers(filteredVenues());
+
+      dismissOverlay();
+    });
+  }
+
+  /* Show labels when zoomed in — hysteresis band prevents flicker near threshold */
+  var labelsShown = false;
+  function checkLabelZoom() {
+    var zoom = map.getZoom();
+    var shouldShow = labelsShown ? zoom > 4.5 : zoom > 5.2;
+    if (shouldShow !== labelsShown) {
+      document.body.classList.toggle('show-labels', shouldShow);
+      labelsShown = shouldShow;
+    }
+  }
+  map.on('zoom', checkLabelZoom);
+
+  /* ── Fetch live wax data ─────────────────────────── */
+  if (CAN_SEE_WAX) {
+    setStatus(i('map.wax_loading'), '#6b7280');
+    fetch('/api/globe-wax/')
+      .then(function (r) { return r.json(); })
+      .then(function (data) {
+        WAX_DATA = data;
+        applyWaxColors();
+        _waxState = 'live';
+        applyStatusLang();
+      })
+      .catch(function () {
+        _waxState = 'offline';
+        applyStatusLang();
+      });
+  } else {
+    _waxState = 'basic';
+    applyStatusLang();
+  }
+
+  document.addEventListener('glidecast:langchange', applyStatusLang);
+})();
+</script>
+{% endblock %}
