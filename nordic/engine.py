@@ -5,8 +5,26 @@ import math
 from datetime import datetime, timedelta
 from typing import Any
 
+import sys
+import types
+
 import pandas as pd
 import requests
+
+if "streamlit" not in sys.modules:
+    class _Noop:
+        def __call__(self, *a, **kw):
+            if a and callable(a[0]):
+                return a[0]
+            return self
+        def __getattr__(self, name):
+            return _Noop()
+
+    class _StubModule(types.ModuleType):
+        def __getattr__(self, name):
+            return _Noop()
+
+    sys.modules["streamlit"] = _StubModule("streamlit")
 
 # Import the exact same energy-balance functions and solar model from the Alpine engine.
 # Nordic uses the identical formula — GPX provides aspect_deg and slope_deg per segment
