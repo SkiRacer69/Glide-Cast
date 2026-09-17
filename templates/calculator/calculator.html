@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% block body_class %}page-calculator{% endblock %}
-{% block title %}Calculator · GlideCast — Wax Done Right{% endblock %}
+{% block title %}Calculator · WaxOracle — Wax Done Right{% endblock %}
 
 {% block extra_head %}
 <script>(function(){if(localStorage.getItem('glidecast-theme')!=='light')document.documentElement.removeAttribute('data-theme');})();</script>
@@ -99,7 +99,7 @@
     <div class="hero-inner">
       <h1 id="calc-hero-title" class="hero-title hero-stagger-1">{{ hero_venue }} · {{ hero_discipline }}</h1>
       <p id="calc-hero-schedule" class="hero-subtitle hero-stagger-2">{{ hero_race_date|date:"l, M j, Y" }} · Run 1 {{ hero_run1_time|time:"g:i A" }} · Run 2 {{ hero_run2_time|time:"g:i A" }}</p>
-      <p class="hero-brand-kicker hero-stagger-2" style="margin-top: 0.25rem;">GlideCast<sup class="mark-tm">™</sup></p>
+      <p class="hero-brand-kicker hero-stagger-2" style="margin-top: 0.25rem;">WaxOracle<sup class="mark-tm">™</sup></p>
       <p id="calc-hero-caption" class="text-caption hero-stagger-2" style="margin-top: 0.35rem; opacity: 0.92;">Wax Done Right<sup class="mark-sm">℠</sup> &mdash; configure run parameters and compute wax recommendations</p>
       <a href="{% url 'venue_map' %}" data-i18n="calc.globe_btn" class="hero-stagger-2 hero-globe-btn" style="display:inline-flex;align-items:center;gap:0.4rem;margin-top:0.75rem;padding:0.32rem 0.85rem;border-radius:9px;border:1px solid rgba(255,255,255,0.18);background:rgba(255,255,255,0.07);font-size:0.72rem;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;text-decoration:none;backdrop-filter:blur(8px);transition:all 0.15s ease;" onmouseover="this.style.background='rgba(255,255,255,0.14)'" onmouseout="this.style.background='rgba(255,255,255,0.07)'">🌍 Venue Globe</a>
       {% if debug %}
@@ -116,7 +116,7 @@
   <div style="display: flex; justify-content: center;">
     <div class="card-glass scroll-anim-card" style="padding: 1.5rem; width: 100%; max-width: 600px;">
       <p class="text-label" data-i18n="calc.label" style="font-size: 0.75rem; text-transform: uppercase; letter-spacing: 0.05em; margin-bottom: 0.25rem;">Wax calculator</p>
-      <h2 class="text-section-title" style="font-size: 1.5rem; margin: 0 0 0.25rem 0;">GlideCast Calculator<sup class="mark-sm">℠</sup> engine</h2>
+      <h2 class="text-section-title" style="font-size: 1.5rem; margin: 0 0 0.25rem 0;">WaxOracle Calculator<sup class="mark-sm">℠</sup> engine</h2>
       <p class="text-caption" data-i18n="calc.subtitle" style="font-size: 0.875rem; margin-bottom: 1.5rem;">Set venue, discipline, times, and snow context. Engine runs on submit.</p>
 
       <form method="post" action="" enctype="multipart/form-data" style="display: flex; flex-direction: column; gap: 1rem;">

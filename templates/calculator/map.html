@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% block body_class %}page-map{% endblock %}
-{% block title %}Venue Globe · GlideCast — Wax Done Right{% endblock %}
+{% block title %}Venue Globe · WaxOracle — Wax Done Right{% endblock %}
 
 {% block extra_head %}
 <script>(function(){document.documentElement.removeAttribute('data-theme');})();</script>
@@ -201,7 +201,7 @@
     <span class="map-view-btn map-view-active" data-i18n="map.toggle.globe">Globe</span>
     <a href="{% url 'calculator' %}" class="map-view-btn" data-i18n="map.toggle.calc">Calculator</a>
   </div>
-  <h1>GlideCast<sup style="font-size:0.5em;vertical-align:super;margin-left:1px">™</sup> <span data-i18n="map.heading">Venue Globe</span></h1>
+  <h1>WaxOracle<sup style="font-size:0.5em;vertical-align:super;margin-left:1px">™</sup> <span data-i18n="map.heading">Venue Globe</span></h1>
   <p>{{ venue_count }} <span data-i18n="map.venues_label">FIS venues</span> · <span id="globe-subtitle" data-i18n="map.loading_wax">loading wax data…</span></p>
 </div>
 

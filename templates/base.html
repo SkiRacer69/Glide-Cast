@@ -6,10 +6,10 @@
   <script>
     (function(){var t=localStorage.getItem('glidecast-theme');if(t!=='dark')document.documentElement.setAttribute('data-theme','light');})();
   </script>
-  <title>{% block title %}GlideCast — Wax Done Right{% endblock %}</title>
+  <title>{% block title %}WaxOracle — Wax Done Right{% endblock %}</title>
   {% load static %}
-  <link rel="icon" type="image/svg+xml" href="/images/glidecast_icon.svg" />
-  <link rel="apple-touch-icon" href="/images/glidecast_icon.svg" />
+  <link rel="icon" type="image/png" href="/images/waxoracle_logo.png" />
+  <link rel="apple-touch-icon" href="/images/waxoracle_logo.png" />
   <link rel="preconnect" href="https://fonts.googleapis.com" />
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
   <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;700;800&display=swap" rel="stylesheet" />
@@ -22,7 +22,7 @@
   <header class="nav-sticky">
     <div class="nav-inner">
       <a href="{% url 'calculator' %}" class="nav-logo">
-        <img src="/images/glidecast_logo.svg" alt="GlideCast™" height="48" class="nav-logo-img" />
+        <img src="/images/waxoracle_logo.png" alt="WaxOracle™" height="48" class="nav-logo-img" />
       </a>
       <div class="lang-selector" id="lang-selector">
         <button class="lang-toggle" id="lang-toggle" aria-label="Select language">
@@ -78,7 +78,7 @@
   <footer class="site-footer">
     <div class="site-footer-inner">
       <p class="site-footer-legal">
-        © 2026 GlideCast<sup class="mark-tm">™</sup>. All rights reserved. &ldquo;Stop Guessing. Start Winning.&rdquo;<sup class="mark-tm">™</sup> GlideCast Calculator<sup class="mark-sm">℠</sup> is a service of GlideCast.
+        © 2026 WaxOracle<sup class="mark-tm">™</sup>. All rights reserved. &ldquo;Stop Guessing. Start Winning.&rdquo;<sup class="mark-tm">™</sup> WaxOracle Calculator<sup class="mark-sm">℠</sup> is a service of WaxOracle.
       </p>
       <p class="site-footer-links">
         <a href="{% url 'terms_of_service' %}" data-i18n="footer.terms">Terms of Service</a>

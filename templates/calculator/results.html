@@ -1,7 +1,7 @@
 {% extends "base.html" %}
 {% load static %}
 {% block body_class %}page-results{% endblock %}
-{% block title %}Results · GlideCast — Wax Done Right{% endblock %}
+{% block title %}Results · WaxOracle — Wax Done Right{% endblock %}
 
 {% block extra_head %}
 {% if user.is_authenticated %}
@@ -12,7 +12,7 @@
 {% block hero %}
   <section class="hero-premium">
     <div class="hero-inner">
-      <p class="hero-brand-kicker hero-stagger-1">GlideCast<sup class="mark-tm">™</sup></p>
+      <p class="hero-brand-kicker hero-stagger-1">WaxOracle<sup class="mark-tm">™</sup></p>
       <h1 class="hero-title hero-stagger-1" data-i18n="results.title">Wax calls for both runs</h1>
       <p class="hero-subtitle hero-stagger-2">{{ calc_venue }} · {{ calc_discipline }} · {{ calc_race_date|date:"l, M j, Y" }}</p>
       <p class="text-caption hero-stagger-2" style="margin-top: 0.35rem; opacity: 0.92;"><span data-i18n="hero.run1">Run 1</span> {{ calc_run1_time|time:"g:i A" }} · <span data-i18n="hero.run2">Run 2</span> {{ calc_run2_time|time:"g:i A" }}</p>

@@ -596,7 +596,7 @@ def venue_map(request):
 
 
 def globe_wax_data(request):
-    """Return current wax call per venue using the GlideCast engine's actual hs_call_from_conditions."""
+    """Return current wax call per venue using the WaxOracle engine's actual hs_call_from_conditions."""
     from django.http import JsonResponse
 
     if not request.user.is_authenticated:
@@ -645,7 +645,7 @@ def globe_wax_data(request):
                     "forecast_days": "1",
                 },
                 timeout=12,
-                headers={"User-Agent": "GlideCast/1.0"},
+                headers={"User-Agent": "WaxOracle/1.0"},
             )
             resp.raise_for_status()
             data = resp.json()
@@ -736,7 +736,7 @@ def export_race_report_pdf(request):
 
         secret = getattr(settings, "WATERMARK_SECRET", settings.SECRET_KEY)
         token = _watermark_token(request.user.id, secret)
-        c.setAuthor("GlideCast™")
+        c.setAuthor("WaxOracle™")
         c.setTitle("Race Day Report")
         c.setSubject(f"glidecast-{token}")
 
@@ -751,7 +751,7 @@ def export_race_report_pdf(request):
         c.restoreState()
         c.setFillColor(colors.black)
         c.setFont("Helvetica", 14)
-        c.drawString(72, height - 72, "Race Day Report — GlideCast™")
+        c.drawString(72, height - 72, "Race Day Report — WaxOracle™")
         y = height - 110
         c.setFont("Helvetica", 12)
         runs = history.results.get("run1"), history.results.get("run2")

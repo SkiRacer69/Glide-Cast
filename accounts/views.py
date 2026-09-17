@@ -181,7 +181,7 @@ def report_screenshot_attempt(request):
 
     # At most one email per user per 15 minutes (count was before this insert).
     if prior_in_window == 0:
-        subject = f"[GlideCast™] Screenshot key signal — {request.user.get_username()}"
+        subject = f"[WaxOracle™] Screenshot key signal — {request.user.get_username()}"
         body = (
             f"User: {request.user.get_username()} ({getattr(request.user, 'email', '') or 'no email'})\n"
             f"Path: {page_path}\n"
