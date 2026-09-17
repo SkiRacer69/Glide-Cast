@@ -269,9 +269,11 @@ def _require_active_subscription(request) -> bool:
 def calculator(request):
     if not request.user.is_authenticated:
         return render(request, "calculator/landing.html", {})
-    profile, _ = Profile.objects.get_or_create(user=request.user)
-    if not profile.has_active_subscription():
-        return redirect("paywall")
+    force_pro = bool(getattr(settings, "SHOW_PRO_CALCULATOR_RESULTS", True))
+    if not force_pro:
+        profile, _ = Profile.objects.get_or_create(user=request.user)
+        if not profile.has_active_subscription():
+            return redirect("paywall")
 
     if request.method == "POST":
         rate_err = check_rate_limit(request)

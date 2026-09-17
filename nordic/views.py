@@ -5,6 +5,7 @@ from pathlib import Path
 
 import pandas as pd
 
+from django.conf import settings
 from django.contrib import messages
 from django.contrib.auth.decorators import login_required
 from django.shortcuts import redirect, render
@@ -22,9 +23,11 @@ _COURSES_DIR = Path(__file__).resolve().parent / "courses"
 
 @login_required
 def nordic_calculator(request):
-    profile, _ = Profile.objects.get_or_create(user=request.user)
-    if not profile.has_access_to_sport("nordic"):
-        return redirect(reverse("paywall") + "?sport=nordic")
+    force_pro = bool(getattr(settings, "SHOW_PRO_CALCULATOR_RESULTS", True))
+    if not force_pro:
+        profile, _ = Profile.objects.get_or_create(user=request.user)
+        if not profile.has_access_to_sport("nordic"):
+            return redirect(reverse("paywall") + "?sport=nordic")
 
     if request.method == "POST":
         form = NordicCalculatorForm(request.POST, request.FILES)

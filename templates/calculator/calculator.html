@@ -102,12 +102,10 @@
       <p class="hero-brand-kicker hero-stagger-2" style="margin-top: 0.25rem;">WaxOracle<sup class="mark-tm">™</sup></p>
       <p id="calc-hero-caption" class="text-caption hero-stagger-2" style="margin-top: 0.35rem; opacity: 0.92;">Wax Done Right<sup class="mark-sm">℠</sup> &mdash; configure run parameters and compute wax recommendations</p>
       <a href="{% url 'venue_map' %}" data-i18n="calc.globe_btn" class="hero-stagger-2 hero-globe-btn" style="display:inline-flex;align-items:center;gap:0.4rem;margin-top:0.75rem;padding:0.32rem 0.85rem;border-radius:9px;border:1px solid rgba(255,255,255,0.18);background:rgba(255,255,255,0.07);font-size:0.72rem;font-weight:700;letter-spacing:0.05em;text-transform:uppercase;text-decoration:none;backdrop-filter:blur(8px);transition:all 0.15s ease;" onmouseover="this.style.background='rgba(255,255,255,0.14)'" onmouseout="this.style.background='rgba(255,255,255,0.07)'">🌍 Venue Globe</a>
-      {% if debug %}
       <div class="hero-stagger-2" style="display:flex;gap:0.5rem;justify-content:center;margin-top:0.6rem;">
         <a href="{% url 'calculator' %}" class="sport-toggle-btn active">Alpine</a>
         <a href="{% url 'nordic_calculator' %}" class="sport-toggle-btn">Nordic</a>
       </div>
-      {% endif %}
     </div>
   </section>
 {% endblock %}
