@@ -126,7 +126,15 @@ def select_glide(
 
     scored.sort(key=lambda x: x["score"], reverse=True)
 
+    _NEAR_EDGE = 1.5  # °C — warn when within this margin of either band edge
+
     def _rec(w: dict) -> dict:
+        in_band = w["temp_min"] <= temp_c <= w["temp_max"]
+        near_edge = (
+            not in_band
+            or (temp_c - w["temp_min"]) < _NEAR_EDGE
+            or (w["temp_max"] - temp_c) < _NEAR_EDGE
+        )
         return {
             "brand":          w["brand"],
             "product":        w["product"],
@@ -137,7 +145,8 @@ def select_glide(
             "application":    w["application"],
             "temp_min":       w["temp_min"],
             "temp_max":       w["temp_max"],
-            "in_band":        w["temp_min"] <= temp_c <= w["temp_max"],
+            "in_band":        in_band,
+            "near_edge":      near_edge,
             "confidence_pct": _pct(w["score"]),
             "dim_scores":     w["dim_scores"],
         }
@@ -197,7 +206,15 @@ def select_kick(
 
     scored.sort(key=lambda x: x["score"], reverse=True)
 
+    _NEAR_EDGE = 1.5
+
     def _rec(w: dict) -> dict:
+        in_band = w["temp_min"] <= temp_c <= w["temp_max"]
+        near_edge = (
+            not in_band
+            or (temp_c - w["temp_min"]) < _NEAR_EDGE
+            or (w["temp_max"] - temp_c) < _NEAR_EDGE
+        )
         return {
             "brand":          w["brand"],
             "product":        w["product"],
@@ -208,7 +225,8 @@ def select_kick(
             "is_klister":     use_klister,
             "temp_min":       w["temp_min"],
             "temp_max":       w["temp_max"],
-            "in_band":        w["temp_min"] <= temp_c <= w["temp_max"],
+            "in_band":        in_band,
+            "near_edge":      near_edge,
             "confidence_pct": _pct(w["score"]),
             "dim_scores":     w["dim_scores"],
         }

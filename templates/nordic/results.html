@@ -432,7 +432,7 @@
     <div class="band-row">
       <span data-i18n="nordic.temp_band">Temp band:</span>
       <strong>{{ result.grip.primary.temp_min|temp:temp_unit }} <span data-i18n="nordic.to">to</span> {{ result.grip.primary.temp_max|temp:temp_unit }}</strong>
-      {% if result.grip.primary.in_band %}
+      {% if result.grip.primary.in_band and not result.grip.primary.near_edge %}
         <span style="color: #16a34a;" data-i18n="nordic.in_band">✓ in band</span>
       {% else %}
         <span style="color: #d97706;" data-i18n="nordic.near_edge">⚠ near edge — consider layering</span>
@@ -519,7 +519,7 @@
     <div class="band-row">
       <span data-i18n="nordic.temp_band">Temp band:</span>
       <strong>{{ result.glide.primary.temp_min|temp:temp_unit }} <span data-i18n="nordic.to">to</span> {{ result.glide.primary.temp_max|temp:temp_unit }}</strong>
-      {% if result.glide.primary.in_band %}
+      {% if result.glide.primary.in_band and not result.glide.primary.near_edge %}
         <span style="color: #16a34a;" data-i18n="nordic.in_band">✓ in band</span>
       {% else %}
         <span style="color: #d97706;" data-i18n="nordic.near_edge_short">⚠ near edge</span>

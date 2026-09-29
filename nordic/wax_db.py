@@ -58,7 +58,7 @@ GLIDE_WAX: list[dict] = [
      "notes": "Around-zero, transitional conditions — optimized for near-zero transformed snow"},
 
     {"brand": "Swix", "product": "Performance Speed 12", "code": "PS12",
-     "tier": "race", "temp_min": 0.0, "temp_max": +12.0, "humidity_max": 95,
+     "tier": "race", "temp_min": 0.0, "temp_max": +10.0, "humidity_max": 95,
      "snow": {"new": 0.3, "cold_powder": 0.0, "packed": 0.4, "transformed": 0.7,
               "hard_groomed": 0.3, "icy": 0.2, "wet": 1.0, "spring": 1.0},
      "durability": 7, "speed": 9, "fluoro_free": True, "race_legal": True,
@@ -173,7 +173,7 @@ GLIDE_WAX: list[dict] = [
      "notes": "Transitional/warm race glide — wet and transformed snow near zero"},
 
     {"brand": "Toko", "product": "High Performance NF Yellow", "code": "HP-YE",
-     "tier": "race", "temp_min": 0.0, "temp_max": +12.0, "humidity_max": 98,
+     "tier": "race", "temp_min": 0.0, "temp_max": +10.0, "humidity_max": 98,
      "snow": {"new": 0.2, "cold_powder": 0.0, "packed": 0.3, "transformed": 0.6,
               "hard_groomed": 0.2, "icy": 0.1, "wet": 1.0, "spring": 1.0},
      "durability": 7, "speed": 9, "fluoro_free": True, "race_legal": True,
@@ -214,7 +214,7 @@ GLIDE_WAX: list[dict] = [
      "notes": "Near-zero wet/transformed conditions race glide"},
 
     {"brand": "Rode", "product": "Cera G Yellow", "code": "CG-YE",
-     "tier": "race", "temp_min": 0.0, "temp_max": +12.0, "humidity_max": 98,
+     "tier": "race", "temp_min": 0.0, "temp_max": +10.0, "humidity_max": 98,
      "snow": {"new": 0.2, "cold_powder": 0.0, "packed": 0.3, "transformed": 0.6,
               "hard_groomed": 0.2, "icy": 0.1, "wet": 1.0, "spring": 1.0},
      "durability": 7, "speed": 9, "fluoro_free": True, "race_legal": True,
@@ -255,7 +255,7 @@ GLIDE_WAX: list[dict] = [
      "notes": "Warm/wet race glide — near-zero and high humidity"},
 
     {"brand": "Rex", "product": "NF Racing Yellow", "code": "NF-YE",
-     "tier": "race", "temp_min": 0.0, "temp_max": +12.0, "humidity_max": 98,
+     "tier": "race", "temp_min": 0.0, "temp_max": +10.0, "humidity_max": 98,
      "snow": {"new": 0.2, "cold_powder": 0.0, "packed": 0.3, "transformed": 0.5,
               "hard_groomed": 0.2, "icy": 0.1, "wet": 1.0, "spring": 1.0},
      "durability": 7, "speed": 10, "fluoro_free": True, "race_legal": True,
