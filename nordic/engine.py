@@ -1209,17 +1209,18 @@ def _build_course_chart(segments: list[dict], zones: list[dict], discipline: str
                 line_width=0,
                 layer="below",
             )
-            # Zone label midpoint
+            # Zone label — fixed at top of plot area to avoid hover crosshair
             mid_x = (z["start_km"] + z["end_km"]) / 2
             label = z["wax"]
             if z.get("is_klister"):
                 label += " (K)"
             fig.add_annotation(
-                x=mid_x, y=y_max - 8,
+                x=mid_x, y=0.97,
+                xref="x", yref="paper",
                 text=label,
                 showarrow=False,
                 font=dict(size=9, color=z["color"]),
-                bgcolor="rgba(0,0,0,0.55)",
+                bgcolor="rgba(10,10,20,0.72)",
                 borderpad=2,
             )
 
@@ -1248,10 +1249,10 @@ def _build_course_chart(segments: list[dict], zones: list[dict], discipline: str
             paper_bgcolor="rgba(0,0,0,0)",
             plot_bgcolor="rgba(0,0,0,0)",
             font=dict(color="#e5e7eb", size=11),
-            margin=dict(l=50, r=60, t=20, b=40),
-            height=260,
+            margin=dict(l=50, r=60, t=46, b=40),
+            height=280,
             legend=dict(
-                orientation="h", y=-0.22, x=0.5, xanchor="center",
+                orientation="h", y=-0.20, x=0.5, xanchor="center",
                 bgcolor="rgba(0,0,0,0)",
                 font=dict(size=10),
             ),
@@ -1276,9 +1277,21 @@ def _build_course_chart(segments: list[dict], zones: list[dict], discipline: str
                 tickformat=".0f",
             ),
             hovermode="x unified",
+            hoverlabel=dict(
+                bgcolor="#1f2937",
+                font=dict(color="#f9fafb", size=12),
+                bordercolor="#374151",
+            ),
         )
 
-        return fig.to_html(full_html=False, include_plotlyjs="cdn")
+        return fig.to_html(
+            full_html=False,
+            include_plotlyjs="cdn",
+            config={"displaylogo": False, "modeBarButtonsToRemove": [
+                "autoScale2d", "resetScale2d",
+                "hoverClosestCartesian", "hoverCompareCartesian",
+            ]},
+        )
     except Exception:
         return ""
 
