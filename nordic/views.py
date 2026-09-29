@@ -109,7 +109,7 @@ def nordic_calculator(request):
                 results={k: v for k, v in result.items() if k != "course"},
             )
 
-            snow_t = result.get("snow_temp_c") or result.get("temp_c")
+            snow_t = result.get("snow_temp_c") or result.get("conditions", {}).get("temp_c")
             return render(request, "nordic/results.html", {
                 "form": form,
                 "result": result,
