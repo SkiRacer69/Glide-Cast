@@ -22,7 +22,7 @@ GLIDE_WAX: list[dict] = [
      "snow": {"new": 1.0, "cold_powder": 1.0, "packed": 0.5, "transformed": 0.1,
               "hard_groomed": 0.2, "icy": 0.1, "wet": 0.0, "spring": 0.0},
      "durability": 6, "speed": 10, "fluoro_free": True, "race_legal": True,
-     "application": "iron", "hex": "#172554",
+     "application": "iron", "hex": "#06b6d4",
      "notes": "Extreme cold, very dry — ultra-hard formula, very low humidity only"},
 
     {"brand": "Swix", "product": "Performance Speed 6 Blue", "code": "PS6",
@@ -38,7 +38,7 @@ GLIDE_WAX: list[dict] = [
      "snow": {"new": 0.9, "cold_powder": 0.8, "packed": 1.0, "transformed": 0.5,
               "hard_groomed": 0.6, "icy": 0.3, "wet": 0.0, "spring": 0.0},
      "durability": 8, "speed": 9, "fluoro_free": True, "race_legal": True,
-     "application": "iron", "hex": "#1a56db",
+     "application": "iron", "hex": "#7c3aed",
      "notes": "Cold, moderate humidity — most versatile cold-range race glide"},
 
     {"brand": "Swix", "product": "Performance Speed 8 Red", "code": "PS8",
@@ -46,7 +46,7 @@ GLIDE_WAX: list[dict] = [
      "snow": {"new": 0.7, "cold_powder": 0.5, "packed": 0.9, "transformed": 1.0,
               "hard_groomed": 0.8, "icy": 0.5, "wet": 0.2, "spring": 0.0},
      "durability": 8, "speed": 9, "fluoro_free": True, "race_legal": True,
-     "application": "iron", "hex": "#7e3af2",
+     "application": "iron", "hex": "#dc2626",
      "notes": "Medium-cold — single most common race glide worldwide"},
 
     {"brand": "Swix", "product": "Performance Speed 10 Yellow", "code": "PS10",

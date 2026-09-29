@@ -21,6 +21,21 @@ from .models import NordicCalculationHistory
 _COURSES_DIR = Path(__file__).resolve().parent / "courses"
 
 
+def _temp_color(temp_c) -> str:
+    """Map snow temperature to wax color scale (Turquoise→Blue→Violet→Red→Yellow)."""
+    if temp_c is None:
+        return "#60a5fa"
+    if temp_c < -11:
+        return "#06b6d4"  # Turquoise  (-18 to -10)
+    if temp_c < -7:
+        return "#2563eb"  # Blue       (-12 to  -6)
+    if temp_c < -3:
+        return "#7c3aed"  # Violet     ( -8 to  -2)
+    if temp_c < 2:
+        return "#dc2626"  # Red        ( -4 to  +4)
+    return "#ca8a04"      # Yellow     (  0 to +10)
+
+
 @login_required
 def nordic_calculator(request):
     force_pro = bool(getattr(settings, "SHOW_PRO_CALCULATOR_RESULTS", True))
@@ -94,6 +109,7 @@ def nordic_calculator(request):
                 results={k: v for k, v in result.items() if k != "course"},
             )
 
+            snow_t = result.get("snow_temp_c") or result.get("temp_c")
             return render(request, "nordic/results.html", {
                 "form": form,
                 "result": result,
@@ -101,6 +117,7 @@ def nordic_calculator(request):
                 "has_course": result.get("course") is not None,
                 "gpx_source": gpx_source,
                 "temp_unit": cd.get("temp_unit", "C"),
+                "temp_color": _temp_color(snow_t),
             })
         else:
             messages.error(request, "Please correct the errors below.")

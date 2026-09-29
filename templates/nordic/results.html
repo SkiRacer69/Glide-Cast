@@ -421,7 +421,7 @@
     <div class="dim-bars">
       <div class="dim-bar-item">
         <div class="dim-bar-label" data-i18n="nordic.dim_temp">Temperature</div>
-        <div class="dim-bar-track"><div class="dim-bar-fill" style="width:{{ result.grip.primary.dim_scores.temperature }}%;background:{% if result.grip.primary.dim_scores.temperature >= 70 %}#22c55e{% elif result.grip.primary.dim_scores.temperature >= 40 %}#f59e0b{% else %}#ef4444{% endif %};"></div></div>
+        <div class="dim-bar-track"><div class="dim-bar-fill" style="width:{{ result.grip.primary.dim_scores.temperature }}%;background:{{ temp_color }};"></div></div>
       </div>
       <div class="dim-bar-item">
         <div class="dim-bar-label" data-i18n="nordic.dim_snow_type">Snow type</div>
@@ -504,7 +504,7 @@
     <div class="dim-bars">
       <div class="dim-bar-item">
         <div class="dim-bar-label" data-i18n="nordic.dim_temp">Temperature</div>
-        <div class="dim-bar-track"><div class="dim-bar-fill" style="width:{{ result.glide.primary.dim_scores.temperature }}%;background:{% if result.glide.primary.dim_scores.temperature >= 70 %}#22c55e{% elif result.glide.primary.dim_scores.temperature >= 40 %}#f59e0b{% else %}#ef4444{% endif %};"></div></div>
+        <div class="dim-bar-track"><div class="dim-bar-fill" style="width:{{ result.glide.primary.dim_scores.temperature }}%;background:{{ temp_color }};"></div></div>
       </div>
       <div class="dim-bar-item">
         <div class="dim-bar-label" data-i18n="nordic.dim_snow_type">Snow type</div>
