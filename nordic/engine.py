@@ -283,11 +283,11 @@ KLISTER: list[dict] = [
 
 # Glide wax (Classic and Skate) — temp in °C, all fluoro-free (FIS 2023 rule)
 GLIDE_WAX: list[dict] = [
-    # Extreme cold: -30 to -12°C
-    {"name": "Swix Performance Speed 6", "brand": "Swix", "tier": "race",
-     "temp_min": -30.0, "temp_max": -12.0, "humidity_max": 60, "fluoro_free": True,
+    # Cold: -12 to -6°C
+    {"name": "Swix Performance Speed 6 Blue", "brand": "Swix", "tier": "race",
+     "temp_min": -12.0, "temp_max": -6.0, "humidity_max": 60, "fluoro_free": True,
      "color": "#1e3a8a", "hex": "#1e3a8a",
-     "notes": "Extreme cold race glide, low humidity powder snow"},
+     "notes": "Cold race glide, low humidity powder snow"},
     {"name": "Swix LF6", "brand": "Swix", "tier": "training",
      "temp_min": -30.0, "temp_max": -12.0, "humidity_max": 70, "fluoro_free": True,
      "color": "#1e3a8a", "hex": "#1e3a8a",
@@ -304,11 +304,11 @@ GLIDE_WAX: list[dict] = [
      "temp_min": -25.0, "temp_max": -12.0, "humidity_max": 70, "fluoro_free": True,
      "color": "#1e3a8a", "hex": "#1e3a8a",
      "notes": "Extreme cold recreational glide"},
-    # Cold: -13 to -6°C
-    {"name": "Swix Performance Speed 7", "brand": "Swix", "tier": "race",
-     "temp_min": -13.0, "temp_max": -6.0, "humidity_max": 70, "fluoro_free": True,
+    # Cold-medium: -8 to -2°C
+    {"name": "Swix Performance Speed 7 Violet", "brand": "Swix", "tier": "race",
+     "temp_min": -8.0, "temp_max": -2.0, "humidity_max": 70, "fluoro_free": True,
      "color": "#1a56db", "hex": "#1a56db",
-     "notes": "Cold, low humidity race glide"},
+     "notes": "Cold-medium race glide"},
     {"name": "Swix LF7", "brand": "Swix", "tier": "training",
      "temp_min": -13.0, "temp_max": -6.0, "humidity_max": 80, "fluoro_free": True,
      "color": "#1a56db", "hex": "#1a56db",
@@ -325,11 +325,11 @@ GLIDE_WAX: list[dict] = [
      "temp_min": -12.0, "temp_max": -5.0, "humidity_max": 80, "fluoro_free": True,
      "color": "#1a56db", "hex": "#1a56db",
      "notes": "Cold recreational glide"},
-    # Medium: -9 to -2°C
-    {"name": "Swix Performance Speed 8", "brand": "Swix", "tier": "race",
-     "temp_min": -9.0, "temp_max": -2.0, "humidity_max": 80, "fluoro_free": True,
+    # Medium: -4 to +4°C
+    {"name": "Swix Performance Speed 8 Red", "brand": "Swix", "tier": "race",
+     "temp_min": -4.0, "temp_max": 4.0, "humidity_max": 80, "fluoro_free": True,
      "color": "#7e3af2", "hex": "#7e3af2",
-     "notes": "Medium-cold race glide; most versatile"},
+     "notes": "Medium race glide; most versatile"},
     {"name": "Swix LF8", "brand": "Swix", "tier": "training",
      "temp_min": -9.0, "temp_max": -2.0, "humidity_max": 85, "fluoro_free": True,
      "color": "#7e3af2", "hex": "#7e3af2",
@@ -346,9 +346,9 @@ GLIDE_WAX: list[dict] = [
      "temp_min": -8.0, "temp_max": 0.0, "humidity_max": 85, "fluoro_free": True,
      "color": "#7e3af2", "hex": "#7e3af2",
      "notes": "Medium recreational glide"},
-    # Warm: -3 to +10°C
-    {"name": "Swix Performance Speed 10", "brand": "Swix", "tier": "race",
-     "temp_min": -3.0, "temp_max": +10.0, "humidity_max": 100, "fluoro_free": True,
+    # Warm: 0 to +10°C
+    {"name": "Swix Performance Speed 10 Yellow", "brand": "Swix", "tier": "race",
+     "temp_min": 0.0, "temp_max": +10.0, "humidity_max": 100, "fluoro_free": True,
      "color": "#e02424", "hex": "#e02424",
      "notes": "Warm/wet race glide"},
     {"name": "Swix LF10", "brand": "Swix", "tier": "training",
