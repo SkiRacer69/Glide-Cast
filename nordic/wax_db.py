@@ -50,7 +50,7 @@ GLIDE_WAX: list[dict] = [
      "notes": "Medium-cold — single most common race glide worldwide"},
 
     {"brand": "Swix", "product": "Performance Speed 10 Yellow", "code": "PS10",
-     "tier": "race", "temp_min": 0.0, "temp_max": 12.0, "humidity_max": 88,
+     "tier": "race", "temp_min": 0.0, "temp_max": 10.0, "humidity_max": 88,
      "snow": {"new": 0.5, "cold_powder": 0.2, "packed": 0.7, "transformed": 1.0,
               "hard_groomed": 0.6, "icy": 0.4, "wet": 0.7, "spring": 0.8},
      "durability": 8, "speed": 9, "fluoro_free": True, "race_legal": True,
