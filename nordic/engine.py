@@ -36,6 +36,8 @@ from calculator.engine import (
     solar_geometry_and_irradiance,
 )
 
+from .wax_selector import select_glide, select_kick
+
 # Same default coefficients as Alpine calculator (calculator/forms.py defaults)
 _WIND_COEFF        = 0.12
 _SOLAR_COEFF       = 2.0
@@ -282,7 +284,7 @@ KLISTER: list[dict] = [
 # Glide wax (Classic and Skate) — temp in °C, all fluoro-free (FIS 2023 rule)
 GLIDE_WAX: list[dict] = [
     # Extreme cold: -30 to -12°C
-    {"name": "Swix Pure Speed 6", "brand": "Swix", "tier": "race",
+    {"name": "Swix Performance Speed 6", "brand": "Swix", "tier": "race",
      "temp_min": -30.0, "temp_max": -12.0, "humidity_max": 60, "fluoro_free": True,
      "color": "#1e3a8a", "hex": "#1e3a8a",
      "notes": "Extreme cold race glide, low humidity powder snow"},
@@ -303,7 +305,7 @@ GLIDE_WAX: list[dict] = [
      "color": "#1e3a8a", "hex": "#1e3a8a",
      "notes": "Extreme cold recreational glide"},
     # Cold: -13 to -6°C
-    {"name": "Swix Pure Speed 7", "brand": "Swix", "tier": "race",
+    {"name": "Swix Performance Speed 7", "brand": "Swix", "tier": "race",
      "temp_min": -13.0, "temp_max": -6.0, "humidity_max": 70, "fluoro_free": True,
      "color": "#1a56db", "hex": "#1a56db",
      "notes": "Cold, low humidity race glide"},
@@ -324,7 +326,7 @@ GLIDE_WAX: list[dict] = [
      "color": "#1a56db", "hex": "#1a56db",
      "notes": "Cold recreational glide"},
     # Medium: -9 to -2°C
-    {"name": "Swix Pure Speed 8", "brand": "Swix", "tier": "race",
+    {"name": "Swix Performance Speed 8", "brand": "Swix", "tier": "race",
      "temp_min": -9.0, "temp_max": -2.0, "humidity_max": 80, "fluoro_free": True,
      "color": "#7e3af2", "hex": "#7e3af2",
      "notes": "Medium-cold race glide; most versatile"},
@@ -345,7 +347,7 @@ GLIDE_WAX: list[dict] = [
      "color": "#7e3af2", "hex": "#7e3af2",
      "notes": "Medium recreational glide"},
     # Warm: -3 to +10°C
-    {"name": "Swix Pure Speed 10", "brand": "Swix", "tier": "race",
+    {"name": "Swix Performance Speed 10", "brand": "Swix", "tier": "race",
      "temp_min": -3.0, "temp_max": +10.0, "humidity_max": 100, "fluoro_free": True,
      "color": "#e02424", "hex": "#e02424",
      "notes": "Warm/wet race glide"},
@@ -779,7 +781,7 @@ def recommend(
         temp_c, humidity_pct, recent_snow_mm, snow_depth_m, wmo_code, snow_mode
     )
 
-    glide = select_glide_wax(temp_c, humidity_pct, tier)
+    glide = select_glide(temp_c, snow_type, humidity_pct, tier)
 
     result: dict[str, Any] = {
         "ok": True,
@@ -800,23 +802,24 @@ def recommend(
     }
 
     if discipline == "Classic":
-        grip = select_grip_wax(temp_c, snow_type)
+        grip = select_kick(temp_c, snow_type, tier)
         result["grip"] = grip
-        # Overall confidence = weighted average
-        result["confidence"] = round(
-            0.55 * grip["confidence"] + 0.45 * glide["confidence"], 2
+        result["binder"] = grip["binder"]
+        conf_raw = round(
+            0.55 * grip["overall_confidence_pct"] / 100
+            + 0.45 * glide["overall_confidence_pct"] / 100,
+            2,
         )
     else:
-        # Skate: glide only
         result["grip"] = None
-        result["confidence"] = round(glide["confidence"], 2)
+        result["binder"] = None
+        conf_raw = round(glide["overall_confidence_pct"] / 100, 2)
 
-    # Confidence label
-    c = result["confidence"]
-    if c >= 0.80:
+    result["confidence"] = conf_raw
+    if conf_raw >= 0.80:
         result["confidence_label"] = "High"
         result["confidence_color"] = "#16a34a"
-    elif c >= 0.60:
+    elif conf_raw >= 0.60:
         result["confidence_label"] = "Medium"
         result["confidence_color"] = "#d97706"
     else:
@@ -1100,8 +1103,8 @@ def analyze_course(
         snow_type, _ = classify_snow(
             snow_temp, humidity, recent_snow, snow_depth, wmo_code, snow_mode
         )
-        glide = select_glide_wax(snow_temp, humidity, tier)
-        grip  = select_grip_wax(snow_temp, snow_type) if discipline == "Classic" else None
+        glide_rec = select_glide(snow_temp, snow_type, humidity, tier)
+        grip_rec  = select_kick(snow_temp, snow_type, tier) if discipline == "Classic" else None
 
         seg_results.append({
             "dist_km":         round(s["cum_dist_m"] / 1000, 2),
@@ -1117,11 +1120,11 @@ def analyze_course(
             "humidity_pct":    round(humidity, 0),
             "snow_type":       snow_type,
             "weather_ok":      ok,
-            "grip_product":    grip["product"] if grip else None,
-            "grip_hex":        grip["hex"] if grip else None,
-            "grip_is_klister": grip["is_klister"] if grip else False,
-            "glide_product":   glide["product"],
-            "glide_hex":       glide["hex"],
+            "grip_product":    grip_rec["primary"]["product"] if grip_rec else None,
+            "grip_hex":        grip_rec["primary"]["hex"] if grip_rec else None,
+            "grip_is_klister": grip_rec["is_klister"] if grip_rec else False,
+            "glide_product":   glide_rec["primary"]["product"],
+            "glide_hex":       glide_rec["primary"]["hex"],
         })
 
     zones = _build_zones(seg_results, discipline)
@@ -1308,7 +1311,7 @@ def recommend_from_gpx(
     snow_type, snow_reason = classify_snow(
         temp_c, humidity_pct, recent_snow_mm, snow_depth_m, wmo_code, snow_mode
     )
-    glide = select_glide_wax(temp_c, humidity_pct, tier)
+    glide = select_glide(temp_c, snow_type, humidity_pct, tier)
 
     result: dict[str, Any] = {
         "ok": True,
@@ -1330,20 +1333,24 @@ def recommend_from_gpx(
     }
 
     if discipline == "Classic":
-        grip = select_grip_wax(temp_c, snow_type)
+        grip = select_kick(temp_c, snow_type, tier)
         result["grip"] = grip
-        result["binder"] = select_binder(grip["is_klister"])
-        result["confidence"] = round(0.55 * grip["confidence"] + 0.45 * glide["confidence"], 2)
+        result["binder"] = grip["binder"]
+        conf_raw = round(
+            0.55 * grip["overall_confidence_pct"] / 100
+            + 0.45 * glide["overall_confidence_pct"] / 100,
+            2,
+        )
     else:
         result["grip"] = None
         result["binder"] = None
-        result["confidence"] = round(glide["confidence"], 2)
+        conf_raw = round(glide["overall_confidence_pct"] / 100, 2)
 
-    c = result["confidence"]
-    if c >= 0.80:
+    result["confidence"] = conf_raw
+    if conf_raw >= 0.80:
         result["confidence_label"] = "High"
         result["confidence_color"] = "#16a34a"
-    elif c >= 0.60:
+    elif conf_raw >= 0.60:
         result["confidence_label"] = "Medium"
         result["confidence_color"] = "#d97706"
     else:

@@ -178,12 +178,12 @@
 {% block hero %}
   <section class="hero-premium">
     <div class="hero-inner">
-      <h1 class="hero-title hero-stagger-1">Nordic Wax Calculator</h1>
-      <p class="hero-subtitle hero-stagger-2">Classic &amp; Skate · Grip and glide wax for cross-country skiing</p>
+      <h1 class="hero-title hero-stagger-1" data-i18n="nordic.hero_title">Nordic Wax Calculator</h1>
+      <p class="hero-subtitle hero-stagger-2" data-i18n="nordic.hero_subtitle">Classic &amp; Skate · Grip and glide wax for cross-country skiing</p>
       <p class="hero-brand-kicker hero-stagger-2" style="margin-top: 0.25rem;">WaxOracle<sup class="mark-tm">™</sup></p>
       <div style="display:flex;gap:0.5rem;justify-content:center;margin-top:0.75rem;" class="hero-stagger-2">
-        <a href="{% url 'calculator' %}" class="sport-toggle-btn">Alpine</a>
-        <a href="{% url 'nordic_calculator' %}" class="sport-toggle-btn active">Nordic</a>
+        <a href="{% url 'calculator' %}" class="sport-toggle-btn" data-i18n="nordic.toggle_alpine">Alpine</a>
+        <a href="{% url 'nordic_calculator' %}" class="sport-toggle-btn active" data-i18n="nordic.toggle_nordic">Nordic</a>
       </div>
     </div>
   </section>
@@ -196,7 +196,7 @@
       {% csrf_token %}
 
       <div style="display:flex;align-items:center;justify-content:space-between;margin-bottom:1rem;">
-        <p class="section-title" style="margin:0;">Race settings</p>
+        <p class="section-title" style="margin:0;" data-i18n="nordic.race_settings">Race settings</p>
         <div style="display:flex;gap:0;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,0.18);">
           <label style="cursor:pointer;">
             <input type="radio" name="temp_unit" value="C" style="display:none;"
@@ -213,63 +213,68 @@
 
       <div class="two-col">
         <div class="field-row">
-          <label class="form-label" for="{{ form.discipline.id_for_label }}">Discipline</label>
+          <label class="form-label" for="{{ form.discipline.id_for_label }}" data-i18n="calc.discipline">Discipline</label>
           <select name="discipline" id="{{ form.discipline.id_for_label }}" class="input-dark">
-            {% for val, display in form.discipline.field.choices %}
-              <option value="{{ val }}" {% if form.discipline.value == val or not form.is_bound and val == 'Classic' %}selected{% endif %}>{{ display }}</option>
-            {% endfor %}
+            <option value="Classic" data-i18n="nordic.opt_disc_Classic" {% if form.discipline.value == 'Classic' or not form.is_bound %}selected{% endif %}>Classic</option>
+            <option value="Skate"   data-i18n="nordic.opt_disc_Skate"   {% if form.discipline.value == 'Skate' %}selected{% endif %}>Skate</option>
           </select>
         </div>
         <div class="field-row">
-          <label class="form-label" for="{{ form.tier.id_for_label }}">Wax tier</label>
+          <label class="form-label" for="{{ form.tier.id_for_label }}" data-i18n="nordic.wax_tier">Wax tier</label>
           <select name="tier" id="{{ form.tier.id_for_label }}" class="input-dark">
-            {% for val, display in form.tier.field.choices %}
-              <option value="{{ val }}" {% if form.tier.value == val or not form.is_bound and val == 'race' %}selected{% endif %}>{{ display }}</option>
-            {% endfor %}
+            <option value="race"         data-i18n="nordic.opt_tier_race"         {% if form.tier.value == 'race' or not form.is_bound %}selected{% endif %}>Race</option>
+            <option value="training"     data-i18n="nordic.opt_tier_training"     {% if form.tier.value == 'training' %}selected{% endif %}>Training</option>
+            <option value="recreational" data-i18n="nordic.opt_tier_recreational" {% if form.tier.value == 'recreational' %}selected{% endif %}>Recreational</option>
           </select>
         </div>
       </div>
 
       <div class="field-row">
-        <label class="form-label" for="{{ form.snow_mode.id_for_label }}">Snow condition</label>
+        <label class="form-label" for="{{ form.snow_mode.id_for_label }}" data-i18n="nordic.snow_condition">Snow condition</label>
         <select name="snow_mode" id="{{ form.snow_mode.id_for_label }}" class="input-dark">
-          {% for val, display in form.snow_mode.field.choices %}
-            <option value="{{ val }}" {% if form.snow_mode.value == val or not form.is_bound and val == 'auto' %}selected{% endif %}>{{ display }}</option>
-          {% endfor %}
+          <option value="auto"         data-i18n="nordic.opt_snow_auto"         {% if form.snow_mode.value == 'auto' or not form.is_bound %}selected{% endif %}>Auto-detect</option>
+          <option value="new"          data-i18n="nordic.opt_snow_new"          {% if form.snow_mode.value == 'new' %}selected{% endif %}>New / fresh snow</option>
+          <option value="packed"       data-i18n="nordic.opt_snow_packed"       {% if form.snow_mode.value == 'packed' %}selected{% endif %}>Packed / groomed</option>
+          <option value="transformed"  data-i18n="nordic.opt_snow_transformed"  {% if form.snow_mode.value == 'transformed' %}selected{% endif %}>Transformed / settled</option>
+          <option value="hard_groomed" data-i18n="nordic.opt_snow_hard_groomed" {% if form.snow_mode.value == 'hard_groomed' %}selected{% endif %}>Hard-groomed / firm</option>
+          <option value="icy"          data-i18n="nordic.opt_snow_icy"          {% if form.snow_mode.value == 'icy' %}selected{% endif %}>Icy / refrozen</option>
+          <option value="wet"          data-i18n="nordic.opt_snow_wet"          {% if form.snow_mode.value == 'wet' %}selected{% endif %}>Wet / slushy</option>
+          <option value="spring"       data-i18n="nordic.opt_snow_spring"       {% if form.snow_mode.value == 'spring' %}selected{% endif %}>Spring corn snow</option>
         </select>
       </div>
 
       <hr class="section-divider" />
-      <p class="section-title">Course &amp; conditions</p>
+      <p class="section-title" data-i18n="nordic.course_conditions">Course &amp; conditions</p>
 
       <div class="field-row">
-        <label class="form-label" for="{{ form.race_datetime.id_for_label }}">Race / training start time</label>
+        <label class="form-label" for="{{ form.race_datetime.id_for_label }}" data-i18n="nordic.start_time">Race / training start time</label>
         <input type="datetime-local" name="race_datetime" id="{{ form.race_datetime.id_for_label }}"
                class="input-dark"
                value="{{ form.race_datetime.value|default:'' }}" />
-        <p class="form-hint">Used for solar position calculations. Leave blank to use tomorrow 10:00 AM.</p>
+        <p class="form-hint" data-i18n="nordic.start_time_hint">Used for solar position calculations. Leave blank to use tomorrow 10:00 AM.</p>
       </div>
 
       <div class="field-row">
-        <label class="form-label" for="{{ form.pre_loaded_course.id_for_label }}">
+        <label class="form-label" for="{{ form.pre_loaded_course.id_for_label }}" data-i18n="nordic.preloaded_course">
           Pre-loaded FIS course
         </label>
         <select name="pre_loaded_course" id="{{ form.pre_loaded_course.id_for_label }}" class="input-dark">
+          <option value="" data-i18n="nordic.opt_course_placeholder" {% if not form.pre_loaded_course.value %}selected{% endif %}>— select a pre-loaded course —</option>
           {% for val, display in form.pre_loaded_course.field.choices %}
-            <option value="{{ val }}" {% if form.pre_loaded_course.value == val %}selected{% endif %}>{{ display }}</option>
+            {% if val %}<option value="{{ val }}" {% if form.pre_loaded_course.value == val %}selected{% endif %}>{{ display }}</option>{% endif %}
           {% endfor %}
         </select>
-        <p class="form-hint">18 FIS World Cup venues pre-loaded. Select one, or upload your own GPX below.</p>
+        <p class="form-hint" data-i18n="nordic.preloaded_hint">18 FIS World Cup venues pre-loaded. Select one, or upload your own GPX below.</p>
       </div>
 
       <div style="display:flex;align-items:center;gap:0.75rem;margin:1.1rem 0 0.9rem;">
         <div style="flex:1;height:1px;background:rgba(255,255,255,0.12);"></div>
-        <span style="font-size:0.72rem;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#64748b;">or upload your own</span>
+        <span style="font-size:0.72rem;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#64748b;" data-i18n="nordic.or_upload">or upload your own</span>
         <div style="flex:1;height:1px;background:rgba(255,255,255,0.12);"></div>
       </div>
 
       <div class="field-row">
-        <label class="form-label" style="opacity:1;font-size:0.78rem;">
+        <label class="form-label" style="opacity:1;font-size:0.78rem;" data-i18n="nordic.upload_gpx">
           Upload GPX file
         </label>
         <div id="gpx-dropzone" class="file-input-wrap" style="border-radius:12px;border:2px dashed rgba(255,255,255,0.25);padding:1.25rem 1rem;text-align:center;background:rgba(255,255,255,0.05);transition:all 0.2s;">
@@ -278,16 +283,16 @@
           <!-- empty state -->
           <label id="gpx-empty" for="{{ form.gpx_file.id_for_label }}" style="cursor:pointer;display:block;">
             <span style="font-size:1.8rem;display:block;margin-bottom:0.35rem;">📍</span>
-            <span style="font-size:0.88rem;font-weight:700;color:#4ade80;display:block;">Click to upload your GPX track</span>
-            <span style="font-size:0.75rem;color:#94a3b8;display:block;margin-top:0.2rem;">.gpx files only · max 10 MB</span>
+            <span style="font-size:0.88rem;font-weight:700;color:#4ade80;display:block;" data-i18n="nordic.gpx_cta">Click to upload your GPX track</span>
+            <span style="font-size:0.75rem;color:#94a3b8;display:block;margin-top:0.2rem;" data-i18n="nordic.gpx_hint">.gpx files only · max 10 MB</span>
           </label>
 
           <!-- filled state (hidden until file selected) -->
           <div id="gpx-filled" style="display:none;">
             <div style="font-size:2.2rem;font-weight:900;color:#22c55e;line-height:1;margin-bottom:0.3rem;">&#10003;</div>
-            <div style="font-size:1rem;font-weight:700;color:#4ade80;margin-bottom:0.25rem;">GPX track loaded</div>
+            <div style="font-size:1rem;font-weight:700;color:#4ade80;margin-bottom:0.25rem;" data-i18n="nordic.gpx_loaded">GPX track loaded</div>
             <div id="gpx-fname" style="font-size:0.8rem;color:#86efac;word-break:break-all;"></div>
-            <label for="{{ form.gpx_file.id_for_label }}" style="display:inline-block;margin-top:0.5rem;font-size:0.72rem;color:#94a3b8;cursor:pointer;text-decoration:underline;">Change file</label>
+            <label for="{{ form.gpx_file.id_for_label }}" style="display:inline-block;margin-top:0.5rem;font-size:0.72rem;color:#94a3b8;cursor:pointer;text-decoration:underline;" data-i18n="nordic.gpx_change">Change file</label>
           </div>
         </div>
         {% if form.gpx_file.errors %}
@@ -301,16 +306,16 @@
       </div>
 
       <div class="field-row">
-        <label class="form-label" for="{{ form.canopy.id_for_label }}">Forest canopy</label>
+        <label class="form-label" for="{{ form.canopy.id_for_label }}" data-i18n="nordic.canopy">Forest canopy</label>
         <select name="canopy" id="{{ form.canopy.id_for_label }}" class="input-dark">
-          {% for val, display in form.canopy.field.choices %}
-            <option value="{{ val }}" {% if form.canopy.value == val or not form.is_bound and val == 'mixed' %}selected{% endif %}>{{ display }}</option>
-          {% endfor %}
+          <option value="open"  data-i18n="nordic.opt_canopy_open"  {% if form.canopy.value == 'open' %}selected{% endif %}>Open — exposed ridges / alpine meadows</option>
+          <option value="mixed" data-i18n="nordic.opt_canopy_mixed" {% if form.canopy.value == 'mixed' or not form.is_bound %}selected{% endif %}>Mixed — partial forest (typical Nordic venue)</option>
+          <option value="dense" data-i18n="nordic.opt_canopy_dense" {% if form.canopy.value == 'dense' %}selected{% endif %}>Dense — deep boreal / spruce forest</option>
         </select>
-        <p class="form-hint">Tree cover controls solar shade on snow surface — affects kick wax selection in shaded segments.</p>
+        <p class="form-hint" data-i18n="nordic.canopy_hint">Tree cover controls solar shade on snow surface — affects kick wax selection in shaded segments.</p>
       </div>
 
-      <button type="submit" class="submit-btn">Get Wax Recommendation →</button>
+      <button type="submit" class="submit-btn" data-i18n="nordic.submit">Get Wax Recommendation →</button>
     </form>
   </div>
 </div>
