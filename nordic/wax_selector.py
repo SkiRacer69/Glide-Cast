@@ -15,11 +15,11 @@ from .wax_db import BINDERS, GLIDE_WAX, KICK_WAX, KLISTER
 # Dimension weights
 # ---------------------------------------------------------------------------
 _GLIDE_W = {
-    "temperature": 0.30,
-    "snow_type":   0.35,
-    "humidity":    0.15,
-    "durability":  0.10,
-    "race_match":  0.10,
+    "temperature": 0.50,
+    "snow_type":   0.25,
+    "humidity":    0.10,
+    "durability":  0.08,
+    "race_match":  0.07,
 }
 
 _KICK_W = {
