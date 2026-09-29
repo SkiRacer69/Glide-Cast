@@ -33,11 +33,11 @@ _KICK_W = {
 # ---------------------------------------------------------------------------
 
 def _temp_score(temp_c: float, temp_min: float, temp_max: float) -> float:
-    """1.0 at band center, ~0.70 at band edges, falls to 0.0 at 5 °C outside."""
+    """1.0 at band center, ~0.70 at band edges, drops to 0.0 at 2.5 °C outside."""
     if temp_c < temp_min:
-        return max(0.0, 1.0 - (temp_min - temp_c) / 5.0)
+        return max(0.0, 1.0 - (temp_min - temp_c) / 2.5)
     if temp_c > temp_max:
-        return max(0.0, 1.0 - (temp_c - temp_max) / 5.0)
+        return max(0.0, 1.0 - (temp_c - temp_max) / 2.5)
     mid = (temp_min + temp_max) / 2.0
     half_w = max((temp_max - temp_min) / 2.0, 0.5)
     return 1.0 - 0.30 * abs(temp_c - mid) / half_w
@@ -129,12 +129,12 @@ def select_glide(
     _NEAR_EDGE = 1.5  # °C — warn when within this margin of either band edge
 
     def _rec(w: dict) -> dict:
-        in_band = w["temp_min"] <= temp_c <= w["temp_max"]
-        near_edge = (
-            not in_band
-            or (temp_c - w["temp_min"]) < _NEAR_EDGE
+        in_band   = w["temp_min"] <= temp_c <= w["temp_max"]
+        near_edge = in_band and (
+            (temp_c - w["temp_min"]) < _NEAR_EDGE
             or (w["temp_max"] - temp_c) < _NEAR_EDGE
         )
+        out_of_band = not in_band
         return {
             "brand":          w["brand"],
             "product":        w["product"],
@@ -147,6 +147,7 @@ def select_glide(
             "temp_max":       w["temp_max"],
             "in_band":        in_band,
             "near_edge":      near_edge,
+            "out_of_band":    out_of_band,
             "confidence_pct": _pct(w["score"]),
             "dim_scores":     w["dim_scores"],
         }
@@ -209,12 +210,12 @@ def select_kick(
     _NEAR_EDGE = 1.5
 
     def _rec(w: dict) -> dict:
-        in_band = w["temp_min"] <= temp_c <= w["temp_max"]
-        near_edge = (
-            not in_band
-            or (temp_c - w["temp_min"]) < _NEAR_EDGE
+        in_band   = w["temp_min"] <= temp_c <= w["temp_max"]
+        near_edge = in_band and (
+            (temp_c - w["temp_min"]) < _NEAR_EDGE
             or (w["temp_max"] - temp_c) < _NEAR_EDGE
         )
+        out_of_band = not in_band
         return {
             "brand":          w["brand"],
             "product":        w["product"],
@@ -227,6 +228,7 @@ def select_kick(
             "temp_max":       w["temp_max"],
             "in_band":        in_band,
             "near_edge":      near_edge,
+            "out_of_band":    out_of_band,
             "confidence_pct": _pct(w["score"]),
             "dim_scores":     w["dim_scores"],
         }

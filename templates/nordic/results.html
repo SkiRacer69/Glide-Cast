@@ -354,6 +354,13 @@
     </div>
   {% endif %}
 
+  {% if result.no_snow %}
+    <div class="wax-card" style="border-color: rgba(251,146,60,0.5); background: rgba(251,146,60,0.08);">
+      <p style="color: #fb923c; font-weight: 700; margin: 0;">⚠ No snow detected on course</p>
+      <p style="color: #fb923c; font-size: 0.85rem; margin: 0.35rem 0 0;">Snow depth at track midpoint is near zero. Wax recommendations are based on projected snow conditions but may not apply if the course is bare or has marginal coverage.</p>
+    </div>
+  {% endif %}
+
   {# — Conditions ——————————————————————————————————————————————————————————— #}
   <div class="wax-card">
     <p class="section-label">
@@ -432,10 +439,12 @@
     <div class="band-row">
       <span data-i18n="nordic.temp_band">Temp band:</span>
       <strong>{{ result.grip.primary.temp_min|temp:temp_unit }} <span data-i18n="nordic.to">to</span> {{ result.grip.primary.temp_max|temp:temp_unit }}</strong>
-      {% if result.grip.primary.in_band and not result.grip.primary.near_edge %}
-        <span style="color: #16a34a;" data-i18n="nordic.in_band">✓ in band</span>
-      {% else %}
+      {% if result.grip.primary.out_of_band %}
+        <span style="color: #ef4444;" data-i18n="nordic.out_of_band">✗ out of band</span>
+      {% elif result.grip.primary.near_edge %}
         <span style="color: #d97706;" data-i18n="nordic.near_edge">⚠ near edge — consider layering</span>
+      {% else %}
+        <span style="color: #16a34a;" data-i18n="nordic.in_band">✓ in band</span>
       {% endif %}
     </div>
 
@@ -519,10 +528,12 @@
     <div class="band-row">
       <span data-i18n="nordic.temp_band">Temp band:</span>
       <strong>{{ result.glide.primary.temp_min|temp:temp_unit }} <span data-i18n="nordic.to">to</span> {{ result.glide.primary.temp_max|temp:temp_unit }}</strong>
-      {% if result.glide.primary.in_band and not result.glide.primary.near_edge %}
-        <span style="color: #16a34a;" data-i18n="nordic.in_band">✓ in band</span>
-      {% else %}
+      {% if result.glide.primary.out_of_band %}
+        <span style="color: #ef4444;" data-i18n="nordic.out_of_band">✗ out of band</span>
+      {% elif result.glide.primary.near_edge %}
         <span style="color: #d97706;" data-i18n="nordic.near_edge_short">⚠ near edge</span>
+      {% else %}
+        <span style="color: #16a34a;" data-i18n="nordic.in_band">✓ in band</span>
       {% endif %}
     </div>
     <div class="band-row" style="margin-top: 0.2rem;">

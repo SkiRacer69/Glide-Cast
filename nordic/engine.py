@@ -1313,7 +1313,35 @@ def recommend_from_gpx(
     snow_type, snow_reason = classify_snow(
         temp_c, humidity_pct, recent_snow_mm, snow_depth_m, wmo_code, snow_mode
     )
-    glide = select_glide(temp_c, snow_type, humidity_pct, tier)
+
+    # Analyze course first so we can use actual snow surface temp for wax selection,
+    # consistent with per-segment behavior in analyze_course().
+    course_data = analyze_course(
+        gpx_samples,
+        conditions,
+        discipline,
+        canopy,
+        snow_mode,
+        tier,
+        mid["elevation_m"],
+        race_dt=race_dt,
+    )
+
+    segs = course_data.get("segments", [])
+    if segs:
+        snow_temps      = [s["temp_c"] for s in segs]
+        snow_temp_c     = round(sum(snow_temps) / len(snow_temps), 1)
+        snow_temp_min_c = round(min(snow_temps), 1)
+        snow_temp_max_c = round(max(snow_temps), 1)
+    else:
+        snow_temp_c     = None
+        snow_temp_min_c = None
+        snow_temp_max_c = None
+
+    # Use snow surface temp for wax selection; fall back to air temp if no segments
+    wax_temp = snow_temp_c if snow_temp_c is not None else temp_c
+
+    glide = select_glide(wax_temp, snow_type, humidity_pct, tier)
 
     result: dict[str, Any] = {
         "ok": True,
@@ -1330,12 +1358,17 @@ def recommend_from_gpx(
         },
         "snow_type": snow_type,
         "snow_reason": snow_reason,
+        "no_snow": snow_depth_m < 0.02,
         "glide": glide,
         "canopy": canopy,
+        "course": course_data,
+        "snow_temp_c":     snow_temp_c,
+        "snow_temp_min_c": snow_temp_min_c,
+        "snow_temp_max_c": snow_temp_max_c,
     }
 
     if discipline == "Classic":
-        grip = select_kick(temp_c, snow_type, tier)
+        grip = select_kick(wax_temp, snow_type, tier)
         result["grip"] = grip
         result["binder"] = grip["binder"]
         conf_raw = round(
@@ -1358,30 +1391,5 @@ def recommend_from_gpx(
     else:
         result["confidence_label"] = "Low"
         result["confidence_color"] = "#dc2626"
-
-    # Per-segment course analysis with real weather at each point
-    course_data = analyze_course(
-        gpx_samples,
-        conditions,
-        discipline,
-        canopy,
-        snow_mode,
-        tier,
-        mid["elevation_m"],
-        race_dt=race_dt,
-    )
-    result["course"] = course_data
-
-    # Aggregate snow surface temps across all segments for the summary card
-    segs = course_data.get("segments", [])
-    if segs:
-        snow_temps = [s["temp_c"] for s in segs]
-        result["snow_temp_c"]     = round(sum(snow_temps) / len(snow_temps), 1)
-        result["snow_temp_min_c"] = round(min(snow_temps), 1)
-        result["snow_temp_max_c"] = round(max(snow_temps), 1)
-    else:
-        result["snow_temp_c"]     = None
-        result["snow_temp_min_c"] = None
-        result["snow_temp_max_c"] = None
 
     return result

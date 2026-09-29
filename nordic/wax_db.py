@@ -518,8 +518,8 @@ KICK_WAX: list[dict] = [
      "color": "yellow", "hex": "#c27803",
      "notes": "Soft wet snow near melting"},
 
-    # ── VAUHTI Performance Speed Grip ─────────────────────────────────────────────────
-    {"brand": "Vauhti", "product": "Performance Speed Blue", "code": "VP-BL",
+    # ── VAUHTI FC Grip ────────────────────────────────────────────────────────
+    {"brand": "Vauhti", "product": "FC Grip Blue", "code": "VP-BL",
      "temp_min": -12.0, "temp_max": -3.0,
      "snow_types": ["new", "cold_powder", "packed"],
      "fluoro_free": True, "race_legal": True,
@@ -527,7 +527,7 @@ KICK_WAX: list[dict] = [
      "color": "blue", "hex": "#1a56db",
      "notes": "Cold race kick wax — Finnish race team formula for cold/dry"},
 
-    {"brand": "Vauhti", "product": "Performance Speed Violet", "code": "VP-VI",
+    {"brand": "Vauhti", "product": "FC Grip Violet", "code": "VP-VI",
      "temp_min": -5.0, "temp_max": 0.0,
      "snow_types": ["packed", "transformed"],
      "fluoro_free": True, "race_legal": True,
@@ -535,7 +535,7 @@ KICK_WAX: list[dict] = [
      "color": "violet", "hex": "#7e3af2",
      "notes": "Medium-cold race kick — near-zero packed conditions"},
 
-    {"brand": "Vauhti", "product": "Performance Speed Red", "code": "VP-RE",
+    {"brand": "Vauhti", "product": "FC Grip Red", "code": "VP-RE",
      "temp_min": -2.0, "temp_max": +2.0,
      "snow_types": ["transformed", "wet"],
      "fluoro_free": True, "race_legal": True,
@@ -725,8 +725,8 @@ KLISTER: list[dict] = [
      "color": "red", "hex": "#e02424",
      "notes": "Wet or slushy conditions"},
 
-    # ── VAUHTI Performance Speed Klister ─────────────────────────────────────────────
-    {"brand": "Vauhti", "product": "Performance Speed Blue Klister", "code": "VK-BL",
+    # ── VAUHTI FC Klister ─────────────────────────────────────────────────────
+    {"brand": "Vauhti", "product": "FC Klister Blue", "code": "VK-BL",
      "temp_min": -8.0, "temp_max": -2.0,
      "snow_types": ["icy", "hard_groomed"],
      "fluoro_free": True, "race_legal": True,
@@ -734,7 +734,7 @@ KLISTER: list[dict] = [
      "color": "blue", "hex": "#1a56db",
      "notes": "Cold icy klister — race-quality formula for hard pack/icy conditions"},
 
-    {"brand": "Vauhti", "product": "Performance Speed Violet Klister", "code": "VK-VI",
+    {"brand": "Vauhti", "product": "FC Klister Violet", "code": "VK-VI",
      "temp_min": -3.0, "temp_max": +2.0,
      "snow_types": ["icy", "wet", "transformed"],
      "fluoro_free": True, "race_legal": True,
@@ -742,7 +742,7 @@ KLISTER: list[dict] = [
      "color": "violet", "hex": "#7e3af2",
      "notes": "Transition klister — near-zero icy/wet"},
 
-    {"brand": "Vauhti", "product": "Performance Speed Red Klister", "code": "VK-RE",
+    {"brand": "Vauhti", "product": "FC Klister Red", "code": "VK-RE",
      "temp_min": -1.0, "temp_max": +6.0,
      "snow_types": ["wet", "spring"],
      "fluoro_free": True, "race_legal": True,
