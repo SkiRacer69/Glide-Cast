@@ -132,7 +132,7 @@ GLIDE_WAX: list[dict] = [
      "notes": "Warm-transitional race glide — excellent near-zero and high-humidity performance"},
 
     {"brand": "Vauhti", "product": "Performance Speed Red", "code": "VPR-RE",
-     "tier": "race", "temp_min": +1.0, "temp_max": +8.0, "humidity_max": 98,
+     "tier": "race", "temp_min": -2.0, "temp_max": +8.0, "humidity_max": 98,
      "snow": {"new": 0.2, "cold_powder": 0.0, "packed": 0.3, "transformed": 0.6,
               "hard_groomed": 0.2, "icy": 0.2, "wet": 1.0, "spring": 1.0},
      "durability": 7, "speed": 9, "fluoro_free": True, "race_legal": True,
