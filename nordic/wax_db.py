@@ -98,8 +98,8 @@ GLIDE_WAX: list[dict] = [
      "application": "iron", "hex": "#f59e0b",
      "notes": "Around-zero training — long-lasting near-zero formula"},
 
-    # ── VAUHTI Performance Race — race ──────────────────────────────────────────────
-    {"brand": "Vauhti", "product": "Performance Race Cold", "code": "VPR-COLD",
+    # ── VAUHTI Performance Speed — race ──────────────────────────────────────────────
+    {"brand": "Vauhti", "product": "Performance Speed Cold", "code": "VPR-COLD",
      "tier": "race", "temp_min": -30.0, "temp_max": -10.0, "humidity_max": 60,
      "snow": {"new": 1.0, "cold_powder": 1.0, "packed": 0.8, "transformed": 0.3,
               "hard_groomed": 0.4, "icy": 0.2, "wet": 0.0, "spring": 0.0},
@@ -107,7 +107,7 @@ GLIDE_WAX: list[dict] = [
      "application": "iron", "hex": "#1e3a8a",
      "notes": "Broad cold-range race glide — Finnish race team staple for cold/dry"},
 
-    {"brand": "Vauhti", "product": "Performance Race Blue", "code": "VPR-BL",
+    {"brand": "Vauhti", "product": "Performance Speed Blue", "code": "VPR-BL",
      "tier": "race", "temp_min": -12.0, "temp_max": -4.0, "humidity_max": 75,
      "snow": {"new": 0.9, "cold_powder": 0.8, "packed": 1.0, "transformed": 0.5,
               "hard_groomed": 0.6, "icy": 0.3, "wet": 0.0, "spring": 0.0},
@@ -115,7 +115,7 @@ GLIDE_WAX: list[dict] = [
      "application": "iron", "hex": "#1a56db",
      "notes": "Cold-medium race glide — strong performer on packed/groomed cold snow"},
 
-    {"brand": "Vauhti", "product": "Performance Race Violet", "code": "VPR-VI",
+    {"brand": "Vauhti", "product": "Performance Speed Violet", "code": "VPR-VI",
      "tier": "race", "temp_min": -6.0, "temp_max": 0.0, "humidity_max": 85,
      "snow": {"new": 0.6, "cold_powder": 0.3, "packed": 0.8, "transformed": 1.0,
               "hard_groomed": 0.7, "icy": 0.5, "wet": 0.3, "spring": 0.0},
@@ -123,7 +123,7 @@ GLIDE_WAX: list[dict] = [
      "application": "iron", "hex": "#7e3af2",
      "notes": "Medium race glide — widely tested in Scandinavian conditions near zero"},
 
-    {"brand": "Vauhti", "product": "Performance Race Yellow", "code": "VPR-YE",
+    {"brand": "Vauhti", "product": "Performance Speed Yellow", "code": "VPR-YE",
      "tier": "race", "temp_min": -2.0, "temp_max": +4.0, "humidity_max": 90,
      "snow": {"new": 0.4, "cold_powder": 0.1, "packed": 0.6, "transformed": 1.0,
               "hard_groomed": 0.5, "icy": 0.4, "wet": 0.8, "spring": 0.4},
@@ -131,7 +131,7 @@ GLIDE_WAX: list[dict] = [
      "application": "iron", "hex": "#c27803",
      "notes": "Warm-transitional race glide — excellent near-zero and high-humidity performance"},
 
-    {"brand": "Vauhti", "product": "Performance Race Red", "code": "VPR-RE",
+    {"brand": "Vauhti", "product": "Performance Speed Red", "code": "VPR-RE",
      "tier": "race", "temp_min": +1.0, "temp_max": +8.0, "humidity_max": 98,
      "snow": {"new": 0.2, "cold_powder": 0.0, "packed": 0.3, "transformed": 0.6,
               "hard_groomed": 0.2, "icy": 0.2, "wet": 1.0, "spring": 1.0},
@@ -518,8 +518,8 @@ KICK_WAX: list[dict] = [
      "color": "yellow", "hex": "#c27803",
      "notes": "Soft wet snow near melting"},
 
-    # ── VAUHTI Performance Race Grip ─────────────────────────────────────────────────
-    {"brand": "Vauhti", "product": "Performance Race Blue", "code": "VP-BL",
+    # ── VAUHTI Performance Speed Grip ─────────────────────────────────────────────────
+    {"brand": "Vauhti", "product": "Performance Speed Blue", "code": "VP-BL",
      "temp_min": -12.0, "temp_max": -3.0,
      "snow_types": ["new", "cold_powder", "packed"],
      "fluoro_free": True, "race_legal": True,
@@ -527,7 +527,7 @@ KICK_WAX: list[dict] = [
      "color": "blue", "hex": "#1a56db",
      "notes": "Cold race kick wax — Finnish race team formula for cold/dry"},
 
-    {"brand": "Vauhti", "product": "Performance Race Violet", "code": "VP-VI",
+    {"brand": "Vauhti", "product": "Performance Speed Violet", "code": "VP-VI",
      "temp_min": -5.0, "temp_max": 0.0,
      "snow_types": ["packed", "transformed"],
      "fluoro_free": True, "race_legal": True,
@@ -535,7 +535,7 @@ KICK_WAX: list[dict] = [
      "color": "violet", "hex": "#7e3af2",
      "notes": "Medium-cold race kick — near-zero packed conditions"},
 
-    {"brand": "Vauhti", "product": "Performance Race Red", "code": "VP-RE",
+    {"brand": "Vauhti", "product": "Performance Speed Red", "code": "VP-RE",
      "temp_min": -2.0, "temp_max": +2.0,
      "snow_types": ["transformed", "wet"],
      "fluoro_free": True, "race_legal": True,
@@ -725,8 +725,8 @@ KLISTER: list[dict] = [
      "color": "red", "hex": "#e02424",
      "notes": "Wet or slushy conditions"},
 
-    # ── VAUHTI Performance Race Klister ─────────────────────────────────────────────
-    {"brand": "Vauhti", "product": "Performance Race Blue Klister", "code": "VK-BL",
+    # ── VAUHTI Performance Speed Klister ─────────────────────────────────────────────
+    {"brand": "Vauhti", "product": "Performance Speed Blue Klister", "code": "VK-BL",
      "temp_min": -8.0, "temp_max": -2.0,
      "snow_types": ["icy", "hard_groomed"],
      "fluoro_free": True, "race_legal": True,
@@ -734,7 +734,7 @@ KLISTER: list[dict] = [
      "color": "blue", "hex": "#1a56db",
      "notes": "Cold icy klister — race-quality formula for hard pack/icy conditions"},
 
-    {"brand": "Vauhti", "product": "Performance Race Violet Klister", "code": "VK-VI",
+    {"brand": "Vauhti", "product": "Performance Speed Violet Klister", "code": "VK-VI",
      "temp_min": -3.0, "temp_max": +2.0,
      "snow_types": ["icy", "wet", "transformed"],
      "fluoro_free": True, "race_legal": True,
@@ -742,7 +742,7 @@ KLISTER: list[dict] = [
      "color": "violet", "hex": "#7e3af2",
      "notes": "Transition klister — near-zero icy/wet"},
 
-    {"brand": "Vauhti", "product": "Performance Race Red Klister", "code": "VK-RE",
+    {"brand": "Vauhti", "product": "Performance Speed Red Klister", "code": "VK-RE",
      "temp_min": -1.0, "temp_max": +6.0,
      "snow_types": ["wet", "spring"],
      "fluoro_free": True, "race_legal": True,
