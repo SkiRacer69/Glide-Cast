@@ -27,3 +27,15 @@ def temp(value_c, unit="C"):
 @register.filter
 def temp_unit_label(unit):
     return "°F" if unit == "F" else "°C"
+
+
+@register.filter
+def temp_from_f(value_f, unit="F"):
+    """Format a Fahrenheit value as '23.0°F' or '−5.0°C' depending on unit."""
+    try:
+        v = float(value_f)
+    except (TypeError, ValueError):
+        return "—"
+    if unit == "C":
+        return f"{(v - 32) * 5 / 9:.1f}°C"
+    return f"{v:.1f}°F"

@@ -51,6 +51,8 @@ class CalculatorForm(forms.Form):
     wet_refreeze_strength = forms.FloatField(min_value=0.0, max_value=10.0, initial=3.5)
     wet_deep_relax_scale = forms.FloatField(min_value=0.1, max_value=1.0, initial=0.4)
 
+    temp_unit = forms.ChoiceField(choices=[("F", "°F"), ("C", "°C")], initial="F", required=False)
+
     gpx_file = forms.FileField(
         required=False,
         help_text="Optional: upload your race run GPX to auto-set slope and aspect from the actual course.",

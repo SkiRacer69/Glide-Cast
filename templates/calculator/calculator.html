@@ -62,6 +62,20 @@
   .ts-dropdown .option:hover,
   .ts-dropdown .option.active { background: #eff6ff !important; color: #1d4ed8 !important; }
   .ts-dropdown .option.selected { background: #dbeafe !important; color: #1d4ed8 !important; }
+  .unit-btn {
+    display: block;
+    padding: 0.25rem 0.65rem;
+    font-size: 0.75rem;
+    font-weight: 700;
+    letter-spacing: 0.04em;
+    color: rgba(255,255,255,0.5);
+    background: transparent;
+    transition: background 0.15s, color 0.15s;
+  }
+  input[type="radio"]:checked + .unit-btn {
+    background: rgba(255,255,255,0.15);
+    color: #fff;
+  }
   .sport-toggle-btn {
     padding: 0.35rem 0.9rem;
     border-radius: 8px;
@@ -120,6 +134,21 @@
       <form method="post" action="" enctype="multipart/form-data" style="display: flex; flex-direction: column; gap: 1rem;">
         {% csrf_token %}
 
+        <div style="display:flex;align-items:center;justify-content:flex-end;">
+          <div style="display:flex;gap:0;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,0.18);">
+            <label style="cursor:pointer;">
+              <input type="radio" name="temp_unit" value="F" style="display:none;"
+                {% if not form.temp_unit.value or form.temp_unit.value == 'F' %}checked{% endif %} />
+              <span class="unit-btn" style="display:block;padding:0.25rem 0.65rem;font-size:0.75rem;font-weight:700;letter-spacing:0.04em;transition:background 0.15s,color 0.15s;">°F</span>
+            </label>
+            <label style="cursor:pointer;">
+              <input type="radio" name="temp_unit" value="C" style="display:none;"
+                {% if form.temp_unit.value == 'C' %}checked{% endif %} />
+              <span class="unit-btn" style="display:block;padding:0.25rem 0.65rem;font-size:0.75rem;font-weight:700;letter-spacing:0.04em;transition:background 0.15s,color 0.15s;">°C</span>
+            </label>
+          </div>
+        </div>
+
         {% if form.errors %}
           <div class="msg error">
             <strong>There was a problem with your input.</strong>
@@ -134,7 +163,7 @@
 
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem;">
           <div class="input-wrap">
-            <label for="id_venue" data-i18n="calc.venue">Venue</label>
+            <label for="id_venue" data-i18n="calc.venue">Venue Search</label>
             <select name="venue" id="id_venue" class="input-dark">
               {% for group_label, group_choices in form.venue.field.choices %}
                 <optgroup label="{{ group_label }}">
@@ -338,6 +367,15 @@
   var filled = document.getElementById("alpine-gpx-filled");
   var fname  = document.getElementById("alpine-gpx-fname");
   if (!input) return;
+  var venueWrap = document.getElementById("id_venue") && document.getElementById("id_venue").closest(".input-wrap");
+  var gpxOverrideNote = (function() {
+    var el = document.createElement("p");
+    el.style.cssText = "margin:0.25rem 0 0 0;font-size:0.68rem;color:#4ade80;display:none;";
+    el.textContent = "GPX overrides venue selection";
+    if (venueWrap) venueWrap.appendChild(el);
+    return el;
+  })();
+
   input.addEventListener("change", function() {
     if (input.files && input.files.length > 0) {
       zone.style.border     = "2px solid #22c55e";
@@ -345,11 +383,13 @@
       empty.style.display   = "none";
       fname.textContent     = input.files[0].name;
       filled.style.display  = "block";
+      gpxOverrideNote.style.display = "block";
     } else {
       zone.style.border     = "2px dashed rgba(255,255,255,0.2)";
       zone.style.background = "rgba(255,255,255,0.04)";
       filled.style.display  = "none";
       empty.style.display   = "block";
+      gpxOverrideNote.style.display = "none";
     }
   });
 })();

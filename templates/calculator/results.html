@@ -1,5 +1,5 @@
 {% extends "base.html" %}
-{% load static %}
+{% load static nordic_filters %}
 {% block body_class %}page-results{% endblock %}
 {% block title %}Results · WaxOracle — Wax Done Right{% endblock %}
 
@@ -38,6 +38,10 @@
           <span class="text-caption"><span data-i18n="results.pdf_export_prefix">PDF export: </span><a href="{% url 'paywall' %}" style="color: var(--glacier);" data-i18n="results.upgrade_pdf">Upgrade for PDF</a></span>
         {% endif %}
       {% endif %}
+      <div id="temp-toggle" style="display:flex;gap:0;border-radius:8px;overflow:hidden;border:1px solid rgba(255,255,255,0.18);">
+        <button type="button" id="btn-F" onclick="setTempUnit('F')" style="padding:0.25rem 0.65rem;font-size:0.75rem;font-weight:700;border:none;cursor:pointer;background:{% if temp_unit == 'F' %}rgba(255,255,255,0.15){% else %}transparent{% endif %};color:{% if temp_unit == 'F' %}#fff{% else %}rgba(255,255,255,0.45){% endif %};">°F</button>
+        <button type="button" id="btn-C" onclick="setTempUnit('C')" style="padding:0.25rem 0.65rem;font-size:0.75rem;font-weight:700;border:none;cursor:pointer;background:{% if temp_unit == 'C' %}rgba(255,255,255,0.15){% else %}transparent{% endif %};color:{% if temp_unit == 'C' %}#fff{% else %}rgba(255,255,255,0.45){% endif %};">°C</button>
+      </div>
       <a href="{% url 'calculator' %}" class="btn-secondary" data-i18n="results.new_calc">New calculation</a>
     </div>
   </div>
@@ -133,7 +137,7 @@
         <div style="display: grid; grid-template-columns: 1fr 1fr; gap: 0.75rem; margin-top: 1rem;">
           <div class="card-glass" style="padding: 0.75rem;">
             <p class="text-label" style="font-size: 0.65rem; margin: 0 0 0.2rem 0;" data-i18n="results.snow_temps">Snow temps (start → finish)</p>
-            <p class="data-value" style="margin: 0; font-size: 1rem;">{{ item.run.snow_start_f|floatformat:1 }} → {{ item.run.snow_finish_f|floatformat:1 }} °F</p>
+            <p class="data-value" style="margin: 0; font-size: 1rem;" data-temp-f-pair="{{ item.run.snow_start_f }},{{ item.run.snow_finish_f }}">{{ item.run.snow_start_f|temp_from_f:temp_unit }} → {{ item.run.snow_finish_f|temp_from_f:temp_unit }}</p>
           </div>
           <div class="card-glass" style="padding: 0.75rem;">
             <p class="text-label" style="font-size: 0.65rem; margin: 0 0 0.2rem 0;" data-i18n="results.air_range">Air range</p>
@@ -141,11 +145,11 @@
           </div>
           <div class="card-glass" style="padding: 0.75rem;">
             <p class="text-label" style="font-size: 0.65rem; margin: 0 0 0.2rem 0;" data-i18n="results.deep_start">Deep snow (start)</p>
-            <p class="data-value" style="margin: 0; font-size: 1rem;">{{ item.run.deep_start_f|floatformat:1 }} °F</p>
+            <p class="data-value" style="margin: 0; font-size: 1rem;" data-temp-f="{{ item.run.deep_start_f }}">{{ item.run.deep_start_f|temp_from_f:temp_unit }}</p>
           </div>
           <div class="card-glass" style="padding: 0.75rem;">
             <p class="text-label" style="font-size: 0.65rem; margin: 0 0 0.2rem 0;" data-i18n="results.deep_finish">Deep snow (finish)</p>
-            <p class="data-value" style="margin: 0; font-size: 1rem;">{{ item.run.deep_finish_f|floatformat:1 }} °F</p>
+            <p class="data-value" style="margin: 0; font-size: 1rem;" data-temp-f="{{ item.run.deep_finish_f }}">{{ item.run.deep_finish_f|temp_from_f:temp_unit }}</p>
           </div>
           <div class="card-glass" style="padding: 0.75rem;">
             <p class="text-label" style="font-size: 0.65rem; margin: 0 0 0.2rem 0;" data-i18n="results.ts_turbo">TS Turbo</p>
@@ -161,7 +165,7 @@
         {% if show_pro_insights and item.run.uncertainty_band_f %}
         <div class="card-glass" style="padding: 0.75rem; margin-top: 0.75rem; grid-column: span 2;">
           <p class="text-label" style="font-size: 0.65rem; margin: 0 0 0.2rem 0;" data-i18n="results.uncertainty">Uncertainty band</p>
-          <p class="data-value" style="margin: 0;">±{{ item.run.uncertainty_band_f|floatformat:1 }} °F</p>
+          <p class="data-value" style="margin: 0;" data-temp-f="{{ item.run.uncertainty_band_f }}" data-temp-prefix="±">±{{ item.run.uncertainty_band_f|temp_from_f:temp_unit }}</p>
         </div>
         {% endif %}
 
@@ -253,6 +257,44 @@
 {% endblock %}
 
 {% block extra_js %}
+<script>
+(function() {
+  var currentUnit = "{{ temp_unit }}";
+
+  function toC(f) { return (f - 32) * 5 / 9; }
+
+  function formatTemp(fVal, unit) {
+    var v = parseFloat(fVal);
+    if (isNaN(v)) return "—";
+    if (unit === "C") return (toC(v)).toFixed(1) + "°C";
+    return v.toFixed(1) + "°F";
+  }
+
+  function updateTemps(unit) {
+    document.querySelectorAll("[data-temp-f]").forEach(function(el) {
+      var prefix = el.dataset.tempPrefix || "";
+      el.textContent = prefix + formatTemp(el.dataset.tempF, unit);
+    });
+    document.querySelectorAll("[data-temp-f-pair]").forEach(function(el) {
+      var parts = el.dataset.tempFPair.split(",");
+      el.textContent = formatTemp(parts[0], unit) + " → " + formatTemp(parts[1], unit);
+    });
+    var btnF = document.getElementById("btn-F");
+    var btnC = document.getElementById("btn-C");
+    if (btnF && btnC) {
+      btnF.style.background = unit === "F" ? "rgba(255,255,255,0.15)" : "transparent";
+      btnF.style.color = unit === "F" ? "#fff" : "rgba(255,255,255,0.45)";
+      btnC.style.background = unit === "C" ? "rgba(255,255,255,0.15)" : "transparent";
+      btnC.style.color = unit === "C" ? "#fff" : "rgba(255,255,255,0.45)";
+    }
+  }
+
+  window.setTempUnit = function(unit) {
+    currentUnit = unit;
+    updateTemps(unit);
+  };
+})();
+</script>
 {% if user.is_authenticated %}
 <div style="display:none" aria-hidden="true">{% csrf_token %}</div>
 <script>window.SCREENSHOT_SIGNAL_URL = "{% url 'report_screenshot_attempt' %}";</script>

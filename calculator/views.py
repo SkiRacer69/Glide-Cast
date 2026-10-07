@@ -230,34 +230,29 @@ def _parse_gpx_samples(gpx_file):
 
 def _venue_choices_for_user(user) -> list:
     engine_keys = set(ENGINE.VENUES.keys())
-    has_multi = check_feature_access(user, "multiple_venues")
     groups = [("📍 GPX Upload", [("__gpx__", "📍 Upload GPX file")])]
 
-    # FIS World Cup Europe — open to all plans
+    # FIS World Cup Europe
     for country, keys in _EU_GROUPS:
         opts = [(k, k) for k in keys if k in engine_keys]
         if opts:
             groups.append((f"FIS World Cup · {country}", opts))
 
-    # US venues
-    if has_multi:
-        for region, keys in _US_GROUPS:
-            opts = [(k, k) for k in keys if k in engine_keys]
-            if opts:
-                groups.append((region, opts))
-    else:
-        basic = basic_venues_for_engine(list(engine_keys))
-        if basic:
-            groups.append(("🇺🇸 US Venues", [(k, k) for k in basic]))
+    # US venues — all regions available to all users
+    for region, keys in _US_GROUPS:
+        opts = [(k, k) for k in keys if k in engine_keys]
+        if opts:
+            groups.append((region, opts))
 
     return groups
 
 
 def _first_venue_key(grouped_choices: list) -> str:
-    """Extract the first venue key from grouped choices."""
+    """Extract the first real venue key from grouped choices (skipping GPX option)."""
     for _group_label, opts in grouped_choices:
-        if opts:
-            return opts[0][0]
+        for key, _label in opts:
+            if key != "__gpx__":
+                return key
     return "Sugarloaf"
 
 
@@ -270,8 +265,8 @@ def calculator(request):
     if not request.user.is_authenticated:
         return render(request, "calculator/landing.html", {})
     force_pro = bool(getattr(settings, "SHOW_PRO_CALCULATOR_RESULTS", True))
+    profile, _ = Profile.objects.get_or_create(user=request.user)
     if not force_pro:
-        profile, _ = Profile.objects.get_or_create(user=request.user)
         if not profile.has_active_subscription():
             return redirect("paywall")
 
@@ -287,6 +282,10 @@ def calculator(request):
             gpx_slope_deg = None
             gpx_aspect_deg = None
             discipline = cd["discipline"]
+
+            # GPX file always overrides venue selection
+            if cd.get("gpx_file") and cd["venue"] != "__gpx__":
+                cd["venue"] = "__gpx__"
 
             if cd["venue"] == "__gpx__":
                 # ── GPX mode ─────────────────────────────────────────────────
@@ -504,6 +503,7 @@ def calculator(request):
                         "show_energy_panel": force_pro or check_feature_access(request.user, "energy_panel"),
                         "licensed_to_email": getattr(request.user, "email", "") or request.user.username,
                         "upgrade_prompt": get_upgrade_prompt(request.user) or {},
+                        "temp_unit": cd.get("temp_unit") or "F",
                         "can_download_pdf": can_pdf and (pdf_remaining is None or pdf_remaining > 0),
                         "pdf_remaining": pdf_remaining,
                         "gpx_chart_html": gpx_chart_html,
