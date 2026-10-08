@@ -325,6 +325,7 @@
       "calc.gpx_hint": ".gpx · max 10 MB",
       "calc.gpx_loaded": "GPX track loaded",
       "calc.gpx_change": "Change file",
+      "calc.gpx_explanation": "A <strong style=\"color:#fff;\">GPX file</strong> is a GPS track of your race course. Get <strong style=\"color:#fff;\">Trailforks</strong> or <strong style=\"color:#fff;\">Strava</strong> premium for unlimited access to GPX tracks for any ski trail in the world. Upload it below and WaxOracle automatically reads the slope and direction of the hill to sharpen your wax call.<br><br><strong style=\"color:#facc15;\">Only upload a GPX for courses not already in the venue list</strong> — such as a local club race or non-homologated hill. If your venue appears in the search above, select it there instead for the best accuracy. Uploading a GPX overrides the venue selection.",
       "nordic.hero_wax_label": "Nordic Wax",
       "nordic.error_prefix": "Error:",
       "nordic.gpx_issue_prefix": "⚠ GPX issue:",
@@ -644,6 +645,7 @@
       "calc.gpx_hint": ".gpx · max 10 MB",
       "calc.gpx_loaded": "GPX-Strecke geladen",
       "calc.gpx_change": "Datei ändern",
+      "calc.gpx_explanation": "Eine <strong style=\"color:#fff;\">GPX-Datei</strong> ist eine GPS-Aufzeichnung Ihrer Rennstrecke. Holen Sie sich <strong style=\"color:#fff;\">Trailforks</strong> oder <strong style=\"color:#fff;\">Strava</strong> Premium für unbegrenzten Zugang zu GPX-Tracks für jede Skipiste der Welt. Laden Sie sie unten hoch und WaxOracle liest automatisch Neigung und Ausrichtung des Hangs.<br><br><strong style=\"color:#facc15;\">Laden Sie eine GPX nur für Strecken hoch, die nicht in der Veranstaltungsliste stehen</strong> — z. B. ein lokales Vereinsrennen. Wenn Ihr Veranstaltungsort in der Suche erscheint, wählen Sie ihn dort aus. Das GPX überschreibt die Veranstaltungsauswahl.",
       "nordic.hero_wax_label": "Nordic Wachs",
       "nordic.error_prefix": "Fehler:",
       "nordic.gpx_issue_prefix": "⚠ GPX-Problem:",
@@ -963,6 +965,7 @@
       "calc.gpx_hint": ".gpx · max 10 Mo",
       "calc.gpx_loaded": "Trace GPX chargée",
       "calc.gpx_change": "Changer le fichier",
+      "calc.gpx_explanation": "Un <strong style=\"color:#fff;\">fichier GPX</strong> est une trace GPS de votre parcours de course. Obtenez <strong style=\"color:#fff;\">Trailforks</strong> ou <strong style=\"color:#fff;\">Strava</strong> premium pour un accès illimité aux traces GPX de toutes les pistes de ski du monde. Téléchargez-le ci-dessous et WaxOracle lit automatiquement la pente et l'orientation de la piste.<br><br><strong style=\"color:#facc15;\">Ne téléchargez un GPX que pour les parcours absents de la liste des sites</strong> — comme une course de club local ou une piste non homologuée. Si votre site apparaît dans la recherche ci-dessus, sélectionnez-le là-bas. Le GPX remplace la sélection du site.",
       "nordic.hero_wax_label": "Fart Nordic",
       "nordic.error_prefix": "Erreur :",
       "nordic.gpx_issue_prefix": "⚠ Problème GPX :",
@@ -1282,6 +1285,7 @@
       "calc.gpx_hint": ".gpx · max 10 MB",
       "calc.gpx_loaded": "Traccia GPX caricata",
       "calc.gpx_change": "Cambia file",
+      "calc.gpx_explanation": "Un <strong style=\"color:#fff;\">file GPX</strong> è una traccia GPS del tuo percorso di gara. Ottieni <strong style=\"color:#fff;\">Trailforks</strong> o <strong style=\"color:#fff;\">Strava</strong> premium per accesso illimitato alle tracce GPX di ogni pista da sci del mondo. Caricalo qui sotto e WaxOracle legge automaticamente pendenza e orientamento della pista.<br><br><strong style=\"color:#facc15;\">Carica un GPX solo per percorsi non presenti nell'elenco dei siti</strong> — come una gara di club locale o una pista non omologata. Se il tuo sito appare nella ricerca sopra, selezionalo lì. Il GPX sostituisce la selezione del sito.",
       "nordic.hero_wax_label": "Cera Nordic",
       "nordic.error_prefix": "Errore:",
       "nordic.gpx_issue_prefix": "⚠ Problema GPX:",
@@ -1601,6 +1605,7 @@
       "calc.gpx_hint": ".gpx · maks 10 MB",
       "calc.gpx_loaded": "GPX-spor lastet",
       "calc.gpx_change": "Bytt fil",
+      "calc.gpx_explanation": "En <strong style=\"color:#fff;\">GPX-fil</strong> er et GPS-spor av løypen din. Få <strong style=\"color:#fff;\">Trailforks</strong> eller <strong style=\"color:#fff;\">Strava</strong> premium for ubegrenset tilgang til GPX-spor for alle skiløyper i verden. Last den opp nedenfor og WaxOracle leser automatisk helling og retning på bakken.<br><br><strong style=\"color:#facc15;\">Last bare opp GPX for løyper som ikke er i stedslisten</strong> — for eksempel et lokalt klubbrennet. Hvis stedet ditt vises i søket ovenfor, velg det der i stedet. GPX overstyrer stedsvalget.",
       "nordic.hero_wax_label": "Nordic Voks",
       "nordic.error_prefix": "Feil:",
       "nordic.gpx_issue_prefix": "⚠ GPX-problem:",
@@ -1920,6 +1925,7 @@
       "calc.gpx_hint": ".gpx · max 10 MB",
       "calc.gpx_loaded": "GPX-spår laddat",
       "calc.gpx_change": "Byt fil",
+      "calc.gpx_explanation": "En <strong style=\"color:#fff;\">GPX-fil</strong> är ett GPS-spår av din tävlingsbana. Skaffa <strong style=\"color:#fff;\">Trailforks</strong> eller <strong style=\"color:#fff;\">Strava</strong> premium för obegränsad tillgång till GPX-spår för alla skidspår i världen. Ladda upp den nedan och WaxOracle läser automatiskt backen lutning och riktning.<br><br><strong style=\"color:#facc15;\">Ladda bara upp GPX för banor som inte finns i platslistan</strong> — t.ex. ett lokalt klubblopp. Om din plats syns i sökningen ovan, välj den där istället. GPX åsidosätter platsval.",
       "nordic.hero_wax_label": "Nordic Vax",
       "nordic.error_prefix": "Fel:",
       "nordic.gpx_issue_prefix": "⚠ GPX-problem:",
@@ -2239,6 +2245,7 @@
       "calc.gpx_hint": ".gpx · máx 10 MB",
       "calc.gpx_loaded": "Ruta GPX cargada",
       "calc.gpx_change": "Cambiar archivo",
+      "calc.gpx_explanation": "Un <strong style=\"color:#fff;\">archivo GPX</strong> es una pista GPS de tu pista de carreras. Obtén <strong style=\"color:#fff;\">Trailforks</strong> o <strong style=\"color:#fff;\">Strava</strong> premium para acceso ilimitado a pistas GPX de cualquier pista de esquí del mundo. Súbelo abajo y WaxOracle lee automáticamente la pendiente y orientación de la pista.<br><br><strong style=\"color:#facc15;\">Solo sube un GPX para pistas que no estén en la lista de sedes</strong> — como una carrera de club local o pista no homologada. Si tu sede aparece en la búsqueda de arriba, selecciónala allí. El GPX anula la selección de sede.",
       "nordic.hero_wax_label": "Cera Nordic",
       "nordic.error_prefix": "Error:",
       "nordic.gpx_issue_prefix": "⚠ Problema GPX:",
@@ -2309,8 +2316,23 @@
     document.dispatchEvent(new CustomEvent("glidecast:langchange", { detail: { lang: lang } }));
   }
 
+  function detectBrowserLang() {
+    var supported = ["en", "de", "fr", "it", "no", "sv", "es"];
+    var browser = (navigator.language || navigator.userLanguage || "en").toLowerCase();
+    // Try exact match first (e.g. "fr"), then prefix (e.g. "fr-CA" → "fr")
+    var prefix = browser.split("-")[0];
+    // Norwegian: nb and nn both map to "no"
+    if (prefix === "nb" || prefix === "nn") prefix = "no";
+    return supported.indexOf(prefix) !== -1 ? prefix : "en";
+  }
+
   function init() {
-    var saved = localStorage.getItem("glidecast-lang") || "en";
+    // Auto-detect on first visit; respect saved preference on return visits
+    var saved = localStorage.getItem("glidecast-lang");
+    if (!saved) {
+      saved = detectBrowserLang();
+      localStorage.setItem("glidecast-lang", saved);
+    }
     applyLang(saved);
 
     var toggle = document.getElementById("lang-toggle");

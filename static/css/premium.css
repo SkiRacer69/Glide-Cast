@@ -690,11 +690,18 @@ select.input-dark option {
 .input-wrap label {
   display: block;
   font-size: 0.75rem;
-  font-weight: 400;
+  font-weight: 700;
   text-transform: uppercase;
   letter-spacing: 0.05em;
   opacity: 0.6;
   margin-bottom: 0.35rem;
+}
+
+html[data-theme="light"] .input-wrap label {
+  opacity: 1 !important;
+  color: #0f172a !important;
+  font-weight: 800 !important;
+  font-size: 0.8rem !important;
 }
 
 /* Checkbox dark */
@@ -1977,8 +1984,52 @@ html[data-theme="light"] {
 }
 
 html[data-theme="light"] body {
-  background: #f1f5f9;
+  background: linear-gradient(145deg, #c8d0dc 0%, #d4dce8 40%, #bfc8d6 100%);
+  min-height: 100vh;
   color: #0f172a;
+}
+
+/* Buttons — bold black outline in light mode */
+html[data-theme="light"] .btn-primary {
+  border: 2.5px solid #0f172a !important;
+  box-shadow: 3px 3px 0 #0f172a !important;
+}
+html[data-theme="light"] .btn-primary:hover {
+  box-shadow: 1px 1px 0 #0f172a !important;
+  transform: translate(2px, 2px);
+}
+html[data-theme="light"] .btn-secondary {
+  background: #ffffff !important;
+  color: #0f172a !important;
+  border: 2.5px solid #0f172a !important;
+  box-shadow: 3px 3px 0 #0f172a !important;
+}
+html[data-theme="light"] .btn-secondary:hover {
+  box-shadow: 1px 1px 0 #0f172a !important;
+  transform: translate(2px, 2px);
+}
+html[data-theme="light"] .sport-toggle-btn {
+  border: 2px solid #0f172a !important;
+  color: #0f172a !important;
+  background: #ffffff !important;
+  opacity: 1 !important;
+}
+html[data-theme="light"] .sport-toggle-btn.active {
+  background: #0f172a !important;
+  color: #ffffff !important;
+}
+html[data-theme="light"] .unit-btn {
+  color: #475569 !important;
+  font-weight: 600 !important;
+  box-shadow: none !important;
+}
+html[data-theme="light"] input[type="radio"]:checked + .unit-btn {
+  background: #0f172a !important;
+  color: #ffffff !important;
+  box-shadow: none !important;
+}
+html[data-theme="light"] .nav-cta {
+  border: 2px solid #0f172a !important;
 }
 
 html[data-theme="light"] .nav-sticky {
@@ -2006,18 +2057,29 @@ html[data-theme="light"] .nav-cta {
 }
 
 html[data-theme="light"] .card-glass {
-  background: rgba(255, 255, 255, 0.88);
-  border-color: rgba(0, 0, 0, 0.1);
-  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.07);
+  background: #ffffff !important;
+  border: 2px solid #0f172a !important;
+  box-shadow: 0 4px 16px rgba(0, 0, 0, 0.12) !important;
 }
 
 html[data-theme="light"] .card-glass:hover {
-  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.12);
+  box-shadow: 0 8px 28px rgba(0, 0, 0, 0.2) !important;
+}
+
+html[data-theme="light"] .card-glass .card-glass {
+  border: 1.5px solid #334155 !important;
 }
 
 html[data-theme="light"] .hero-premium::before {
   background: radial-gradient(ellipse 80% 60% at 50% 0%, #dbeafe 0%, #f1f5f9 55%);
   animation: none;
+}
+
+html[data-theme="light"] .hero-premium {
+  border: 2.5px solid #0f172a;
+  border-radius: 18px;
+  margin: 1rem;
+  box-shadow: 4px 4px 0 #0f172a;
 }
 
 html[data-theme="light"] .hero-title,
@@ -2030,8 +2092,8 @@ html[data-theme="light"] .text-page-title {
 
 html[data-theme="light"] .text-caption,
 html[data-theme="light"] .text-label {
-  color: #475569;
-  opacity: 1;
+  color: #0f172a !important;
+  opacity: 1 !important;
 }
 
 html[data-theme="light"] .text-data,
@@ -2122,6 +2184,86 @@ html[data-theme="light"] .input-check-wrap .text-data {
 
 /* Snow animation — hide in light mode (looks odd on light bg) */
 html[data-theme="light"] #snow-container { opacity: 0.15; }
+
+/* ── Light mode: force all inline white/light text to dark ─────────────── */
+html[data-theme="light"] p,
+html[data-theme="light"] span,
+html[data-theme="light"] div,
+html[data-theme="light"] li,
+html[data-theme="light"] strong,
+html[data-theme="light"] label,
+html[data-theme="light"] h1,
+html[data-theme="light"] h2,
+html[data-theme="light"] h3,
+html[data-theme="light"] h4,
+html[data-theme="light"] summary {
+  color: #0f172a !important;
+}
+
+/* Keep accent colors for warnings (yellow → amber-brown on light bg) */
+html[data-theme="light"] [style*="color:#facc15"],
+html[data-theme="light"] [style*="color: #facc15"] {
+  color: #92400e !important;
+}
+
+/* Keep accent blue links */
+html[data-theme="light"] [style*="color:#60a5fa"],
+html[data-theme="light"] [style*="color: #60a5fa"] {
+  color: #1d4ed8 !important;
+}
+
+/* Keep green success text */
+html[data-theme="light"] [style*="color:#4ade80"],
+html[data-theme="light"] [style*="color:#22c55e"],
+html[data-theme="light"] [style*="color:#86efac"] {
+  color: #15803d !important;
+}
+
+/* Keep white text on colored buttons and pills */
+html[data-theme="light"] .btn-primary,
+html[data-theme="light"] .btn-primary span,
+html[data-theme="light"] .btn-primary strong,
+html[data-theme="light"] .wax-pill,
+html[data-theme="light"] .wax-pill span {
+  color: #fff !important;
+}
+
+/* Nav links */
+html[data-theme="light"] a { color: #1d4ed8; }
+html[data-theme="light"] .nav-links a,
+html[data-theme="light"] .nav-links button { color: #0f172a !important; }
+
+/* Unit toggle buttons */
+/* unit-btn handled above */
+
+/* GPX dropzone bold outline in light mode */
+html[data-theme="light"] #alpine-gpx-dropzone,
+html[data-theme="light"] #gpx-dropzone {
+  border: 2.5px dashed #0f172a !important;
+  background: rgba(0,0,0,0.03) !important;
+}
+
+/* Form hints */
+html[data-theme="light"] .form-hint { color: #334155 !important; }
+
+/* Data values */
+html[data-theme="light"] .data-value { color: #0f172a !important; }
+
+/* Kill all opacity fading on text in light mode so nothing looks washed out */
+html[data-theme="light"] p[style*="opacity"],
+html[data-theme="light"] span[style*="opacity"],
+html[data-theme="light"] div[style*="opacity"],
+html[data-theme="light"] label[style*="opacity"] {
+  opacity: 1 !important;
+  color: #0f172a !important;
+}
+
+/* form-hint readable */
+html[data-theme="light"] .form-hint {
+  color: #0f172a !important;
+  opacity: 1 !important;
+  font-weight: 500;
+}
 
 /* ── Hero globe button — text color only ─────────────── */
 .hero-globe-btn { color: rgba(255, 255, 255, 0.72); }

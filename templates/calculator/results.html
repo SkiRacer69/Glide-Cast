@@ -78,9 +78,9 @@
         <div style="display: flex; align-items: flex-start; justify-content: space-between; gap: 1rem; flex-wrap: wrap;">
           <div>
             {% if item.label == "Run 1" %}
-              <p class="text-label" style="font-size: 0.75rem; margin-bottom: 0.15rem;" data-i18n="hero.run1">Run 1</p>
+              <p style="font-size: 2rem; font-weight: 900; margin-bottom: 0.15rem; letter-spacing: 0.02em; color: #ffffff;" data-i18n="hero.run1">Run 1</p>
             {% else %}
-              <p class="text-label" style="font-size: 0.75rem; margin-bottom: 0.15rem;" data-i18n="hero.run2">Run 2</p>
+              <p style="font-size: 2rem; font-weight: 900; margin-bottom: 0.15rem; letter-spacing: 0.02em; color: #ffffff;" data-i18n="hero.run2">Run 2</p>
             {% endif %}
             <p class="text-caption" style="font-size: 0.78rem; margin: 0 0 0.35rem 0; opacity: 0.9;">
               {% if item.label == "Run 1" %}{{ calc_run1_time|time:"g:i A" }}{% else %}{{ calc_run2_time|time:"g:i A" }}{% endif %}
@@ -111,7 +111,7 @@
           <p class="text-label" style="font-size: 0.7rem; margin-bottom: 0.25rem;" data-i18n="results.snow_type">Snow type</p>
           <p class="data-value" style="margin: 0;">{{ item.run.snow_type }}</p>
           {% if item.run.snow_type_note %}
-          <p class="text-caption" style="font-size: 0.75rem; margin: 0.25rem 0 0 0;">{{ item.run.snow_type_note }}</p>
+          <p style="font-size: 0.9rem; margin: 0.35rem 0 0 0; opacity: 1; line-height: 1.5;">{{ item.run.snow_type_note }}</p>
           {% endif %}
         </div>
         {% endif %}

@@ -9,7 +9,13 @@ class CalculatorForm(forms.Form):
     def __init__(self, *args, venue_choices=None, **kwargs):
         super().__init__(*args, **kwargs)
         if venue_choices:
-            self.fields["venue"].choices = venue_choices
+            self.fields["venue"].choices = [("", "")] + list(venue_choices)
+
+    def clean_venue(self):
+        v = self.cleaned_data.get("venue")
+        if not v:
+            raise forms.ValidationError("Please select a venue.")
+        return v
     discipline = forms.ChoiceField(choices=[("SL", "SL"), ("GS", "GS"), ("SuperG", "SuperG"), ("DH", "DH")])
     race_date = forms.DateField(widget=forms.DateInput(attrs={"type": "date"}))
     run1_time = forms.TimeField(widget=forms.TimeInput(attrs={"type": "time"}))

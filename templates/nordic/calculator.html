@@ -35,14 +35,15 @@
     border-color: rgba(255,255,255,0.5);
   }
   [data-theme="light"] .sport-toggle-btn {
-    color: #1e293b;
-    border-color: rgba(0,0,0,0.22);
-    background: rgba(0,0,0,0.06);
+    color: #0f172a;
+    border: 2px solid #0f172a;
+    background: #ffffff;
+    opacity: 1;
   }
   [data-theme="light"] .sport-toggle-btn.active {
-    color: #0f172a;
-    background: rgba(0,0,0,0.13);
-    border-color: rgba(0,0,0,0.4);
+    color: #ffffff;
+    background: #0f172a;
+    border-color: #0f172a;
   }
   .nordic-card {
     background: #0f1629;
@@ -53,10 +54,10 @@
     color: #e2e8f0;
   }
   [data-theme="light"] .nordic-card {
-    background: #1e2d4a;
-    border-color: rgba(255,255,255,0.12);
-    box-shadow: 0 4px 20px rgba(0,0,0,0.3);
-    color: #e2e8f0;
+    background: #ffffff;
+    border: 2px solid #0f172a;
+    box-shadow: 0 4px 16px rgba(0,0,0,0.15);
+    color: #0f172a;
   }
   .form-label {
     display: block;
@@ -68,11 +69,22 @@
     margin-bottom: 0.3rem;
     color: #e2e8f0;
   }
+  [data-theme="light"] .form-label {
+    color: #0f172a;
+    opacity: 1;
+    font-weight: 800;
+    font-size: 0.8rem;
+  }
   .form-hint {
-    font-size: 0.72rem;
-    opacity: 0.6;
+    font-size: 0.875rem;
+    opacity: 0.85;
     margin-top: 0.25rem;
     color: #cbd5e1;
+  }
+  [data-theme="light"] .form-hint {
+    color: #0f172a;
+    opacity: 1;
+    font-weight: 500;
   }
   .input-dark {
     width: 100%;
@@ -89,9 +101,13 @@
   }
   .input-dark option { background: #1e2d4a; color: #f1f5f9; }
   [data-theme="light"] .input-dark {
-    background: rgba(255,255,255,0.1);
-    border-color: rgba(255,255,255,0.2);
-    color: #f1f5f9;
+    background: #ffffff;
+    border: 1.5px solid #0f172a;
+    color: #0f172a;
+  }
+  [data-theme="light"] .input-dark option {
+    background: #ffffff;
+    color: #0f172a;
   }
   .input-dark:focus {
     outline: none;
@@ -142,6 +158,16 @@
     transition: background 0.15s;
   }
   .submit-btn:hover { background: #166534; }
+  [data-theme="light"] .submit-btn {
+    background: #15803d;
+    color: #fff;
+    border: 2.5px solid #0f172a;
+    box-shadow: 3px 3px 0 #0f172a;
+  }
+  [data-theme="light"] .submit-btn:hover {
+    box-shadow: 1px 1px 0 #0f172a;
+    transform: translate(2px, 2px);
+  }
   .field-row { margin-bottom: 1rem; }
   .two-col { display: grid; grid-template-columns: 1fr 1fr; gap: 1rem; }
   .unit-btn {
@@ -157,6 +183,45 @@
   input[type="radio"]:checked + .unit-btn {
     background: #15803d;
     color: #fff;
+  }
+  [data-theme="light"] .unit-btn {
+    color: #475569;
+    font-weight: 600;
+    box-shadow: none;
+  }
+  [data-theme="light"] input[type="radio"]:checked + .unit-btn {
+    background: #0f172a;
+    color: #fff;
+    box-shadow: none;
+  }
+  .section-title {
+    font-size: 0.72rem;
+    font-weight: 700;
+    letter-spacing: 0.08em;
+    text-transform: uppercase;
+    opacity: 0.55;
+    margin-bottom: 0.85rem;
+    color: #94a3b8;
+  }
+  [data-theme="light"] .section-title {
+    color: #0f172a;
+    opacity: 1;
+    font-weight: 800;
+  }
+  [data-theme="light"] #gpx-dropzone {
+    border: 2.5px dashed #0f172a !important;
+    background: rgba(0,0,0,0.03) !important;
+  }
+  [data-theme="light"] .section-divider {
+    border-top-color: rgba(0,0,0,0.2);
+  }
+  [data-theme="light"] p,
+  [data-theme="light"] span,
+  [data-theme="light"] li,
+  [data-theme="light"] strong,
+  [data-theme="light"] label,
+  [data-theme="light"] summary {
+    color: #0f172a;
   }
   .gpx-badge {
     display: inline-block;
@@ -272,6 +337,8 @@
         <span style="font-size:0.72rem;font-weight:700;letter-spacing:0.07em;text-transform:uppercase;color:#64748b;" data-i18n="nordic.or_upload">or upload your own</span>
         <div style="flex:1;height:1px;background:rgba(255,255,255,0.12);"></div>
       </div>
+
+      <p style="font-size:1rem;color:rgba(255,255,255,0.9);margin:0 0 1rem 0;line-height:1.7;" data-i18n-html="calc.gpx_explanation">A <strong style="color:#fff;">GPX file</strong> is a GPS track of your race course. Get <strong style="color:#fff;">Trailforks</strong> or <strong style="color:#fff;">Strava</strong> premium for unlimited access to GPX tracks for any ski trail in the world. Upload it below and WaxOracle automatically reads the slope and direction of the course to sharpen your wax call.<br><br><strong style="color:#facc15;">Only upload a GPX for courses not already in the venue list</strong> — such as a local club race or non-homologated course. If your venue appears in the list above, select it there instead for the best accuracy. Uploading a GPX overrides the venue selection.</p>
 
       <div class="field-row">
         <label class="form-label" style="opacity:1;font-size:0.78rem;" data-i18n="nordic.upload_gpx">

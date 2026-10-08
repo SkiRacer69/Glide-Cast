@@ -519,11 +519,10 @@ def calculator(request):
             messages.error(request, "Please correct the errors below.")
     else:
         vc = _venue_choices_for_user(request.user)
-        default_venue = _first_venue_key(vc)
         form = CalculatorForm(
             venue_choices=vc,
             initial={
-                "venue": default_venue,
+                "venue": "",
                 "discipline": "GS",
                 "race_date": pd.Timestamp.now().date(),
                 "run1_time": pd.Timestamp("09:30").time(),
